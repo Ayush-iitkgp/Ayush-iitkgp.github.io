@@ -1,4 +1,4 @@
-Sitemap: http://Ayush-iitkgp.github.io/sitemapindex.xml
+Sitemap: http://Ayush-iitkgp.github.io/ayush-pandey/sitemapindex.xml
 
 User-Agent: *
 Host: Ayush-iitkgp.github.io

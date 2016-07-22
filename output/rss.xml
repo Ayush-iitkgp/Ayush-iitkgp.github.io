@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 22 Jul 2016 17:54:51 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Convex Optimization</title><link>http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div class="reveal"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/ayush-pandey/</link><description>Ayush Pandey</description><atom:link type="application/rss+xml" href="http://Ayush-iitkgp.github.io/ayush-pandey/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 22 Jul 2016 22:01:24 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Convex Optimization</title><link>http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div class="reveal"&gt;
 &lt;div class="slides"&gt;
 &lt;section&gt;&lt;section&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -7,7 +7,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Enabling-Complex-Domain-Convex-Optimization-in-Julia"&gt;Enabling Complex-Domain Convex Optimization in Julia&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Enabling-Complex-Domain-Convex-Optimization-in-Julia"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;h2 id="Ayush-Pandey-|-JuliaCon-2016"&gt;Ayush Pandey | JuliaCon 2016&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Ayush-Pandey-%7C-JuliaCon-2016"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://github.com/Ayush-iitkgp/JuliaCon2016Presentation"&gt;https://github.com/Ayush-iitkgp/JuliaCon2016Presentation&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="Enabling-Complex-Domain-Convex-Optimization-in-Julia"&gt;Enabling Complex-Domain Convex Optimization in Julia&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Enabling-Complex-Domain-Convex-Optimization-in-Julia"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;h2 id="Ayush-Pandey-|-JuliaCon-2016"&gt;Ayush Pandey | JuliaCon 2016&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Ayush-Pandey-%7C-JuliaCon-2016"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://github.com/Ayush-iitkgp/JuliaCon2016Presentation"&gt;https://github.com/Ayush-iitkgp/JuliaCon2016Presentation&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -17,7 +17,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="About-Me"&gt;About Me&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#About-Me"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="Integrated-Master-of-Science-student-at-IIT-Kharagpur-pursuing-Mathematics-and-Computing-Sciences"&gt;Integrated Master of Science student at IIT Kharagpur pursuing Mathematics and Computing Sciences&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Integrated-Master-of-Science-student-at-IIT-Kharagpur-pursuing-Mathematics-and-Computing-Sciences"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="GitHub---https://github.com/ayush-iitkgp"&gt;GitHub - &lt;a href="https://github.com/ayush-iitkgp"&gt;https://github.com/ayush-iitkgp&lt;/a&gt;&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#GitHub---https://github.com/ayush-iitkgp"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="Google-Summer-of-Code---2016-student-under-mentorship-of-Madeleine-Udell-and-Dvijotham-Krishnamurthy"&gt;Google Summer of Code - 2016 student under mentorship of Madeleine Udell and Dvijotham Krishnamurthy&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Google-Summer-of-Code---2016-student-under-mentorship-of-Madeleine-Udell-and-Dvijotham-Krishnamurthy"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="Blogging-my-GSoC'16-experience-at-http://ayush-iitkgp.rhcloud.com"&gt;Blogging my GSoC'16 experience at &lt;a href="http://ayush-iitkgp.rhcloud.com/"&gt;http://ayush-iitkgp.rhcloud.com&lt;/a&gt;&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Blogging-my-GSoC'16-experience-at-http://ayush-iitkgp.rhcloud.com"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;!--- ## CVX.jl team
+&lt;h2 id="About-Me"&gt;About Me&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#About-Me"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="Integrated-Master-of-Science-student-at-IIT-Kharagpur-pursuing-Mathematics-and-Computing-Sciences"&gt;Integrated Master of Science student at IIT Kharagpur pursuing Mathematics and Computing Sciences&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Integrated-Master-of-Science-student-at-IIT-Kharagpur-pursuing-Mathematics-and-Computing-Sciences"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="GitHub---https://github.com/ayush-iitkgp"&gt;GitHub - &lt;a href="https://github.com/ayush-iitkgp"&gt;https://github.com/ayush-iitkgp&lt;/a&gt;&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#GitHub---https://github.com/ayush-iitkgp"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="Google-Summer-of-Code---2016-student-under-mentorship-of-Madeleine-Udell-and-Dvijotham-Krishnamurthy"&gt;Google Summer of Code - 2016 student under mentorship of Madeleine Udell and Dvijotham Krishnamurthy&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Google-Summer-of-Code---2016-student-under-mentorship-of-Madeleine-Udell-and-Dvijotham-Krishnamurthy"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h4 id="Blogging-my-GSoC'16-experience-at-http://ayush-iitkgp.rhcloud.com"&gt;Blogging my GSoC'16 experience at &lt;a href="http://ayush-iitkgp.rhcloud.com/"&gt;http://ayush-iitkgp.rhcloud.com&lt;/a&gt;&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Blogging-my-GSoC'16-experience-at-http://ayush-iitkgp.rhcloud.com"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;!--- ## CVX.jl team
 
 * [CVX.jl](https://github.com/cvxgrp/CVX.jl): Madeleine Udell, Karanveer Mohan, David Zeng, Jenny Hong
 &lt;!---* [ParallelSparseMatMul.jl](https://github.com/madeleineudell/ParallelSparseMatMul.jl): Madeleine Udell
@@ -30,7 +30,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="What-is-Convex-Optimization?"&gt;What is Convex Optimization?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#What-is-Convex-Optimization?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="What-is-Convex-Optimization?"&gt;What is Convex Optimization?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#What-is-Convex-Optimization?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/section&gt;&lt;section&gt;
@@ -39,7 +39,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="What-is-Convex-function?"&gt;What is Convex function?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#What-is-Convex-function?"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;$f$ is &lt;strong&gt;convex&lt;/strong&gt; if for all $\theta \in [0,1]$
+&lt;h3 id="What-is-Convex-function?"&gt;What is Convex function?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#What-is-Convex-function?"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;$f$ is &lt;strong&gt;convex&lt;/strong&gt; if for all $\theta \in [0,1]$
 $$
 f(\theta x + (1-\theta)y ) \leq \theta f(x) + (1-\theta) f(y)
 $$&lt;/p&gt;
@@ -51,7 +51,7 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;!---* sublevel sets $\{x: f(x) \leq \alpha\}$ are convex sets ---&gt;
 
-&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/chord.png" alt="chords"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/chord.png" alt="chords"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note - A function is called affine iff it is both convex and concave.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;/div&gt;
@@ -62,7 +62,7 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="What-is-Convex-optimization-?"&gt;What is Convex optimization ?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#What-is-Convex-optimization-?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Functional-Form"&gt;Functional Form&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Functional-Form"&gt;¶&lt;/a&gt;&lt;/h3&gt;$$
+&lt;h2 id="What-is-Convex-optimization-?"&gt;What is Convex optimization ?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#What-is-Convex-optimization-?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Functional-Form"&gt;Functional Form&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Functional-Form"&gt;¶&lt;/a&gt;&lt;/h3&gt;$$
 \begin{array}{ll} 
 \mbox{minimize}  &amp;amp; f_0(x) \\
 \mbox{subject to} &amp;amp; f_i(x) \leq 0, \quad i=1, \ldots, m_1\\
@@ -84,7 +84,7 @@ $$&lt;ul&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Why-do-we-need-another-package-if-we-have-available-solvers-like-SCS,-Mosek?"&gt;Why do we need another package if we have available solvers like SCS, Mosek?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Why-do-we-need-another-package-if-we-have-available-solvers-like-SCS,-Mosek?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Convex-optimization-(conic-form)"&gt;Convex optimization (conic form)&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Convex-optimization-(conic-form)"&gt;¶&lt;/a&gt;&lt;/h3&gt;$$
+&lt;h2 id="Why-do-we-need-another-package-if-we-have-available-solvers-like-SCS,-Mosek?"&gt;Why do we need another package if we have available solvers like SCS, Mosek?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Why-do-we-need-another-package-if-we-have-available-solvers-like-SCS,-Mosek?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Convex-optimization-(conic-form)"&gt;Convex optimization (conic form)&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Convex-optimization-(conic-form)"&gt;¶&lt;/a&gt;&lt;/h3&gt;$$
 \begin{array}{ll} 
 \mbox{minimize}  &amp;amp; c^T x \\
     \mbox{subject to} &amp;amp; Ax = b\\
@@ -120,7 +120,7 @@ $$\mathcal K_{\mathrm{SDP}} = \{X: X = X^T,~ v^T X v \geq 0,~ \forall v \in \mat
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Quick-Tutorial"&gt;Quick Tutorial&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Quick-Tutorial"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Quick-Tutorial"&gt;Quick Tutorial&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Quick-Tutorial"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class="fragment"&gt;
@@ -157,7 +157,7 @@ WARNING: Method definition norm(Convex.AbstractExpr, Symbol) in module Convex at
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Variables"&gt;Variables&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Variables"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Variables"&gt;Variables&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Variables"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class="fragment"&gt;
@@ -203,7 +203,7 @@ vexity: Convex.AffineVexity()&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Expressions"&gt;Expressions&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Expressions"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;h1 id="Expressions"&gt;Expressions&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Expressions"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;We can operate on variables to form &lt;em&gt;convex expressions&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -253,7 +253,7 @@ vexity: Convex.ConcaveVexity()
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Constraints"&gt;Constraints&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Constraints"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Constraints"&gt;Constraints&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Constraints"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class="fragment"&gt;
@@ -341,7 +341,7 @@ vexity: Convex.ConvexVexity()&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Problems"&gt;Problems&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Problems"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;h1 id="Problems"&gt;Problems&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Problems"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Now let's combine the above 3 steps to define our problem&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -568,7 +568,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Why-do-we-need-complex-domain-optimization-convex-package?"&gt;Why do we need complex-domain optimization convex package?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Why-do-we-need-complex-domain-optimization-convex-package?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Why-do-we-need-complex-domain-optimization-convex-package?"&gt;Why do we need complex-domain optimization convex package?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Why-do-we-need-complex-domain-optimization-convex-package?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/section&gt;&lt;section&gt;
@@ -577,7 +577,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Applicationf-of-complex-domain-convex-optimization"&gt;Applicationf of complex-domain convex optimization&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Applicationf-of-complex-domain-convex-optimization"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2 id="Applicationf-of-complex-domain-convex-optimization"&gt;Applicationf of complex-domain convex optimization&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Applicationf-of-complex-domain-convex-optimization"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Phase retreival from sparse signals&lt;/strong&gt; used in MRI Imaging of the Brain&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Mathematical Formulation&lt;/strong&gt;&lt;/p&gt;
@@ -585,7 +585,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;satisfying A(x) = A($x_0$) = b&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;where $x_0$ in $x\in \mathbf{C}^n$&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;A($x_0$) = {|$&lt;a_k x_0&gt;$|^2 : k = 1, 2, . . . , m }&lt;/a_k&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/Brain_MRI.jpg" alt="MRI Imaging"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/Brain_MRI.jpg" alt="MRI Imaging"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -597,7 +597,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Used in demodulation of the mutually interfering digital streams of information&lt;/strong&gt; that occur in areas such as wireless communications, high-speed data transmission, DSL, satellite communication, digital television, and magnetic recording.&lt;/p&gt;
 &lt;p&gt;Here the problem is detecting interference between multiple users in a wireless communication network.&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/wirelesscommunication.jpg" alt="Wireless Communication"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/wirelesscommunication.jpg" alt="Wireless Communication"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -609,7 +609,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;Optimization in power grids&lt;/strong&gt;: The problem of finding the most efficient dispatch of generators in a power grid subject to meeting the demand for power and respecting network constraints. Here the complex variable x represents steady-state voltages in an AC power network.&lt;/p&gt;
 &lt;p&gt;Here one of the variables which represents steady-state voltages in an AC power network is a complex variable so it again becomes complex-domain optimization problem.&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/powergrid.jpg" alt="Power Grids"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/powergrid.jpg" alt="Power Grids"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -619,7 +619,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="How-Convex.jl-handles-the-complex-domain-optimization-problem?"&gt;How Convex.jl handles the complex-domain optimization problem?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#How-Convex.jl-handles-the-complex-domain-optimization-problem?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="How-Convex.jl-handles-the-complex-domain-optimization-problem?"&gt;How Convex.jl handles the complex-domain optimization problem?&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#How-Convex.jl-handles-the-complex-domain-optimization-problem?"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/section&gt;&lt;section&gt;
@@ -628,7 +628,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Things-to-keep-in-mind"&gt;Things to keep in mind&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Things-to-keep-in-mind"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="Things-to-keep-in-mind"&gt;Things to keep in mind&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Things-to-keep-in-mind"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;The objective function must be real&lt;/li&gt;
 &lt;li&gt;The inequality constraints must be real&lt;/li&gt;
 &lt;li&gt;The last entry of the Second Order Conic Constraint must be real.&lt;/li&gt;
@@ -656,7 +656,7 @@ current status: Unbounded&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="My-Work"&gt;My Work&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#My-Work"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;I have started with implemeting the support for complex coefficients which means we keep the variable (say x) as real but the coefficients as complex.&lt;/p&gt;
+&lt;h1 id="My-Work"&gt;My Work&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#My-Work"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;I have started with implemeting the support for complex coefficients which means we keep the variable (say x) as real but the coefficients as complex.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -898,7 +898,7 @@ c'x = 5.9999, -b'y = 6.0003
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Future-work"&gt;Future work&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Future-work"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;h1 id="Future-work"&gt;Future work&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Future-work"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Implementing complex variables&lt;/li&gt;
 &lt;li&gt;Implemeting Complex SemiDefinite Programming&lt;/li&gt;
 &lt;/ul&gt;
@@ -911,7 +911,7 @@ c'x = 5.9999, -b'y = 6.0003
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Questions"&gt;Questions&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/#Questions"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Questions"&gt;Questions&lt;a class="anchor-link" href="http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/#Questions"&gt;¶&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/section&gt;&lt;/section&gt;
@@ -971,7 +971,7 @@ require(
 
 &lt;/script&gt;
 
-</description><guid>http://Ayush-iitkgp.github.io/posts/Convex%20Optimization/</guid><pubDate>Fri, 22 Jul 2016 16:20:47 GMT</pubDate></item><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
+</description><guid>http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/</guid><pubDate>Fri, 22 Jul 2016 16:20:47 GMT</pubDate></item><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/ayush-pandey/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.&lt;/p&gt;
 &lt;p&gt;I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: &lt;/p&gt;
 &lt;p&gt;Many problems in applied sciences are posed as optimization problems over the complex field such as:&lt;/p&gt;
@@ -1074,9 +1074,9 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</guid><pubDate>Fri, 22 Jul 2016 16:14:47 GMT</pubDate></item><item><title>Exciting Summers Ahead!</title><link>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Fall seven times, stand up eight !!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/ayush-pandey/posts/a-month-of-excitement/</guid><pubDate>Fri, 22 Jul 2016 16:14:47 GMT</pubDate></item><item><title>Exciting Summers Ahead!</title><link>http://Ayush-iitkgp.github.io/ayush-pandey/posts/exciting-summers-ahead/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Fall seven times, stand up eight !!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Google Summer of Code, the thing I wanted to be a part of as soon as I heard of it in my 1st year of college. It took me 4 years when I am finally selected for the prestigious open source program. Harsh Gupta no word can express my gratefulness for you. Thank you very much for always being there. Coincidently, the results were announced in the middle of my end-semester examination and I must accept my selection was one more reason for not studying for the exams. I am glad that my exams are over and as always I am looking forward to the summers where I apply the theories I have learnt during the semester in a practical world. I think I should make it apparent that applying to Julia and getting selected was a well-thought process, there were series of events which helped me getting selected in GSoC under The Julia Lang. It all started when I was finishing the web-development internship during the winter vacations when I realized that I need to pursue applied mathematics more seriously as that is somewhere I can excel at. &lt;strong&gt;Operations Research and Optimization&lt;/strong&gt; was an obvious choice as I enjoyed the introductory course in Linear Programming way more than other cs and mathematics courses that I took during my stay at IIT Kharagpur. I decided to take an advanced course in Optimization(Non-Linear Programming) but sadly the course was open for final year students but yes &lt;em&gt;where there is will, there is a way&lt;/em&gt;, I was able to enroll for the course after consulting with my professor, interestingly I was the only pre-final year student in that class yet I tried to attend each and every class in spite of not having familiar faces to sit with. During the semester, 4th InterIIT Meet was being held at IIT Mandi. Initially, I was not the part of IIT Kharagpur's contingent as I didn't find myself competent enough to apply for the selections. But as soon as the problem statement for the event Portfolio Optimization was out, my friend Raja Ambrish contacted me as the problem was related to Convex Optimization because he thought I could help him. My eyes were lit bright as soon as I saw the problem statement as it was the application of what I have been reading throughout the semester. I worked with the other team members and was finally selected to present our solution to the jury at IIT Mandi. Yay, IIT Kharagpur were the overall champions and also our team managed to win gold medal Portfolio Optimization as well. 
-&lt;img alt="A click during InterIIT Presentation" src="http://Ayush-iitkgp.github.io/content/images/2016/05/InterIITTech.jpg"&gt;&lt;/p&gt;
+&lt;img alt="A click during InterIIT Presentation" src="http://Ayush-iitkgp.github.io/ayush-pandey/content/images/2016/05/InterIITTech.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The InterIIT experience was awesome and it made me realize that indeed I have a special interest in the field of Optimization. I wanted to explore more of this field and Google Summer of Code was an exciting opportunity. I told my friend Harsh about the plans to participate in GSoC in an organization which has Optimization related projects and his first suggestion was &lt;a href="http://julialang.org/"&gt;Julia&lt;/a&gt;. I came back room and browsed projects and wow Julia has this one project namely &lt;code&gt;"Support for Complex SemiDefinite Programming within Convex.jl"&lt;/code&gt; on Convex Optimization that I fell in love with. The concepts I learnt during the classroom hours in Non-Linear Programming were of immense help to me in getting started with Convex.jl special thanks to Prof. Geetanjali Panda for teaching this course in a very intuitive way.&lt;/p&gt;
 &lt;p&gt;Finally, after having an extensive discussion with my mentors &lt;a href="https://people.orie.cornell.edu/mru8/"&gt;Madeleine Udell&lt;/a&gt; and &lt;a href="http://www.its.caltech.edu/~dvij/"&gt;Dvijotham Krishnamurthy&lt;/a&gt;, I submitted my &lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;proposal&lt;/a&gt; under The Julia Lang and NumFocus and was selected under former. I want to express my gratefulness to each and everyone who has helped me before and throughout the GSoC Application Period.&lt;/p&gt;
 &lt;p&gt;I am officially in the first week of the Community Bonding Period. My week started with having a video call with my mentors where we discussed my proposal in more detail and went through some of the existing codebase in order to understand what specific changes need to be made to accomplish our task. We have started by first tackling the complex-domain Linear Programming Problems. We have decided that we would need few utility functions like:&lt;/p&gt;
@@ -1112,4 +1112,4 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</guid><pubDate>Fri, 22 Jul 2016 16:08:08 GMT</pubDate></item></channel></rss>
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/ayush-pandey/posts/exciting-summers-ahead/</guid><pubDate>Fri, 22 Jul 2016 16:08:08 GMT</pubDate></item></channel></rss>
