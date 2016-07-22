@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A month of Excitement! | Ayush Pandey</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/">
+<!--[if lt IE 9]>
+            <script src="../../assets/js/html5shiv.min.js"></script>
+            <script src="../../assets/js/respond.min.js"></script>
+        <![endif]--><meta name="author" content="Ayush Pandey">
+<link rel="prev" href="../exciting-summers-ahead/" title="Exciting Summers Ahead!" type="text/html">
+<link rel="next" href="../Convex%20Optimization/" title="Convex Optimization" type="text/html">
+<meta property="og:site_name" content="Ayush Pandey">
+<meta property="og:title" content="A month of Excitement!">
+<meta property="og:url" content="http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/">
+<meta property="og:description" content="Every day is a new experience and it opening up new opportunities. Life is awesome. 
+That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the worl">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-22T21:44:47+05:30">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-success header-panel shadow-z-3" role="navigation"><div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-3">
+            <h1 class="title-blog">
+                <a href="http://Ayush-iitkgp.github.io/">
+                        <span id="blog-title">Ayush Pandey</span>
+                    </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+<!-- /.container-fluid -->
+</nav><div class="container-fluid main" id="content" role="main">
+        <div class="row">
+            <nav class="col-xs-3 menu"><ul>
+<li class="withripple"><a href="../../archive.html">Archive</a></li>
+                <li class="withripple"><a href="../../categories/">Tags</a></li>
+                <li class="withripple"><a href="../../rss.xml">RSS feed</a></li>
+
+                    
+                </ul>
+<ul class="nav navbar-nav"></ul></nav><div class="posts-material col-xs-9">
+                <div class="col-xs-12 col-md-11 content-material">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">A month of Excitement!</a></h1>
+<hr>
+<div class="metadata">
+            <span class="byline author vcard">
+                <a href=".">
+                        <img class="img-circle" src="../../images/avatar.jpg" alt="icon">
+                    Ayush Pandey
+                </a>
+            </span>
+            <span class="dateline">
+                <a href="." rel="bookmark"><i class="mdi-device-access-time"></i>
+                    <time class="published dt-published" datetime="2016-07-22T21:44:47+05:30" itemprop="datePublished" title="2016-07-22 21:44">2016-07-22 21:44</time></a>
+            </span>
+        </div>
+        
+        <hr></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><strong>Every day is a new experience and it opening up new opportunities. Life is awesome</strong>. </p>
+<p>That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.</p>
+<p>I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: </p>
+<p>Many problems in applied sciences are posed as optimization problems over the complex field such as:</p>
+<ul>
+<li>Phase retrieval from sparse signals</li>
+<li>Designing an FIR filter given desired frequency response</li>
+<li>Optimization problems in AC power systems</li>
+<li>Frequency domain analysis in signal processing and control theory.</li>
+</ul>
+<p>The present approach is to manually convert the complex-domain problems to real-domain problems <a href="http://nbviewer.jupyter.org/github/cvxgrp/cvxpy/blob/master/examples/notebooks/WWW/fir_chebychev_design.ipynb">(example)</a> and pass to solvers. This process can be time-consuming and non-intuitive sometimes. The correct approach to such problem would be to make existing packages deal with complex-domain optimization hence making it easier for the optimization community to deal with complex-domain problems.</p>
+<p>In the first hangout call with my mentors, we had decided to implement the functionality to support the Linear complex-domain optimization problem in Convex.jl. In order to support the above functionality, I was required to make the following changes:</p>
+<ol>
+<li>
+<p>Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign <code>ComplexSign</code> which was introduced as the subtype of the user-defined type <code>Sign</code> in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with <code>ComplexSign</code></p>
+<pre class="code literal-block"><span></span>abstract Sign
+type Positive &lt;: Sign                   end
+type Negative &lt;: Sign                   end
+type NoSign &lt;: Sign                     end
+type ComplexSign &lt;: Sign                end
+
+-(s::ComplexSign) = ComplexSign()
++(s::ComplexSign, t::ComplexSign) = s
++(s::Sign, t::ComplexSign) = t
++(t::ComplexSign, s::Sign) = s+t
+*(t::ComplexSign, s::ComplexSign) = t
+*(t::ComplexSign, s::Sign) = t
+*(s::Sign, t::ComplexSign) = t
+*(s::ComplexSign, m::Monotonicity) = NoMonotonicity()
+*(m::Monotonicity, s::Sign) = s * m
+*(s::ComplexSign, v::ConstVexity) = v
+*(s::ComplexSign, v::AffineVexity) = v
+*(s::ComplexSign, v::ConvexVexity) = NotDcp()
+*(s::ComplexSign, v::ConcaveVexity) = NotDcp()
+*(s::ComplexSign, v::NotDcp) = v
+</pre>
+
+
+</li>
+<li>
+<p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
+<pre class="code literal-block"><span></span>ComplexVariable(m::Int, n::Int, sets::Symbol...) = Variable((m,n), ComplexSign(), sets...)
+ComplexVariable(sets::Symbol...) = Variable((1, 1), ComplexSign(), sets...)
+ComplexVariable(size::Tuple{Int, Int}, sets::Symbol...) = Variable(size, ComplexSign(), sets...)
+ComplexVariable(size::Int, sets::Symbol...) = Variable((size, 1), ComplexSign(), sets...)
+HermitianSemidefinite(m::Integer) = ComplexVariable((m,m), :Semidefinite)
+function HermitianSemidefinite(m::Integer, n::Integer)
+  if m==n
+    return ComplexVariable((m,m), :Semidefinite)
+  else
+    error("HermitianSemidefinite matrices must be square")
+  end
+end
+</pre>
+
+
+</li>
+</ol>
+<p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
+<pre class="code literal-block"><span></span>    y = ComplexVariable()
+    Variable of
+    size: (1, 1)
+    sign: Convex.ComplexSign()
+    vexity: Convex.AffineVexity()
+    z = HermitianSemidefinite(4)
+    Variable of
+    size: (4, 4)
+    sign: Convex.ComplexSign()
+    vexity: Convex.AffineVexity()
+</pre>
+
+
+<ol>
+<li>The third step was to redefine the <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine">affine</a> atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. </li>
+</ol>
+<p>So, this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.</p>
+<p>Also, the coming week is crucial for us as we have decided to fully implement the complex-domain Linear Programming Problem in Convex.jl. Last night, we had our 3rd hangout meeting where we discussed the nitty-gritty of Convex.jl especially the conic form functionality and how to proceed so as to meet the deadline that we have set up for ourselves. I look forward to another week of coding and making new friends and getting involved in the Open Source Community.</p>
+<p><strong>The Bragging Rights- Convex.jl would be the second optimization package after Matlab's cvx to support complex-domain optimization problems, so yes this excites me as well to be a part the team that is developing such a useful package.</strong></p>
+<p>Also, I am very very much excited to attend JuliaCon'16 at the Massachusetts Institute of Technology and give a talk on what I have been doing this summer. I hope I get the visa on time, wish me luck everyone :)</p>
+<p>See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! </p>
+<div id="disqus_thread"></div>
+
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager">
+<li class="previous">
+                <a href="../exciting-summers-ahead/" rel="prev" title="Exciting Summers Ahead!">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../Convex%20Optimization/" rel="next" title="Convex Optimization">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+            </div>
+        </div>
+        <button class="btn btn-fab btn-raised btn-material-green btn-footer" data-toggle="modal" data-target="#footer-dialog">
+            <i class="mdi-communication-message"></i>
+        </button>
+        <div id="footer-dialog" class="modal fade" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Ayush Pandey credits</h4>
+ 
+              </div>
+              <div class="modal-body">
+                    Contents © 2016         <a href="mailto:ayush.pandey@iitkgp.ac.in">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="source-button">
+    <a class="btn btn-fab btn-raised btn-material-indigo" target="_blank" href="index.md" title="Source">
+        <i class="mdi-file-cloud-download"></i>
+    </a>
+
+        </div>
+        <div class="kc_fab_wrapper"></div>
+</div>
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+                var links = [
+                        {
+                            "icon": "<i class='fa fa-share-square-o'></i>",
+                            "bgcolor": "#F44336",
+                        },
+                        {
+                            "target": "_blank",
+                            "url": "https://twitter.com/",
+                            "icon": "<i class='fa fa-twitter'></i>",
+                            "color": "#fffff",
+                            "bgcolor": "#55ACEE",
+                        },
+                        {
+                            "target": "_blank",
+                            "url": "https://github.com/",
+                            "icon": "<i class='fa fa-github-square'></i>",
+                            "color": "#fffff",
+                            "bgcolor": "#666666",
+                        },
+                        {
+                            "target": "_blank",
+                            "url": "https://www.facebook.com",
+                            "icon": "<i class='fa fa-facebook'></i>",
+                            "color": "#fffff",
+                            "bgcolor": "#3B5998",
+                        },
+                ];
+
+            $(document).ready(function() {
+                // This command is used to initialize some elements and make them work properly
+                $.material.init();
+                    $('.kc_fab_wrapper').kc_fab(links);
+            });
+
+            $(window).on("resize", function() {
+                $("html, body").height($(window).height());
+                $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight() - 76 ); // footer margin: $("footer.footer").outerHeight()
+                $(".posts-material").height($(window).height());
+            }).trigger("resize");
+        </script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

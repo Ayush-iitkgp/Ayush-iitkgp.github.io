@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/blog.xml</loc>
+  <lastmod>2016-07-22T15:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/cat_nikola.xml</loc>
+  <lastmod>2016-07-22T15:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/demo.xml</loc>
+  <lastmod>2016-07-22T15:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/nikola.xml</loc>
+  <lastmod>2016-07-22T15:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/python.xml</loc>
+  <lastmod>2016-07-22T15:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/galleries/demo/rss.xml</loc>
+  <lastmod>2016-07-22T16:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/galleries/rss.xml</loc>
+  <lastmod>2016-07-22T16:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/rss.xml</loc>
+  <lastmod>2016-07-22T16:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/sitemap.xml</loc>
+  <lastmod>2016-07-22T16:22:00Z</lastmod>
+ </sitemap>
+</sitemapindex>
