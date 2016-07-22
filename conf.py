@@ -1198,7 +1198,11 @@ UNSLUGIFY_TITLES = True
 # Consult your engine's documentation on filters if you need help defining
 # those.
 # TEMPLATE_FILTERS = {}
-
+BIOGRAPHY = """
+<img class="img-circle" style="float:left;margin:10px 20px 10px 0px;max-height:200px;" src="/images/avatar.jpg">
+<p>Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system.
+</p>
+"""
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = { 
@@ -1231,7 +1235,10 @@ GLOBAL_CONTEXT = {
     },
     ],
      'author_avatar': '/images/avatar.jpg',
+     "biography": BIOGRAPHY,
+
 }
+
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
