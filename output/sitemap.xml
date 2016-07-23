@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/</loc>
-  <lastmod>2016-07-22T17:14:00Z</lastmod>
+  <lastmod>2016-07-23T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/2016/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/archive.html</loc>
-  <lastmod>2016-07-22T22:01:00Z</lastmod>
+  <lastmod>2016-07-23T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/categories/</loc>
@@ -30,6 +30,10 @@
   <lastmod>2016-07-22T17:14:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/ayush-pandey/juliacon.html</loc>
+  <lastmod>2016-07-23T18:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/listings/</loc>
   <lastmod>2016-07-22T17:14:00Z</lastmod>
  </url>
@@ -39,7 +43,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/listings/hello.py.html</loc>
-  <lastmod>2016-07-22T22:01:00Z</lastmod>
+  <lastmod>2016-07-23T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/posts/Convex%20Optimization/</loc>

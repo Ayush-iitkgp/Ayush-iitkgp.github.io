@@ -135,6 +135,8 @@ NAVIGATION_LINKS = {
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
         ("/galleries", "Gallery"),
+        ("/juliacon.html", "JuliaCon2016 Presentation"),
+
 
 
 
