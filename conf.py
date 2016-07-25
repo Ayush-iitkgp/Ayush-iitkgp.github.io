@@ -131,12 +131,15 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Posts"),
-        ("/categories/", "Tags"),
+        #("/archive.html", "Posts"),
+        #("/categories/", "Tags"),
         #("/rss.xml", "RSS feed"),
+
         ("/galleries", "Gallery"),
-        ("/juliacon.slides.html", "JuliaCon2016 Presentation"),
+        ("/stories/juliacon.slides.html", "JuliaCon2016 Presentation"),
         ("http://ayush-iitkgp.rhcloud.com", "GSoC'16"),
+        ("http://github.com/Ayush-iitkgp", "GitHub"),
+
         )
 }
 
@@ -180,7 +183,7 @@ POSTS = (
     ("posts/*.html", "posts", "post.tmpl"),
 )
 PAGES = (
-    ("stories/*.md", "stories", "story.tmpl"),
+    ("stories/*.md", "", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
     ("stories/*.html", "stories", "story.tmpl"),
 )
@@ -472,7 +475,7 @@ HIDDEN_AUTHORS = ['Guest']
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
-# INDEX_PATH = ""
+INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)

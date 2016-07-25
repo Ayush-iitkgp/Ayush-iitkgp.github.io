@@ -5,16 +5,22 @@ article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Ayush Pandey">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayush Pandey | Ayush Pandey</title>
+<title>index | Ayush Pandey</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://Ayush-iitkgp.github.io/ayush-pandey/">
 <!--[if lt IE 9]>
             <script src="assets/js/html5shiv.min.js"></script>
             <script src="assets/js/respond.min.js"></script>
-        <![endif]--><link rel="prefetch" href="posts/a-month-of-excitement/" type="text/html">
+        <![endif]--><meta name="author" content="Ayush Pandey">
+<meta property="og:site_name" content="Ayush Pandey">
+<meta property="og:title" content="index">
+<meta property="og:url" content="http://Ayush-iitkgp.github.io/ayush-pandey/">
+<meta property="og:description" content="Mathematics itself is too enthralling to resist. Moreso, when coupled with the insights from Computer Science, the satisfaction of learning is remarkable.
+I am a final year undergarduate pursuing at I">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-25T15:01:32+05:30">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -36,191 +42,39 @@ article: http://ogp.me/ns/article#
 </nav><div class="container-fluid main" id="content" role="main">
         <div class="row">
             <nav class="col-xs-3 menu"><ul>
-<li class="withripple"><a href="archive.html">Posts</a></li>
-                <li class="withripple"><a href="categories/">Tags</a></li>
-                <li class="withripple"><a href="galleries">Gallery</a></li>
-                <li class="withripple"><a href="juliacon.slides.html">JuliaCon2016 Presentation</a></li>
+<li class="withripple"><a href="galleries">Gallery</a></li>
+                <li class="withripple"><a href="stories/juliacon.slides.html">JuliaCon2016 Presentation</a></li>
                 <li class="withripple"><a href="http://ayush-iitkgp.rhcloud.com">GSoC'16</a></li>
+                <li class="withripple"><a href="http://github.com/Ayush-iitkgp">GitHub</a></li>
 
                     
                 </ul>
 <ul class="nav navbar-nav"></ul></nav><div class="posts-material col-xs-9">
                 <div class="col-xs-12 col-md-11 content-material">
-
-    <div class="postindex well post-material ">
-        <article class="h-entry post-text"><header><h1 class="p-name entry-title header"><a href="posts/a-month-of-excitement/" class="u-url">A month of Excitement!</a></h1>
-            <div class="metadata">
-                <span class="byline author vcard">
-                        <img class="img-circle" src="images/avatar.jpg" alt="icon">
-                    Ayush Pandey
-                </span>
-                <span class="dateline"><a href="posts/a-month-of-excitement/" rel="bookmark">
-                    <i class="mdi-device-access-time"></i><time class="published dt-published" datetime="2016-07-22T21:44:47+05:30" title="2016-07-22 21:44">2016-07-22 21:44</time></a></span>
-            </div>
-            <hr></header><div class="e-content entry-content">
-        <div>
-<p><strong>Every day is a new experience and it opening up new opportunities. Life is awesome</strong>. </p>
-<p>That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.</p>
-<p>I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: </p>
-<p>Many problems in applied sciences are posed as optimization problems over the complex field such as:</p>
-<ul>
-<li>Phase retrieval from sparse signals</li>
-<li>Designing an FIR filter given desired frequency response</li>
-<li>Optimization problems in AC power systems</li>
-<li>Frequency domain analysis in signal processing and control theory.</li>
-</ul>
-<p>The present approach is to manually convert the complex-domain problems to real-domain problems <a href="http://nbviewer.jupyter.org/github/cvxgrp/cvxpy/blob/master/examples/notebooks/WWW/fir_chebychev_design.ipynb">(example)</a> and pass to solvers. This process can be time-consuming and non-intuitive sometimes. The correct approach to such problem would be to make existing packages deal with complex-domain optimization hence making it easier for the optimization community to deal with complex-domain problems.</p>
-<p>In the first hangout call with my mentors, we had decided to implement the functionality to support the Linear complex-domain optimization problem in Convex.jl. In order to support the above functionality, I was required to make the following changes:</p>
-<ol>
-<li>
-<p>Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign <code>ComplexSign</code> which was introduced as the subtype of the user-defined type <code>Sign</code> in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with <code>ComplexSign</code></p>
-<pre class="code literal-block"><span></span>abstract Sign
-type Positive &lt;: Sign                   end
-type Negative &lt;: Sign                   end
-type NoSign &lt;: Sign                     end
-type ComplexSign &lt;: Sign                end
-
--(s::ComplexSign) = ComplexSign()
-+(s::ComplexSign, t::ComplexSign) = s
-+(s::Sign, t::ComplexSign) = t
-+(t::ComplexSign, s::Sign) = s+t
-*(t::ComplexSign, s::ComplexSign) = t
-*(t::ComplexSign, s::Sign) = t
-*(s::Sign, t::ComplexSign) = t
-*(s::ComplexSign, m::Monotonicity) = NoMonotonicity()
-*(m::Monotonicity, s::Sign) = s * m
-*(s::ComplexSign, v::ConstVexity) = v
-*(s::ComplexSign, v::AffineVexity) = v
-*(s::ComplexSign, v::ConvexVexity) = NotDcp()
-*(s::ComplexSign, v::ConcaveVexity) = NotDcp()
-*(s::ComplexSign, v::NotDcp) = v
-</pre>
-
-
-</li>
-<li>
-<p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
-<pre class="code literal-block"><span></span>ComplexVariable(m::Int, n::Int, sets::Symbol...) = Variable((m,n), ComplexSign(), sets...)
-ComplexVariable(sets::Symbol...) = Variable((1, 1), ComplexSign(), sets...)
-ComplexVariable(size::Tuple{Int, Int}, sets::Symbol...) = Variable(size, ComplexSign(), sets...)
-ComplexVariable(size::Int, sets::Symbol...) = Variable((size, 1), ComplexSign(), sets...)
-HermitianSemidefinite(m::Integer) = ComplexVariable((m,m), :Semidefinite)
-function HermitianSemidefinite(m::Integer, n::Integer)
-  if m==n
-    return ComplexVariable((m,m), :Semidefinite)
-  else
-    error("HermitianSemidefinite matrices must be square")
-  end
-end
-</pre>
-
-
-</li>
-</ol>
-<p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
-<pre class="code literal-block"><span></span>    y = ComplexVariable()
-    Variable of
-    size: (1, 1)
-    sign: Convex.ComplexSign()
-    vexity: Convex.AffineVexity()
-    z = HermitianSemidefinite(4)
-    Variable of
-    size: (4, 4)
-    sign: Convex.ComplexSign()
-    vexity: Convex.AffineVexity()
-</pre>
-
-
-<ol>
-<li>The third step was to redefine the <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine">affine</a> atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. </li>
-</ol>
-<p>So, this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.</p>
-<p>Also, the coming week is crucial for us as we have decided to fully implement the complex-domain Linear Programming Problem in Convex.jl. Last night, we had our 3rd hangout meeting where we discussed the nitty-gritty of Convex.jl especially the conic form functionality and how to proceed so as to meet the deadline that we have set up for ourselves. I look forward to another week of coding and making new friends and getting involved in the Open Source Community.</p>
-<p><strong>The Bragging Rights- Convex.jl would be the second optimization package after Matlab's cvx to support complex-domain optimization problems, so yes this excites me as well to be a part the team that is developing such a useful package.</strong></p>
-<p>Also, I am very very much excited to attend JuliaCon'16 at the Massachusetts Institute of Technology and give a talk on what I have been doing this summer. I hope I get the visa on time, wish me luck everyone :)</p>
-<p>See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! </p>
-<div id="disqus_thread"></div>
-
-<script>
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//avoyage.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">index</a></h1>
+<hr></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Mathematics itself is too enthralling to resist. Moreso, when coupled with the insights from Computer Science, the satisfaction of learning is remarkable.</p>
+<p>I am a final year undergarduate pursuing at Indian Institute of Technology, Kharagpur pursuing majors in Mathematics and Computer Science. My research interests lie in the intersection of Machine Learning and Robotics. More specifically, I am intrigued by the current research in the field of Deep Learning. I am also passionate about autonomous robotics, especially those which draw inspiration from nature. Add to that the passion for knowing all about human intelligence, and life's good.</p>
+<p>While trying to keep up with the rapid advancements in learning-based approaches, I spend a considerable amount of my time tinkering with quadcopters at the ARK Lab, or building my own swarm of robots at the SIK Lab. For updates on the amazing work we do in our Robotics Labs and my occasional ramblings, look up my blog.</p>
+<p>Updates
+Joining MILA Lab as intern, under Professor Yoshua Bengio. 
+Summer Research Intern, MILA , May-present 2016</p>
+<p>Undergraduate summer research at Johns Hopkins University under Professor Raman Arora. 
+Summer Research Expeditions, May-July 2015</p>
+<p>Our submission won the Microsoft Machine Learning Challenge, IISC Bangalore. 
+Pravega IISc Bangalore, January 2015</p>
+<p>A great winter at the CMU-India Winter School with awesome people and mentors. 
+CMU-India IPTSE, NIT Surathkal, December 2014</p>
+<p>The Quad Project and Swarm Project now funded by SRIC, IIT Kharagpur! 
+December 2014</p>
+<p>Wonderful summers at ISI Bangalore under Professor B. Sury's guidance. 
+Summer Research Fellow , May-July 2014</p>
 </div>
-        </div>
-        </article><article class="h-entry post-text"><header><h1 class="p-name entry-title header"><a href="posts/exciting-summers-ahead/" class="u-url">Exciting Summers Ahead!</a></h1>
-            <div class="metadata">
-                <span class="byline author vcard">
-                        <img class="img-circle" src="images/avatar.jpg" alt="icon">
-                    Ayush Pandey
-                </span>
-                <span class="dateline"><a href="posts/exciting-summers-ahead/" rel="bookmark">
-                    <i class="mdi-device-access-time"></i><time class="published dt-published" datetime="2016-07-22T21:38:08+05:30" title="2016-07-22 21:38">2016-07-22 21:38</time></a></span>
-            </div>
-            <hr></header><div class="e-content entry-content">
-        <div>
-<p><strong>Fall seven times, stand up eight !!!!</strong></p>
-<p>Google Summer of Code, the thing I wanted to be a part of as soon as I heard of it in my 1st year of college. It took me 4 years when I am finally selected for the prestigious open source program. Harsh Gupta no word can express my gratefulness for you. Thank you very much for always being there. Coincidently, the results were announced in the middle of my end-semester examination and I must accept my selection was one more reason for not studying for the exams. I am glad that my exams are over and as always I am looking forward to the summers where I apply the theories I have learnt during the semester in a practical world. I think I should make it apparent that applying to Julia and getting selected was a well-thought process, there were series of events which helped me getting selected in GSoC under The Julia Lang. It all started when I was finishing the web-development internship during the winter vacations when I realized that I need to pursue applied mathematics more seriously as that is somewhere I can excel at. <strong>Operations Research and Optimization</strong> was an obvious choice as I enjoyed the introductory course in Linear Programming way more than other cs and mathematics courses that I took during my stay at IIT Kharagpur. I decided to take an advanced course in Optimization(Non-Linear Programming) but sadly the course was open for final year students but yes <em>where there is will, there is a way</em>, I was able to enroll for the course after consulting with my professor, interestingly I was the only pre-final year student in that class yet I tried to attend each and every class in spite of not having familiar faces to sit with. During the semester, 4th InterIIT Meet was being held at IIT Mandi. Initially, I was not the part of IIT Kharagpur's contingent as I didn't find myself competent enough to apply for the selections. But as soon as the problem statement for the event Portfolio Optimization was out, my friend Raja Ambrish contacted me as the problem was related to Convex Optimization because he thought I could help him. My eyes were lit bright as soon as I saw the problem statement as it was the application of what I have been reading throughout the semester. I worked with the other team members and was finally selected to present our solution to the jury at IIT Mandi. Yay, IIT Kharagpur were the overall champions and also our team managed to win gold medal Portfolio Optimization as well. 
-<img alt="A click during InterIIT Presentation" src="content/images/2016/05/InterIITTech.jpg"></p>
-<p>The InterIIT experience was awesome and it made me realize that indeed I have a special interest in the field of Optimization. I wanted to explore more of this field and Google Summer of Code was an exciting opportunity. I told my friend Harsh about the plans to participate in GSoC in an organization which has Optimization related projects and his first suggestion was <a href="http://julialang.org/">Julia</a>. I came back room and browsed projects and wow Julia has this one project namely <code>"Support for Complex SemiDefinite Programming within Convex.jl"</code> on Convex Optimization that I fell in love with. The concepts I learnt during the classroom hours in Non-Linear Programming were of immense help to me in getting started with Convex.jl special thanks to Prof. Geetanjali Panda for teaching this course in a very intuitive way.</p>
-<p>Finally, after having an extensive discussion with my mentors <a href="https://people.orie.cornell.edu/mru8/">Madeleine Udell</a> and <a href="http://www.its.caltech.edu/~dvij/">Dvijotham Krishnamurthy</a>, I submitted my <a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb">proposal</a> under The Julia Lang and NumFocus and was selected under former. I want to express my gratefulness to each and everyone who has helped me before and throughout the GSoC Application Period.</p>
-<p>I am officially in the first week of the Community Bonding Period. My week started with having a video call with my mentors where we discussed my proposal in more detail and went through some of the existing codebase in order to understand what specific changes need to be made to accomplish our task. We have started by first tackling the complex-domain Linear Programming Problems. We have decided that we would need few utility functions like:</p>
-<ul>
-<li>A function to recurse on the expression tree to check if an expression is real or complex</li>
-<li>A function conj(A)</li>
-<li>A function to check the LHS and RHS of each inequality constraint is real.</li>
-</ul>
-<p>I would also need to think of the rules that would be helpful in determining whether the combination of two or more expressions is real or complex on the lines of how we determine the DCP compliance of a problem. The next step would be to rewrite all the atoms to accept the complex parameters.</p>
-<p>The next assignment was to set-up a blog to write and publish my experience as GSoCer or rather JuliaSoCer which I did just complete :D During this week, I was also introduced to the Julia community and added to their slack channel. I believe I would have some awesome time with the community and hope to see them during JuliaCon 2016.</p>
-<p>Interestingly, I have my birthday on 4th May which I plan to celebrate with my family so I would be traveling to my home from my university. Don't forget to wish me ;) </p>
-<p>This is all for now. Thank you very much for making it this far :)</p>
-<div id="disqus_thread"></div>
-
-<script>
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//avoyage.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
+    </div>
+    
+</article>
 </div>
-        </div>
-        </article>
-</div>
-
-
-
-                </div>
             </div>
         </div>
         <button class="btn btn-fab btn-raised btn-material-green btn-footer" data-toggle="modal" data-target="#footer-dialog">
@@ -251,6 +105,10 @@ s.setAttribute('data-timestamp', +new Date());
           </div>
         </div>
         <div class="source-button">
+    <a class="btn btn-fab btn-raised btn-material-indigo" target="_blank" href="index.md" title="Source">
+        <i class="mdi-file-cloud-download"></i>
+    </a>
+
         </div>
         <div class="kc_fab_wrapper"></div>
 </div>
@@ -262,25 +120,25 @@ s.setAttribute('data-timestamp', +new Date());
                             "bgcolor": "#F44336",
                         },
                         {
+                            "color": "#fffff",
                             "icon": "<i class='fa fa-twitter'></i>",
-                            "bgcolor": "#55ACEE",
-                            "target": "_blank",
-                            "color": "#fffff",
                             "url": "https://twitter.com/",
+                            "target": "_blank",
+                            "bgcolor": "#55ACEE",
                         },
                         {
+                            "color": "#fffff",
                             "icon": "<i class='fa fa-github-square'></i>",
-                            "bgcolor": "#666666",
-                            "target": "_blank",
-                            "color": "#fffff",
                             "url": "https://github.com/",
+                            "target": "_blank",
+                            "bgcolor": "#666666",
                         },
                         {
-                            "icon": "<i class='fa fa-facebook'></i>",
-                            "bgcolor": "#3B5998",
-                            "target": "_blank",
                             "color": "#fffff",
+                            "icon": "<i class='fa fa-facebook'></i>",
                             "url": "https://www.facebook.com",
+                            "target": "_blank",
+                            "bgcolor": "#3B5998",
                         },
                 ];
 
