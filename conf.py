@@ -131,7 +131,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        #("/archive.html", "Posts"),
+        ("/archive.html", "Posts"),
         #("/categories/", "Tags"),
         #("/rss.xml", "RSS feed"),
 
@@ -186,6 +186,8 @@ PAGES = (
     ("stories/*.md", "", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
     ("stories/*.html", "stories", "story.tmpl"),
+    #("stories/*.pdf", "stories", "story.tmpl"),
+
 )
 
 
@@ -265,6 +267,7 @@ COMPILERS = {
     "wiki": ('.wiki',),
     "ipynb": ('.ipynb',),
     "html": ('.html', '.htm'),
+    #"pdf": ('.pdf',),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
