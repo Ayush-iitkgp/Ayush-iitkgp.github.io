@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/</loc>
-  <lastmod>2016-07-25T09:47:00Z</lastmod>
+  <lastmod>2016-07-25T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/2016/</loc>
@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/archive.html</loc>
-  <lastmod>2016-07-25T10:25:00Z</lastmod>
+  <lastmod>2016-07-25T16:08:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/blog/</loc>
-  <lastmod>2016-07-25T10:01:00Z</lastmod>
+  <lastmod>2016-07-25T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/categories/</loc>
@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/listings/hello.py.html</loc>
-  <lastmod>2016-07-25T10:25:00Z</lastmod>
+  <lastmod>2016-07-25T16:08:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/posts/a-month-of-excitement/</loc>
@@ -68,6 +68,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/stories/extending/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/ayush-pandey/stories/gsoc16-proposal/</loc>
+  <lastmod>2016-07-25T16:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/ayush-pandey/stories/internals/</loc>
