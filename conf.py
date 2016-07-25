@@ -133,14 +133,11 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Posts"),
         ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        #("/rss.xml", "RSS feed"),
         ("/galleries", "Gallery"),
-        ("/juliacon.html", "JuliaCon2016 Presentation"),
-
-
-
-
-    ),
+        ("/juliacon.slides.html", "JuliaCon2016 Presentation"),
+        ("http://ayush-iitkgp.rhcloud.com", "GSoC'16"),
+        )
 }
 
 # Name of the theme to use.
