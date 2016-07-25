@@ -1,5 +1,5 @@
 <!-- 
-.. title: index
+.. title: About Me 
 .. slug: index
 .. date: 2016-07-25 15:01:32 UTC+05:30
 .. tags: 
