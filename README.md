@@ -1,1 +1,0 @@
-# Ayush-iitkgp.github.io
