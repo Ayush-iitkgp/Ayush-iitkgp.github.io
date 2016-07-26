@@ -7,11 +7,6 @@
 .. link: 
 .. description: 
 .. type: text
-.. figure: https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg
-   :target: https://farm1.staticflickr.com/138/352972944_4f9d568680_z.jpg$
-   :class: thumbnail
-   :alt: Nikola Tesla Corner by nicwest, on Flickr
-
  
 <div>
     <p style="float: left;"><img src="/images/profile.jpg" height="270px" width="200px" border="100px"></p>
@@ -28,10 +23,10 @@
 
 
 ## Contact 
-**GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
+**Email:** | **ayush.pandey@iitkgp.ac.in**
 ------------ | -------------
 **Gmail:** | **ayushpandey.iitkgp@gmail.com**
-**Email:** | **ayush.pandey@iitkgp.ac.in**
+**GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
 
 
 ## Updates
