@@ -22,7 +22,7 @@ article: http://ogp.me/ns/article#
 <meta property="og:description" content="Every day is a new experience and it opening up new opportunities. Life is awesome. 
 That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the worl">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-07-22T21:44:47+05:30">
+<meta property="article:published_time" content="2016-05-22T21:44:47+05:30">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -85,7 +85,7 @@ That is how I would describe my first month as GSoCer. From meeting new like min
             </span>
             <span class="dateline">
                 <a href="." rel="bookmark"><i class="mdi-device-access-time"></i>
-                    <time class="published dt-published" datetime="2016-07-22T21:44:47+05:30" itemprop="datePublished" title="2016-07-22 21:44">2016-07-22 21:44</time></a>
+                    <time class="published dt-published" datetime="2016-05-22T21:44:47+05:30" itemprop="datePublished" title="2016-05-22 21:44">2016-05-22 21:44</time></a>
             </span>
         </div>
         
@@ -147,26 +147,26 @@ end
 </pre>
 
 
-</li>
-</ol>
 <p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
-<pre class="code literal-block"><span></span>    y = ComplexVariable()
-    Variable of
-    size: (1, 1)
-    sign: Convex.ComplexSign()
-    vexity: Convex.AffineVexity()
-    z = HermitianSemidefinite(4)
-    Variable of
-    size: (4, 4)
-    sign: Convex.ComplexSign()
-    vexity: Convex.AffineVexity()
+<pre class="code literal-block"><span></span>y = ComplexVariable()
+Variable of
+size: (1, 1)
+sign: Convex.ComplexSign()
+vexity: Convex.AffineVexity()
+z = HermitianSemidefinite(4)
+Variable of
+size: (4, 4)
+sign: Convex.ComplexSign()
+vexity: Convex.AffineVexity()
 </pre>
 
 
-<ol>
-<li>The third step was to redefine the <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine">affine</a> atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. </li>
+</li>
+<li>
+<p>The third step was to redefine the <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine">affine</a> atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. </p>
+</li>
 </ol>
-<p>So, this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.</p>
+<p>So this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.</p>
 <p>Also, the coming week is crucial for us as we have decided to fully implement the complex-domain Linear Programming Problem in Convex.jl. Last night, we had our 3rd hangout meeting where we discussed the nitty-gritty of Convex.jl especially the conic form functionality and how to proceed so as to meet the deadline that we have set up for ourselves. I look forward to another week of coding and making new friends and getting involved in the Open Source Community.</p>
 <p><strong>The Bragging Rights- Convex.jl would be the second optimization package after Matlab's cvx to support complex-domain optimization problems, so yes this excites me as well to be a part the team that is developing such a useful package.</strong></p>
 <p>Also, I am very very much excited to attend JuliaCon'16 at the Massachusetts Institute of Technology and give a talk on what I have been doing this summer. I hope I get the visa on time, wish me luck everyone :)</p>
@@ -262,28 +262,28 @@ s.setAttribute('data-timestamp', +new Date());
 <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>
                 var links = [
                         {
-                            "bgcolor": "#F44336",
                             "icon": "<i class='fa fa-share-square-o'></i>",
+                            "bgcolor": "#F44336",
                         },
                         {
-                            "url": "https://twitter.com/",
-                            "target": "_blank",
-                            "bgcolor": "#55ACEE",
                             "icon": "<i class='fa fa-twitter'></i>",
+                            "target": "_blank",
+                            "url": "https://twitter.com/",
+                            "bgcolor": "#55ACEE",
                             "color": "#fffff",
                         },
                         {
-                            "url": "https://github.com/",
-                            "target": "_blank",
-                            "bgcolor": "#666666",
                             "icon": "<i class='fa fa-github-square'></i>",
+                            "target": "_blank",
+                            "url": "https://github.com/",
+                            "bgcolor": "#666666",
                             "color": "#fffff",
                         },
                         {
-                            "url": "https://www.facebook.com",
-                            "target": "_blank",
-                            "bgcolor": "#3B5998",
                             "icon": "<i class='fa fa-facebook'></i>",
+                            "target": "_blank",
+                            "url": "https://www.facebook.com",
+                            "bgcolor": "#3B5998",
                             "color": "#fffff",
                         },
                 ];

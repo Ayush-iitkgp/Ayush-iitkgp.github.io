@@ -1,7 +1,7 @@
 <!-- 
 .. title: A month of Excitement!
 .. slug: a-month-of-excitement
-.. date: 2016-07-22 21:44:47 UTC+05:30
+.. date: 2016-05-22 21:44:47 UTC+05:30
 .. tags: 
 .. category: 
 .. link: 
@@ -66,7 +66,7 @@ In the first hangout call with my mentors, we had decided to implement the funct
           end
         end
 
- Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:
+    Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:
 
         y = ComplexVariable()
         Variable of
@@ -81,7 +81,7 @@ In the first hangout call with my mentors, we had decided to implement the funct
 
 3. The third step was to redefine the [affine](https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine) atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. 
 
-So, this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.
+So this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.
  
 Also, the coming week is crucial for us as we have decided to fully implement the complex-domain Linear Programming Problem in Convex.jl. Last night, we had our 3rd hangout meeting where we discussed the nitty-gritty of Convex.jl especially the conic form functionality and how to proceed so as to meet the deadline that we have set up for ourselves. I look forward to another week of coding and making new friends and getting involved in the Open Source Community.
 
