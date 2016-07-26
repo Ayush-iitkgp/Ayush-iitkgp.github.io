@@ -14,7 +14,7 @@
 
  
 <div>
-    <p style="float: left;"><img src="/images/profile.jpg" height="270px" width="200px" border="1px" style="margin: 0px 20px" ></p>
+    <p style="float: left;"><img src="/images/profile.jpg" class="img-circle" height="245px" width="220px" border="1px" style="margin: 0px 20px" ></p>
     <p>Mathematics itself is too enthralling to resist. Moreso, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
 
 
@@ -37,7 +37,7 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Updates
 
-**25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](http://ayush-iitkgp.rhcloud.com/announcing-support-for-complex-domain-linear-programming-problem-in-convex-jl/)
+**25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
 
 **24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](https://www.youtube.com/watch?v=fHG4uEOlMbY) I delivered to introduce the community of my work.
 
