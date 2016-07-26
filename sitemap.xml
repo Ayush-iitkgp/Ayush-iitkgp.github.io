@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/</loc>
-  <lastmod>2016-07-26T10:49:00Z</lastmod>
+  <lastmod>2016-07-26T17:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2016/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2016-07-26T11:30:00Z</lastmod>
+  <lastmod>2016-07-26T17:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -46,6 +46,18 @@
   <lastmod>2016-07-25T17:45:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/gsoc/</loc>
+  <lastmod>2016-07-26T17:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/gsoc/a-month-of-excitement/</loc>
+  <lastmod>2016-07-26T17:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/gsoc/exciting-summers-ahead/</loc>
+  <lastmod>2016-07-26T17:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/listings/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
  </url>
@@ -55,7 +67,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/hello.py.html</loc>
-  <lastmod>2016-07-26T11:30:00Z</lastmod>
+  <lastmod>2016-07-26T17:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/</loc>
+  <lastmod>2016-07-26T17:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</loc>
