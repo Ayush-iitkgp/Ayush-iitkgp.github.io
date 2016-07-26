@@ -1,4 +1,4 @@
-<!-- 
+ 
 .. title: About Me 
 .. slug: index
 .. date: 2016-07-25 15:01:32 UTC+05:30
@@ -7,29 +7,39 @@
 .. link: 
 .. description: 
 .. type: text
--->
+.. figure: https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg
+   :target: https://farm1.staticflickr.com/138/352972944_4f9d568680_z.jpg$
+   :class: thumbnail
+   :alt: Nikola Tesla Corner by nicwest, on Flickr
 
-Mathematics itself is too enthralling to resist. Moreso, when coupled with the insights from Computer Science, the satisfaction of learning is remarkable.
+ 
+<div>
+    <p style="float: left;"><img src="/images/profile.jpg" height="270px" width="200px" border="100px"></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Mathematics itself is too enthralling to resist. Moreso, when coupled with the insights from Computer &nbsp;&nbsp;&nbsp;&nbsp;Science, the satisfaction of learning is remarkable.
 
-I am a final year undergarduate pursuing at Indian Institute of Technology, Kharagpur pursuing majors in Mathematics and Computer Science. My research interests lie in the intersection of Machine Learning and Robotics. More specifically, I am intrigued by the current research in the field of Deep Learning. I am also passionate about autonomous robotics, especially those which draw inspiration from nature. Add to that the passion for knowing all about human intelligence, and life's good.
 
-While trying to keep up with the rapid advancements in learning-based approaches, I spend a considerable amount of my time tinkering with quadcopters at the ARK Lab, or building my own swarm of robots at the SIK Lab. For updates on the amazing work we do in our Robotics Labs and my occasional ramblings, look up my blog.
+&nbsp;&nbsp;&nbsp;&nbsp;I am a final year undergarduate pursuing at Indian Institute of Technology, Kharagpur pursuing majors in &nbsp;&nbsp;&nbsp;&nbsp;Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. &nbsp;&nbsp;&nbsp;&nbsp;My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am &nbsp;&nbsp;&nbsp;&nbsp;intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their &nbsp;&nbsp;&nbsp;&nbsp;application in improving our day to day lives. 
 
-Updates
-Joining MILA Lab as intern, under Professor Yoshua Bengio. 
-Summer Research Intern, MILA , May-present 2016
+&nbsp;&nbsp;&nbsp;&nbsp;Recently, I have been involved in the application of optimization techniques in the field of portfolio &nbsp;&nbsp;&nbsp;&nbsp;optimization. Currently, I am implementing the support for the **Complex SemiDefinite Programming** in &nbsp;&nbsp;&nbsp;&nbsp;[Convex.jl](http://convexjl.readthedocs.io/en/latest/) under the guidance of [Madeleine Udell](https://people.orie.cornell.edu/mru8/) and [Dvijotham Krishnamurthy](http://www.its.caltech.edu/~dvij/).
 
-Undergraduate summer research at Johns Hopkins University under Professor Raman Arora. 
-Summer Research Expeditions, May-July 2015
+&nbsp;&nbsp;&nbsp;&nbsp;While trying to keep up with the rapid advancements in technology, I like to spend my free time travelling, &nbsp;&nbsp;&nbsp;&nbsp;writing, running and playing Cricket in one of the grounds at [Tata Sports Complex.](https://wiki.metakgp.org/w/Tata_Sports_Complex)</p>
 
-Our submission won the Microsoft Machine Learning Challenge, IISC Bangalore. 
-Pravega IISc Bangalore, January 2015
 
-A great winter at the CMU-India Winter School with awesome people and mentors. 
-CMU-India IPTSE, NIT Surathkal, December 2014
 
-The Quad Project and Swarm Project now funded by SRIC, IIT Kharagpur! 
-December 2014
 
-Wonderful summers at ISI Bangalore under Professor B. Sury's guidance. 
-Summer Research Fellow , May-July 2014
+## Contact 
+**GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
+------------ | -------------
+**Gmail:** | **ayushpandey.iitkgp@gmail.com**
+**Email:** | **ayush.pandey@iitkgp.ac.in**
+
+
+## Updates
+
+**25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](http://ayush-iitkgp.rhcloud.com/announcing-support-for-complex-domain-linear-programming-problem-in-convex-jl/)
+
+**24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](https://www.youtube.com/watch?v=fHG4uEOlMbY) I delivered to introduce the community of my work.
+
+**12th May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
+
+**22nd April, 2016:** It gives me announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled *Adding support for complex-domain converx optimization problems in Convex.jl*
