@@ -18,7 +18,7 @@
     <p>Mathematics itself is too enthralling to resist. Moreso, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
 
 
-I am a final year undergarduate at the Indian Institute of Technology(IIT), Kharagpur pursuing majors in Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
+I am a final year graduate student at the Indian Institute of Technology(IIT), Kharagpur pursuing majors in Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
 
 Recently, I have been involved in the application of optimization techniques in field of portfolio optimization. Currently, I am implementing the support for the **Complex SemiDefinite Programming** in [Convex.jl](http://convexjl.readthedocs.io/en/latest/) under the guidance of [Madeleine Udell](https://people.orie.cornell.edu/mru8/) and [Dvijotham Krishnamurthy](http://www.its.caltech.edu/~dvij/).
 
