@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 26 Jul 2016 17:04:19 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link rel="self" href="http://Ayush-iitkgp.github.io/rss.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 26 Jul 2016 20:53:18 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Announcing support for complex-domain linear Programs in Convex.jl</title><link>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the &lt;em&gt;Google Summer of Code&lt;/em&gt; students under &lt;em&gt;The Julia Language&lt;/em&gt;, I had proposed to implement the support for complex semidefinite programming. In the first phase of project, I started by tackling the problem of complex-domain LPs where in first subphase, I had announced the support for complex coefficients during &lt;a href="https://www.youtube.com/watch?v=fHG4uEOlMbY"&gt;JuliaCon'16&lt;/a&gt; and now I take this opportunity to announce the support for complex variables in LPs.&lt;/p&gt;
+&lt;p&gt;Complex-domain LPs consist of a real linear objective function, real linear inequality constraints, and real and complex linear equality constraints.&lt;/p&gt;
+&lt;p&gt;In order to enable complex-domain LPs, we came up with these ideas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We redefined the &lt;strong&gt;conic_form!&lt;/strong&gt; of every affine atom to accept complex arguments.&lt;/li&gt;
+&lt;li&gt;Every complex variable z was internally represented as &lt;code&gt;z = z1 + i*z2&lt;/code&gt;, where z1 and z2 are real.&lt;/li&gt;
+&lt;li&gt;We introduced two new affine atoms &lt;strong&gt;real&lt;/strong&gt; and &lt;strong&gt;imag&lt;/strong&gt; which return the real and the imaginary parts of the complex variable respectively.&lt;/li&gt;
+&lt;li&gt;transpose and ctranspose perform differently on complex variables so a new atom &lt;strong&gt;CTransposeAtom&lt;/strong&gt; was created.&lt;/li&gt;
+&lt;li&gt;A complex-equality constraint &lt;em&gt;RHS = LHS&lt;/em&gt; can be decomposed into two corresponding real equalities constraint &lt;em&gt;real(RHS) = real(LHS)&lt;/em&gt; and &lt;em&gt;imag(RHS) = imag(LHS)&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Importing Packages
+Pkg.clone("https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2")
+using Convex
+
+# Complex LP with real variable"
+n = 10 # variable dimension (parameter)
+m = 5 # number of constraints (parameter)
+xo = rand(n)
+A = randn(m,n) + im*randn(m,n)
+b = A * xo 
+# Declare a real variable
+x = Variable(n)
+p1 = minimize(sum(x), A*x == b, x&amp;gt;=0) 
+# Notice A*x==b is complex equality constraint 
+solve!(p1)
+x1 = x.value
+
+# Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.
+p2 = minimize(sum(x), real(A)*x == real(b),      imag(A)*x==imag(b), x&amp;gt;=0)
+solve!(p2)
+x2 = x.value
+x1==x2 # should return true
+
+
+# Let's now take an example where the complex variable is used
+# Complex LP with complex variable
+n = 10 # variable dimension (parameter)
+m = 5 # number of constraints (parameter)
+xo = rand(n)+im*rand(n)
+A = randn(m,n) + im*randn(m,n)
+b = A * xo
+
+# Declare a complex variable
+x = ComplexVariable(n)
+p1 = minimize(real(sum(x)), A*x == b, real(x)&amp;gt;=0, imag(x)&amp;gt;=0)
+solve!(p1)
+x1 = x.value
+
+xr = Variable(n)
+xi = Variable(n)
+p2 = minimize(sum(xr), real(A)*xr-imag(A)*xi == real(b), imag(A)*xr+real(A)*xi == imag(b), xr&amp;gt;=0, xi&amp;gt;=0)
+solve!(p2)
+x1== xr.value + im*xi.value # should return true
+&lt;/pre&gt;
+
+
+&lt;p&gt;List of all the affine atoms are as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;addition, substraction, multiplication, division&lt;/li&gt;
+&lt;li&gt;indexing and slicing&lt;/li&gt;
+&lt;li&gt;k-th diagonal of a matrix&lt;/li&gt;
+&lt;li&gt;construct diagonal matrix&lt;/li&gt;
+&lt;li&gt;transpose and ctranspose&lt;/li&gt;
+&lt;li&gt;stacking&lt;/li&gt;
+&lt;li&gt;sum&lt;/li&gt;
+&lt;li&gt;trace&lt;/li&gt;
+&lt;li&gt;conv&lt;/li&gt;
+&lt;li&gt;real and imag&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, I am working towards implementing the complex-domain Second Order Conic Programming. Meanwhile, I invite the Julia community to play around with the complex LPP. The link to the development branch is &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Looking forward to your suggestions!&lt;/p&gt;
+&lt;p&gt;Special thanks to my mentors Madeleine and Dj!&lt;/p&gt;
+&lt;div id="disqus_thread"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</guid><pubDate>Tue, 26 Jul 2016 20:43:21 GMT</pubDate></item><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.&lt;/p&gt;
 &lt;p&gt;I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: &lt;/p&gt;
 &lt;p&gt;Many problems in applied sciences are posed as optimization problems over the complex field such as:&lt;/p&gt;

@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2016-07-26T17:04:00Z</lastmod>
+  <lastmod>2016-07-26T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -46,18 +46,6 @@
   <lastmod>2016-07-25T17:45:00Z</lastmod>
  </url>
  <url>
-  <loc>http://Ayush-iitkgp.github.io/gsoc/</loc>
-  <lastmod>2016-07-26T17:01:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/gsoc/a-month-of-excitement/</loc>
-  <lastmod>2016-07-26T17:01:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/gsoc/exciting-summers-ahead/</loc>
-  <lastmod>2016-07-26T17:01:00Z</lastmod>
- </url>
- <url>
   <loc>http://Ayush-iitkgp.github.io/listings/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
  </url>
@@ -67,15 +55,15 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/hello.py.html</loc>
-  <lastmod>2016-07-26T17:04:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/posts/</loc>
-  <lastmod>2016-07-26T17:01:00Z</lastmod>
+  <lastmod>2016-07-26T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</loc>
+  <lastmod>2016-07-26T20:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</loc>
