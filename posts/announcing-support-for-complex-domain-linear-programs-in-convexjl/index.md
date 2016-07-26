@@ -80,7 +80,7 @@ List of all the affine atoms are as follows:
 9. conv
 10. real and imag
 
-Now, I am working towards implementing the complex-domain Second Order Conic Programming. Meanwhile, I invite the Julia community to play around with the complex LPP. The link to the development branch is [here](https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2).
+Now, I am working towards implementing the complex-domain Second Order Conic Programming. Meanwhile, I invite the Julia community to play around with the complex-domain LPs. The link to the development branch is [here](https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2).
 
 Looking forward to your suggestions!
 
