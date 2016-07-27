@@ -39,7 +39,7 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
 
-**24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](https://www.youtube.com/watch?v=fHG4uEOlMbY) I delivered to introduce the community of my work.
+**24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
 
 **12th May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
 
