@@ -6,22 +6,22 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>galleries | Ayush Pandey</title>
+<title>JuliaCon 2016 Talk | Ayush Pandey</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://Ayush-iitkgp.github.io/galleries/">
+<link rel="canonical" href="http://Ayush-iitkgp.github.io/juliacon-2016-talk/">
 <!--[if lt IE 9]>
             <script src="../assets/js/html5shiv.min.js"></script>
             <script src="../assets/js/respond.min.js"></script>
-        <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<style type="text/css">
-    .image-block {
-        display: inline-block;
-    }
-    .flowr_row {
-        width: 100%;
-    }
-    </style>
+        <![endif]--><meta name="author" content="Ayush Pandey">
+<meta property="og:site_name" content="Ayush Pandey">
+<meta property="og:title" content="JuliaCon 2016 Talk">
+<meta property="og:url" content="http://Ayush-iitkgp.github.io/juliacon-2016-talk/">
+<meta property="og:description" content="It was an honour to be invited as a speaker to JuliaCon 2016 where I talked about my project explaining it's implementation, real-life application and the future roadmap.
+
+Please let me know what you ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-27T15:15:54+05:30">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -73,19 +73,16 @@ article: http://ogp.me/ns/article#
                 </ul>
 <ul class="nav navbar-nav"></ul></nav><div class="posts-material col-xs-9">
                 <div class="col-xs-12 col-md-11 content-material">
-    <div class="page">
-        <nav class="breadcrumbs"><ul class="breadcrumb">
-<li>galleries</li>
-</ul></nav><h1>galleries</h1>
-        <ul>
-<li><a href="4th%20Inter%20IIT%20Tech%20Meet/"><i class="glyphicon glyphicon-folder-open"></i> 4th Inter IIT Tech Meet</a></li>
-                <li><a href="50th%20InterIIT%20Sports%20Meet/"><i class="glyphicon glyphicon-folder-open"></i> 50th InterIIT Sports Meet</a></li>
-                <li><a href="demo/"><i class="glyphicon glyphicon-folder-open"></i> demo</a></li>
-                <li><a href="JuliaCon16/"><i class="glyphicon glyphicon-folder-open"></i> JuliaCon16</a></li>
-        </ul>
-<div id="gallery_container"></div>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">JuliaCon 2016 Talk</a></h1>
+<hr></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>It was an honour to be invited as a speaker to JuliaCon 2016 where I talked about my project explaining it's implementation, real-life application and the future roadmap.<br><iframe width="560" height="315" src="https://www.youtube.com/watch?v=fHG4uEOlMbY" frameborder="0" allowfullscreen></iframe></p>
+<p>Please let me know what you think. </p>
+</div>
     </div>
-                </div>
+    
+</article>
+</div>
             </div>
         </div>
         <button class="btn btn-fab btn-raised btn-material-green btn-footer" data-toggle="modal" data-target="#footer-dialog">
@@ -114,6 +111,10 @@ article: http://ogp.me/ns/article#
           </div>
         </div>
         <div class="source-button">
+    <!--<a class="btn btn-fab btn-raised btn-material-indigo" target="_blank" href="/juliacon-2016-talk/index.md" title="Source">
+        <i class="mdi-file-cloud-download"></i>
+    </a> -->
+
         </div>
         <div class="kc_fab_wrapper"></div>
 </div>
@@ -178,42 +179,6 @@ article: http://ogp.me/ns/article#
         </script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script src="../assets/js/flowr.plugin.js"></script><script>
-jsonContent = [];
-$("#gallery_container").flowr({
-        data : jsonContent,
-        height : 180*.6,
-        padding: 15,
-        rows: -1,
-        render : function(params) {
-            // Just return a div, string or a dom object, anything works fine
-            img = $("<img />").attr({
-                'src': params.itemData.url_thumb,
-                'width' : params.width,
-                'height' : params.height
-            }).css('max-width', '100%');
-            link = $( "<a></a>").attr({
-                'href': params.itemData.url,
-                'class': 'image-reference'
-            });
-            div = $("<div />").addClass('image-block shadow-z-3').attr({
-                'title': params.itemData.title,
-                'data-toggle': "tooltip",
-            });
-            link.append(img);
-            div.append(link);
-            div.hover(div.tooltip());
-            return div;
-        },
-        itemWidth : function(data) { return data.size.w; },
-        itemHeight : function(data) { return data.size.h; },
-        complete : function(params) {
-            if( jsonContent.length > params.renderedItems ) {
-                nextRenderList = jsonContent.slice( params.renderedItems );
-            }
-        }
-    });
-$("a.image-reference").colorbox({rel:"gal", maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
-</script>
+    </script><!-- end fancy dates -->
 </body>
 </html>
