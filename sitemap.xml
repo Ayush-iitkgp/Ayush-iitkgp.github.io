@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2016-07-27T09:52:00Z</lastmod>
+  <lastmod>2016-07-27T10:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/hello.py.html</loc>
-  <lastmod>2016-07-27T09:52:00Z</lastmod>
+  <lastmod>2016-07-27T10:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</loc>
@@ -74,8 +74,24 @@
   <lastmod>2016-07-23T19:37:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/about-nikola/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/bootstrap-demo/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/stories/charts/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/creating-a-theme/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/dr-nikolas-vendetta/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/extending/</loc>
@@ -86,8 +102,16 @@
   <lastmod>2016-07-25T16:01:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/handbook/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/stories/internals/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/juliacon.slides.html/</loc>
@@ -98,11 +122,31 @@
   <lastmod>2016-07-25T09:49:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/listings-demo/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/stories/path-handlers/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/quickref/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/quickstart/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/slides-demo/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/stories/social_buttons/</loc>
   <lastmod>2016-07-23T19:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/theming/</loc>
+  <lastmod>2016-07-27T10:05:00Z</lastmod>
  </url>
 </urlset>
