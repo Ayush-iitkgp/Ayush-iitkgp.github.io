@@ -43,6 +43,6 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **12th May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
 
-**22nd Apr, 2016:** It gives me immense pleasure to announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled *Adding support for complex-domain converx optimization problems in Convex.jl*
+**22nd Apr, 2016:** It gives me immense pleasure to announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled *Adding support for complex-domain convex optimization problems in Convex.jl*
 
 **2nd Feb, 2016:** IIT Kharagpur won the General Championship in the **4th Inter IIT Tech Meet**. So proud to be the member of the contingent.
