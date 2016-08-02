@@ -7,7 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/galleries/4th%20Inter%20IIT%20Tech%20Meet/rss.xml</loc>
-  <lastmod>2016-08-02T09:07:00Z</lastmod>
+  <lastmod>2016-08-02T10:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/galleries/50th%20Inter%20IIT%20Sports%20Meet/rss.xml</loc>
+  <lastmod>2016-08-02T10:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/galleries/50th%20InterIIT%20Sports%20Meet/rss.xml</loc>
@@ -15,11 +19,11 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/galleries/JuliaCon16/rss.xml</loc>
-  <lastmod>2016-07-27T10:20:00Z</lastmod>
+  <lastmod>2016-08-02T10:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/galleries/rss.xml</loc>
-  <lastmod>2016-07-27T10:20:00Z</lastmod>
+  <lastmod>2016-08-02T10:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/rss.xml</loc>
@@ -27,6 +31,6 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/sitemap.xml</loc>
-  <lastmod>2016-08-02T09:07:00Z</lastmod>
+  <lastmod>2016-08-02T10:00:00Z</lastmod>
  </sitemap>
 </sitemapindex>
