@@ -149,8 +149,8 @@ NAVIGATION_LINKS = {
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), 
 
-        ((('https://drive.google.com/open?id=0B2oOdWdSJWa1dFhTWHpWczgwTkZ0Vy1DTFVxVm9rYjlxeU1R', 'Portfolio Optimization'),
-          ('https://drive.google.com/open?id=0B-q4w3YtD2swSm5tdEJoc1VjaGdBMnh4YjEzUDV4QnI1bGxR', 'Theft Analyics')), "Projects"),
+        ((('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', 'Portfolio Optimization'),
+          ('https://drive.google.com/open?id=0B2oOdWdSJWa1T0NhMGpVc2JuZHc', 'Theft Analyics')), "Projects"),
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), "Projects"),
 
