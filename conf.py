@@ -140,7 +140,7 @@ NAVIGATION_LINKS = {
         #("http://ayush-iitkgp.rhcloud.com", "GSoC'16"),
         
         ((('http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb', 'Proposal'),
-          ('/2016', 'Blog'),
+          ('/categories/gsoc16/', 'Blog'),
           ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 

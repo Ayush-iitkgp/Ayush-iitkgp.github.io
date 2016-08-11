@@ -2,7 +2,7 @@
 .. title: Announcing support for complex-domain linear Programs in Convex.jl
 .. slug: announcing-support-for-complex-domain-linear-programs-in-convexjl
 .. date: 2016-07-27 02:13:21 UTC+05:30
-.. tags: GS0C'16
+.. tags: GSoC'16
 .. category: 
 .. link: 
 .. description: 
