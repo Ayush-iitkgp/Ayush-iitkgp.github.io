@@ -6,10 +6,6 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>http://Ayush-iitkgp.github.io/categories/gs0c16.xml</loc>
-  <lastmod>2016-08-11T23:08:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/gsoc16.xml</loc>
   <lastmod>2016-08-11T23:11:00Z</lastmod>
  </sitemap>
