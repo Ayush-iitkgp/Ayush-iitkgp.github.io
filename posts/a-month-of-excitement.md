@@ -2,7 +2,7 @@
 .. title: A month of Excitement!
 .. slug: a-month-of-excitement
 .. date: 2016-05-22 21:44:47 UTC+05:30
-.. tags: 
+.. tags: GSoC'16
 .. category: 
 .. link: 
 .. description: 

@@ -2,7 +2,7 @@
 .. title: Exciting Summers Ahead!
 .. slug: exciting-summers-ahead
 .. date: 2016-05-03 21:38:08 UTC+05:30
-.. tags: 
+.. tags: GSoC'16
 .. category: 
 .. link: 
 .. description: 
