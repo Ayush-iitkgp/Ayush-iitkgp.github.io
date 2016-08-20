@@ -33,15 +33,15 @@ I am glad to have been successfully implemented what I proposed in my proposal. 
 
 ## References
 
-1. [Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming](http://www.sciencedirect.com/science/article/pii/S0022000003001454)
+1.[Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming](http://www.sciencedirect.com/science/article/pii/S0022000003001454)
 
-2. [Invariant semidefinite programs](http://arxiv.org/pdf/1007.2905v2.pdf)
+2.[Invariant semidefinite programs](http://arxiv.org/pdf/1007.2905v2.pdf)
 
-3. [Convex Optimization in Julia](http://arxiv.org/pdf/1410.4821.pdf)
+3.[Convex Optimization in Julia](http://arxiv.org/pdf/1410.4821.pdf)
 
-4. [Support for complex variables](https://github.com/JuliaOpt/Convex.jl/issues/103)
+4.[Support for complex variables](https://github.com/JuliaOpt/Convex.jl/issues/103)
 
-5. [Add complex variables](https://github.com/cvxgrp/cvxpy/issues/191)
+5.[Add complex variables](https://github.com/cvxgrp/cvxpy/issues/191)
 
 <div id="disqus_thread"></div>
 <script>
