@@ -36,7 +36,7 @@ zcasfcvsvzvvsvsd
 
 
 
-
+The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2)
 
 
 I am glad to have been successfully implemented what I proposed in my proposal. Presently, I am writing the documentation and examples to demonstrate the usability of my implementation. 
