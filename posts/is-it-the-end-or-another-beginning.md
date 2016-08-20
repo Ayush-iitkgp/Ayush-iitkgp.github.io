@@ -19,13 +19,13 @@ Now, coming to the technical aspect of my project, I would want to divide my pro
 
 During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post [here](https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/).
 
-###2. Support for Second Order conic programs
+###2. Support for second order conic programs
 
-hehdssvsdsdsv
+In this phase of the project, I in consulation with my mentors, rewrote many the second order cone atoms such as abs, norm to accept complex arguments. During this phase, we had an intense discussion on whether redefining the above atoms to accept complex arguments would violate DCP compliance and we came to a conclusion that defining inverse or the square atoms on complex variables neither makes sense nor does it preserve the DCP compliance.
 
 ###3. Support for Complex Semidefinite programs
 
-zcasfcvsvzvvsvsd
+In this final phase of the project
 
 
 
@@ -36,12 +36,10 @@ zcasfcvsvzvvsvsd
 
 
 
-The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2)
+The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2).
 
 
-I am glad to have been successfully implemented what I proposed in my proposal. Presently, I am writing the documentation and examples to demonstrate the usability of my implementation. 
-
-The project will culminate with a single Pull Request to the Convex.jl repository which I am planning to submit in next few days. 
+I am glad to have been successfully implemented what I proposed in my proposal. Presently, I am writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository which I am planning to submit in next few days. 
 
 
 
