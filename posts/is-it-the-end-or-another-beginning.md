@@ -1,7 +1,7 @@
 <!-- 
 .. title: Is it the end or another beginning ?
 .. slug: is-it-the-end-or-another-beginning
-.. date: 2016-08-21 02:13:21 UTC+05:30
+.. date: 2016-08-20 02:13:21 UTC+05:30
 .. tags: GSoC'16
 .. category: 
 .. link: 

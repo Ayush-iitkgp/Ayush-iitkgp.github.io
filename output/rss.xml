@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link type="application/rss+xml" href="http://Ayush-iitkgp.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 20 Aug 2016 02:53:40 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Announcing support for complex-domain linear Programs in Convex.jl</title><link>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the &lt;em&gt;Google Summer of Code&lt;/em&gt; students under &lt;em&gt;The Julia Language&lt;/em&gt;, I had proposed to implement the support for complex semidefinite programming. In the first phase of project, I started by tackling the problem of complex-domain LPs where in first subphase, I had announced the support for complex coefficients during &lt;a href="https://www.youtube.com/watch?v=fHG4uEOlMbY"&gt;JuliaCon'16&lt;/a&gt; and now I take this opportunity to announce the support for complex variables in LPs.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 20 Aug 2016 03:05:05 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Is it the end or another beginning ?</title><link>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h6&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;     &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;BLog&lt;/a&gt;     &lt;a href="https://ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;     &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;It is ironic how the time flies ! It hasn't been long when I was hugging my friends, calling my parents to share my happiness of getting selected to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.&lt;/p&gt;
+&lt;p&gt;Now, coming to the technical aspect of my project, I would want to divide my project into 3 phases based on the parts of convex programming namely:&lt;/p&gt;
+&lt;h6&gt;1. Support for complex-domain linear programs&lt;/h6&gt;
+&lt;p&gt;During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post &lt;a href="https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h6&gt;2. Support for Second Order conic programs&lt;/h6&gt;
+&lt;h6&gt;3. Support for Complex Semidefinite programs&lt;/h6&gt;
+&lt;p&gt;I am glad to have been successfully implemented what I proposed in my proposal. Presently, I am writing the documentation and examples to demonstrate the usability of my implementation. &lt;/p&gt;
+&lt;p&gt;The project will culminate with a single Pull Request to the Convex.jl repository which I am planning to submit in next few days. &lt;/p&gt;
+&lt;div id="disqus_thread"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</guid><pubDate>Fri, 19 Aug 2016 20:43:21 GMT</pubDate></item><item><title>Announcing support for complex-domain linear Programs in Convex.jl</title><link>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the &lt;em&gt;Google Summer of Code&lt;/em&gt; students under &lt;em&gt;The Julia Language&lt;/em&gt;, I had proposed to implement the support for complex semidefinite programming. In the first phase of project, I started by tackling the problem of complex-domain LPs where in first subphase, I had announced the support for complex coefficients during &lt;a href="https://www.youtube.com/watch?v=fHG4uEOlMbY"&gt;JuliaCon'16&lt;/a&gt; and now I take this opportunity to announce the support for complex variables in LPs.&lt;/p&gt;
 &lt;p&gt;Complex-domain LPs consist of a real linear objective function, real linear inequality constraints, and real and complex linear equality constraints.&lt;/p&gt;
 &lt;p&gt;In order to enable complex-domain LPs, we came up with these ideas:&lt;/p&gt;
 &lt;ol&gt;
