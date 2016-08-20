@@ -29,7 +29,7 @@ The above 2 phases were relatively difficult for us as we had no literature refe
 
 The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2).
 
-I am glad to have been successfully implemented what I proposed in my proposal. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. 
+I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. 
 
 ## References
 
