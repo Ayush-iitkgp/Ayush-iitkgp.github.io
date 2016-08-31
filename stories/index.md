@@ -37,6 +37,8 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Updates
 
+**29th Aug, 2016:** I would be working as Teaching Assitant for the course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
+
 **25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
 
 **24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
