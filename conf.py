@@ -139,10 +139,12 @@ NAVIGATION_LINKS = {
         #("/stories/juliacon.slides.html", "JuliaCon2016 Presentation"),
         #("http://ayush-iitkgp.rhcloud.com", "GSoC'16"),
         
-        ((('http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb', 'Proposal'),
-          ('/categories/gsoc16/', 'Blog'),
-          ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
-          ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
+        # ((('http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb', 'Proposal'),
+        #   ('/categories/gsoc16/', 'Blog'),
+        #   ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
+        #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
+
+        ("/categories/gsoc16/", "GSoC'16"),
 
         ((('https://drive.google.com/open?id=0B2oOdWdSJWa1YUJGTjNGdTNoRGVkNHNkcmRoRDZCd2ozSFk0', 'Samsung'),
           ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', 'Flutura')), "Internships"),
