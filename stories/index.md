@@ -28,6 +28,7 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Contact 
 **Email:** | **ayush.pandey@iitkgp.ac.in**
+----------------|--------------------------
 **Gmail:** | **ayushpandey.iitkgp@gmail.com**
 **LinkedIn:** | &nbsp;[**Ayush Pandey**](https://www.linkedin.com/in/ayushiitkgp)
 **GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
