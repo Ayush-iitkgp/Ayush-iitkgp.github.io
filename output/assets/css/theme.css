@@ -1,235 +1,389 @@
-@font-face {
-    font-family: 'ralewaymedium';
-    src: url('../fonts/raleway-medium-webfont.eot');
-    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
-         url('../fonts/raleway-medium-webfont.woff') format('woff'),
-         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
-         url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@charset "UTF-8";
+
+/*
+	Copyright © 2014-2016 Daniel Aleksandersen and others.
+
+	Permission is hereby granted, free of charge, to any
+	person obtaining a copy of this software and associated
+	documentation files (the "Software"), to deal in the
+	Software without restriction, including without limitation
+	the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice
+	shall be included in all copies or substantial portions of
+	the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+	KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+	WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+	PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+	OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+body {
+	color: #4F5151;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	line-height: 1.4;
+	padding: 1em;
 }
 
-h1, h2, h3, h4 {
-    font-family: "ralewaymedium";
-    color: #009688;
+#container {
+	margin: 1em auto;
+	max-width: 770px;
+}
+#menu ul,
+#menu ul li,
+.postpromonav .tags,
+.postpromonav .tags li,
+.pager,
+.pager li,
+#toptranslations ul,
+#toptranslations ul li {
+	list-style: none;
+	padding-left: 0;
+	padding-right: 0;
 }
 
-h2 {
-    color: #333;
+#toptranslations ul {
+	display: inline;
 }
 
-/* header */
-.header-panel {
-    z-index: 3;
-    height: 156px;
+#menu ul li,
+#toptranslations ul li {
+	display: inline-block;
+	margin-right: 1.5em;
 }
 
-.header-panel h1 {
-    color: #FFF;
-    font-size: 35px;
-    font-weight: 400;
-    position: absolute;
-    bottom: 10px;
-    padding-left: 35px;
+#toptranslations h2 {
+	display: inline;
+	font-size: 1em;
+	margin-right: 1.5em;
 }
 
-.header-panel div {
-    position: relative;
-    height: 100%;
+#menu ul li:dir(rtl),
+#toptranslations ul li:dir(rtl),
+#toptranslations h2:dir(rtl) {
+	margin-left: 1.5em;
+	margin-right: 0;
 }
 
-.navbar {
-    margin-bottom: 0px;
+#toptranslations {
+	text-align: right;
+	float: right;
 }
 
-#blog-title {
-    color: #fff;
+#toptranslations:dir(rtl) {
+	text-align: left;
+	float: left;
 }
 
-.source-button > a {
-    position: fixed;
-    z-index: 1000;
-    top: 35px;
-    right: 8%;
+.posttranslations h3 {
+	display: inline;
+	font-size: 1em;
 }
 
-.footer {
-    z-index: 30;
-    height: 40px;
-    background-color: #eee;
+.entry-title {
+	font-size: 2em;
 }
 
-/* menu */
-.menu {
-    overflow: auto;
-    padding: 0;
+.posttranslations h3:last-child {
+	display: none;
 }
 
-.menu, .menu * {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+.postindex article {
+	border-bottom: 1px solid #4F5151;
+	padding-bottom: 1em;
+}
+#header {
+	border-bottom: 1px solid #4F5151;
+}
+#footer {
+	border-top: 1px solid #4F5151;
 }
 
-.menu ul {
-    padding: 0;
-    margin: 7px 0;
+/* Tags */
+.postpromonav {
+	border-bottom: 1px solid #4F5151;
+	border-top: 1px solid #4F5151;
+	margin-top: 1em;
+	padding: .5em 0;
+}
+.postpromonav .tags {
+	text-align: center;
+}
+.metadata p:before,
+.postpromonav .tags li:before,
+.postlist .listdate:after {
+	content: " — ";
+}
+.postlist li {
+	margin-bottom: .33em;
 }
 
-.menu ul li {
-    list-style: none;
-    font-size: 15px;
-    font-weight: normal;
-    cursor: pointer;
+/* Post and archive pagers */
+.postindexpager .pager .next:before {
+	content: "↓ ";
+}
+.postindexpager .pager .previous:before {
+	content: "↑ ";
+}
+.postpromonav .pager .next:after {
+	content: " →";
+}
+.postpromonav .pager .previous:dir(rtl):after {
+	content: " →";
+}
+.postpromonav .pager .previous:before {
+	content: "← ";
+}
+.postpromonav .pager .next:dir(rtl):before {
+	content: "← ";
 }
 
-.menu ul li.active {
-    background-color: #dedede;
-    position: relative;
+.metadata p:first-of-type:before,
+.postpromonav .tags li:first-of-type:before {
+	content: "";
+}
+.postpromonav .pager {
+	clear: both;
+	height: 1em;
+}
+.postpromonav .tags li,
+.postpromonav .pager li {
+	display: inline-block;
+}
+.postpromonav .pager .next {
+	float: right;
+}
+.postpromonav .pager .next:dir(rtl) {
+	float: left;
 }
 
-.menu ul li a {
-    color: rgb(51, 51, 51);
-    text-decoration: none;
-    padding: 20px 0 20px 50px;
-    display: block;
-    outline: 0;
+.postpromonav .pager .previous {
+	float: left;
+}
+.postpromonav .pager .previous:dir(rtl) {
+	float: right;
 }
 
-/* articles */
-article > header span > a {
-    color: #333;
+.metadata p {
+	display: inline;
 }
 
-article.postpage > header hr, article.post-text > header hr {
-    margin-top: 5px;
-    margin-bottom: 15px;
+#brand {
+	font-size: 3em;
+	line-height: 1;
 }
 
-article.postpage > header div.metadata span {
-    padding: 0px 5px;
+/* Links */
+:link {
+	color: #1168CC;
+	text-decoration: none;
+}
+:visited {
+	color: #6830BB;
+}
+:link:hover, :visited:hover {
+	color: #0d53a3;
 }
 
-article.postpage > header i, article.post-text > header i {
-    position: relative;
-    top: 2px;
-    margin-right: 2px;
+#brand :link,
+#brand :visited {
+	color: inherit;
 }
 
-span.vcard img.img-circle {
-    width: 30px;
-    position: relative;
-    top: -5px;
+/* Images */
+img {
+	border: none;
+	line-height: 1;
 }
 
-/* carousel */
-.carousel.slide {
-    margin-bottom: 15px;
+.postpage img,
+.postpage object,
+.postindex article img,
+.postindex article object {
+	height: auto;
+	max-width: 100%;
 }
 
-.carousel.slide .arrow-back {
-    position: absolute;
-    left: 5px;
-    top: 5px;
+/* Comment helpers */
+#disqus_thread {
+	min-height: 325px;
 }
 
-.carousel.slide .arrow-forward {
-    position: absolute;
-    right: 5px;
-    top: 5px;
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	list-style: none;
 }
 
-.carousel-inner > .item {
-    margin: 30px 20px 70px;
-}
-.carousel-indicators{
-    left: 45%;
-    width: 70%;
-}
-.carousel-indicators li {
-    width: 15px;
-    height: 15px;
-    margin: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: rgba(0, 202, 197, 0.2);
-    border: 1px solid #009587;
-    border-radius: 15px;
+.breadcrumb > li {
+	display: inline-block;
+	margin-right: 0;
+	margin-left: 0;
 }
 
-.carousel-indicators .active {
-    width: 18px;
-    height: 18px;
-    margin: 2px;
-    border-radius: 18px;
-    background-color: #009688;
+.breadcrumb > li:after {
+	content: ' / ';
+	color: #888;
 }
 
-/* layout */
-.content-material {
-    min-height: 75%;
+.breadcrumb > li:last-of-type:after {
+	content: '';
+	margin-left: 0;
 }
 
-.posts-material {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    z-index: 4;
-    padding: 0px;
-    overflow: auto;
+.thumbnails {
+	list-style: none;
+	padding: 0;
 }
 
-.posts-material> div {
-    padding: 64px 5px 0px;
+.thumbnails > li {
+	display: inline-block;
+	margin-right: 10px;
 }
 
-.post-material, .content-material > article, .content-material > .page {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 0.3s ease-out 0s;
-    display: block;
-    background-color: #fff;
-    padding: 19px;
-    margin-bottom: 20px;
-    box-shadow: 0px 8px 17px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
-    border-radius: 2px;
-    border: 0px none;
+.thumbnails > li:last-of-type {
+	margin-right: 0;
 }
 
-.search-form {
-    z-index: 10;
+.codetable .linenos {
+	padding-right: 10px;
 }
 
-.btn-footer {
-    margin: 20px;
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
 
-ul > li {
-    list-style: none;
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
 }
 
-.postlist a.reference > i {
-    position: relative;
-    top: 2px;
-    margin-right: 2px;
+pre.code, code {
+	white-space: pre;
+	word-wrap: normal;
+	overflow: auto;
 }
 
-img.thumbnail {
-    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12), 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
-    max-width: 100%;
-    height: auto;
-    padding: 0px;
-}
+/* SOURCE: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+		font-family: Garamond, Junicode, serif;
+	}
 
-@media only screen and (max-width: 990px) {
-    .source-button > a {
-        top:35px;
-        right: 20px;
-    }
-}
+	body {
+		font-size: 12pt;
+	}
 
-div.admonition {
-    border: 0px solid transparent;
-    box-shadow: 0px 8px 17px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19)
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
+
+	a[href^="#"]:after,
+	a[href^="data:"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	/*
+	 * Printing Tables:
+	 * http://css-discuss.incutio.com/wiki/Printing_Tables
+	 */
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	.hidden-print {
+		display: none !important;
+	}
+
+	article .entry-title a[href]:after,
+	article .metadata a[href]:after,
+	article .tags a[href]:after {
+		content: "";
+	}
+
+	article .metadata .sourceline {
+		display: none;
+	}
+
+	article .metadata .linkline a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	#header {
+		display: none;
+	}
+
+	.postpromonav {
+		padding: 0;
+	}
 }
