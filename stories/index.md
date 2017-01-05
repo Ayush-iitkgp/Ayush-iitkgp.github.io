@@ -1,4 +1,3 @@
- 
 .. title: About Me 
 .. slug: index
 .. date: 2016-07-25 15:01:32 UTC+05:30
@@ -29,7 +28,6 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Contact 
 **Email:** | **ayush.pandey@iitkgp.ac.in**
------------- | -------------
 **Gmail:** | **ayushpandey.iitkgp@gmail.com**
 **LinkedIn:** | &nbsp;[**Ayush Pandey**](https://www.linkedin.com/in/ayushiitkgp)
 **GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
