@@ -135,7 +135,7 @@ NAVIGATION_LINKS = {
         #("/categories/", "Tags"),
         #("/rss.xml", "RSS feed"),
 
-        ("/galleries", "Gallery"),
+        
         #("/stories/juliacon.slides.html", "JuliaCon2016 Presentation"),
         #("http://ayush-iitkgp.rhcloud.com", "GSoC'16"),
         
@@ -159,6 +159,7 @@ NAVIGATION_LINKS = {
         
         
         ("https://drive.google.com/open?id=0B2oOdWdSJWa1Y185TVRTc0xSMGs", "Resume"),
+        ("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
         #("http://github.com/Ayush-iitkgp", "GitHub"),
