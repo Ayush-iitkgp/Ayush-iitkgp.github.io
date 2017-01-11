@@ -144,21 +144,20 @@ NAVIGATION_LINKS = {
         #   ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
         #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 
-        ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
+        ("/stories/gsoc16/", "GSoC'16"),
 
-        ((('https://drive.google.com/open?id=0B2oOdWdSJWa1YUJGTjNGdTNoRGVkNHNkcmRoRDZCd2ozSFk0', 'Samsung'),
-          ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', 'Flutura')), "Internships"),
+        
+        ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Internships"),
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), 
 
-        ((('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', 'Portfolio Optimization'),
-          ('https://drive.google.com/open?id=0B2oOdWdSJWa1T0NhMGpVc2JuZHc', 'Theft Analyics')), "Projects"),
+        ('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Projects"),
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), "Projects"),
 
         
         
-        ("https://drive.google.com/open?id=0B2oOdWdSJWa1Y185TVRTc0xSMGs", "Resume"),
+        ("https://drive.google.com/open?id=0B2oOdWdSJWa1NkpiSDhuUy1fb28", "Resume"),
         ("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
