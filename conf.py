@@ -144,7 +144,7 @@ NAVIGATION_LINKS = {
         #   ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
         #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 
-        ("/stories/is-it-the-end-or-another-beginning/", "GSoC'16"),
+        ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
 
         
         ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Internship"),
