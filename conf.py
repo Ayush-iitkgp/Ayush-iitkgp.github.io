@@ -158,7 +158,7 @@ NAVIGATION_LINKS = {
         
         
         ("https://drive.google.com/open?id=0B2oOdWdSJWa1NkpiSDhuUy1fb28", "Resume"),
-        ("/galleries", "Gallery"),
+        #("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
         #("http://github.com/Ayush-iitkgp", "GitHub"),
