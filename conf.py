@@ -144,14 +144,14 @@ NAVIGATION_LINKS = {
         #   ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
         #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 
-        ("/stories/gsoc16/", "GSoC'16"),
+        ("/stories/is-it-the-end-or-another-beginning/", "GSoC'16"),
 
         
-        ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Internships"),
+        ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Internship"),
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), 
 
-        ('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Projects"),
+        ('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Project"),
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
           #('https://www.youtube.com/watch?v=fHG4uEOlMbY', 'Talk')), "Projects"),
 
