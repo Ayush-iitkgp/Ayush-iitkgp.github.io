@@ -1,8 +1,8 @@
 <!-- 
-.. title: When does traditional classfication algorithm fail?
-.. slug: when-does-traditional-classfication-algorithm-fail
+.. title: Novelty Detection Algorithms
+.. slug: novelty-detection-algorithms
 .. date: 2017-01-17 12:13:21 UTC+05:30
-.. tags: Machine Learning, Application of Novelty Detection Algorithms to predict Electricity Theft
+.. tags: 
 .. category: 
 .. link: 
 .. description: 
