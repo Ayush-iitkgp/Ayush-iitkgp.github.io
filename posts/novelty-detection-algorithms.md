@@ -2,8 +2,8 @@
 .. title: Application of Novelty Algorithms to predict Electricity Theft
 .. slug: novelty-detection-algorithms
 .. date: 2014-04-20 12:13:21 UTC+05:30
-.. tags: 
-.. category: ml
+.. tags: ml
+.. category: 
 .. link: 
 .. description: 
 .. type: text
