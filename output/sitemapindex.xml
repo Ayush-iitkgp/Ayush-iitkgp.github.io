@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/cat_ml.xml</loc>
-  <lastmod>2017-01-17T13:40:00Z</lastmod>
+  <lastmod>2017-01-17T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/gsoc16.xml</loc>
@@ -39,10 +39,10 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/rss.xml</loc>
-  <lastmod>2017-01-17T13:40:00Z</lastmod>
+  <lastmod>2017-01-17T15:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-17T13:40:00Z</lastmod>
+  <lastmod>2017-01-17T15:50:00Z</lastmod>
  </sitemap>
 </sitemapindex>

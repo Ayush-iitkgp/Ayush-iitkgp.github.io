@@ -19,6 +19,10 @@ In order to appreciate the problem statement. Let us first have the review of th
 
 * **At the ratio 1:10**, the performance is so poor for traditional classifiers that it can no longer be trusted.
 
+Figure below shows the performance trends of the binary classiﬁers over the various UCI dataset as the ratio between the classes start to become skewed
+
+<img src="images/BinaryPerformanceTable.png" alt="Binary Classification Algorithm Performance Table" height="400px" width="750px" border="1px" style="margin: 0px 20px" >
+
 
 
 <div id="disqus_thread"></div>
