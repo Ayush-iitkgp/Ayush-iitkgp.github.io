@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link type="application/rss+xml" rel="self" href="http://Ayush-iitkgp.github.io/rss.xml"></atom:link><language>en</language><lastBuildDate>Fri, 13 Jan 2017 21:50:56 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Is it the end or another beginning ?</title><link>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link type="application/rss+xml" href="http://Ayush-iitkgp.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 17 Jan 2017 14:58:07 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Is it the end or another beginning ?</title><link>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.&lt;/p&gt;
 &lt;p&gt;Now, coming to the technical aspects of my project, it was divide in 3 phases based on the branches of convex programming namely:&lt;/p&gt;
 &lt;h4&gt;1. Support for complex-domain linear programs&lt;/h4&gt;
@@ -276,4 +276,38 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</guid><pubDate>Tue, 03 May 2016 16:08:08 GMT</pubDate></item></channel></rss>
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</guid><pubDate>Tue, 03 May 2016 16:08:08 GMT</pubDate></item><item><title>Application of Novelty Algorithms to predict Electricity Theft</title><link>http://Ayush-iitkgp.github.io/posts/novelty-detection-algorithms/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;One of the most intriguing Machine Learning problems that I have come across was during my 3rd year in the college where a company named Quantta Analytics presented us with the problem statement about a power distribution company which had observed a significant loss of revenue over a period of time. The loss in revenue was mainly becuase of possible power theft by malicious consumers. The power company resorted to periodic vigilance of customers by sampling and &lt;strong&gt;creating a database of only the fraudulent customers&lt;/strong&gt; to curb this practice. The company wanted the vigilance process to be more robust and effective. Hence, the objective of the problem statement was to deploy a machine learning algorithm to provide a list of customers who are likely to commit fraud. So the problem was effectively a classification problem (&lt;strong&gt;with a catch&lt;/strong&gt;) where given the attributes of a customer we had to predict where it would commit the electricity theft or not.&lt;/p&gt;
+&lt;p&gt;In order to appreciate the problem statement. Let us first have the review of the well-known famous classification algorithms. Classification problems try to solve the two or multi-class situation. The goal is to distinguish test data between a number of classes, using training data which has samples from all the possible classes and &lt;strong&gt;training data has reasonable level of balance between the various classes&lt;/strong&gt;. Now the question that arise is - &lt;em&gt;At what levels of imbalance does the use of traditional classifiers becomes futile?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://ieeexplore.ieee.org/document/6406735/"&gt;This paper&lt;/a&gt; has made observation by conduct experiments on various datasets from the UCI repository, and monitoring the performance of the traditional classifiers. I am listing down the most important observations stated in the paper:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The ration of the traditional classifiers start to decline when the imbalance between output classes increase and &lt;strong&gt;the decline becomes prominent at the ratio 1:2.8&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;At the ratio 1:10&lt;/strong&gt;, the performance is so poor for traditional classifiers that it can no longer be trusted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="disqus_thread"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/posts/novelty-detection-algorithms/</guid><pubDate>Sun, 20 Apr 2014 06:43:21 GMT</pubDate></item></channel></rss>
