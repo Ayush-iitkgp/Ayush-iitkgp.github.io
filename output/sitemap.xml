@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/</loc>
-  <lastmod>2017-01-17T13:22:00Z</lastmod>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2014/</loc>
@@ -18,8 +18,12 @@
   <lastmod>2016-07-23T19:37:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/2017/</loc>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2017-01-17T13:22:00Z</lastmod>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -27,7 +31,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/</loc>
-  <lastmod>2017-01-17T19:20:00Z</lastmod>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/categories/application-of-novelty-detection-algorithms-to-predict-electricity-theft/</loc>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/gsoc16/</loc>
@@ -36,10 +44,6 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/machine-learning/</loc>
   <lastmod>2017-01-17T19:20:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/categories/ml/</loc>
-  <lastmod>2017-01-17T19:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/galleries/</loc>
@@ -96,6 +100,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/novelty-detection-algorithms/</loc>
   <lastmod>2017-01-17T13:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/when-does-traditional-classfication-algorithm-fail/</loc>
+  <lastmod>2017-01-17T19:35:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/bootstrap-demo/</loc>

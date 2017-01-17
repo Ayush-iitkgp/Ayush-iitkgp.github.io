@@ -1,8 +1,8 @@
 <!-- 
-.. title: Application of Novelty Algorithms to predict Electricity Theft
-.. slug: novelty-detection-algorithms
-.. date: 2014-04-20 12:13:21 UTC+05:30
-.. tags: Machine Learning
+.. title: When does traditional classfication algorithm fail?
+.. slug: when-does-traditional-classfication-algorithm-fail
+.. date: 2017-01-17 12:13:21 UTC+05:30
+.. tags: Machine Learning, Application of Novelty Detection Algorithms to predict Electricity Theft
 .. category: 
 .. link: 
 .. description: 
@@ -27,9 +27,17 @@ Now the questions that arise are - what if we have the training data which has i
 
 To answer the latter first, yes there are plenty of situations where we have the data from only one class. Consider a case of a nuclaer power plant. We have the measurement of the plant conditions such as temperature, reaction rate when the plant is in working condition. Can we get such measurements in case of an accident? No. Now, if we want to predict the possible scenario of the breakdown of the plant. From the above observations it is sure that the traditional classification algorithms will not perform well. Some other cases are:
 
-1. Detection of oil spill
+* Detection of oil spill
 
-2. In computational biology to predict microRNA gene target
+* In computational biology to predict microRNA gene target
+
+There are 2 methods to tackle the case when we have data from only one class:
+
+1. The first method is an obvious approach to generate an artificial second class and proceed with traditional classification algorithms.
+
+2. The second one is to modify the existing classification algoriths to learn on the data from only one class. These algorithms are called "one-class classfication algorithms" and include one-class SVM, One-Class K-Means, One-Class K-Nearest Neighbor, and One-Class Gaussian.
+
+I will be elaborating on the above two methods in next blog post. Thank you very much for making it this far.
 
 
 
