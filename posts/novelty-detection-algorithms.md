@@ -15,7 +15,7 @@ In order to appreciate the problem statement, let us first have the review of th
 
 [This paper](http://ieeexplore.ieee.org/document/6406735/) has made observation by conducting experiments on various datasets from the UCI repository, and monitoring the performance of the traditional classifiers. I am listing down the most important observations stated in the paper:
 
-* The ratio of the traditional classifiers start to decline when the imbalance between output classes increase and **the decline becomes prominent at the ratio 1:2.8**.
+* The performance of the traditional classifiers start to decline when the imbalance between output classes increase and **the decline becomes prominent at the ratio 1:2.8**.
 
 * **At the ratio 1:10**, the performance is so poor for traditional classifiers that it can no longer be trusted.
 
