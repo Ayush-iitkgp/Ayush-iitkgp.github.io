@@ -1,7 +1,7 @@
 <!-- 
 .. title: Novelty Detection Algorithms
 .. slug: novelty-detection-algorithms
-.. date: 2017-01-17 12:13:21 UTC+05:30
+.. date: 2014-04-20 12:13:21 UTC+05:30
 .. tags: 
 .. category: 
 .. link: 
