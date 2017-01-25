@@ -37,10 +37,11 @@ In this section, I will explain the mathematics behind different one-class machi
 
 This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample(say z) having n-feaures, the probability of it belonging to the target class can be calculated as follows:
 
-<center><img src="/images/one-classGaussian.png" alt="one-class gaussian" height="200px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
+<center><img src="/images/one-classGaussian.png" alt="one-class gaussian" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
 
-where the parameters &mu; and &Sigma; are the *poputation mean and covariance*.
+where the parameters &mu; and &Sigma; are the *poputation mean and covariance*. Hence, the objective function of this machine learning algorithm is to determine the estimates for &mu; and &Sigma;. Using the method of maximum likelihood estimator, we can show that the sample mean and sample covariance are the unbiased and consistent eztimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.
 
+### **One-Class Kmeans**
  
 
 

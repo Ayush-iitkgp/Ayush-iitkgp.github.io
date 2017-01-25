@@ -21,7 +21,7 @@ In order to appreciate the problem statement, let us first have the review of th
 
 Figure below shows the initial ratio of the classes present in UCI dataset and the ratio at which the performance of the binary classiﬁers starts to deteriorate.
 
-<center><img src="/images/BinaryPerformanceTable.png" alt="Binary Classification Algorithm Performance Table" height="200px" width="375px" border="1px" style="margin: 0px 20px"></center>
+<center><img src="/images/BinaryPerformanceTable.png" alt="Binary Classification Algorithm Performance Table" height="100px" width="275px" border="1px" style="margin: 0px 20px"></center>
 
 Now the questions that arise are - what if we have the training data which has imbalance between the classes or data only from one class? Why do we need to study such case? And are there any situations where such data is available?
 
