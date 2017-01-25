@@ -25,7 +25,7 @@ Binary classification algorithms are *discriminatory in nature*, since they lear
 
 <center><img src="/images/binaryClassification.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">Binary Classification Hyperplane</center><br/>
 
-Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it liew within the boundary or outside and accordingly classify the sample as belonging to the outlier class or the outlier.
+Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it lies within the boundary or outside and accordingly classify the sample as belonging to the target class or the outlier.
 
 <center><img src="/images/oneClassClassification.png" alt="One-Class Classification Boundary" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center><br/>
 
@@ -39,15 +39,15 @@ This is basically a density estimation model. It assumes that the training data 
 
 <center><img src="/images/one-classGaussian.png" alt="one-class gaussian" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
 
-where the parameters &mu; and &Sigma; are the *poputation mean and covariance*. Hence, the objective function of this machine learning algorithm is to determine the estimates for &mu; and &Sigma;. Using the **method of maximum likelihood estimator**, we can show that the sample mean and sample covariance are the unbiased and consistent eztimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.
+where the parameters &mu; and &Sigma; are the *poputation mean and covariance*. Hence, the objective function of this machine learning algorithm is to determine the estimates for &mu; and &Sigma;. Using the **method of maximum likelihood estimator**, we can show that the sample mean and sample covariance are the unbiased and consistent estimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.
 
 ### **One-Class Kmeans**
  
-In this methos, we first classify the training data into k clusters (which is chosen as per our requirements). Then, for a new sample (say z), the distance *d(z)* is calculated as the minimum distance of the sample from the centroid of all the k clusters. Now if *d(z)* is less than a particular thereshold (which is again chosen as per our requirements), then the sample belongs to the target class otherwise it is classified as the outlier.
+In this method, we first classify the training data into k clusters (which is chosen as per our requirements). Then, for a new sample (say z), the distance *d(z)* is calculated as the minimum distance of the sample from the centroid of all the k clusters. Now if *d(z)* is less than a particular thereshold (which is again chosen as per our requirements), then the sample belongs to the target class otherwise it is classified as the outlier.
 
 ### **One-Class K-Nearest Neighbor**
 
-Let us take note of some notation before we understand the mathematics behind this algorithms.
+Let us take note of some notation before we understand the mathematics behind the algorithm.
 
 *d(z,y)* : distance between two samples z and y
 
