@@ -34,7 +34,8 @@ Where as the one-class algorithms are based on *recognition* since their aim is 
 In this section, I will explain the mathematics behind different one-class machine learning algorithms by taking a cue from [this research paper](http://file.scirp.org/pdf/JBiSE20100300003_45072138.pdf).
 
 ### **One-Class Gaussian**
-This model uses the The Gaussian model is considered as a density estimation model. The assumption is that the target samples form a multivariate normal distribution, therefore for a given test sample z in n-dimensional space, the probability density function can be calculated as: 
+
+This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample(say z) having n-feaures, the probability density function can be calculated as: 
 
 
 Thank you very much for making it this far.
