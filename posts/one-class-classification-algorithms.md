@@ -35,7 +35,13 @@ In this section, I will explain the mathematics behind different one-class machi
 
 ### **One-Class Gaussian**
 
-This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample(say z) having n-feaures, the probability density function can be calculated as: 
+This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample(say z) having n-feaures, the probability of it belonging to the target class can be calculated as follows:
+
+<center><img src="/images/one-classGaussian.png" alt="one-class gaussian" height="200px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
+
+where the parameters &mu; and &Sigma; are the *poputation mean and covariance*.
+
+ 
 
 
 Thank you very much for making it this far.
