@@ -29,11 +29,12 @@ Where as the one-class algorithms are based on *recognition* since their aim is 
 
 <center><img src="/images/oneClassClassification.png" alt="One-Class Classification Boundary" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center><br/>
 
-## Mathematics of different One-Class Classification Algorithms
+## Mathematics behind different One-Class Classification Algorithms
 
 In this section, I will explain the mathematics behind different one-class machine learning algorithms by taking a cue from [this research paper](http://file.scirp.org/pdf/JBiSE20100300003_45072138.pdf).
 
-### One-Class Gaussian 
+### **One-Class Gaussian**
+This model uses the The Gaussian model is considered as a density estimation model. The assumption is that the target samples form a multivariate normal distribution, therefore for a given test sample z in n-dimensional space, the probability density function can be calculated as: 
 
 
 Thank you very much for making it this far.
