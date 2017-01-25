@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of balance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. **The power company had only created the database of fraudulent customers**. 
+In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of balance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. **The power company had only created the database of fraudulent customers**. 
 
 As I mentioned in my previous blog post, there are 2 methods to tackle the case when we have data from only one class:
 
@@ -28,6 +28,12 @@ Binary classification algorithms are *discriminatory in nature*, since they lear
 Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it liew within the boundary or outside and accordingly classify the sample as belonging to the outlier class or the outlier.
 
 <center><img src="/images/oneClassClassification.png" alt="One-Class Classification Boundary" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center><br/>
+
+## Mathematics of different One-Class Classification Algorithms
+
+In this section, I will explain the mathematics behind different one-class machine learning algorithms by taking a cue from [this research paper](http://file.scirp.org/pdf/JBiSE20100300003_45072138.pdf).
+
+### One-Class Gaussian 
 
 
 Thank you very much for making it this far.
