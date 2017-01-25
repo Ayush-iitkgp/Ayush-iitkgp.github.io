@@ -27,7 +27,7 @@ Binary classification algorithms are *discriminatory in nature*, since they lear
 
 Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it liew within the boundary or outside and accordingly classify the sample as belonging to the outlier class or the outlier.
 
-<center><img src="/images/oneClassClassification.png.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center>
+<center><img src="/images/oneClassClassification.png.png" alt="One-Class Classification Boundary" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center><br/>
 
 
 Thank you very much for making it this far.
