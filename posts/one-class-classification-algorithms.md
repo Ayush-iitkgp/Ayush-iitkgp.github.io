@@ -35,14 +35,19 @@ In this section, I will explain the mathematics behind different one-class machi
 
 ### **One-Class Gaussian**
 
-This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample(say z) having n-feaures, the probability of it belonging to the target class can be calculated as follows:
+This is basically a density estimation model. It assumes that the training data are the samples from the *Multivariate Normal Population*, therefore for a test sample (say z) having n-feaures, the probability of it belonging to the target class can be calculated as follows:
 
 <center><img src="/images/one-classGaussian.png" alt="one-class gaussian" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
 
-where the parameters &mu; and &Sigma; are the *poputation mean and covariance*. Hence, the objective function of this machine learning algorithm is to determine the estimates for &mu; and &Sigma;. Using the method of maximum likelihood estimator, we can show that the sample mean and sample covariance are the unbiased and consistent eztimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.
+where the parameters &mu; and &Sigma; are the *poputation mean and covariance*. Hence, the objective function of this machine learning algorithm is to determine the estimates for &mu; and &Sigma;. Using the **method of maximum likelihood estimator**, we can show that the sample mean and sample covariance are the unbiased and consistent eztimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.
 
 ### **One-Class Kmeans**
  
+In this methos, we first classify the training data into k clusters (which is chosen as per our requirements). Then, for a new sample (say z), the distance *d(z)* is calculated as the minimum distance of the sample from the centroid of all the k clusters. Now if *d(z)* is less than a particular thereshold (which is again chosen as per our requirements), then the sample belongs to the target class otherwise it is classified as the outlier.
+
+### **One-Class K-Nearest Neighbor**
+
+
 
 
 Thank you very much for making it this far.
