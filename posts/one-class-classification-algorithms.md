@@ -52,6 +52,7 @@ Let us take note of some notation before we understand the mathematics behind th
 *d(z,y)* : distance between two samples z and y
 
 *NN(y)* : Nearest Neighbor of sample y
+
 Now given a test sample z, we find the nearest neighbor of z from the training data (which is NN(z) = y) and the nearest neighbor of y (which is NN(y)). Now the rule is to classify z as belonging to the target class when:
 
 <center><img src="/images/K-NearestNeighbor.png" alt="K-Nearest Neighbor" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
