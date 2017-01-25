@@ -23,15 +23,14 @@ In this blog entry, I will elaborate on the second method and explain the mathem
 
 Binary classification algorithms are *discriminatory in nature*, since they learn to discriminate between classes using all data classes to create a hyperplane(as seen in the fig. below) and use the hyperplane to label a new sample. In case of imbalance between the classes, the discriminatory methods can not be used to their full potential, since by their very nature, they rely on data from all classes to build the hyperplane that separate the various classes.
 
-<center><img src="/images/binaryClassification.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">Binary Classification Hyperplane</center>
+<center><img src="/images/binaryClassification.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">Binary Classification Hyperplane</center><br/>
+
+Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it liew within the boundary or outside and accordingly classify the sample as belonging to the outlier class or the outlier.
+
+<center><img src="/images/oneClassClassification.png.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center>
 
 
-Where as the one-class algorithms are based on *recognition* since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself.
-
-
-
-
-I will be elaborating on the above two methods in my next blog post. Thank you very much for making it this far.
+Thank you very much for making it this far.
 
 
 
