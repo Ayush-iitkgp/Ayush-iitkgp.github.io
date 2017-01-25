@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2017-01-18T12:16:00Z</lastmod>
+  <lastmod>2017-01-25T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -100,6 +100,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/novelty-detection-algorithms/</loc>
   <lastmod>2017-01-17T19:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/</loc>
+  <lastmod>2017-01-25T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/</loc>
