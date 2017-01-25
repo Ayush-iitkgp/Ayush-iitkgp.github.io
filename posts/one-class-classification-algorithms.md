@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of balance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. **The power company had only created the database of fraudulent customers**. 
+In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of imbalance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. **The power company had only created the database of fraudulent customers**. 
 
 As I mentioned in my previous blog post, there are 2 methods to tackle the case when we have data from only one class:
 
@@ -47,6 +47,17 @@ In this methos, we first classify the training data into k clusters (which is ch
 
 ### **One-Class K-Nearest Neighbor**
 
+Let us take note of some notation before we understand the mathematics behind this algorithms.
+
+*d(z,y)* : distance between two samples z and y
+*NN(y)* : Nearest Neighbor of sample y
+
+Now given a test sample z, we find the nearest neighbor of z from the training data (which is NN(z) = y) and the nearest neighbor of y (which is NN(y)). Now the rule is to classify z as belonging to the target class when:
+
+<center><img src="/images/K-NearestNeighbor.png" alt="K-Nearest Neighbor" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center><br/>
+
+where the default value of &delta; is 1 but can be chosen to satisfy our requirements.
+ 
 
 
 
