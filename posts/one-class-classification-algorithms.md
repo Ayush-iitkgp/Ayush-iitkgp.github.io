@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of balance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. The power company had only created the database of fraudulent customers. 
+In my [previous blog entry](/posts/when-does-traditional-classification-algorithm-fail/), I have put forth a case when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of balance between the various classes. The [problem statement](https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing) that I was trying to solve had a similar problem of the skewed distribution of the training data. *The power company had only created the database of fraudulent customers*. 
 
 As I mentioned in my previous blog post, there are 2 methods to tackle the case when we have data from only one class:
 
@@ -17,9 +17,13 @@ As I mentioned in my previous blog post, there are 2 methods to tackle the case 
 
 2. The second one is to modify the existing classification algoriths to learn on the data from only one class. These algorithms are called "one-class classfication algorithms" and include one-class SVM, One-Class K-Means, One-Class K-Nearest Neighbor, and One-Class Gaussian.
 
-In this blog entry, I will elaborate on the second method and explain the mathematics behind the one-class classification algorithms and how it improves over the traditional classification algorithms.
+In this blog entry, I will elaborate on the second method and explain the mathematics behind the one-class classification algorithms and how it improves over the traditional classification algorithms. 
 
- 
+## Fundamental difference between Binary and One Class Classification Algorithms
+
+
+
+
 
 One of the most intriguing Machine Learning problems that I have come across was during my 3rd year in the college where a startup named Quantta Analytics presented us with the problem statement about a power distribution company which had observed a significant loss of revenue over a period of time. The loss in revenue was mainly becuase of possible power theft by malicious consumers. The power company resorted to periodic vigilance of customers by sampling and **creating a database of only the fraudulent customers** to curb this practice. The company wanted the vigilance process to be more robust and effective. Hence, the objective of the problem statement was to deploy a machine learning algorithm to provide a list of customers who are likely to commit fraud. So the problem was effectively a classification problem (**with a catch!**) where given the attributes of a customer, we had to predict where it is likely to commit the electricity theft or not.
 
