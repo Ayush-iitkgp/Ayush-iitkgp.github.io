@@ -59,8 +59,7 @@ Now given a test sample z, we find the nearest neighbor of z from the training d
 
 where the default value of &delta; is 1 but can be chosen to satisfy our requirements.
  
-
-
+In my next blog entry, I will try to explain the most widely used one-class classification algorithm i.e. one-class support vector machines. Stay tuned !
 
 Thank you very much for making it this far.
 
