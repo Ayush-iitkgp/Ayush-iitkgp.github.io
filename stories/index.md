@@ -14,7 +14,7 @@
  
 <div>
     <p style="float: left;"><img src="/images/profile.jpg" class="img-circle" height="245px" width="220px" border="1px" style="margin: 0px 20px" ></p>
-    <p>Mathematics itself is too enthralling to resist. Moreso, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
+    <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
 
 
 I am a final year graduate student at the Indian Institute of Technology(IIT), Kharagpur pursuing majors in Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
@@ -23,7 +23,7 @@ Recently, I have been involved in the application of optimization techniques in 
 
 While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, writing, running and playing cricket in one of the grounds at [Tata Sports Complex.](https://wiki.metakgp.org/w/Tata_Sports_Complex)</p>
 
-
+**I am actively looking for a job**. Contact me, if you are interested in my profile.
 
 
 ## Contact 
