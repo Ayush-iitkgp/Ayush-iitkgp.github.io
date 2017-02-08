@@ -23,7 +23,7 @@ Recently, I have been involved in the application of optimization techniques in 
 
 While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, writing, running and playing cricket in one of the grounds at [Tata Sports Complex.](https://wiki.metakgp.org/w/Tata_Sports_Complex)</p>
 
-**I am actively looking for a job**. Contact me, if you are interested in my profile.
+**I am actively looking for a job**. Contact me if you are interested in my profile.
 
 
 ## Contact 
