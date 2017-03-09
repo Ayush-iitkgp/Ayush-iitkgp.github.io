@@ -158,7 +158,7 @@ NAVIGATION_LINKS = {
 
         
         
-        ("https://drive.google.com/open?id=0B2oOdWdSJWa1NkpiSDhuUy1fb28", "Resume"),
+        ("https://drive.google.com/open?id=0B2oOdWdSJWa1aTBpU2ZlUm5oTUU", "Resume"),
         #("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
