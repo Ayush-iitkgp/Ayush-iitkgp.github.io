@@ -150,7 +150,7 @@ NAVIGATION_LINKS = {
         
         ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Flutura Analytics"),
 
-        ('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Portfolio Optimization"),
+        ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "Projects"),
         #('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Data Analytics"),
 
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
