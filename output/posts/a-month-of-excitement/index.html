@@ -111,18 +111,18 @@ type ComplexSign &lt;: Sign                end
 </li>
 <li>
 <p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
-<pre class="code literal-block"><span></span>ComplexVariable(m::Int, n::Int, sets::Symbol...) = Variable((m,n), ComplexSign(), sets...)
-ComplexVariable(sets::Symbol...) = Variable((1, 1), ComplexSign(), sets...)
-ComplexVariable(size::Tuple{Int, Int}, sets::Symbol...) = Variable(size, ComplexSign(), sets...)
-ComplexVariable(size::Int, sets::Symbol...) = Variable((size, 1), ComplexSign(), sets...)
-HermitianSemidefinite(m::Integer) = ComplexVariable((m,m), :Semidefinite)
-function HermitianSemidefinite(m::Integer, n::Integer)
-  if m==n
-    return ComplexVariable((m,m), :Semidefinite)
-  else
-    error("HermitianSemidefinite matrices must be square")
-  end
-end
+<pre class="code literal-block"><span></span><span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">n</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
+<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
+<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Tuple</span><span class="p">{</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">Int</span><span class="p">},</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
+<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
+<span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span>
+  <span class="k">if</span> <span class="nx">m</span><span class="o">==</span><span class="nx">n</span>
+    <span class="k">return</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="nx">error</span><span class="p">(</span><span class="s2">"HermitianSemidefinite matrices must be square"</span><span class="p">)</span>
+  <span class="nx">end</span>
+<span class="nx">end</span>
 </pre>
 
 
