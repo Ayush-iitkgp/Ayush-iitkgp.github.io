@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link rel="self" type="application/rss+xml" href="http://Ayush-iitkgp.github.io/rss.xml"></atom:link><language>en</language><lastBuildDate>Sun, 27 Aug 2017 00:41:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>One-Class Classification Algorithms</title><link>http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;In my &lt;a href="http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/"&gt;previous blog entry&lt;/a&gt;, I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of imbalance between the various classes. The &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing"&gt;problem statement&lt;/a&gt; that I was trying to solve had a similar problem of the skewed distribution of the training data. &lt;strong&gt;The power company had only created the database of fraudulent customers&lt;/strong&gt;. &lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 30 Aug 2017 04:48:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Summer of Code, 2017</title><link>http://Ayush-iitkgp.github.io/posts/gsoc-2017/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.&lt;/p&gt;
+&lt;p&gt;Now, coming to the technical aspects of my project, it was divide in 3 phases based on the branches of convex programming namely:&lt;/p&gt;
+&lt;h4&gt;1. Support for complex-domain linear programs&lt;/h4&gt;
+&lt;p&gt;During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post &lt;a href="https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;2. Support for second order conic programs&lt;/h4&gt;
+&lt;p&gt;In this phase of the project, I in consulation with my mentors, rewrote many the second order cone atoms such as abs, norm to accept complex arguments. We also had an intense discussion on whether redefining the above atoms to accept complex arguments would violate DCP compliance and we came to a conclusion that defining inverse or the square atoms on complex variables neither makes sense nor does it preserve the DCP compliance.&lt;/p&gt;
+&lt;h4&gt;3. Support for Complex Semidefinite programs&lt;/h4&gt;
+&lt;p&gt;The above 2 phases were relatively difficult for us as we had no literature references and the decision we made were solely based on our understanding and intuition. During this phase, we used the mapping in the introductory section of the research paper &lt;a href="http://arxiv.org/pdf/1007.2905v2.pdf"&gt;here&lt;/a&gt; to transform a complex semidefinite program to the corresponding real semidefinite program. Presently, I am writing test cases to check the correctness of our implementation.&lt;/p&gt;
+&lt;p&gt;The exhaustive list of commits can be found &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. &lt;/p&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;p&gt;[1].&lt;a href="http://www.sciencedirect.com/science/article/pii/S0022000003001454"&gt;Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2].&lt;a href="http://arxiv.org/pdf/1007.2905v2.pdf"&gt;Invariant semidefinite programs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3].&lt;a href="http://arxiv.org/pdf/1410.4821.pdf"&gt;Convex Optimization in Julia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4].&lt;a href="https://github.com/JuliaOpt/Convex.jl/issues/103"&gt;Support for complex variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5].&lt;a href="https://github.com/cvxgrp/cvxpy/issues/191"&gt;Add complex variables&lt;/a&gt;&lt;/p&gt;
+&lt;div id="disqus_thread"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'17</category><guid>http://Ayush-iitkgp.github.io/posts/gsoc-2017/</guid><pubDate>Fri, 25 Aug 2017 20:43:21 GMT</pubDate></item><item><title>One-Class Classification Algorithms</title><link>http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;In my &lt;a href="http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/"&gt;previous blog entry&lt;/a&gt;, I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of imbalance between the various classes. The &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing"&gt;problem statement&lt;/a&gt; that I was trying to solve had a similar problem of the skewed distribution of the training data. &lt;strong&gt;The power company had only created the database of fraudulent customers&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;As I mentioned in my previous blog post, there are 2 methods to tackle the case when we have data from only one class:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -111,47 +151,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>Application of Novelty Detection Algorithms to predict Electricity Theft</category><category>Machine Learning</category><guid>http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/</guid><pubDate>Tue, 17 Jan 2017 06:43:21 GMT</pubDate></item><item><title>Google Summer of Code, 2017</title><link>http://Ayush-iitkgp.github.io/posts/gsoc-2017/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.&lt;/p&gt;
-&lt;p&gt;Now, coming to the technical aspects of my project, it was divide in 3 phases based on the branches of convex programming namely:&lt;/p&gt;
-&lt;h4&gt;1. Support for complex-domain linear programs&lt;/h4&gt;
-&lt;p&gt;During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post &lt;a href="https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;2. Support for second order conic programs&lt;/h4&gt;
-&lt;p&gt;In this phase of the project, I in consulation with my mentors, rewrote many the second order cone atoms such as abs, norm to accept complex arguments. We also had an intense discussion on whether redefining the above atoms to accept complex arguments would violate DCP compliance and we came to a conclusion that defining inverse or the square atoms on complex variables neither makes sense nor does it preserve the DCP compliance.&lt;/p&gt;
-&lt;h4&gt;3. Support for Complex Semidefinite programs&lt;/h4&gt;
-&lt;p&gt;The above 2 phases were relatively difficult for us as we had no literature references and the decision we made were solely based on our understanding and intuition. During this phase, we used the mapping in the introductory section of the research paper &lt;a href="http://arxiv.org/pdf/1007.2905v2.pdf"&gt;here&lt;/a&gt; to transform a complex semidefinite program to the corresponding real semidefinite program. Presently, I am writing test cases to check the correctness of our implementation.&lt;/p&gt;
-&lt;p&gt;The exhaustive list of commits can be found &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. &lt;/p&gt;
-&lt;h3&gt;References&lt;/h3&gt;
-&lt;p&gt;[1].&lt;a href="http://www.sciencedirect.com/science/article/pii/S0022000003001454"&gt;Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[2].&lt;a href="http://arxiv.org/pdf/1007.2905v2.pdf"&gt;Invariant semidefinite programs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[3].&lt;a href="http://arxiv.org/pdf/1410.4821.pdf"&gt;Convex Optimization in Julia&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[4].&lt;a href="https://github.com/JuliaOpt/Convex.jl/issues/103"&gt;Support for complex variables&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[5].&lt;a href="https://github.com/cvxgrp/cvxpy/issues/191"&gt;Add complex variables&lt;/a&gt;&lt;/p&gt;
-&lt;div id="disqus_thread"&gt;&lt;/div&gt;
-
-&lt;script&gt;
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//avoyage.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'17</category><guid>http://Ayush-iitkgp.github.io/posts/gsoc-2017/</guid><pubDate>Thu, 25 Aug 2016 20:43:21 GMT</pubDate></item><item><title>Is it the end or another beginning ?</title><link>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>Application of Novelty Detection Algorithms to predict Electricity Theft</category><category>Machine Learning</category><guid>http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/</guid><pubDate>Tue, 17 Jan 2017 06:43:21 GMT</pubDate></item><item><title>Is it the end or another beginning ?</title><link>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h3&gt;&lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;Proposal&lt;/a&gt;            &lt;a href="https://ayush-iitkgp.github.io/categories/gsoc16/"&gt;Blog&lt;/a&gt;            &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Talk&lt;/a&gt;            &lt;a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing"&gt;Presentation&lt;/a&gt;            &lt;a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"&gt;Github&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.&lt;/p&gt;
 &lt;p&gt;Now, coming to the technical aspects of my project, it was divide in 3 phases based on the branches of convex programming namely:&lt;/p&gt;
 &lt;h4&gt;1. Support for complex-domain linear programs&lt;/h4&gt;
