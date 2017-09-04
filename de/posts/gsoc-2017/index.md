@@ -22,10 +22,51 @@ Differential equation models are widely used in many scientific fields that incl
 
 The expected outcome of my project was **set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning.**
 
+#Application - HIV-AIDS Viral Dynamics Study
+
+Studies of HIV dynamics in AIDS research are very important for understanding the pathogenesis of HIV infection and for assessing the potency of antiviral therapies. Ordinary differential equation (ODE) models are proposed to describe the interactions between HIV virus and immune cellular response.
+
+One popular HIV dynamic model can be written as:
+
+<center><img src="/images/HIV.png" alt="HIV-AIDS Dynamics Differential Equation" height="400px" width="375px" border="1px" style="margin: 0px 20px"></center>
+
+where (T) is target cells which are assumed to be produced at a constant rate s and which are assumed to die at rate d per cell. Productive infection by virus (V), occurs by virus interacting with target cells at a rate proportional to the product of their densities i.e at rate $\beta$VT, where $\beta$ is called the infection rate constant. Productively infected cells (I) are assumed to die at rate $\delta$ per cell. Virus is produced from productively infected cells at rate p per cell and is assumed to either infect new cells or be cleared. In the basic model, loss of virus by cell infection is included in the clearance process and virus is assumed to be cleared by all mechanisms at rate c per virion.
+
+Here we assume that the parameters p and c are known and can be obtained from the literature.
+
+
+
+
 Very similar to any Machine Lerning problem, we approached the problem of parameter estimation of differential equations by 2 ways: the Bayesian approach (where the idea is to find the probability distribution of the parameters) and the optimization approach (where we are interested to know the point estimates of the parameters).
 
+#Optimization Approach
 
+My mentor Chris had integrated the LossFunctions.jl which builds L2Loss objective function to estimate the parameters of the differential equations. I started by implementing the Two-stage method which is based on based on the local smoothing approach and a pseudo-least squares (PsLS) principle under a framework of measurement error in regression models.
 
+The following is the comparative study of the above two methods:
+
+## Advantages
+
+1. Computational efficiency
+2. The initial values of the state variables of the differential equations are not required
+3. Providing good initial estimates of the unknown parameters for other computationally-intensive methods to further refine the estimates rapidly
+4. Easing of the convergence problem
+
+## Disadvantages
+
+1. This method does not converge to the global/local minima as the Non-Linear regression does if the cost function is convex/concave.
+
+I also wrote implementations and test cases for supporting different optimizers and algorithms such as:
+1. Genetic Algorithm from Evolutionary.jl
+2. Stochastic Algorithms from BlackBoxOptim.jl
+3. Simulated Annealing, Brent method, Golden Section Search, BFGS algorithm from Optim.jl
+4. MathProgBase associated solvers such as IPOPT, NLopt, MOSEK, etc.
+
+Then, I integrated the PenaltyFunctions.jl with DiffEqParamEstim to add regularization to the loss function such as Tikhonov and Lasso regularization to surmount ill-posedness and ill-conditioning of the parameter estimation problem.
+
+#Bayesian Approach
+
+Our objective was to translate the ODE described in DifferentialEquations.jl using ParameterizedFunctions.jl into the corresponding Stan (a Markov Chain Monte Carlo Bayesian inference engine) code and use Stan.jl to find the probability distribution of the parameters **without writing a single line of Stan code**.
 
 The exhaustive list of pull requests can be found [here](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/pulls?q=is%3Apr+is%3Aclosed+author%3AAyush-iitkgp).
 
