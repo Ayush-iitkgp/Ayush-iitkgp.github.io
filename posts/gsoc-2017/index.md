@@ -24,8 +24,10 @@ The expected outcome of my project was **set of a tools for easily classifying p
 
 Very similar to any Machine Lerning problem, we approached the problem of parameter estimation of differential equations by 2 ways: the Bayesian approach (where the idea is to find the probability distribution of the parameters) and the optimization approach (where we are interested to know the point estimates of the parameters).
 
-###1. Support for complex-domain linear programs
 
+
+<! -- ###1. Support for complex-domain linear programs
+ 
 During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post [here](https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/).
 
 ###2. Support for second order conic programs
@@ -38,19 +40,21 @@ The above 2 phases were relatively difficult for us as we had no literature refe
 
 The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2).
 
-I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. 
+I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. --!>
 
 ## References
 
-[1].[Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming](http://www.sciencedirect.com/science/article/pii/S0022000003001454)
+[1].[Parameter Estimation for Differential Equation Models Using a Framework of Measurement Error in Regression Models](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631937/)
 
-[2].[Invariant semidefinite programs](http://arxiv.org/pdf/1007.2905v2.pdf)
+[2].[Parameter estimation: the build_loss_objective #5](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/issues/5)
 
-[3].[Convex Optimization in Julia](http://arxiv.org/pdf/1410.4821.pdf)
+[3].[Robust and efficient parameter estimation in dynamic models of biological systems](http://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-015-0219-2)
 
-[4].[Support for complex variables](https://github.com/JuliaOpt/Convex.jl/issues/103)
+[4].[Parameter Estimation for Differential Equations: A Generalized Smoothing Approach](http://faculty.bscb.cornell.edu/~hooker/ODE_Estimation.pdf)
 
-[5].[Add complex variables](https://github.com/cvxgrp/cvxpy/issues/191)
+[5].[Stan: A probabilistic programming language for Bayesian inference and optimization](http://www.stat.columbia.edu/~gelman/research/published/stan_jebs_2.pdf)
+
+[6]. [Linking with Stan project #135](https://github.com/JuliaDiffEq/DifferentialEquations.jl/issues/135)
 
 <div id="disqus_thread"></div>
 <script>
