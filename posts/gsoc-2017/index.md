@@ -1,5 +1,5 @@
 <!-- 
-.. title: Google Summer of Code, 2017
+.. title: Google Summer of Code 2017
 .. slug: gsoc-2017
 .. date: 2017-08-26 02:13:21 UTC+05:30
 .. tags: GSoC'17
@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-##[Proposal](http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Blog](https://ayush-iitkgp.github.io/categories/gsoc16/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Talk](/stories/juliacon-2016-talk/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation](https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Github](https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2)
+##[Proposal](https://summerofcode.withgoogle.com/projects/#5914180975591424) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Poster](https://drive.google.com/open?id=0B2oOdWdSJWa1b3JvRDR1OHZEUTg) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Github](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/pulls?q=is%3Apr+is%3Aclosed+author%3AAyush-iitkgp)
 
 
 It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.
