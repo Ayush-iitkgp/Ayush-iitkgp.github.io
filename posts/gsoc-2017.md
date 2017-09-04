@@ -26,23 +26,12 @@ Very similar to any Machine Lerning problem, we approached the problem of parame
 
 
 
-<! -- ###1. Support for complex-domain linear programs
- 
-During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post [here](https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/).
 
-###2. Support for second order conic programs
+The exhaustive list of pull requests can be found [here](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/pulls?q=is%3Apr+is%3Aclosed+author%3AAyush-iitkgp).
 
-In this phase of the project, I in consulation with my mentors, rewrote many the second order cone atoms such as abs, norm to accept complex arguments. We also had an intense discussion on whether redefining the above atoms to accept complex arguments would violate DCP compliance and we came to a conclusion that defining inverse or the square atoms on complex variables neither makes sense nor does it preserve the DCP compliance.
+I am glad to have been successfully implemented what I proposed.
 
-###3. Support for Complex Semidefinite programs
-
-The above 2 phases were relatively difficult for us as we had no literature references and the decision we made were solely based on our understanding and intuition. During this phase, we used the mapping in the introductory section of the research paper [here](http://arxiv.org/pdf/1007.2905v2.pdf) to transform a complex semidefinite program to the corresponding real semidefinite program. Presently, I am writing test cases to check the correctness of our implementation.
-
-The exhaustive list of commits can be found [here](https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2).
-
-I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. --!>
-
-## References
+# References
 
 [1].[Parameter Estimation for Differential Equation Models Using a Framework of Measurement Error in Regression Models](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631937/)
 
