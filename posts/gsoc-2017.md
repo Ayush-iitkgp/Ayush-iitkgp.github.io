@@ -22,6 +22,8 @@ Differential equation models are widely used in many scientific fields that incl
 
 The expected outcome of my project was **set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning.**
 
+Very similar to any Machine Lerning problem, we approached the problem of parameter estimation of differential equations by 2 ways: the Bayesian approach (where the idea is to find the probability distribution of the parameters) and the optimization approach (where we are interested to know the point estimates of the parameters).
+
 ###1. Support for complex-domain linear programs
 
 During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post [here](https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/).
