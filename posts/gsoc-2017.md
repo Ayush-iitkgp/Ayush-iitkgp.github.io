@@ -28,7 +28,7 @@ Studies of HIV dynamics in AIDS research are very important for understanding th
 
 One popular HIV dynamic model can be written as:
 
-<center><img src="/images/HIV.png" alt="HIV-AIDS Dynamics Differential Equation" height="400px" width="375px" border="1px" style="margin: 0px 20px"></center>
+<center><img src="/images/HIV.png" alt="HIV-AIDS Dynamics Differential Equation" height="300px" width="500px" border="1px" style="margin: 0px 20px"></center>
 
 where (T) is target cells which are assumed to be produced at a constant rate s and which are assumed to die at rate d per cell. Productive infection by virus (V), occurs by virus interacting with target cells at a rate proportional to the product of their densities i.e at rate $\beta$VT, where $\beta$ is called the infection rate constant. Productively infected cells (I) are assumed to die at rate $\delta$ per cell. Virus is produced from productively infected cells at rate p per cell and is assumed to either infect new cells or be cleared. In the basic model, loss of virus by cell infection is included in the clearance process and virus is assumed to be cleared by all mechanisms at rate c per virion.
 
