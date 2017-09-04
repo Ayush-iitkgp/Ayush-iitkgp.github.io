@@ -160,7 +160,6 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/</loc>
   <lastmod>2017-09-04T19:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/" />
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/index.src.html</loc>
@@ -205,6 +204,15 @@
   <loc>http://Ayush-iitkgp.github.io/de/stories/juliacon-2016-talk/</loc>
   <lastmod>2017-09-04T19:59:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/" />
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/de/stories/juliacon-2017-talk/</loc>
+  <lastmod>2017-09-04T20:01:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/juliacon-2017-talk/" />
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/de/stories/juliacon-2017-talk/index.src.html</loc>
+  <lastmod>2017-09-04T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/stories/listings-demo/</loc>
@@ -376,7 +384,6 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/</loc>
   <lastmod>2017-09-04T19:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/" />
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/stories/applications-of-convexjl-in-optimization-involving-complex-numbersslides/index.src.html</loc>
@@ -421,6 +428,15 @@
   <loc>http://Ayush-iitkgp.github.io/hi/stories/juliacon-2016-talk/</loc>
   <lastmod>2017-09-04T19:59:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/" />
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/hi/stories/juliacon-2017-talk/</loc>
+  <lastmod>2017-09-04T20:01:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/stories/juliacon-2017-talk/" />
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/hi/stories/juliacon-2017-talk/index.src.html</loc>
+  <lastmod>2017-09-04T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/stories/listings-demo/</loc>
@@ -530,14 +546,6 @@
   <lastmod>2017-08-30T05:07:00Z</lastmod>
  </url>
  <url>
-  <loc>http://Ayush-iitkgp.github.io/stories/gsoc16/</loc>
-  <lastmod>2017-08-27T01:15:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/stories/gsoc16/index.src.html</loc>
-  <lastmod>2017-08-27T01:09:00Z</lastmod>
- </url>
- <url>
   <loc>http://Ayush-iitkgp.github.io/stories/handbook/</loc>
   <lastmod>2017-08-27T01:15:00Z</lastmod>
  </url>
@@ -548,6 +556,14 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/</loc>
   <lastmod>2017-08-27T01:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/juliacon-2017-talk/</loc>
+  <lastmod>2017-09-04T20:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/stories/juliacon-2017-talk/index.src.html</loc>
+  <lastmod>2017-09-04T19:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/listings-demo/</loc>
@@ -567,7 +583,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/slides-demo/</loc>
-  <lastmod>2017-09-04T19:56:00Z</lastmod>
+  <lastmod>2017-09-04T19:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/social_buttons/</loc>
