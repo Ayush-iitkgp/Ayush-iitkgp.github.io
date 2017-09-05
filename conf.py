@@ -160,7 +160,7 @@ NAVIGATION_LINKS = {
 
         
         
-        ("https://drive.google.com/open?id=0B2oOdWdSJWa1aTBpU2ZlUm5oTUU", "Resume"),
+        ("https://drive.google.com/open?id=0B2oOdWdSJWa1VFlGdW02blgzTU0", "Resume"),
         #("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
