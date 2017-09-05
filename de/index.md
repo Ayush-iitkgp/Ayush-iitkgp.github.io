@@ -17,14 +17,15 @@
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
 
 
-I am a final year graduate student at the Indian Institute of Technology(IIT), Kharagpur pursuing majors in Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
+I am a recent graduate student from the Indian Institute of Technology(IIT), Kharagpur pursuing majors in Mathematics and Computer Science with micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
 
-Recently, I have been involved in the application of optimization techniques in field of portfolio optimization. Currently, I am implementing the support for the **Complex SemiDefinite Programming** in [Convex.jl](http://convexjl.readthedocs.io/en/latest/) under the guidance of [Madeleine Udell](https://people.orie.cornell.edu/mru8/) and [Dvijotham Krishnamurthy](http://www.its.caltech.edu/~dvij/).
+I currently work as the Product Engineer, Data Engine at Sprinklr, India where I am implementing the machine learning module in the data flow execution pipeline for real-time or batch processing using Kafka, Spark, and Spring framework.
+
+Recently, I have been involved in the project titled "[Machine learning tools for classification of qualitative traits of differential equation solutions](https://julialang.org/soc/projects/diffeq.html#machine-learning-tools-for-classification-of-qualitative-traits-of-differential-equation-solutions)" where I developed set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning under the mentorship of [Chris Rackauckas](http://www.chrisrackauckas.com/).
+
+As Google Summer of Code 2016 student, I implemented the support for the **Complex SemiDefinite Programming** in [Convex.jl](http://convexjl.readthedocs.io/en/latest/) under the guidance of [Madeleine Udell](https://people.orie.cornell.edu/mru8/) and [Dvijotham Krishnamurthy](http://www.its.caltech.edu/~dvij/). I have also been part of the project involving the application of optimization techniques in field of portfolio optimization. 
 
 While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, writing, running and playing cricket in one of the grounds at [Tata Sports Complex.](https://wiki.metakgp.org/w/Tata_Sports_Complex)</p>
-
-**I am actively looking for a job**. Contact me if you are interested in my profile.
-
 
 ## Contact 
 **Email:** | **ayush.pandey@iitkgp.ac.in**
@@ -36,14 +37,21 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Updates
 
-**29th Aug, 2016:** I would be working as Teaching Assitant for the NPTEL online course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
+**Jun, 2017:** The unbelievable journey has finally concluded. I am graduating from the Indian Institute of Technology Kharagpur with majors in Mathematics and Computing Sciences and a micro-specialization in Optimization Theory and Applications.
 
-**25th July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
+**May, 2017:** I will be working with Julia Language to add Machine Learning functionality in [DiffEqParamEstim.jl](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl) as Google Summer of Code 2017 student. [Here](https://summerofcode.withgoogle.com/projects/#5914180975591424) is my proposal. 
 
-**24th June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
 
-**12th May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
+**Apr, 2017:** I am honoured to receive Institute Blue for my contribution to the game of cricket in IIT Kharagpur at the Annual Gymkhana Awards ceremony.
 
-**22nd Apr, 2016:** It gives me immense pleasure to announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled *Adding support for complex-domain convex optimization problems in Convex.jl*
+**Aug, 2016:** I would be working as Teaching Assitant for the NPTEL online course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
 
-**2nd Feb, 2016:** IIT Kharagpur won the General Championship in the **4th Inter IIT Tech Meet**. So proud to be the member of the contingent.
+**July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
+
+**June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
+
+**May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
+
+**Apr, 2016:** It gives me immense pleasure to announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled *Adding support for complex-domain convex optimization problems in Convex.jl*
+
+**Feb, 2016:** IIT Kharagpur won the General Championship in the **4th Inter IIT Tech Meet**. So proud to be the member of the contingent.
