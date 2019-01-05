@@ -41,7 +41,7 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **Jul, 2017:** The new phase of life has begun, I am joining Sprinklr as a Product Engineer in their R&D department. I will be starting to work with the Data Engine team  where we will be implementing the machine learning module in the data flow execution pipeline.
 
-**Jun, 2017:** It feel honoured to present my work related to the **Applications of Convex.jl in Optimization Involving Complex Numbers** at JuliaCon'17 held at University of California, Berkeley. [Here is the link to my talk](https://www.youtube.com/watch?v=dIlarXpwT5I) I delivered .
+**Jun, 2017:** It feel honoured to present my work related to the **Applications of Convex.jl in Optimization Involving Complex Numbers** at JuliaCon'17 held at University of California, Berkeley. [Here is the link to the talk](https://www.youtube.com/watch?v=dIlarXpwT5I) I delivered .
 
 **Jun, 2017:** The unbelievable journey has finally concluded. I am graduating from the Indian Institute of Technology Kharagpur with majors in Mathematics and Computing Sciences and a micro-specialization in Optimization Theory and Applications.
 
