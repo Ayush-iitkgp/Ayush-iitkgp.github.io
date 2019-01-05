@@ -41,6 +41,8 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **Jul, 2017:** The new phase of life has begun, I am joining Sprinklr as a Product Engineer in their R&D department. I will be starting to work with the Data Engine team  where we will be implementing the machine learning module in the data flow execution pipeline.
 
+**Jun, 2017:** It feel honoured to present my work related to the **Applications of Convex.jl in Optimization Involving Complex Numbers** at JuliaCon'17 held at University of California, Berkeley. [Here is the link to my talk](https://www.youtube.com/watch?v=dIlarXpwT5I) I delivered .
+
 **Jun, 2017:** The unbelievable journey has finally concluded. I am graduating from the Indian Institute of Technology Kharagpur with majors in Mathematics and Computing Sciences and a micro-specialization in Optimization Theory and Applications.
 
 **May, 2017:** I will be working with Julia Language to add Machine Learning functionality in [DiffEqParamEstim.jl](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl) as Google Summer of Code 2017 student. [Here](https://summerofcode.withgoogle.com/projects/#5914180975591424) is my proposal. 
@@ -50,9 +52,9 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **Aug, 2016:** I would be working as Teaching Assitant for the NPTEL online course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
 
-**July, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
+**Jul, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
 
-**June, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
+**Jun, 2016:** It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. [Here is the talk](/stories/juliacon-2016-talk/) I delivered to introduce the community of my work.
 
 **May, 2016:** Joining Samsung Research Institute, Bangalore as Student Trainee.
 
