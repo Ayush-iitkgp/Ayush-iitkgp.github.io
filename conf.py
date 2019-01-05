@@ -146,13 +146,16 @@ NAVIGATION_LINKS = {
         #   ('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
         #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 
-        ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
         ("/blog", "Blog"),
+        ("https://drive.google.com/open?id=0B2oOdWdSJWa1VFlGdW02blgzTU0", "Resume"),
+        ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "University Projects"),
+        ("/posts/gsoc-2017/", "GSoC'17"),
+        ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
 
         
-        ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Flutura Analytics"),
+        # ('https://drive.google.com/open?id=0B2oOdWdSJWa1UE41cHlCZEdZOTQ', "Flutura Analytics"),
 
-        ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "Projects"),
+        
         #('https://drive.google.com/open?id=0B2oOdWdSJWa1WjNUM3RTNVlrSVE', "Data Analytics"),
 
           #('/stories/juliacon.slides.html/', 'JuliaCon2016 Presentation'),
@@ -160,7 +163,7 @@ NAVIGATION_LINKS = {
 
         
         
-        ("https://drive.google.com/open?id=0B2oOdWdSJWa1VFlGdW02blgzTU0", "Resume"),
+        
         #("/galleries", "Gallery"),
         #("/blog", "gsoc"),
 
