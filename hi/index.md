@@ -16,7 +16,7 @@
     <p style="float: left;"><img src="/images/zemanta_pic.jpg" class="img-circle" height="245px" width="245px" border="1px" style="margin: 0px 20px" ></p>
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
 
-I am a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder insfrastucture.
+I am a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infastructure.
 
 Before joining Zemanta, I worked as the Product Engineer, Data Engine at Sprinklr, India where I was involved in implementing the machine learning module in the data flow execution pipeline using Kafka, Spark, and Spring framework.
 
