@@ -25,7 +25,7 @@ SITE_URL = "http://Ayush-iitkgp.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://Ayush-iitkgp.github.io/"
-BLOG_EMAIL = "ayush.pandey@iitkgp.ac.in"
+BLOG_EMAIL = "ayushpandey.iitkgp@gmail.com"
 BLOG_DESCRIPTION = "Ayush Pandey"  # (translatable)
 
 # Nikola is multilingual!
