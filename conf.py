@@ -147,7 +147,7 @@ NAVIGATION_LINKS = {
         #   ('/stories/juliacon-2016-talk/', 'Talk')), "GSoC'16"),
 
         ("/blog", "Blog"),
-        ("https://drive.google.com/open?id=0B2oOdWdSJWa1VFlGdW02blgzTU0", "Resume"),
+        ("https://drive.google.com/file/d/1Vz5m3MWiulh-_VJVASmGYiiwbK8ifE8q/view?usp=sharing", "Resume"),
         ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "University Projects"),
         ("/posts/gsoc-2017/", "GSoC'17"),
         ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
