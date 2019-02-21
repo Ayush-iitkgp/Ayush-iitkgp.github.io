@@ -11,7 +11,11 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/cat_posts.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/categories/data-science.xml</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/gsoc16.xml</loc>
@@ -23,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/categories/machine-learning.xml</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/categories/application-of-novelty-detection-algorithms-to-predict-electricity-theft.xml</loc>
@@ -31,7 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/categories/cat_posts.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/de/categories/data-science.xml</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/categories/gsoc16.xml</loc>
@@ -43,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/categories/machine-learning.xml</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/galleries/4th-Inter-IIT-Tech-Meet/rss.xml</loc>
@@ -71,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/de/rss.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/galleries/4th-Inter-IIT-Tech-Meet/rss.xml</loc>
@@ -103,7 +111,11 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/cat_posts.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://Ayush-iitkgp.github.io/hi/categories/data-science.xml</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/gsoc16.xml</loc>
@@ -115,7 +127,7 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/machine-learning.xml</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/hi/galleries/4th-Inter-IIT-Tech-Meet/rss.xml</loc>
@@ -143,14 +155,14 @@
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/hi/rss.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/rss.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://Ayush-iitkgp.github.io/sitemap.xml</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </sitemap>
 </sitemapindex>

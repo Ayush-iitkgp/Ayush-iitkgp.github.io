@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2019/</loc>
-  <lastmod>2019-01-21T13:12:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
@@ -35,7 +35,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/application-of-novelty-detection-algorithms-to-predict-electricity-theft/</loc>
@@ -44,6 +44,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/cat_posts/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/categories/data-science/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/gsoc16/</loc>
@@ -75,11 +79,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/2019/</loc>
-  <lastmod>2019-01-21T13:12:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/archive.html</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/blog/</loc>
@@ -87,7 +91,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/categories/</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/categories/application-of-novelty-detection-algorithms-to-predict-electricity-theft/</loc>
@@ -96,6 +100,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/categories/cat_posts/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/de/categories/data-science/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/categories/gsoc16/</loc>
@@ -144,6 +152,11 @@
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/" />
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/de/posts/ctr-analysis-using-spark/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/ctr-analysis-using-spark/" />
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/de/posts/exciting-summers-ahead/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/" />
@@ -167,10 +180,6 @@
   <loc>http://Ayush-iitkgp.github.io/de/posts/one-class-classification-algorithms/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/" />
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/de/posts/using-machine-learning-to-ensure-high-quality-traffic/</loc>
-  <lastmod>2019-01-21T13:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/de/posts/when-does-traditional-classification-algorithm-fail/</loc>
@@ -303,11 +312,11 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/2019/</loc>
-  <lastmod>2019-01-21T13:12:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/archive.html</loc>
-  <lastmod>2019-02-19T15:22:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/blog/</loc>
@@ -315,7 +324,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/</loc>
-  <lastmod>2019-01-04T14:16:00Z</lastmod>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/application-of-novelty-detection-algorithms-to-predict-electricity-theft/</loc>
@@ -324,6 +333,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/cat_posts/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/hi/categories/data-science/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/categories/gsoc16/</loc>
@@ -372,6 +385,11 @@
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/" />
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/hi/posts/ctr-analysis-using-spark/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/ctr-analysis-using-spark/" />
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/hi/posts/exciting-summers-ahead/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/" />
@@ -395,10 +413,6 @@
   <loc>http://Ayush-iitkgp.github.io/hi/posts/one-class-classification-algorithms/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/" />
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/hi/posts/using-machine-learning-to-ensure-high-quality-traffic/</loc>
-  <lastmod>2019-01-21T13:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/hi/posts/when-does-traditional-classification-algorithm-fail/</loc>
@@ -510,6 +524,10 @@
   <lastmod>2019-01-04T14:16:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/ctr-analysis-using-spark/</loc>
+  <lastmod>2019-02-21T10:47:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</loc>
   <lastmod>2019-01-04T14:15:00Z</lastmod>
  </url>
@@ -528,10 +546,6 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/</loc>
   <lastmod>2019-01-04T14:16:00Z</lastmod>
- </url>
- <url>
-  <loc>http://Ayush-iitkgp.github.io/posts/using-machine-learning-to-ensure-high-quality-traffic/</loc>
-  <lastmod>2019-01-21T13:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/when-does-traditional-classification-algorithm-fail/</loc>
