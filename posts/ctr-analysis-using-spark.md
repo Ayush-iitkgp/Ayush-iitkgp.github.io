@@ -30,13 +30,13 @@ But, Pandas has a huge problem, it has to load all the dataset in memory in orde
 
 In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. 
 
-### Setting up notebook and importing libraries
+### **Setting up notebook and importing libraries**
 
-#### Pandas
+#### **Pandas**
 
 	import pandas as pd
 
-#### Spark
+#### **Spark**
 
 	import os
 	import sys
@@ -46,7 +46,6 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 	sys.path.insert(0, spark_home + "/python")
 	sys.path.insert(0, os.path.join(spark_home, "python/lib/py4j-0.10.7-src.zip"))
 
-
 	from  pyspark import SparkContext
 	from pyspark.conf import SparkConf
 	CLUSTER_URL = "spark://zemds-10002-prod-nydc1.nydc1.outbrain.com:7077"
@@ -55,13 +54,13 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 	sc = SparkContext(conf=conf)
 	print(sc.version)
 
-### Reading CSV File
+### **Reading CSV File**
 
-#### Pandas
+#### **Pandas**
 
 	df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
 
-#### Spark
+#### **Spark**
 
 	from pyspark.sql.types import StructType, StructField
 	from pyspark.sql.types import DoubleType, IntegerType, StringType
@@ -70,20 +69,20 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 	# df = spark.read.csv(file_location, header=False, inferSchema=True, sep="\t")
 	# df.cache()
 
-### Cleaning data
+### **Cleaning data**
 
-#### Pandas
-
-
-#### Spark
+#### **Pandas**
 
 
-### Spend, CTR, CPC Per Algo
-
-#### Pandas
+#### **Spark**
 
 
-#### Spark
+### **Calculating Spend, CTR, CPC Per Algo**
+
+#### **Pandas**
+
+
+#### **Spark**
 
 
 <div id="disqus_thread"></div>

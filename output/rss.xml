@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 21 Feb 2019 11:27:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Click Through Rate Analysis using Spark</title><link>http://Ayush-iitkgp.github.io/posts/ctr-analysis-using-spark/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 21 Feb 2019 11:29:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Click Through Rate Analysis using Spark</title><link>http://Ayush-iitkgp.github.io/posts/ctr-analysis-using-spark/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In recent years, programmatic advertising is been taking over the online advertisement industry. To enable automatic selling and purchasing ad impressions between advertisers and publishers through real-time auctions, Real-Time Bidding (RTB) is quickly becoming the leading method.&lt;/p&gt;
 &lt;p&gt;In contrast to the traditional online ad market, where a certain amount of impressions is sold at a fixed rate, RTB allows advertisers to bid each impression individually in real time at a cost based on impression-level features. Real-time Bidding (RTB) is a way of transacting media that allows an individual ad impression to be put up for bid in real-time. This is done through a programmatic &lt;strong&gt;on-the-spot auction&lt;/strong&gt;, which is similar to how financial markets operate. RTB allows for Addressable Advertising; the ability to serve ads to consumers directly based on their demographic, psychographic, or behavioral attributes.&lt;/p&gt;
 &lt;p&gt;Many DSPs (Demand Side Platforms) act as agents for the advertisers and take part in the real-time auction on behalf of them. In order to enable real-time bidding and provide the advertisers with the clicks at the lowest price possible, DSPs develop their own machine learning algorithms using techniques such as &lt;a href="https://en.wikipedia.org/wiki/Feature_hashing"&gt;hashing trick&lt;/a&gt;, feature combinations, stochastic gradient descent etc.&lt;/p&gt;
@@ -9,13 +9,13 @@
 &lt;p&gt;But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, &lt;strong&gt;Pandas needs the RAM size to be 3 times the size of the dataset&lt;/strong&gt; and it can not be run into a distributed environment as cluster of machines. This is where &lt;a href="https://spark.apache.org/"&gt;Apache Spark&lt;/a&gt; is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.&lt;/p&gt;
 &lt;h2&gt;Migrating to Spark from Pandas&lt;/h2&gt;
 &lt;p&gt;In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. &lt;/p&gt;
-&lt;h4&gt;Setting up notebook and importing libraries&lt;/h4&gt;
-&lt;h5&gt;Pandas&lt;/h5&gt;
+&lt;h4&gt;&lt;strong&gt;Setting up notebook and importing libraries&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 &lt;/pre&gt;
 
 
-&lt;h5&gt;Spark&lt;/h5&gt;
+&lt;h5&gt;&lt;strong&gt;Spark&lt;/strong&gt;&lt;/h5&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
 &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'SPARK_HOME'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"/home/spark-2.3.2-bin-hadoop2.7"&lt;/span&gt;
@@ -23,7 +23,6 @@
 &lt;span class="n"&gt;spark_home&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"SPARK_HOME"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;spark_home&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;"/python"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;spark_home&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"python/lib/py4j-0.10.7-src.zip"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
 
 &lt;span class="kn"&gt;from&lt;/span&gt;  &lt;span class="nn"&gt;pyspark&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SparkContext&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyspark.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SparkConf&lt;/span&gt;
@@ -35,13 +34,13 @@
 &lt;/pre&gt;
 
 
-&lt;h4&gt;Reading CSV File&lt;/h4&gt;
-&lt;h5&gt;Pandas&lt;/h5&gt;
+&lt;h4&gt;&lt;strong&gt;Reading CSV File&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
 &lt;/pre&gt;
 
 
-&lt;h5&gt;Spark&lt;/h5&gt;
+&lt;h5&gt;&lt;strong&gt;Spark&lt;/strong&gt;&lt;/h5&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyspark.sql.types&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StructType&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StructField&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyspark.sql.types&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DoubleType&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;IntegerType&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StringType&lt;/span&gt;
 &lt;span class="n"&gt;file_location&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hdfs://zemds-10002-prod-nydc1.nydc1.outbrain.com:9000/outbrain/zemds/hadoop/dataNode/2019_01_08_research_pyspark/data_large_tsv.tsv"&lt;/span&gt;
@@ -51,12 +50,12 @@
 &lt;/pre&gt;
 
 
-&lt;h4&gt;Cleaning data&lt;/h4&gt;
-&lt;h5&gt;Pandas&lt;/h5&gt;
-&lt;h5&gt;Spark&lt;/h5&gt;
-&lt;h4&gt;Spend, CTR, CPC Per Algo&lt;/h4&gt;
-&lt;h5&gt;Pandas&lt;/h5&gt;
-&lt;h5&gt;Spark&lt;/h5&gt;
+&lt;h4&gt;&lt;strong&gt;Cleaning data&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;strong&gt;Spark&lt;/strong&gt;&lt;/h5&gt;
+&lt;h4&gt;&lt;strong&gt;Calculating Spend, CTR, CPC Per Algo&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;strong&gt;Spark&lt;/strong&gt;&lt;/h5&gt;
 &lt;div id="disqus_thread"&gt;&lt;/div&gt;
 
 &lt;script&gt;
