@@ -23,11 +23,13 @@ Like the standard practice in most of the data science use cases, whenever a new
 
 Due to the huge volume of bid requests (around a million bid requests per second), the amount of data collected during AB is in the order of 100 GBs. Python's Pandas library has basically all the functionality needed to do the offline analysis of the data collected in terms of CPCs, spend, clicks, CTR, AUC etc. 
 
-But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, **Pandas needs the RAM size to be 3 times the size of the dataset** and it can not be run into a distributed environment as cluster of machines. This is where [Apache Spark](https://spark.apache.org/) is useful as it can process the datasets whose size is more than the size of the RAM.
+But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, **Pandas needs the RAM size to be 3 times the size of the dataset** and it can not be run into a distributed environment as cluster of machines. This is where [Apache Spark](https://spark.apache.org/) is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.
 
-# Apache Spark
 
-# Pandas Vs Apache Spark
+
+# Migrating to Spark from Pandas
+
+
 
 Pictographically, the RTB ecosystem can be represented as: 
 

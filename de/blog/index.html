@@ -69,9 +69,8 @@
 <h2>Motivation</h2>
 <p>Like the standard practice in most of the data science use cases, whenever a new algorithm is developed, they are put into A/B test against the already existing algorithm in the production (atleast for few days) in order to do determine which algorithm suits the business metrics better. </p>
 <p>Due to the huge volume of bid requests (around a million bid requests per second), the amount of data collected during AB is in the order of 100 GBs. Python's Pandas library has basically all the functionality needed to do the offline analysis of the data collected in terms of CPCs, spend, clicks, CTR, AUC etc. </p>
-<p>But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, <strong>Pandas needs the RAM size to be 3 times the size of the dataset</strong> and it can not be run into a distributed environment as cluster of machines. This is where <a href="https://spark.apache.org/">Apache Spark</a> is useful as it can process the datasets whose size is more than the size of the RAM.</p>
-<h2>Apache Spark</h2>
-<h2>Pandas Vs Apache Spark</h2>
+<p>But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, <strong>Pandas needs the RAM size to be 3 times the size of the dataset</strong> and it can not be run into a distributed environment as cluster of machines. This is where <a href="https://spark.apache.org/">Apache Spark</a> is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.</p>
+<h2>Migrating to Spark from Pandas</h2>
 <p>Pictographically, the RTB ecosystem can be represented as: </p>
 <p></p>
 <center><img src="../../images/rtb.png" alt="RTB ecosystem" height="300px" width="500px" border="1px" style="margin: 0px 20px"></center>
