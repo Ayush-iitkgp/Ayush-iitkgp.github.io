@@ -48,7 +48,7 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 
 	from  pyspark import SparkContext
 	from pyspark.conf import SparkConf
-	CLUSTER_URL = "spark://zemds-10002-prod-nydc1.nydc1.outbrain.com:7077"
+	CLUSTER_URL = "spark://address:7077"
 	conf = SparkConf()
 	conf.setMaster(CLUSTER_URL).setAppName("CTR Analysis").set("spark.executor.memory", "120g")
 	sc = SparkContext(conf=conf)
@@ -64,9 +64,9 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 
 	from pyspark.sql.types import StructType, StructField
 	from pyspark.sql.types import DoubleType, IntegerType, StringType
-	file_location = "hdfs://zemds-10002-prod-nydc1.nydc1.outbrain.com:9000/outbrain/zemds/hadoop/dataNode/2019_01_08_research_pyspark/data_large_tsv.tsv"
-	df = spark.read.csv(file_location, header=False, schema=schema, sep="\t")
-	# df = spark.read.csv(file_location, header=False, inferSchema=True, sep="\t")
+	file_location = "hdfs://address:port/hadoop/dataNode/pyspark/data.csv"
+	df = spark.read.csv(file_location, header=False, schema=schema, sep=",")
+	# df = spark.read.csv(file_location, header=False, inferSchema=True, sep=",")
 	# df.cache()
 
 ### **Cleaning data**

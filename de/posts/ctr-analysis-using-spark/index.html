@@ -101,7 +101,7 @@ In recent years, programmatic advertising is been taking over the online adverti
 
 <span class="kn">from</span>  <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
 <span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="kn">import</span> <span class="n">SparkConf</span>
-<span class="n">CLUSTER_URL</span> <span class="o">=</span> <span class="s2">"spark://zemds-10002-prod-nydc1.nydc1.outbrain.com:7077"</span>
+<span class="n">CLUSTER_URL</span> <span class="o">=</span> <span class="s2">"spark://address:7077"</span>
 <span class="n">conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span>
 <span class="n">conf</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="n">CLUSTER_URL</span><span class="p">)</span><span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">"CTR Analysis"</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"spark.executor.memory"</span><span class="p">,</span> <span class="s2">"120g"</span><span class="p">)</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">)</span>
@@ -118,9 +118,9 @@ In recent years, programmatic advertising is been taking over the online adverti
 <h5><strong>Spark</strong></h5>
 <pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StringType</span>
-<span class="n">file_location</span> <span class="o">=</span> <span class="s2">"hdfs://zemds-10002-prod-nydc1.nydc1.outbrain.com:9000/outbrain/zemds/hadoop/dataNode/2019_01_08_research_pyspark/data_large_tsv.tsv"</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
-<span class="c1"># df = spark.read.csv(file_location, header=False, inferSchema=True, sep="\t")</span>
+<span class="n">file_location</span> <span class="o">=</span> <span class="s2">"hdfs://address:port/hadoop/dataNode/pyspark/data.csv"</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
+<span class="c1"># df = spark.read.csv(file_location, header=False, inferSchema=True, sep=",")</span>
 <span class="c1"># df.cache()</span>
 </pre>
 
