@@ -84,13 +84,13 @@ In recent years, programmatic advertising is been taking over the online adverti
 <p>But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, <strong>Pandas needs the RAM size to be 3 times the size of the dataset</strong> and it can not be run into a distributed environment as cluster of machines. This is where <a href="https://spark.apache.org/">Apache Spark</a> is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.</p>
 <h2>Migrating to Spark from Pandas</h2>
 <p>In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. </p>
-<h4>Setting up notebook and importing libraries</h4>
-<h5>Pandas</h5>
+<h4><strong>Setting up notebook and importing libraries</strong></h4>
+<h5><strong>Pandas</strong></h5>
 <pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre>
 
 
-<h5>Spark</h5>
+<h5><strong>Spark</strong></h5>
 <pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'SPARK_HOME'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/home/spark-2.3.2-bin-hadoop2.7"</span>
@@ -98,7 +98,6 @@ In recent years, programmatic advertising is been taking over the online adverti
 <span class="n">spark_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SPARK_HOME"</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spark_home</span> <span class="o">+</span> <span class="s2">"/python"</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spark_home</span><span class="p">,</span> <span class="s2">"python/lib/py4j-0.10.7-src.zip"</span><span class="p">))</span>
-
 
 <span class="kn">from</span>  <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
 <span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="kn">import</span> <span class="n">SparkConf</span>
@@ -110,13 +109,13 @@ In recent years, programmatic advertising is been taking over the online adverti
 </pre>
 
 
-<h4>Reading CSV File</h4>
-<h5>Pandas</h5>
+<h4><strong>Reading CSV File</strong></h4>
+<h5><strong>Pandas</strong></h5>
 <pre class="code literal-block"><span></span>df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
 </pre>
 
 
-<h5>Spark</h5>
+<h5><strong>Spark</strong></h5>
 <pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StringType</span>
 <span class="n">file_location</span> <span class="o">=</span> <span class="s2">"hdfs://zemds-10002-prod-nydc1.nydc1.outbrain.com:9000/outbrain/zemds/hadoop/dataNode/2019_01_08_research_pyspark/data_large_tsv.tsv"</span>
@@ -126,12 +125,12 @@ In recent years, programmatic advertising is been taking over the online adverti
 </pre>
 
 
-<h4>Cleaning data</h4>
-<h5>Pandas</h5>
-<h5>Spark</h5>
-<h4>Spend, CTR, CPC Per Algo</h4>
-<h5>Pandas</h5>
-<h5>Spark</h5>
+<h4><strong>Cleaning data</strong></h4>
+<h5><strong>Pandas</strong></h5>
+<h5><strong>Spark</strong></h5>
+<h4><strong>Calculating Spend, CTR, CPC Per Algo</strong></h4>
+<h5><strong>Pandas</strong></h5>
+<h5><strong>Spark</strong></h5>
 <div id="disqus_thread"></div>
 
 <script>
