@@ -26,30 +26,65 @@ Due to the huge volume of bid requests (around a million bid requests per second
 But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, **Pandas needs the RAM size to be 3 times the size of the dataset** and it can not be run into a distributed environment as cluster of machines. This is where [Apache Spark](https://spark.apache.org/) is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.
 
 
-
 # Migrating to Spark from Pandas
 
 In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. 
 
-Pictographically, the RTB ecosystem can be represented as: 
+### Setting up notebook and importing libraries
 
-<center><img src="/images/rtb.png" alt="RTB ecosystem" height="300px" width="500px" border="1px" style="margin: 0px 20px"></center>
+#### Pandas
+
+	import pandas as pd
+
+#### Spark
+
+	import os
+	import sys
+	os.environ['SPARK_HOME'] = "/home/spark-2.3.2-bin-hadoop2.7"
+	os.environ['JAVA_HOME'] = "/home/jdk1.8.0_181"
+	spark_home = os.environ.get("SPARK_HOME")
+	sys.path.insert(0, spark_home + "/python")
+	sys.path.insert(0, os.path.join(spark_home, "python/lib/py4j-0.10.7-src.zip"))
 
 
+	from  pyspark import SparkContext
+	from pyspark.conf import SparkConf
+	CLUSTER_URL = "spark://zemds-10002-prod-nydc1.nydc1.outbrain.com:7077"
+	conf = SparkConf()
+	conf.setMaster(CLUSTER_URL).setAppName("CTR Analysis").set("spark.executor.memory", "120g")
+	sc = SparkContext(conf=conf)
+	print(sc.version)
 
-# References
+### Reading CSV File
 
-[1].[Parameter Estimation for Differential Equation Models Using a Framework of Measurement Error in Regression Models](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631937/)
+#### Pandas
 
-[2].[Parameter estimation: the build_loss_objective #5](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/issues/5)
+	df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
 
-[3].[Robust and efficient parameter estimation in dynamic models of biological systems](http://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-015-0219-2)
+#### Spark
 
-[4].[Parameter Estimation for Differential Equations: A Generalized Smoothing Approach](http://faculty.bscb.cornell.edu/~hooker/ODE_Estimation.pdf)
+	from pyspark.sql.types import StructType, StructField
+	from pyspark.sql.types import DoubleType, IntegerType, StringType
+	file_location = "hdfs://zemds-10002-prod-nydc1.nydc1.outbrain.com:9000/outbrain/zemds/hadoop/dataNode/2019_01_08_research_pyspark/data_large_tsv.tsv"
+	df = spark.read.csv(file_location, header=False, schema=schema, sep="\t")
+	# df = spark.read.csv(file_location, header=False, inferSchema=True, sep="\t")
+	# df.cache()
 
-[5].[Stan: A probabilistic programming language for Bayesian inference and optimization](http://www.stat.columbia.edu/~gelman/research/published/stan_jebs_2.pdf)
+### Cleaning data
 
-[6]. [Linking with Stan project #135](https://github.com/JuliaDiffEq/DifferentialEquations.jl/issues/135)
+#### Pandas
+
+
+#### Spark
+
+
+### Spend, CTR, CPC Per Algo
+
+#### Pandas
+
+
+#### Spark
+
 
 <div id="disqus_thread"></div>
 <script>
