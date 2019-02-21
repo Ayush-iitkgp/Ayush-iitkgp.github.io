@@ -1,5 +1,5 @@
 <!-- 
-.. title: Click Through Rate Analysis using Apache Spark
+.. title: Click Through Rate Analysis using Spark
 .. slug: ctr-analysis-using-spark
 .. date: 2019-02-21 02:13:21 UTC+05:30
 .. tags: Machine Learning, Data Science
