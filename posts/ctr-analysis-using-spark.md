@@ -121,6 +121,8 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
     data = (data.withColumn("ecpc", f.col("win_price")/100))
 
 
+
+
 <div id="disqus_thread"></div>
 <script>
 /**
