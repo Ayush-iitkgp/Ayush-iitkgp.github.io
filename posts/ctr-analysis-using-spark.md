@@ -30,6 +30,20 @@ But, Pandas has a huge problem, it has to load all the dataset in memory in orde
 
 In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. 
 
+Before, I jump into the coding, I would like to introduce some of the keywords used in the code:
+
+*Effective CPC*:Total money spent / Total number of clicks
+
+*Label*: It is either 0 or 1 (1 signifies that the click happened and 0 is for no click)
+
+*Win Price*: The price paid to win the on-spot auction
+
+*Bid CPC*: The price the advertizer is willing to pay for the impression
+
+**How is Win Price different from Bid CPC?**
+
+If an exchange is using [First Price Auction](https://en.wikipedia.org/wiki/First-price_sealed-bid_auction), the win pice and the bid cpc is same but if the exchange is using [Second Price Auction](https://en.wikipedia.org/wiki/Generalized_second-price_auction), the advertizer with the highest bid CPC wins but it pays the price equivalent to the second highest bid cpc hence the win price is less than the bid cpc.
+
 ## **Setting up notebook and importing libraries**
 
 #### **Pandas**
@@ -73,14 +87,14 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 
 #### **Pandas**
 
-	numeric_cols = ['click','win_price','ctr','bid_cpc']
+	numeric_cols = ['label','win_price','ctr','bid_cpc']
 	df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
 	df.dropna(inplace=True, subset=numeric_cols)
 
 
 #### **Spark**
 
-	numeric_cols = ['click','win_price','ctr','bid_cpc']
+	numeric_cols = ['label','win_price','ctr','bid_cpc']
 	df = df.dropna(subset=numeric_cols)
 
 
@@ -90,7 +104,7 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 
 	data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
     data[('win_price','sum')] = data[('win_price','sum')] / 1000.
-    data['ecpc'] = data[('win_price','sum')] / data[(c_label,'clicks')]
+    data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]
     data = pd.DataFrame(data.to_records())
     data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
 
@@ -117,8 +131,8 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
     data_clicks = data_clicks.withColumnRenamed("sum(label)", "clicks")
 	#     print data_wins.columns
     # print data_clicks.columns
-    data = data_wins.join(data_clicks, on = c_testgroup, how='inner')
-    data = (data.withColumn("ecpc", f.col("win_price")/100))
+    data = data_wins.join(data_clicks, on = 'algo', how='inner')
+    data = (data.withColumn("effective cpc", f.col("win_price")/100))
 
 
 
