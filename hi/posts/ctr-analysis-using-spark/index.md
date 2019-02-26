@@ -73,16 +73,52 @@ In new versions, Spark started to support Dataframes which is conceptually equiv
 
 #### **Pandas**
 
+	numeric_cols = ['click','win_price','ctr','bid_cpc']
+	df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
+	df.dropna(inplace=True, subset=numeric_cols)
+
 
 #### **Spark**
+
+	numeric_cols = ['click','win_price','ctr','bid_cpc']
+	df = df.dropna(subset=numeric_cols)
 
 
 ## **Calculating Spend, CTR, CPC Per Algo**
 
 #### **Pandas**
 
+	data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
+    data[('win_price','sum')] = data[('win_price','sum')] / 1000.
+    data['ecpc'] = data[('win_price','sum')] / data[(c_label,'clicks')]
+    data = pd.DataFrame(data.to_records())
+    data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+
 
 #### **Spark**
+
+	from pyspark.sql.functions import udf
+	import pyspark.sql.functions as f
+
+	def divide_by_1000(x):
+    	return x/1000.0
+
+	udfdivide_by_1000 = udf(divide_by_1000, DoubleType())
+
+	data_wins = df.groupby(['algo']).agg( {'win_price': 'sum', 'label: 'count'})
+    data_clicks = df.groupby(['algo']).agg({'label: 'sum'})
+    # print data_wins.columns
+    # print data_clicks.columns
+    # Rename the columns
+    data_wins = data_wins.withColumnRenamed("sum(win_price)", "win_price").withColumnRenamed("count(label)", "wins")
+	#     print data_wins.schema
+	#     data_wins['win_price'] = data_wins.win_price/1000.
+    data_wins = (data_wins.withColumn("win_price",udfdivide_by_1000("win_price")))
+    data_clicks = data_clicks.withColumnRenamed("sum(label)", "clicks")
+	#     print data_wins.columns
+    # print data_clicks.columns
+    data = data_wins.join(data_clicks, on = c_testgroup, how='inner')
+    data = (data.withColumn("ecpc", f.col("win_price")/100))
 
 
 <div id="disqus_thread"></div>

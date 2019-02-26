@@ -115,10 +115,54 @@
 
 <h3><strong>Cleaning data</strong></h3>
 <h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span>numeric_cols = ['click','win_price','ctr','bid_cpc']
+df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
+df.dropna(inplace=True, subset=numeric_cols)
+</pre>
+
+
 <h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span>numeric_cols = ['click','win_price','ctr','bid_cpc']
+df = df.dropna(subset=numeric_cols)
+</pre>
+
+
 <h3><strong>Calculating Spend, CTR, CPC Per Algo</strong></h3>
 <h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span>data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
+data[('win_price','sum')] = data[('win_price','sum')] / 1000.
+data['ecpc'] = data[('win_price','sum')] / data[(c_label,'clicks')]
+data = pd.DataFrame(data.to_records())
+data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+</pre>
+
+
 <h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">udf</span>
+<span class="kn">import</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">as</span> <span class="nn">f</span>
+
+<span class="k">def</span> <span class="nf">divide_by_1000</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mf">1000.0</span>
+
+<span class="n">udfdivide_by_1000</span> <span class="o">=</span> <span class="n">udf</span><span class="p">(</span><span class="n">divide_by_1000</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">())</span>
+
+<span class="n">data_wins</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span> <span class="p">{</span><span class="s1">'win_price'</span><span class="p">:</span> <span class="s1">'sum'</span><span class="p">,</span> <span class="s1">'label: '</span><span class="n">count</span><span class="s1">'})</span>
+<span class="n">data_clicks</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'label: '</span><span class="nb">sum</span><span class="s1">'})</span>
+<span class="c1"># print data_wins.columns</span>
+<span class="c1"># print data_clicks.columns</span>
+<span class="c1"># Rename the columns</span>
+<span class="n">data_wins</span> <span class="o">=</span> <span class="n">data_wins</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"sum(win_price)"</span><span class="p">,</span> <span class="s2">"win_price"</span><span class="p">)</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"count(label)"</span><span class="p">,</span> <span class="s2">"wins"</span><span class="p">)</span>
+<span class="c1">#     print data_wins.schema</span>
+<span class="c1">#     data_wins['win_price'] = data_wins.win_price/1000.</span>
+<span class="n">data_wins</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_wins</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">,</span><span class="n">udfdivide_by_1000</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">)))</span>
+<span class="n">data_clicks</span> <span class="o">=</span> <span class="n">data_clicks</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"sum(label)"</span><span class="p">,</span> <span class="s2">"clicks"</span><span class="p">)</span>
+<span class="c1">#     print data_wins.columns</span>
+<span class="c1"># print data_clicks.columns</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_wins</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_clicks</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="n">c_testgroup</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"ecpc"</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
+</pre>
+
+
 <div id="disqus_thread"></div>
 
 <script>
