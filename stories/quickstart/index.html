@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="" lang="en">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -11,33 +11,31 @@
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (de)" href="../../de/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (hi)" href="../../hi/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="canonical" href="http://Ayush-iitkgp.github.io/stories/quickstart/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ayush Pandey">
 <meta property="og:site_name" content="Ayush Pandey">
 <meta property="og:title" content="A reStructuredText Primer">
 <meta property="og:url" content="http://Ayush-iitkgp.github.io/stories/quickstart/">
-<meta property="og:description" content="A ReStructuredText Primer
-
-
-
-
-Author:Richard Jones
-
-Version:$Revision: 5801 $
-
-Copyright:This document has been placed in the public domain.
-
+<meta property="og:description" content="Author:
+Richard Jones
+Version:
+5801
+Copyright:
+This document has been placed in the public domain.
 
 
 
 Contents
 
-A ReStructuredText Primer
 Structure
-Text styl">
+Text styles
+Lists
+Preformatting (code samples)
+Sections
+Document Title / Subti">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-03-30T23:00:00-03:00">
 <link rel="alternate" hreflang="de" href="../../de/stories/quickstart/">
@@ -83,44 +81,39 @@ Text styl">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="section" id="a-restructuredtext-primer">
-<h2><a class="toc-backref" href="#id16">A ReStructuredText Primer</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
+    <div>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name">
+<col class="docinfo-content">
 <tbody valign="top">
-<tr class="field">
-<th class="field-name">Author:</th>
-<td class="field-body">Richard Jones</td>
+<tr>
+<th class="docinfo-name">Author:</th>
+<td>Richard Jones</td>
 </tr>
-<tr class="field">
-<th class="field-name">Version:</th>
-<td class="field-body">$Revision: 5801 $</td>
+<tr>
+<th class="docinfo-name">Version:</th>
+<td>5801</td>
 </tr>
-<tr class="field">
-<th class="field-name">Copyright:</th>
-<td class="field-body">This document has been placed in the public domain.</td>
+<tr>
+<th class="docinfo-name">Copyright:</th>
+<td>This document has been placed in the public domain.</td>
 </tr>
 </tbody>
 </table>
 <div class="contents alert alert-info pull-left topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
+<li><a class="reference internal" href="#structure" id="id16">Structure</a></li>
+<li><a class="reference internal" href="#text-styles" id="id17">Text styles</a></li>
+<li><a class="reference internal" href="#lists" id="id18">Lists</a></li>
+<li><a class="reference internal" href="#preformatting-code-samples" id="id19">Preformatting (code samples)</a></li>
 <li>
-<a class="reference internal" href="#a-restructuredtext-primer" id="id16">A ReStructuredText Primer</a><ul>
-<li><a class="reference internal" href="#structure" id="id17">Structure</a></li>
-<li><a class="reference internal" href="#text-styles" id="id18">Text styles</a></li>
-<li><a class="reference internal" href="#lists" id="id19">Lists</a></li>
-<li><a class="reference internal" href="#preformatting-code-samples" id="id20">Preformatting (code samples)</a></li>
-<li>
-<a class="reference internal" href="#sections" id="id21">Sections</a><ul>
-<li><a class="reference internal" href="#document-title-subtitle" id="id22">Document Title / Subtitle</a></li>
+<a class="reference internal" href="#sections" id="id20">Sections</a><ul>
+<li><a class="reference internal" href="#document-title-subtitle" id="id21">Document Title / Subtitle</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#images" id="id23">Images</a></li>
-<li><a class="reference internal" href="#what-next" id="id24">What Next?</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#images" id="id22">Images</a></li>
+<li><a class="reference internal" href="#what-next" id="id23">What Next?</a></li>
 </ul>
 </div>
 <p>The text below contains links that look like "(<a class="reference external" href="quickref.html">quickref</a>)".  These
@@ -134,7 +127,7 @@ reStructuredText.  The <a class="reference internal" href="#what-next">What Next
 further resources, including a formal reference.</p>
 </div>
 <div class="section" id="structure">
-<h3><a class="toc-backref" href="#id17">Structure</a></h3>
+<h2><a class="toc-backref" href="#id16">Structure</a></h2>
 <p>From the outset, let me say that "Structured Text" is probably a bit
 of a misnomer.  It's more like "Relaxed Text" that uses certain
 consistent patterns.  These patterns are interpreted by a HTML
@@ -165,7 +158,7 @@ text, typically used for quoting other text.</blockquote>
 </blockquote>
 </div>
 <div class="section" id="text-styles">
-<h3><a class="toc-backref" href="#id18">Text styles</a></h3>
+<h2><a class="toc-backref" href="#id17">Text styles</a></h2>
 <p>(<a class="reference external" href="quickref.html#inline-markup">quickref</a>)</p>
 <p>Inside paragraphs and other bodies of text, you may additionally mark
 text for <em>italics</em> with "<tt class="docutils literal">*italics*</tt>" or <strong>bold</strong> with
@@ -195,7 +188,7 @@ full details.</p>
 </div>
 </div>
 <div class="section" id="lists">
-<h3><a class="toc-backref" href="#id19">Lists</a></h3>
+<h2><a class="toc-backref" href="#id18">Lists</a></h2>
 <p>Lists of items come in three main flavours: <strong>enumerated</strong>,
 <strong>bulleted</strong> and <strong>definitions</strong>.  In all list cases, you may have as
 many paragraphs, sublists, etc. as you want, as long as the left-hand
@@ -317,7 +310,7 @@ Blank lines are not allowed between term and definition.</dd>
 </dl>
 </div>
 <div class="section" id="preformatting-code-samples">
-<h3><a class="toc-backref" href="#id20">Preformatting (code samples)</a></h3>
+<h2><a class="toc-backref" href="#id19">Preformatting (code samples)</a></h2>
 <p>(<a class="reference external" href="quickref.html#literal-blocks">quickref</a>)</p>
 <p>To just include a chunk of preformatted, never-to-be-fiddled-with
 text, finish the prior paragraph with "<tt class="docutils literal">::</tt>".  The preformatted
@@ -359,7 +352,7 @@ last "::" paragraph is removed
 </pre>
 </div>
 <div class="section" id="sections">
-<h3><a class="toc-backref" href="#id21">Sections</a></h3>
+<h2><a class="toc-backref" href="#id20">Sections</a></h2>
 <p>(<a class="reference external" href="quickref.html#section-structure">quickref</a>)</p>
 <p>To break longer text up into sections, you use <strong>section headers</strong>.
 These are a single line of text (one or more words) with adornment: an
@@ -416,7 +409,7 @@ their name.  To link to the <a class="reference internal" href="#lists">Lists</a
 the heading has a space in it like <a class="reference internal" href="#text-styles">text styles</a>, we need to quote
 the heading "<tt class="docutils literal">`text styles`_</tt>".</p>
 <div class="section" id="document-title-subtitle">
-<h4><a class="toc-backref" href="#id22">Document Title / Subtitle</a></h4>
+<h3><a class="toc-backref" href="#id21">Document Title / Subtitle</a></h3>
 <p>The title of the whole document is distinct from section titles and
 may be formatted somewhat differently (e.g. the HTML writer by default
 shows it as a centered heading).</p>
@@ -444,7 +437,7 @@ for aesthetics.</p>
 </div>
 </div>
 <div class="section" id="images">
-<h3><a class="toc-backref" href="#id23">Images</a></h3>
+<h2><a class="toc-backref" href="#id22">Images</a></h2>
 <p>(<a class="reference external" href="quickref.html#directives">quickref</a>)</p>
 <p>To include an image in your document, you use the the <tt class="docutils literal">image</tt> <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">directive</a>.
 For example:</p>
@@ -466,7 +459,7 @@ you wish to supply additional information, you may:</p>
 <p>See the full <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#images">image directive documentation</a> for more info.</p>
 </div>
 <div class="section" id="what-next">
-<h3><a class="toc-backref" href="#id24">What Next?</a></h3>
+<h2><a class="toc-backref" href="#id23">What Next?</a></h2>
 <p>This primer introduces the most common features of reStructuredText,
 but there are a lot more to explore.  The <a class="reference external" href="quickref.html">Quick reStructuredText</a>
 user reference is a good place to go next.  For complete details, the
