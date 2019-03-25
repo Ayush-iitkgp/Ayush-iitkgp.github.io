@@ -14,11 +14,12 @@
 [Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as th training step of th Machine Learning algorithm. As part of the Data Engine team at [Sprinklr]() I had some experince working with building data processing pipeline in Spark. In this blogpost, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
 
 **Q. Why is Apache Spark a suitable tool for building the data pipeline?**
+
 **Ans.** Few years ago, [scikit-learn]() came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.
 
 Now, I will introduce the key concepts used in the Pipelines API:
 
-**DataFrame:* This is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, strue labels, and predictions.
+**DataFrame:** This is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, strue labels, and predictions.
 
 **Transformer:** A Transformer is an algorithm which can transform one DataFrame into another DataFrame. E.g., an ML model is a Transformer which transforms a DataFrame with features into a DataFrame with predictions.
 
