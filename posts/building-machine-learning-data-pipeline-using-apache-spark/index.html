@@ -11,9 +11,7 @@
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (de)" href="../../de/rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (hi)" href="../../hi/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://Ayush-iitkgp.github.io/posts/building-machine-learning-data-pipeline-using-apache-spark/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ayush Pandey">
 <link rel="prev" href="../ctr-analysis-using-spark/" title="Click Through Rate Analysis using Spark" type="text/html">
@@ -26,8 +24,6 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 <meta property="article:published_time" content="2019-03-20T02:13:21+05:30">
 <meta property="article:tag" content="Data Science">
 <meta property="article:tag" content="Machine Learning">
-<link rel="alternate" hreflang="de" href="../../de/posts/building-machine-learning-data-pipeline-using-apache-spark/">
-<link rel="alternate" hreflang="hi" href="../../hi/posts/building-machine-learning-data-pipeline-using-apache-spark/">
 </head>
 <body class="theme-base-0d">
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -75,8 +71,8 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <h2>Introduction</h2>
-<p><a href=".">Apache Spark</a> is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as th training step of th Machine Learning algorithm. As part of the Data Engine team at <a href="https://www.sprinklr.com/">Sprinklr</a> I had some experince working with building data processing pipeline in Spark. In this blogpost, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  </p>
-<p><strong>Q. Why is Apache Spark a suitable tool for building the data pipeline?</strong></p>
+<p><a href=".">Apache Spark</a> is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as the training step of the Machine Learning algorithm. As part of the Data Engine team at <a href="https://www.sprinklr.com/">Sprinklr</a>, I had some experince building the data processing pipeline in Spark. In this blog post, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  </p>
+<p><strong>Q. Why is Apache Spark a suitable tool for building the ML data pipeline?</strong></p>
 <p><strong>Ans.</strong> Few years ago, <a href="https://scikit-learn.org/stable/">scikit-learn</a> came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.</p>
 <p>Now, I will introduce the key concepts used in the Pipelines API:</p>
 <p><strong>DataFrame:</strong> It is basically a datastructure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, true labels, and predictions.
@@ -147,6 +143,7 @@ selected.show()
 </pre>
 
 
+<p>One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. </p>
 <div id="disqus_thread"></div>
 
 <script>

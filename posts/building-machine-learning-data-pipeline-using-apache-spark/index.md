@@ -11,9 +11,9 @@
 
 # Introduction
 
-[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as th training step of th Machine Learning algorithm. As part of the Data Engine team at [Sprinklr](https://www.sprinklr.com/) I had some experince working with building data processing pipeline in Spark. In this blogpost, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
+[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as the training step of the Machine Learning algorithm. As part of the Data Engine team at [Sprinklr](https://www.sprinklr.com/), I had some experince building the data processing pipeline in Spark. In this blog post, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
 
-**Q. Why is Apache Spark a suitable tool for building the data pipeline?**
+**Q. Why is Apache Spark a suitable tool for building the ML data pipeline?**
 
 **Ans.** Few years ago, [scikit-learn](https://scikit-learn.org/stable/) came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.
 
@@ -64,6 +64,7 @@ Let's dive into the Python code using an example mentioned in the Spark's doc [h
     (7, "apache hadoop")
     ], ["id", "text"])
 
+
 **Step 2: Specify the transformers and the estimators of the pipeline**
     
     # Tokenizer is a transformer which would convert the text column into words using space as a delimeter
@@ -75,13 +76,16 @@ Let's dive into the Python code using an example mentioned in the Spark's doc [h
     # Logistic Regression is an Estimator which would take "features" and "label" as an input and create a trained model
     lr = LogisticRegression(maxIter=10, regParam=0.001)
 
+
 **Step 3: Create the pipeline using the transformers and the estimators defined in step 2**
 
     pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
 
+
 **Step 4: Call the fit() method on the pipeline to create a PipelineModel**
 
     model = pipeline.fit(training)
+
 
 **Step 5: Use the PipelineModel to do the predictions of the test dataset**
 
@@ -90,6 +94,7 @@ Let's dive into the Python code using an example mentioned in the Spark's doc [h
     selected.show()
 
 
+One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. 
 
 
 
