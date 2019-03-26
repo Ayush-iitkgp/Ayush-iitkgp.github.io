@@ -17,7 +17,7 @@
 
 **Ans.** Few years ago, [scikit-learn](https://scikit-learn.org/stable/) came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.
 
-Now, I will introduce the key concepts used in the Pipelines API:
+Now, I will introduce the key concepts used in the Pipeline API:
 
 **DataFrame:** It is basically a data structure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, true labels, and predictions.
 Dataframes can be created from the csv, json and many different file formats stored on the local filesystem. Hadoop HDFS or cloud environment such as AWS S3.
