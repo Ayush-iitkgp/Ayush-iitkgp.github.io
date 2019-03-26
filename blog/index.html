@@ -74,18 +74,10 @@ Dataframes can be created from the csv, json and many different file formats sto
 <p><strong>Parameter:</strong> These are the hyperparameters used during cross-validation phase of the ML pipeline.</p>
 <p><strong>Pipeline:</strong> A Pipeline is a sequence of Transformers and Estimators together to specify a Machine Learning workflow. For example predicting the price of house given it's breadth, length, location and age involves several stages:</p>
 <ul>
-<li>
-<p>Remove the datapoints which have null values - Transformer</p>
-</li>
-<li>
-<p>Create a new feature <strong>area</strong> using a transformer - Transformer</p>
-</li>
-<li>
-<p>Learn a prediction model using the feature vectors and the actual price - Estimator</p>
-</li>
-<li>
-<p>Use the learned model to predict the prices - Transformer</p>
-</li>
+<li>Remove the datapoints which have null values - Transformer</li>
+<li>Create a new feature <strong>area</strong> using a transformer - Transformer</li>
+<li>Learn a prediction model using the feature vectors and the actual price - Estimator</li>
+<li>Use the learned model to predict the prices - Transformer</li>
 </ul>
 <div id="disqus_thread"></div>
 

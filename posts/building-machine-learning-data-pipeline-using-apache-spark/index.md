@@ -31,11 +31,8 @@ Dataframes can be created from the csv, json and many different file formats sto
 **Pipeline:** A Pipeline is a sequence of Transformers and Estimators together to specify a Machine Learning workflow. For example predicting the price of house given it's breadth, length, location and age involves several stages:
 
 * Remove the datapoints which have null values - Transformer
-
 * Create a new feature **area** using a transformer - Transformer
-
 * Learn a prediction model using the feature vectors and the actual price - Estimator
-
 * Use the learned model to predict the prices - Transformer
 
 
