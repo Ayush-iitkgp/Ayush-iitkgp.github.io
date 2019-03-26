@@ -11,23 +11,33 @@
 
 # Introduction
 
-[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as th training step of th Machine Learning algorithm. As part of the Data Engine team at [Sprinklr]() I had some experince working with building data processing pipeline in Spark. In this blogpost, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
+[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as th training step of th Machine Learning algorithm. As part of the Data Engine team at [Sprinklr](https://www.sprinklr.com/) I had some experince working with building data processing pipeline in Spark. In this blogpost, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
 
 **Q. Why is Apache Spark a suitable tool for building the data pipeline?**
 
-**Ans.** Few years ago, [scikit-learn]() came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.
+**Ans.** Few years ago, [scikit-learn](https://scikit-learn.org/stable/) came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.
 
 Now, I will introduce the key concepts used in the Pipelines API:
 
-**DataFrame:** This is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, strue labels, and predictions.
+**DataFrame:** It is basically a datastructure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, true labels, and predictions.
+Dataframes can be created from the csv, json and many different file formats stored on the local filesystem. Hadoop HDFS or cloud environment such a AWS S3.
 
-**Transformer:** A Transformer is an algorithm which can transform one DataFrame into another DataFrame. E.g., an ML model is a Transformer which transforms a DataFrame with features into a DataFrame with predictions.
+**Transformer:** It is a method or an algorithm which can transform one DataFrame into another DataFrame. It includes SQL statements, feature transformers and learned ML models. Technically, a Transformer implements a method **transform()**. E.g., a SQL *select* statement which would return a new dataframe with only required columns. Another example is a *trained ML model* which turns a dataframe with feature vectors into a dataframe with predictions.
 
-**Estimator:** An Estimator is an algorithm which can be fit on a DataFrame to produce a Transformer. E.g., a learning algorithm is an Estimator which trains on a DataFrame and produces a model.
+**Estimator:** It is an algorithm which can be fit on a DataFrame to produce a Transformer.  Technically, an Estimator implements a method **fit()** which accepts a DataFrame and produces a **Model** which is a Transformer. For example, a machine learning algorithm is an Estimator which trains on a DataFrame and produces a trained model which is a transformer as it can transform a feature vector into predictions.
 
-**Pipeline:** A Pipeline chains multiple Transformers and Estimators together to specify an ML workflow.
+**Parameter:** These are the hyperparameters used during cross-validation phase of the ML pipeline.
 
-**Parameter:** All Transformers and Estimators now share a common API for specifying parameters.
+**Pipeline:** A Pipeline is a sequence of Transformers and Estimators together to specify a Machine Learning workflow. For example predicting the price of house given it's breadth, length, location and age involves several stages:
+
+* Remove the datapoints which have null values - Transformer
+
+* Create a new feature **area** using a transformer - Transformer
+
+* Learn a prediction model using the feature vectors and the actual price - Estimator
+
+* Use the learned model to predict the prices - Transformer
+
 
 
 <div id="disqus_thread"></div>
