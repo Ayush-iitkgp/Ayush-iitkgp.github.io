@@ -11,7 +11,7 @@
 
 # Introduction
 
-[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as the training step of the Machine Learning algorithm. As part of the Data Engine team at [Sprinklr](https://www.sprinklr.com/), I had some experince building the data processing pipeline in Spark. In this blog post, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
+[Apache Spark]() is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as the training step of the Machine Learning algorithm. As part of the Data Engine team at [Sprinklr](https://www.sprinklr.com/), I had some experience building the data processing pipeline in Spark. In this blog post, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  
 
 **Q. Why is Apache Spark a suitable tool for building the ML data pipeline?**
 
@@ -19,8 +19,8 @@
 
 Now, I will introduce the key concepts used in the Pipelines API:
 
-**DataFrame:** It is basically a datastructure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, true labels, and predictions.
-Dataframes can be created from the csv, json and many different file formats stored on the local filesystem. Hadoop HDFS or cloud environment such a AWS S3.
+**DataFrame:** It is basically a data structure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can different data types such a string, vectors, true labels, and predictions.
+Dataframes can be created from the csv, json and many different file formats stored on the local filesystem. Hadoop HDFS or cloud environment such as AWS S3.
 
 **Transformer:** It is a method or an algorithm which can transform one DataFrame into another DataFrame. It includes SQL statements, feature transformers and learned ML models. While defining a transformer, you have to specify the column it would operate on and the output column it would append to the input DataFrame. Technically, a Transformer implements a method **transform()**. E.g., a SQL *select* statement which would return a new dataframe with only required columns. Another example is a *trained ML model* which turns a dataframe with feature vectors into a dataframe with predictions.
 
@@ -28,9 +28,9 @@ Dataframes can be created from the csv, json and many different file formats sto
 
 **Parameter:** These are the hyperparameters used during cross-validation phase of the ML pipeline.
 
-**Pipeline:** A Pipeline is a sequence of PipelineStage (Transformers and Estimators)together to be running in a particular order to specify a Machine Learning workflow. **A Pipeline’s stages are specified as an ordered array**. For example predicting the price of house given it's breadth, length, location and age involves several stages:
+**Pipeline:** A Pipeline is a sequence of PipelineStage (Transformers and Estimators)together to be running in a particular order to specify a Machine Learning workflow. **A Pipeline’s stages are specified as an ordered array**. For example predicting the price of a house given it's breadth, length, location and age involve several stages:
 
-* Remove the datapoints which have all columns as null value - Transformer
+* Remove the data points which have all columns as null value - Transformer
 * Create a new feature **area** - Transformer
 * Learn a prediction model using the feature vectors and the actual price - Estimator
 * Use the learned model to predict the prices - Transformer
@@ -95,8 +95,6 @@ Let's dive into the Python code using an example mentioned in the Spark's doc [h
 
 
 One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. 
-
-
 
 
 
