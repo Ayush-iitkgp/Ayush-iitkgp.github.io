@@ -28,13 +28,20 @@ Dataframes can be created from the csv, json and many different file formats sto
 
 **Parameter:** These are the hyperparameters used during cross-validation phase of the ML pipeline.
 
-**Pipeline:** A Pipeline is a sequence of Transformers and Estimators together to specify a Machine Learning workflow. For example predicting the price of house given it's breadth, length, location and age involves several stages:
+**Pipeline:** A Pipeline is a sequence of PipelineStage (Transformers and Estimators)together to be running in a particular order to specify a Machine Learning workflow. **A Pipeline’s stages are specified as an ordered array**. For example predicting the price of house given it's breadth, length, location and age involves several stages:
 
-* Remove the datapoints which have null values - Transformer
-* Create a new feature **area** using a transformer - Transformer
+* Remove the datapoints which have all columns as null value - Transformer
+* Create a new feature **area** - Transformer
 * Learn a prediction model using the feature vectors and the actual price - Estimator
 * Use the learned model to predict the prices - Transformer
 
+A Pipeline is an *Estimator* in itself. Thus, after a Pipeline’s fit() method is called, it produces a *PipelineModel*, which is a Transformer. 
+
+PipelineModel has the same number of stages as the original Pipeline, **but all Estimators in the original Pipeline have become Transformers**. This PipelineModel is used at test time. 
+
+**Note:** Each instance of a Transformer or Estimator has a unique ID, which is useful in specifying parameters.
+
+Let's dive into the Python code using an example:
 
 
 <div id="disqus_thread"></div>

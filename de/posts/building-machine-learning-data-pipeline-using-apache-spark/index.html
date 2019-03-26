@@ -11,8 +11,8 @@
 <link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="alternate" type="application/rss+xml" title="RSS (hi)" href="../../../hi/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (de)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (hi)" href="../../../hi/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="canonical" href="http://Ayush-iitkgp.github.io/de/posts/building-machine-learning-data-pipeline-using-apache-spark/">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ayush Pandey">
@@ -84,13 +84,17 @@ Dataframes can be created from the csv, json and many different file formats sto
 <p><strong>Transformer:</strong> It is a method or an algorithm which can transform one DataFrame into another DataFrame. It includes SQL statements, feature transformers and learned ML models. Technically, a Transformer implements a method <strong>transform()</strong>. E.g., a SQL <em>select</em> statement which would return a new dataframe with only required columns. Another example is a <em>trained ML model</em> which turns a dataframe with feature vectors into a dataframe with predictions.</p>
 <p><strong>Estimator:</strong> It is an algorithm which can be fit on a DataFrame to produce a Transformer.  Technically, an Estimator implements a method <strong>fit()</strong> which accepts a DataFrame and produces a <strong>Model</strong> which is a Transformer. For example, a machine learning algorithm is an Estimator which trains on a DataFrame and produces a trained model which is a transformer as it can transform a feature vector into predictions.</p>
 <p><strong>Parameter:</strong> These are the hyperparameters used during cross-validation phase of the ML pipeline.</p>
-<p><strong>Pipeline:</strong> A Pipeline is a sequence of Transformers and Estimators together to specify a Machine Learning workflow. For example predicting the price of house given it's breadth, length, location and age involves several stages:</p>
+<p><strong>Pipeline:</strong> A Pipeline is a sequence of PipelineStage (Transformers and Estimators)together to be running in a particular order to specify a Machine Learning workflow. <strong>A Pipeline’s stages are specified as an ordered array</strong>. For example predicting the price of house given it's breadth, length, location and age involves several stages:</p>
 <ul>
-<li>Remove the datapoints which have null values - Transformer</li>
-<li>Create a new feature <strong>area</strong> using a transformer - Transformer</li>
+<li>Remove the datapoints which have all columns as null value - Transformer</li>
+<li>Create a new feature <strong>area</strong> - Transformer</li>
 <li>Learn a prediction model using the feature vectors and the actual price - Estimator</li>
 <li>Use the learned model to predict the prices - Transformer</li>
 </ul>
+<p>A Pipeline is an <em>Estimator</em> in itself. Thus, after a Pipeline’s fit() method is called, it produces a <em>PipelineModel</em>, which is a Transformer. </p>
+<p>PipelineModel has the same number of stages as the original Pipeline, <strong>but all Estimators in the original Pipeline have become Transformers</strong>. This PipelineModel is used at test time. </p>
+<p><strong>Note:</strong> Each instance of a Transformer or Estimator has a unique ID, which is useful in specifying parameters.</p>
+<p>Let's dive into the Python code using an example:</p>
 <div id="disqus_thread"></div>
 
 <script>
