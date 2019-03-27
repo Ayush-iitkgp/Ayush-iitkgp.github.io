@@ -19,32 +19,32 @@ Many DSPs (Demand Side Platforms) act as agents for the advertisers and take par
 
 # Motivation
 
-Like the standard practice in most of the data science use cases, whenever a new algorithm is developed, they are put into A/B test against the already existing algorithm in the production (atleast for few days) in order to do determine which algorithm suits the business metrics better. 
+Like the standard practice in most of the data science use cases, whenever a new algorithm is developed, they are put into A/B test against the already existing algorithm in the production (at least for few days) in order to do determine which algorithm suits the business metrics better. 
 
 Due to the huge volume of bid requests (around a million bid requests per second), the amount of data collected during AB is in the order of 100 GBs. Python's Pandas library has basically all the functionality needed to do the offline analysis of the data collected in terms of CPCs, spend, clicks, CTR, AUC etc. 
 
-But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, **Pandas needs the RAM size to be 3 times the size of the dataset** and it can not be run into a distributed environment as cluster of machines. This is where [Apache Spark](https://spark.apache.org/) is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.
+But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, **Pandas needs the RAM size to be 3 times the size of the dataset** and it can not be run into a distributed environment as cluster a of machines. This is where [Apache Spark](https://spark.apache.org/) is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.
 
 
 # Migrating to Spark from Pandas
 
 In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. 
 
-Before, I jump into the coding, I would like to introduce some of the keywords used in the code:
+Before I jump into the coding, I would like to introduce some of the keywords used in the code:
 
-*Effective CPC*:Total money spent / Total number of clicks
+*Effective CPC*: Total money spent / Total number of clicks
 
 *Label*: It is either 0 or 1 (1 signifies that the click happened and 0 is for no click)
 
 *Win Price*: The price paid to win the on-spot auction
 
-*Bid CPC*: The price the advertizer is willing to pay for the impression
+*Bid CPC*: The price the advertiser is willing to pay for the impression
 
 *CTR*: Click Through Rate = Total Number of Clicks / Total Number of Impressions
 
 **How is Win Price different from Bid CPC?**
 
-If an exchange is using [First Price Auction](https://en.wikipedia.org/wiki/First-price_sealed-bid_auction), the win pice and the bid cpc is same but if the exchange is using [Second Price Auction](https://en.wikipedia.org/wiki/Generalized_second-price_auction), the advertizer with the highest bid CPC wins but it pays the price equivalent to the second highest bid cpc hence the win price is less than the bid cpc.
+If an exchange is using [First Price Auction](https://en.wikipedia.org/wiki/First-price_sealed-bid_auction), the win pice and the bid price is same but if the exchange is using [Second Price Auction](https://en.wikipedia.org/wiki/Generalized_second-price_auction), the advertizer with the highest bid price wins but it pays the price equivalent to the second highest bid price hence the win price is less than the bid price.
 
 ## **Setting up notebook and importing libraries**
 
