@@ -19,7 +19,7 @@
 
 Now, I will introduce the key concepts used in the Pipeline API:
 
-**DataFrame:** It is basically a data structure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can store  different data types such a string, vectors, true labels, and predictions. Dataframes can be created from the csv, json and many different file formats stored on the local filesystem. Hadoop HDFS or cloud environment such as AWS S3.
+**DataFrame:** It is basically a data structure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can store  different data types such a string, vectors, true labels, and predictions. Dataframes can be created from the csv, json and many different file formats stored on the local filesystem, Hadoop HDFS or cloud environment such as AWS S3.
 
 **Transformer:** It is a method or an algorithm which can transform one DataFrame into another DataFrame. It includes SQL statements, feature transformers and learned ML models. While defining a transformer, you have to specify the column it would operate on and the output column it would append to the input DataFrame. Technically, a Transformer implements a method **transform()**. E.g., a SQL *select* statement which would return a new dataframe with only required columns. Another example is a *trained ML model* which turns a dataframe with feature vectors into a dataframe with predictions.
 
