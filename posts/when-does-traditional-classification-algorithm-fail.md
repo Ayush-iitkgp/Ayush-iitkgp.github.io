@@ -2,7 +2,7 @@
 .. title: When does traditional classification algorithm fail?
 .. slug: when-does-traditional-classification-algorithm-fail
 .. date: 2017-01-17 12:13:21 UTC+05:30
-.. tags: Machine Learning, Data, Science, Application of Novelty Detection Algorithms to predict Electricity Theft
+.. tags: Machine Learning, Application of Novelty Detection Algorithms to predict Electricity Theft, Data Science
 .. category: 
 .. link: 
 .. description: 
