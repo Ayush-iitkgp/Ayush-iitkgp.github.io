@@ -2,7 +2,7 @@
 .. title: One-Class Classification Algorithms
 .. slug: one-class-classification-algorithms
 .. date: 2017-01-22 12:13:21 UTC+05:30
-.. tags: Machine Learning, Data Science, Application of Novelty Detection Algorithms to predict Electricity Theft
+.. tags: Machine Learning, Application of Novelty Detection Algorithms to predict Electricity Theft, Data Science,
 .. category: 
 .. link: 
 .. description: 
