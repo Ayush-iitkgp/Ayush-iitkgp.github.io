@@ -42,7 +42,7 @@ Before I jump into the coding, I would like to introduce some of the keywords us
 
 *CTR*: Click Through Rate = Total Number of Clicks / Total Number of Impressions
 
-**How is Win Price different from Bid CPC?**
+**How is Win Price different from Bid Price?**
 
 If an exchange is using [First Price Auction](https://en.wikipedia.org/wiki/First-price_sealed-bid_auction), the win pice and the bid price is same but if the exchange is using [Second Price Auction](https://en.wikipedia.org/wiki/Generalized_second-price_auction), the advertizer with the highest bid price wins but it pays the price equivalent to the second highest bid price hence the win price is less than the bid price.
 
