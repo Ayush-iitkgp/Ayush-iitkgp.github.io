@@ -36,6 +36,7 @@ To achieve high CTR and Conversion Rates, DSPs heavily rely on using Artificial 
 This blog is the aggregation of all the lessons learnt while working as Data Scientist in the AdTech company. Do let me know if you have any additional comments. 
 
 Do you have any questions?
+
 Ask your questions in the comments below and I will do my best to answer.
 
 <div id="disqus_thread"></div>
