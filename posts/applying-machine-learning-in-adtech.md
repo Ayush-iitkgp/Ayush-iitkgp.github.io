@@ -16,14 +16,19 @@ In recent years, programmatic advertising is been taking over the online adverti
 1. High Click Through Rate = Number of clicks/ Number of ads shown
 2. High Conversion Rate = Number of conversions (such as purchase)/ Number of sds shown
 
-To achieve high CTR and Conversion Rates, DSPs havily rely on using Artificial Intelligence techniques and develop their in-house Machine Learning algorithms. The problem of applying Machine Learning in Adtech is different from the standard problem in many sense such as:
+To achieve high CTR and Conversion Rates, DSPs havily rely on using Artificial Intelligence techniques and develop their in-house Machine Learning algorithms. The problem of applying Machine Learning in Adtech is different from the standard problem in many sense. In the reamining blog post, I will discuss the differences and how we tackle it in the production:
 
-* *Large size of the training vector:* Every feature in the ML moldel is a categorical feature and encoding them into numerical feature explodes the size of the training vector to the order of billions. For example, one of the most important features in the ML model is the *publisher* website where the ad would be displayed which is a categorical feature and there are millions of publishers so using one-hot encoding would result in a training vector of million entries. 
+* **Large size of the training vector:** Every feature in the ML moldel is a categorical feature and encoding them into numerical feature explodes the size of the training vector to the order of billions. For example, one of the most important features in the ML model is the *publisher* website where the ad would be displayed which is a categorical feature and there are millions of publishers so using one-hot encoding would result in a training vector of million entries. 
 
-* *Skewness of the training data:*
+* **Skewness of the training data:** Typically, CTRs are much lower than 50% (generally, CTR is around 1-2%)which means that positive examples (clicks) are relatively rare, hence is the problem of skewness in the training data is introduced. 
 
-* *Rapid changes in the online ad landscape:*
+* **Rapid changes in the online ad landscape:**
 
+* **Per-coordinate learning rate:**
+
+* **Using Progressive Validation rather than cross-validation:**
+
+* **Segmented Visualization:**
 
 DSPs develop their own machine learning algorithms using techniques such as [hashing trick](https://en.wikipedia.org/wiki/Feature_hashing), feature combinations, stochastic gradient descent etc.
 
