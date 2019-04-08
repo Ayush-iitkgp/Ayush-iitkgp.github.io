@@ -33,7 +33,10 @@ To achieve high CTR and Conversion Rates, DSPs heavily rely on using Artificial 
 
 * **Segmented performance metrics instead of aggregated metrics:** One of the things that we have to take care while analyzing the performance of the models in adtech is that the aggregated performance metrics may hide effects that are specific to certain sub-populations of the data. For example, a high CTR may, in fact, be caused by a mix of low and high CTR from different ad exchanges. This makes it critical to visualize the performance metrics not only on the aggregate data but also on the various slicing of the data such as per ad exchange, per adgroup, per device type, per publisher.
 
+This blog is the aggregation of all the lessons learnt while working as Data Scientist in the AdTech company. Do let me know if you have any additional comments. 
 
+Do you have any questions?
+Ask your questions in the comments below and I will do my best to answer.
 
 <div id="disqus_thread"></div>
 <script>
