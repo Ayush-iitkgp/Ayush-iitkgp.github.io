@@ -14,7 +14,7 @@
 In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on the internet. The success of the DSPs to deliver the values to the advertizers is evaluated on the below two criteria:
 
 1. High Click Through Rate = Number of clicks/ Number of ads shown
-2. High Conversion Rate = Number of conversions (such as purchase)/ Number of sds shown
+2. High Conversion Rate = Number of conversions (such as purchase)/ Number of ads shown
 
 To achieve high CTR and Conversion Rates, DSPs havily rely on using Artificial Intelligence techniques and develop their in-house Machine Learning algorithms. The problem of applying Machine Learning in Adtech is different from the standard problem in many sense. In the reamining blog post, I will discuss the differences and how we tackle it in the production:
 
