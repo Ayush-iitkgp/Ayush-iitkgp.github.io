@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -115,31 +115,31 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 
 
 <p><strong>Step 2: Specify the transformers and the estimators of the pipeline</strong></p>
-<pre class="code literal-block"><span></span># Tokenizer is a transformer which would convert the text column into words using space as a delimeter
-tokenizer = Tokenizer(inputCol="text", outputCol="words")
+<pre class="code literal-block"><span></span><span class="o">#</span> <span class="n">Tokenizer</span> <span class="k">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="k">convert</span> <span class="n">the</span> <span class="nb">text</span> <span class="k">column</span> <span class="k">into</span> <span class="n">words</span> <span class="k">using</span> <span class="k">space</span> <span class="k">as</span> <span class="n">a</span> <span class="n">delimeter</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="ss">"text"</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="ss">"words"</span><span class="p">)</span>
 
-# HashingTF is again a transformer which takes the column "words as an input and creates a new column of a vector" 
-hashingTF = HashingTF(inputCol=tokenizer.getOutputCol(), outputCol="features")
+<span class="o">#</span> <span class="n">HashingTF</span> <span class="k">is</span> <span class="n">again</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">takes</span> <span class="n">the</span> <span class="k">column</span> <span class="ss">"words as an input and creates a new column of a vector"</span> 
+<span class="n">hashingTF</span> <span class="o">=</span> <span class="n">HashingTF</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">getOutputCol</span><span class="p">(),</span> <span class="n">outputCol</span><span class="o">=</span><span class="ss">"features"</span><span class="p">)</span>
 
-# Logistic Regression is an Estimator which would take "features" and "label" as an input and create a trained model
-lr = LogisticRegression(maxIter=10, regParam=0.001)
+<span class="o">#</span> <span class="n">Logistic</span> <span class="n">Regression</span> <span class="k">is</span> <span class="n">an</span> <span class="n">Estimator</span> <span class="n">which</span> <span class="n">would</span> <span class="n">take</span> <span class="ss">"features"</span> <span class="k">and</span> <span class="ss">"label"</span> <span class="k">as</span> <span class="n">an</span> <span class="k">input</span> <span class="k">and</span> <span class="k">create</span> <span class="n">a</span> <span class="n">trained</span> <span class="n">model</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">001</span><span class="p">)</span>
 </pre>
 
 
 <p><strong>Step 3: Create the pipeline using the transformers and the estimators defined in step 2</strong></p>
-<pre class="code literal-block"><span></span>pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
+<pre class="code literal-block"><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">hashingTF</span><span class="p">,</span> <span class="n">lr</span><span class="p">])</span>
 </pre>
 
 
 <p><strong>Step 4: Call the fit() method on the pipeline to create a PipelineModel</strong></p>
-<pre class="code literal-block"><span></span>model = pipeline.fit(training)
+<pre class="code literal-block"><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
 </pre>
 
 
 <p><strong>Step 5: Use the PipelineModel to do the predictions of the test dataset</strong></p>
-<pre class="code literal-block"><span></span>prediction = model.transform(test)
-selected = prediction.select("id", "text", "probability", "prediction")
-selected.show()
+<pre class="code literal-block"><span></span><span class="nv">prediction</span> <span class="o">=</span> <span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
+<span class="nv">selected</span> <span class="o">=</span> <span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"</span><span class="s">id</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">text</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">probability</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">prediction</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">selected</span>.<span class="k">show</span><span class="ss">()</span>
 </pre>
 
 

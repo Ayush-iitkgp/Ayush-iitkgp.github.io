@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Ayush Pandey">
@@ -169,31 +169,31 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 <p><strong>Step 2: Specify the transformers and the estimators of the pipeline</strong></p>
-<pre class="code literal-block"><span></span># Tokenizer is a transformer which would convert the text column into words using space as a delimeter
-tokenizer = Tokenizer(inputCol="text", outputCol="words")
+<pre class="code literal-block"><span></span><span class="o">#</span> <span class="n">Tokenizer</span> <span class="k">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="k">convert</span> <span class="n">the</span> <span class="nb">text</span> <span class="k">column</span> <span class="k">into</span> <span class="n">words</span> <span class="k">using</span> <span class="k">space</span> <span class="k">as</span> <span class="n">a</span> <span class="n">delimeter</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="ss">"text"</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="ss">"words"</span><span class="p">)</span>
 
-# HashingTF is again a transformer which takes the column "words as an input and creates a new column of a vector" 
-hashingTF = HashingTF(inputCol=tokenizer.getOutputCol(), outputCol="features")
+<span class="o">#</span> <span class="n">HashingTF</span> <span class="k">is</span> <span class="n">again</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">takes</span> <span class="n">the</span> <span class="k">column</span> <span class="ss">"words as an input and creates a new column of a vector"</span> 
+<span class="n">hashingTF</span> <span class="o">=</span> <span class="n">HashingTF</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">getOutputCol</span><span class="p">(),</span> <span class="n">outputCol</span><span class="o">=</span><span class="ss">"features"</span><span class="p">)</span>
 
-# Logistic Regression is an Estimator which would take "features" and "label" as an input and create a trained model
-lr = LogisticRegression(maxIter=10, regParam=0.001)
+<span class="o">#</span> <span class="n">Logistic</span> <span class="n">Regression</span> <span class="k">is</span> <span class="n">an</span> <span class="n">Estimator</span> <span class="n">which</span> <span class="n">would</span> <span class="n">take</span> <span class="ss">"features"</span> <span class="k">and</span> <span class="ss">"label"</span> <span class="k">as</span> <span class="n">an</span> <span class="k">input</span> <span class="k">and</span> <span class="k">create</span> <span class="n">a</span> <span class="n">trained</span> <span class="n">model</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">001</span><span class="p">)</span>
 </pre>
 
 
 <p><strong>Step 3: Create the pipeline using the transformers and the estimators defined in step 2</strong></p>
-<pre class="code literal-block"><span></span>pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
+<pre class="code literal-block"><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">hashingTF</span><span class="p">,</span> <span class="n">lr</span><span class="p">])</span>
 </pre>
 
 
 <p><strong>Step 4: Call the fit() method on the pipeline to create a PipelineModel</strong></p>
-<pre class="code literal-block"><span></span>model = pipeline.fit(training)
+<pre class="code literal-block"><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
 </pre>
 
 
 <p><strong>Step 5: Use the PipelineModel to do the predictions of the test dataset</strong></p>
-<pre class="code literal-block"><span></span>prediction = model.transform(test)
-selected = prediction.select("id", "text", "probability", "prediction")
-selected.show()
+<pre class="code literal-block"><span></span><span class="nv">prediction</span> <span class="o">=</span> <span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
+<span class="nv">selected</span> <span class="o">=</span> <span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"</span><span class="s">id</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">text</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">probability</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">prediction</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">selected</span>.<span class="k">show</span><span class="ss">()</span>
 </pre>
 
 
@@ -275,7 +275,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 <h3><strong>Reading CSV File</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
+<pre class="code literal-block"><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">,</span> <span class="k">names</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">error_bad_lines</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">warn_bad_lines</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
 </pre>
 
 
@@ -291,25 +291,25 @@ s.setAttribute('data-timestamp', +new Date());
 
 <h3><strong>Cleaning data</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>numeric_cols = ['label','win_price','ctr','bid_cpc']
-df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
-df.dropna(inplace=True, subset=numeric_cols)
+<pre class="code literal-block"><span></span><span class="n">numeric_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">'label','win_price','ctr','bid_cpc'</span><span class="o">]</span><span class="w"></span>
+<span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="p">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+<span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="k">True</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span><span class="w"></span>
 </pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span>numeric_cols = ['label','win_price','ctr','bid_cpc']
-df = df.dropna(subset=numeric_cols)
+<pre class="code literal-block"><span></span><span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'ctr'</span><span class="p">,</span><span class="s1">'bid_cpc'</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span>
 </pre>
 
 
 <h3><strong>Calculating Spend, CTR, CPC Per Algo</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
-data[('win_price','sum')] = data[('win_price','sum')] / 1000.
-data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]
-data = pd.DataFrame(data.to_records())
-data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+<pre class="code literal-block"><span></span><span class="k">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">]).</span><span class="n">agg</span><span class="p">(</span><span class="err">{</span><span class="s1">'win_price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="n">c_label</span><span class="p">:</span><span class="err">{</span><span class="s1">'clicks'</span><span class="p">:</span><span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="s1">'wins'</span><span class="p">:</span><span class="s1">'count'</span><span class="err">}}</span><span class="p">).</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">.</span>
+<span class="k">data</span><span class="p">[</span><span class="s1">'ecpc'</span><span class="p">]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'label,'</span><span class="n">clicks</span><span class="s1">')]</span>
+<span class="s1">data = pd.DataFrame(data.to_records())</span>
+<span class="s1">data.columns = ['',algo, '</span><span class="n">spend</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">impressions</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">clicks</span><span class="s1">', '</span><span class="n">effective</span> <span class="n">cpc</span><span class="err">'</span><span class="p">]</span>
 </pre>
 
 
@@ -650,49 +650,49 @@ s.setAttribute('data-timestamp', +new Date());
 </li>
 </ol>
 <p>After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:</p>
-<pre class="code literal-block"><span></span># Importing Packages
-Pkg.clone("https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2")
-using Convex
+<pre class="code literal-block"><span></span># <span class="nv">Importing</span> <span class="nv">Packages</span>
+<span class="nv">Pkg</span>.<span class="nv">clone</span><span class="ss">(</span><span class="s2">"</span><span class="s">https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">using</span> <span class="nv">Convex</span>
 
-# Complex LP with real variable"
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo 
-# Declare a real variable
-x = Variable(n)
-p1 = minimize(sum(x), A*x == b, x&gt;=0) 
-# Notice A*x==b is complex equality constraint 
-solve!(p1)
-x1 = x.value
+# <span class="nv">Complex</span> <span class="nv">LP</span> <span class="nv">with</span> <span class="nv">real</span> <span class="nv">variable</span><span class="s2">"</span>
+<span class="nv">n</span> <span class="o">=</span> <span class="mi">10</span> # <span class="nv">variable</span> <span class="nv">dimension</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">m</span> <span class="o">=</span> <span class="mi">5</span> # <span class="nv">number</span> <span class="nv">of</span> <span class="nv">constraints</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">xo</span> <span class="o">=</span> <span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>
+<span class="nv">b</span> <span class="o">=</span> <span class="nv">A</span> <span class="o">*</span> <span class="nv">xo</span> 
+# <span class="nv">Declare</span> <span class="nv">a</span> <span class="nv">real</span> <span class="nv">variable</span>
+<span class="nv">x</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p1</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>, <span class="nv">A</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">b</span>, <span class="nv">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span> 
+# <span class="nv">Notice</span> <span class="nv">A</span><span class="o">*</span><span class="nv">x</span><span class="o">==</span><span class="nv">b</span> <span class="nv">is</span> <span class="nv">complex</span> <span class="nv">equality</span> <span class="nv">constraint</span> 
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p1</span><span class="ss">)</span>
+<span class="nv">x1</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
 
-# Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.
-p2 = minimize(sum(x), real(A)*x == real(b),      imag(A)*x==imag(b), x&gt;=0)
-solve!(p2)
-x2 = x.value
-x1==x2 # should return true
+# <span class="nv">Let</span><span class="s1">'</span><span class="s">s now solve by decomposing complex equality constraint into the corresponding real and imaginary part.</span>
+<span class="nv">p2</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">real</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>,      <span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">x</span><span class="o">==</span><span class="nv">imag</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p2</span><span class="ss">)</span>
+<span class="nv">x2</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
+<span class="nv">x1</span><span class="o">==</span><span class="nv">x2</span> # <span class="nv">should</span> <span class="k">return</span> <span class="nv">true</span>
 
 
-# Let's now take an example where the complex variable is used
-# Complex LP with complex variable
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)+im*rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo
+# <span class="nv">Let</span><span class="s1">'</span><span class="s">s now take an example where the complex variable is used</span>
+# <span class="nv">Complex</span> <span class="nv">LP</span> <span class="nv">with</span> <span class="nv">complex</span> <span class="nv">variable</span>
+<span class="nv">n</span> <span class="o">=</span> <span class="mi">10</span> # <span class="nv">variable</span> <span class="nv">dimension</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">m</span> <span class="o">=</span> <span class="mi">5</span> # <span class="nv">number</span> <span class="nv">of</span> <span class="nv">constraints</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">xo</span> <span class="o">=</span> <span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span><span class="o">+</span><span class="nv">im</span><span class="o">*</span><span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>
+<span class="nv">b</span> <span class="o">=</span> <span class="nv">A</span> <span class="o">*</span> <span class="nv">xo</span>
 
-# Declare a complex variable
-x = ComplexVariable(n)
-p1 = minimize(real(sum(x)), A*x == b, real(x)&gt;=0, imag(x)&gt;=0)
-solve!(p1)
-x1 = x.value
+# <span class="nv">Declare</span> <span class="nv">a</span> <span class="nv">complex</span> <span class="nv">variable</span>
+<span class="nv">x</span> <span class="o">=</span> <span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p1</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">))</span>, <span class="nv">A</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">b</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">&gt;=</span><span class="mi">0</span>, <span class="nv">imag</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p1</span><span class="ss">)</span>
+<span class="nv">x1</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
 
-xr = Variable(n)
-xi = Variable(n)
-p2 = minimize(sum(xr), real(A)*xr-imag(A)*xi == real(b), imag(A)*xr+real(A)*xi == imag(b), xr&gt;=0, xi&gt;=0)
-solve!(p2)
-x1== xr.value + im*xi.value # should return true
+<span class="nv">xr</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">xi</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p2</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">xr</span><span class="ss">)</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xr</span><span class="o">-</span><span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xi</span> <span class="o">==</span> <span class="nv">real</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xr</span><span class="o">+</span><span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xi</span> <span class="o">==</span> <span class="nv">imag</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">xr</span><span class="o">&gt;=</span><span class="mi">0</span>, <span class="nv">xi</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p2</span><span class="ss">)</span>
+<span class="nv">x1</span><span class="o">==</span> <span class="nv">xr</span>.<span class="nv">value</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">xi</span>.<span class="nv">value</span> # <span class="nv">should</span> <span class="k">return</span> <span class="nv">true</span>
 </pre>
 
 
@@ -759,58 +759,58 @@ s.setAttribute('data-timestamp', +new Date());
 <ol>
 <li>
 <p>Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign <code>ComplexSign</code> which was introduced as the subtype of the user-defined type <code>Sign</code> in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with <code>ComplexSign</code></p>
-<pre class="code literal-block"><span></span>abstract Sign
-type Positive &lt;: Sign                   end
-type Negative &lt;: Sign                   end
-type NoSign &lt;: Sign                     end
-type ComplexSign &lt;: Sign                end
+<pre class="code literal-block"><span></span><span class="nv">abstract</span> <span class="nv">Sign</span>
+<span class="nv">type</span> <span class="nv">Positive</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">Negative</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">NoSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                     <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">ComplexSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                <span class="k">end</span>
 
--(s::ComplexSign) = ComplexSign()
-+(s::ComplexSign, t::ComplexSign) = s
-+(s::Sign, t::ComplexSign) = t
-+(t::ComplexSign, s::Sign) = s+t
-*(t::ComplexSign, s::ComplexSign) = t
-*(t::ComplexSign, s::Sign) = t
-*(s::Sign, t::ComplexSign) = t
-*(s::ComplexSign, m::Monotonicity) = NoMonotonicity()
-*(m::Monotonicity, s::Sign) = s * m
-*(s::ComplexSign, v::ConstVexity) = v
-*(s::ComplexSign, v::AffineVexity) = v
-*(s::ComplexSign, v::ConvexVexity) = NotDcp()
-*(s::ComplexSign, v::ConcaveVexity) = NotDcp()
-*(s::ComplexSign, v::NotDcp) = v
+<span class="o">-</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexSign</span><span class="ss">()</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span><span class="o">+</span><span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">m</span>::<span class="nv">Monotonicity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NoMonotonicity</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Monotonicity</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span> <span class="o">*</span> <span class="nv">m</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConstVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">AffineVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConvexVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConcaveVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">NotDcp</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
 </pre>
 
 
 </li>
 <li>
 <p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
-<pre class="code literal-block"><span></span><span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">n</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Tuple</span><span class="p">{</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">Int</span><span class="p">},</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
-<span class="kd">function</span> <span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span>
-  <span class="k">if</span> <span class="nx">m</span><span class="o">==</span><span class="nx">n</span>
-    <span class="k">return</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
+<pre class="code literal-block"><span></span><span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Int</span>, <span class="nv">n</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="mi">1</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Tuple</span>{<span class="nv">Int</span>, <span class="nv">Int</span>}, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">size</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">size</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
+<span class="nv">function</span> <span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span>, <span class="nv">n</span>::<span class="nv">Integer</span><span class="ss">)</span>
+  <span class="k">if</span> <span class="nv">m</span><span class="o">==</span><span class="nv">n</span>
+    <span class="k">return</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
   <span class="k">else</span>
-    <span class="nx">error</span><span class="p">(</span><span class="s2">"HermitianSemidefinite matrices must be square"</span><span class="p">)</span>
-  <span class="nx">end</span>
-<span class="nx">end</span>
+    <span class="nv">error</span><span class="ss">(</span><span class="s2">"</span><span class="s">HermitianSemidefinite matrices must be square</span><span class="s2">"</span><span class="ss">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </pre>
 
 
 <p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
-<pre class="code literal-block"><span></span>y = ComplexVariable()
-Variable of
-size: (1, 1)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
-z = HermitianSemidefinite(4)
-Variable of
-size: (4, 4)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
+<pre class="code literal-block"><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">ComplexVariable</span><span class="p">()</span>
+<span class="k">Variable</span> <span class="k">of</span>
+<span class="k">size</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sign</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">ComplexSign</span><span class="p">()</span>
+<span class="n">vexity</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">AffineVexity</span><span class="p">()</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">HermitianSemidefinite</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">Variable</span> <span class="k">of</span>
+<span class="k">size</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">sign</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">ComplexSign</span><span class="p">()</span>
+<span class="n">vexity</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">AffineVexity</span><span class="p">()</span>
 </pre>
 
 

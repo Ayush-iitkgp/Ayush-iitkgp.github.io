@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -117,7 +117,7 @@ In recent years, programmatic advertising is been taking over the online adverti
 
 <h3><strong>Reading CSV File</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
+<pre class="code literal-block"><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">,</span> <span class="k">names</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">error_bad_lines</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">warn_bad_lines</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
 </pre>
 
 
@@ -133,25 +133,25 @@ In recent years, programmatic advertising is been taking over the online adverti
 
 <h3><strong>Cleaning data</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>numeric_cols = ['label','win_price','ctr','bid_cpc']
-df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
-df.dropna(inplace=True, subset=numeric_cols)
+<pre class="code literal-block"><span></span><span class="n">numeric_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">'label','win_price','ctr','bid_cpc'</span><span class="o">]</span><span class="w"></span>
+<span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="p">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+<span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="k">True</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span><span class="w"></span>
 </pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span>numeric_cols = ['label','win_price','ctr','bid_cpc']
-df = df.dropna(subset=numeric_cols)
+<pre class="code literal-block"><span></span><span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'ctr'</span><span class="p">,</span><span class="s1">'bid_cpc'</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span>
 </pre>
 
 
 <h3><strong>Calculating Spend, CTR, CPC Per Algo</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span>data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
-data[('win_price','sum')] = data[('win_price','sum')] / 1000.
-data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]
-data = pd.DataFrame(data.to_records())
-data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+<pre class="code literal-block"><span></span><span class="k">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">]).</span><span class="n">agg</span><span class="p">(</span><span class="err">{</span><span class="s1">'win_price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="n">c_label</span><span class="p">:</span><span class="err">{</span><span class="s1">'clicks'</span><span class="p">:</span><span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="s1">'wins'</span><span class="p">:</span><span class="s1">'count'</span><span class="err">}}</span><span class="p">).</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">.</span>
+<span class="k">data</span><span class="p">[</span><span class="s1">'ecpc'</span><span class="p">]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'label,'</span><span class="n">clicks</span><span class="s1">')]</span>
+<span class="s1">data = pd.DataFrame(data.to_records())</span>
+<span class="s1">data.columns = ['',algo, '</span><span class="n">spend</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">impressions</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">clicks</span><span class="s1">', '</span><span class="n">effective</span> <span class="n">cpc</span><span class="err">'</span><span class="p">]</span>
 </pre>
 
 

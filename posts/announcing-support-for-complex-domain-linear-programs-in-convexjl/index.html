@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -81,49 +81,49 @@
 </li>
 </ol>
 <p>After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:</p>
-<pre class="code literal-block"><span></span># Importing Packages
-Pkg.clone("https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2")
-using Convex
+<pre class="code literal-block"><span></span># <span class="nv">Importing</span> <span class="nv">Packages</span>
+<span class="nv">Pkg</span>.<span class="nv">clone</span><span class="ss">(</span><span class="s2">"</span><span class="s">https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">using</span> <span class="nv">Convex</span>
 
-# Complex LP with real variable"
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo 
-# Declare a real variable
-x = Variable(n)
-p1 = minimize(sum(x), A*x == b, x&gt;=0) 
-# Notice A*x==b is complex equality constraint 
-solve!(p1)
-x1 = x.value
+# <span class="nv">Complex</span> <span class="nv">LP</span> <span class="nv">with</span> <span class="nv">real</span> <span class="nv">variable</span><span class="s2">"</span>
+<span class="nv">n</span> <span class="o">=</span> <span class="mi">10</span> # <span class="nv">variable</span> <span class="nv">dimension</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">m</span> <span class="o">=</span> <span class="mi">5</span> # <span class="nv">number</span> <span class="nv">of</span> <span class="nv">constraints</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">xo</span> <span class="o">=</span> <span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>
+<span class="nv">b</span> <span class="o">=</span> <span class="nv">A</span> <span class="o">*</span> <span class="nv">xo</span> 
+# <span class="nv">Declare</span> <span class="nv">a</span> <span class="nv">real</span> <span class="nv">variable</span>
+<span class="nv">x</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p1</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>, <span class="nv">A</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">b</span>, <span class="nv">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span> 
+# <span class="nv">Notice</span> <span class="nv">A</span><span class="o">*</span><span class="nv">x</span><span class="o">==</span><span class="nv">b</span> <span class="nv">is</span> <span class="nv">complex</span> <span class="nv">equality</span> <span class="nv">constraint</span> 
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p1</span><span class="ss">)</span>
+<span class="nv">x1</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
 
-# Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.
-p2 = minimize(sum(x), real(A)*x == real(b),      imag(A)*x==imag(b), x&gt;=0)
-solve!(p2)
-x2 = x.value
-x1==x2 # should return true
+# <span class="nv">Let</span><span class="s1">'</span><span class="s">s now solve by decomposing complex equality constraint into the corresponding real and imaginary part.</span>
+<span class="nv">p2</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">real</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>,      <span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">x</span><span class="o">==</span><span class="nv">imag</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p2</span><span class="ss">)</span>
+<span class="nv">x2</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
+<span class="nv">x1</span><span class="o">==</span><span class="nv">x2</span> # <span class="nv">should</span> <span class="k">return</span> <span class="nv">true</span>
 
 
-# Let's now take an example where the complex variable is used
-# Complex LP with complex variable
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)+im*rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo
+# <span class="nv">Let</span><span class="s1">'</span><span class="s">s now take an example where the complex variable is used</span>
+# <span class="nv">Complex</span> <span class="nv">LP</span> <span class="nv">with</span> <span class="nv">complex</span> <span class="nv">variable</span>
+<span class="nv">n</span> <span class="o">=</span> <span class="mi">10</span> # <span class="nv">variable</span> <span class="nv">dimension</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">m</span> <span class="o">=</span> <span class="mi">5</span> # <span class="nv">number</span> <span class="nv">of</span> <span class="nv">constraints</span> <span class="ss">(</span><span class="nv">parameter</span><span class="ss">)</span>
+<span class="nv">xo</span> <span class="o">=</span> <span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span><span class="o">+</span><span class="nv">im</span><span class="o">*</span><span class="nv">rand</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">randn</span><span class="ss">(</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>
+<span class="nv">b</span> <span class="o">=</span> <span class="nv">A</span> <span class="o">*</span> <span class="nv">xo</span>
 
-# Declare a complex variable
-x = ComplexVariable(n)
-p1 = minimize(real(sum(x)), A*x == b, real(x)&gt;=0, imag(x)&gt;=0)
-solve!(p1)
-x1 = x.value
+# <span class="nv">Declare</span> <span class="nv">a</span> <span class="nv">complex</span> <span class="nv">variable</span>
+<span class="nv">x</span> <span class="o">=</span> <span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p1</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">real</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">x</span><span class="ss">))</span>, <span class="nv">A</span><span class="o">*</span><span class="nv">x</span> <span class="o">==</span> <span class="nv">b</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">&gt;=</span><span class="mi">0</span>, <span class="nv">imag</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p1</span><span class="ss">)</span>
+<span class="nv">x1</span> <span class="o">=</span> <span class="nv">x</span>.<span class="nv">value</span>
 
-xr = Variable(n)
-xi = Variable(n)
-p2 = minimize(sum(xr), real(A)*xr-imag(A)*xi == real(b), imag(A)*xr+real(A)*xi == imag(b), xr&gt;=0, xi&gt;=0)
-solve!(p2)
-x1== xr.value + im*xi.value # should return true
+<span class="nv">xr</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">xi</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>
+<span class="nv">p2</span> <span class="o">=</span> <span class="nv">minimize</span><span class="ss">(</span><span class="nv">sum</span><span class="ss">(</span><span class="nv">xr</span><span class="ss">)</span>, <span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xr</span><span class="o">-</span><span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xi</span> <span class="o">==</span> <span class="nv">real</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">imag</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xr</span><span class="o">+</span><span class="nv">real</span><span class="ss">(</span><span class="nv">A</span><span class="ss">)</span><span class="o">*</span><span class="nv">xi</span> <span class="o">==</span> <span class="nv">imag</span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span>, <span class="nv">xr</span><span class="o">&gt;=</span><span class="mi">0</span>, <span class="nv">xi</span><span class="o">&gt;=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">solve</span><span class="o">!</span><span class="ss">(</span><span class="nv">p2</span><span class="ss">)</span>
+<span class="nv">x1</span><span class="o">==</span> <span class="nv">xr</span>.<span class="nv">value</span> <span class="o">+</span> <span class="nv">im</span><span class="o">*</span><span class="nv">xi</span>.<span class="nv">value</span> # <span class="nv">should</span> <span class="k">return</span> <span class="nv">true</span>
 </pre>
 
 

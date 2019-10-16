@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link type="application/rss+xml" href="http://Ayush-iitkgp.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 08 Apr 2019 20:06:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Applying Machine Learning in Ad Tech</title><link>http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Oct 2019 11:42:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Applying Machine Learning in Ad Tech</title><link>http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on the internet. The success of the DSPs to deliver the values to the advertisers is evaluated on the below two criteria:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;High Click Through Rate = Number of clicks/ Number of ads shown&lt;/li&gt;
@@ -99,31 +99,31 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 &lt;p&gt;&lt;strong&gt;Step 2: Specify the transformers and the estimators of the pipeline&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Tokenizer is a transformer which would convert the text column into words using space as a delimeter
-tokenizer = Tokenizer(inputCol="text", outputCol="words")
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Tokenizer&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;transformer&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt; &lt;span class="n"&gt;would&lt;/span&gt; &lt;span class="k"&gt;convert&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="nb"&gt;text&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;space&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;delimeter&lt;/span&gt;
+&lt;span class="n"&gt;tokenizer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Tokenizer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inputCol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;"text"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;outputCol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;"words"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-# HashingTF is again a transformer which takes the column "words as an input and creates a new column of a vector" 
-hashingTF = HashingTF(inputCol=tokenizer.getOutputCol(), outputCol="features")
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;HashingTF&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;again&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;transformer&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt; &lt;span class="n"&gt;takes&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="ss"&gt;"words as an input and creates a new column of a vector"&lt;/span&gt; 
+&lt;span class="n"&gt;hashingTF&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HashingTF&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inputCol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;tokenizer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getOutputCol&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;outputCol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;"features"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-# Logistic Regression is an Estimator which would take "features" and "label" as an input and create a trained model
-lr = LogisticRegression(maxIter=10, regParam=0.001)
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Logistic&lt;/span&gt; &lt;span class="n"&gt;Regression&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;Estimator&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt; &lt;span class="n"&gt;would&lt;/span&gt; &lt;span class="n"&gt;take&lt;/span&gt; &lt;span class="ss"&gt;"features"&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="ss"&gt;"label"&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="k"&gt;input&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;trained&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;
+&lt;span class="n"&gt;lr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogisticRegression&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;maxIter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;regParam&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;001&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Step 3: Create the pipeline using the transformers and the estimators defined in step 2&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pipeline&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pipeline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stages&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;tokenizer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hashingTF&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Step 4: Call the fit() method on the pipeline to create a PipelineModel&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;model = pipeline.fit(training)
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;training&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Step 5: Use the PipelineModel to do the predictions of the test dataset&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;prediction = model.transform(test)
-selected = prediction.select("id", "text", "probability", "prediction")
-selected.show()
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;prediction&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;model&lt;/span&gt;.&lt;span class="nv"&gt;transform&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;test&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;selected&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;prediction&lt;/span&gt;.&lt;span class="nv"&gt;select&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;id&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;, &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;text&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;, &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;probability&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;, &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;prediction&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;selected&lt;/span&gt;.&lt;span class="k"&gt;show&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -196,7 +196,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 &lt;h3&gt;&lt;strong&gt;Reading CSV File&lt;/strong&gt;&lt;/h3&gt;
 &lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_file_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;error_bad_lines&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;warn_bad_lines&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -212,25 +212,25 @@ s.setAttribute('data-timestamp', +new Date());
 
 &lt;h3&gt;&lt;strong&gt;Cleaning data&lt;/strong&gt;&lt;/h3&gt;
 &lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;numeric_cols = ['label','win_price','ctr','bid_cpc']
-df[numeric_cols] = df[numeric_cols].convert_objects(convert_numeric=True)
-df.dropna(inplace=True, subset=numeric_cols)
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;'label','win_price','ctr','bid_cpc'&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;convert_objects&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;convert_numeric&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;subset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;h5&gt;&lt;strong&gt;Spark&lt;/strong&gt;&lt;/h5&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;numeric_cols = ['label','win_price','ctr','bid_cpc']
-df = df.dropna(subset=numeric_cols)
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'label'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'win_price'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'ctr'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'bid_cpc'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;numeric_cols&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;h3&gt;&lt;strong&gt;Calculating Spend, CTR, CPC Per Algo&lt;/strong&gt;&lt;/h3&gt;
 &lt;h5&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/h5&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
-data[('win_price','sum')] = data[('win_price','sum')] / 1000.
-data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]
-data = pd.DataFrame(data.to_records())
-data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;'algo'&lt;/span&gt;&lt;span class="p"&gt;]).&lt;/span&gt;&lt;span class="n"&gt;agg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'win_price'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c_label&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'clicks'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'wins'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;'count'&lt;/span&gt;&lt;span class="err"&gt;}}&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;reset_index&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'win_price'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'sum'&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'win_price'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'sum'&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'ecpc'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'win_price'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'sum'&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'label,'&lt;/span&gt;&lt;span class="n"&gt;clicks&lt;/span&gt;&lt;span class="s1"&gt;')]&lt;/span&gt;
+&lt;span class="s1"&gt;data = pd.DataFrame(data.to_records())&lt;/span&gt;
+&lt;span class="s1"&gt;data.columns = ['',algo, '&lt;/span&gt;&lt;span class="n"&gt;spend&lt;/span&gt;&lt;span class="s1"&gt;', '&lt;/span&gt;&lt;span class="nb"&gt;number&lt;/span&gt; &lt;span class="k"&gt;of&lt;/span&gt; &lt;span class="n"&gt;impressions&lt;/span&gt;&lt;span class="s1"&gt;', '&lt;/span&gt;&lt;span class="nb"&gt;number&lt;/span&gt; &lt;span class="k"&gt;of&lt;/span&gt; &lt;span class="n"&gt;clicks&lt;/span&gt;&lt;span class="s1"&gt;', '&lt;/span&gt;&lt;span class="n"&gt;effective&lt;/span&gt; &lt;span class="n"&gt;cpc&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -513,49 +513,49 @@ s.setAttribute('data-timestamp', +new Date());
 &lt;li&gt;A complex-equality constraint &lt;em&gt;RHS = LHS&lt;/em&gt; can be decomposed into two corresponding real equalities constraint &lt;em&gt;real(RHS) = real(LHS)&lt;/em&gt; and &lt;em&gt;imag(RHS) = imag(LHS)&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# Importing Packages
-Pkg.clone("https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2")
-using Convex
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# &lt;span class="nv"&gt;Importing&lt;/span&gt; &lt;span class="nv"&gt;Packages&lt;/span&gt;
+&lt;span class="nv"&gt;Pkg&lt;/span&gt;.&lt;span class="nv"&gt;clone&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;using&lt;/span&gt; &lt;span class="nv"&gt;Convex&lt;/span&gt;
 
-# Complex LP with real variable"
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo 
-# Declare a real variable
-x = Variable(n)
-p1 = minimize(sum(x), A*x == b, x&amp;gt;=0) 
-# Notice A*x==b is complex equality constraint 
-solve!(p1)
-x1 = x.value
+# &lt;span class="nv"&gt;Complex&lt;/span&gt; &lt;span class="nv"&gt;LP&lt;/span&gt; &lt;span class="nv"&gt;with&lt;/span&gt; &lt;span class="nv"&gt;real&lt;/span&gt; &lt;span class="nv"&gt;variable&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; # &lt;span class="nv"&gt;variable&lt;/span&gt; &lt;span class="nv"&gt;dimension&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;parameter&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;m&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; # &lt;span class="nv"&gt;number&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;constraints&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;parameter&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;xo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;rand&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;A&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;randn&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;im&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;randn&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;A&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;xo&lt;/span&gt; 
+# &lt;span class="nv"&gt;Declare&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;real&lt;/span&gt; &lt;span class="nv"&gt;variable&lt;/span&gt;
+&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;minimize&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;, &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
+# &lt;span class="nv"&gt;Notice&lt;/span&gt; &lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;complex&lt;/span&gt; &lt;span class="nv"&gt;equality&lt;/span&gt; &lt;span class="nv"&gt;constraint&lt;/span&gt; 
+&lt;span class="nv"&gt;solve&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;p1&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;.&lt;span class="nv"&gt;value&lt;/span&gt;
 
-# Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.
-p2 = minimize(sum(x), real(A)*x == real(b),      imag(A)*x==imag(b), x&amp;gt;=0)
-solve!(p2)
-x2 = x.value
-x1==x2 # should return true
+# &lt;span class="nv"&gt;Let&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="s"&gt;s now solve by decomposing complex equality constraint into the corresponding real and imaginary part.&lt;/span&gt;
+&lt;span class="nv"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;minimize&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,      &lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;solve&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;p2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;x2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;.&lt;span class="nv"&gt;value&lt;/span&gt;
+&lt;span class="nv"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;x2&lt;/span&gt; # &lt;span class="nv"&gt;should&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;true&lt;/span&gt;
 
 
-# Let's now take an example where the complex variable is used
-# Complex LP with complex variable
-n = 10 # variable dimension (parameter)
-m = 5 # number of constraints (parameter)
-xo = rand(n)+im*rand(n)
-A = randn(m,n) + im*randn(m,n)
-b = A * xo
+# &lt;span class="nv"&gt;Let&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="s"&gt;s now take an example where the complex variable is used&lt;/span&gt;
+# &lt;span class="nv"&gt;Complex&lt;/span&gt; &lt;span class="nv"&gt;LP&lt;/span&gt; &lt;span class="nv"&gt;with&lt;/span&gt; &lt;span class="nv"&gt;complex&lt;/span&gt; &lt;span class="nv"&gt;variable&lt;/span&gt;
+&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; # &lt;span class="nv"&gt;variable&lt;/span&gt; &lt;span class="nv"&gt;dimension&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;parameter&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;m&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; # &lt;span class="nv"&gt;number&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;constraints&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;parameter&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;xo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;rand&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nv"&gt;im&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;rand&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;A&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;randn&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;im&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;randn&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;A&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;xo&lt;/span&gt;
 
-# Declare a complex variable
-x = ComplexVariable(n)
-p1 = minimize(real(sum(x)), A*x == b, real(x)&amp;gt;=0, imag(x)&amp;gt;=0)
-solve!(p1)
-x1 = x.value
+# &lt;span class="nv"&gt;Declare&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;complex&lt;/span&gt; &lt;span class="nv"&gt;variable&lt;/span&gt;
+&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;minimize&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt;, &lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;, &lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;solve&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;p1&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;x1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;.&lt;span class="nv"&gt;value&lt;/span&gt;
 
-xr = Variable(n)
-xi = Variable(n)
-p2 = minimize(sum(xr), real(A)*xr-imag(A)*xi == real(b), imag(A)*xr+real(A)*xi == imag(b), xr&amp;gt;=0, xi&amp;gt;=0)
-solve!(p2)
-x1== xr.value + im*xi.value # should return true
+&lt;span class="nv"&gt;xr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;xi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;minimize&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;xr&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;xr&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;xi&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;xr&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nv"&gt;real&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;xi&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;imag&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;xr&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;, &lt;span class="nv"&gt;xi&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;solve&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;p2&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;x1&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;xr&lt;/span&gt;.&lt;span class="nv"&gt;value&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;im&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;xi&lt;/span&gt;.&lt;span class="nv"&gt;value&lt;/span&gt; # &lt;span class="nv"&gt;should&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;true&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -613,58 +613,58 @@ s.setAttribute('data-timestamp', +new Date());
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign &lt;code&gt;ComplexSign&lt;/code&gt; which was introduced as the subtype of the user-defined type &lt;code&gt;Sign&lt;/code&gt; in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with &lt;code&gt;ComplexSign&lt;/code&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;abstract Sign
-type Positive &amp;lt;: Sign                   end
-type Negative &amp;lt;: Sign                   end
-type NoSign &amp;lt;: Sign                     end
-type ComplexSign &amp;lt;: Sign                end
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;abstract&lt;/span&gt; &lt;span class="nv"&gt;Sign&lt;/span&gt;
+&lt;span class="nv"&gt;type&lt;/span&gt; &lt;span class="nv"&gt;Positive&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;: &lt;span class="nv"&gt;Sign&lt;/span&gt;                   &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="nv"&gt;type&lt;/span&gt; &lt;span class="nv"&gt;Negative&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;: &lt;span class="nv"&gt;Sign&lt;/span&gt;                   &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="nv"&gt;type&lt;/span&gt; &lt;span class="nv"&gt;NoSign&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;: &lt;span class="nv"&gt;Sign&lt;/span&gt;                     &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="nv"&gt;type&lt;/span&gt; &lt;span class="nv"&gt;ComplexSign&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;: &lt;span class="nv"&gt;Sign&lt;/span&gt;                &lt;span class="k"&gt;end&lt;/span&gt;
 
--(s::ComplexSign) = ComplexSign()
-+(s::ComplexSign, t::ComplexSign) = s
-+(s::Sign, t::ComplexSign) = t
-+(t::ComplexSign, s::Sign) = s+t
-*(t::ComplexSign, s::ComplexSign) = t
-*(t::ComplexSign, s::Sign) = t
-*(s::Sign, t::ComplexSign) = t
-*(s::ComplexSign, m::Monotonicity) = NoMonotonicity()
-*(m::Monotonicity, s::Sign) = s * m
-*(s::ComplexSign, v::ConstVexity) = v
-*(s::ComplexSign, v::AffineVexity) = v
-*(s::ComplexSign, v::ConvexVexity) = NotDcp()
-*(s::ComplexSign, v::ConcaveVexity) = NotDcp()
-*(s::ComplexSign, v::NotDcp) = v
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;s&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;Sign&lt;/span&gt;, &lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;Sign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;Sign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;Sign&lt;/span&gt;, &lt;span class="nv"&gt;t&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;m&lt;/span&gt;::&lt;span class="nv"&gt;Monotonicity&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;NoMonotonicity&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;::&lt;span class="nv"&gt;Monotonicity&lt;/span&gt;, &lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;Sign&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;s&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;m&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;v&lt;/span&gt;::&lt;span class="nv"&gt;ConstVexity&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;v&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;v&lt;/span&gt;::&lt;span class="nv"&gt;AffineVexity&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;v&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;v&lt;/span&gt;::&lt;span class="nv"&gt;ConvexVexity&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;NotDcp&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;v&lt;/span&gt;::&lt;span class="nv"&gt;ConcaveVexity&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;NotDcp&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;::&lt;span class="nv"&gt;ComplexSign&lt;/span&gt;, &lt;span class="nv"&gt;v&lt;/span&gt;::&lt;span class="nv"&gt;NotDcp&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;v&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;Variable&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nx"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt;
-&lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;Variable&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nx"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt;
-&lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;Variable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt;
-&lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;Variable&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nx"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;sets&lt;/span&gt;&lt;span class="p"&gt;...)&lt;/span&gt;
-&lt;span class="nx"&gt;HermitianSemidefinite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;Semidefinite&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;HermitianSemidefinite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;m&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;Semidefinite&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;::&lt;span class="nv"&gt;Int&lt;/span&gt;, &lt;span class="nv"&gt;n&lt;/span&gt;::&lt;span class="nv"&gt;Int&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;::&lt;span class="nv"&gt;Symbol&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sets&lt;/span&gt;::&lt;span class="nv"&gt;Symbol&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;, &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;::&lt;span class="nv"&gt;Tuple&lt;/span&gt;{&lt;span class="nv"&gt;Int&lt;/span&gt;, &lt;span class="nv"&gt;Int&lt;/span&gt;}, &lt;span class="nv"&gt;sets&lt;/span&gt;::&lt;span class="nv"&gt;Symbol&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;, &lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;::&lt;span class="nv"&gt;Int&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;::&lt;span class="nv"&gt;Symbol&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;Variable&lt;/span&gt;&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;size&lt;/span&gt;, &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, &lt;span class="nv"&gt;ComplexSign&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;, &lt;span class="nv"&gt;sets&lt;/span&gt;...&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;HermitianSemidefinite&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;::&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, :&lt;span class="nv"&gt;Semidefinite&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;function&lt;/span&gt; &lt;span class="nv"&gt;HermitianSemidefinite&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;::&lt;span class="nv"&gt;Integer&lt;/span&gt;, &lt;span class="nv"&gt;n&lt;/span&gt;::&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;ComplexVariable&lt;/span&gt;&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;,&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;, :&lt;span class="nv"&gt;Semidefinite&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
   &lt;span class="k"&gt;else&lt;/span&gt;
-    &lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"HermitianSemidefinite matrices must be square"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="nx"&gt;end&lt;/span&gt;
-&lt;span class="nx"&gt;end&lt;/span&gt;
+    &lt;span class="nv"&gt;error&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;HermitianSemidefinite matrices must be square&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
 &lt;p&gt;Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;y = ComplexVariable()
-Variable of
-size: (1, 1)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
-z = HermitianSemidefinite(4)
-Variable of
-size: (4, 4)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ComplexVariable&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;Variable&lt;/span&gt; &lt;span class="k"&gt;of&lt;/span&gt;
+&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Convex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;vexity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Convex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AffineVexity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HermitianSemidefinite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;Variable&lt;/span&gt; &lt;span class="k"&gt;of&lt;/span&gt;
+&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Convex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ComplexSign&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;vexity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Convex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AffineVexity&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 
 
