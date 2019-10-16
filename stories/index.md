@@ -14,7 +14,7 @@
  
 <div>
     <p style="float: left;"><img src="/images/zemanta_pic.jpg" class="img-circle" height="245px" width="245px" border="1px" style="margin: 0px 20px" ></p>
-    <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.
+    <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
 
 I am a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am involved in developing an algorithm to detect the event-type of the news articles and buiding an API to serve the developed models to our users.
 
