@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -85,58 +85,58 @@ That is how I would describe my first month as GSoCer. From meeting new like min
 <ol>
 <li>
 <p>Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign <code>ComplexSign</code> which was introduced as the subtype of the user-defined type <code>Sign</code> in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with <code>ComplexSign</code></p>
-<pre class="code literal-block"><span></span>abstract Sign
-type Positive &lt;: Sign                   end
-type Negative &lt;: Sign                   end
-type NoSign &lt;: Sign                     end
-type ComplexSign &lt;: Sign                end
+<pre class="code literal-block"><span></span><span class="nv">abstract</span> <span class="nv">Sign</span>
+<span class="nv">type</span> <span class="nv">Positive</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">Negative</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">NoSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                     <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">ComplexSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                <span class="k">end</span>
 
--(s::ComplexSign) = ComplexSign()
-+(s::ComplexSign, t::ComplexSign) = s
-+(s::Sign, t::ComplexSign) = t
-+(t::ComplexSign, s::Sign) = s+t
-*(t::ComplexSign, s::ComplexSign) = t
-*(t::ComplexSign, s::Sign) = t
-*(s::Sign, t::ComplexSign) = t
-*(s::ComplexSign, m::Monotonicity) = NoMonotonicity()
-*(m::Monotonicity, s::Sign) = s * m
-*(s::ComplexSign, v::ConstVexity) = v
-*(s::ComplexSign, v::AffineVexity) = v
-*(s::ComplexSign, v::ConvexVexity) = NotDcp()
-*(s::ComplexSign, v::ConcaveVexity) = NotDcp()
-*(s::ComplexSign, v::NotDcp) = v
+<span class="o">-</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexSign</span><span class="ss">()</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span><span class="o">+</span><span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">m</span>::<span class="nv">Monotonicity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NoMonotonicity</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Monotonicity</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span> <span class="o">*</span> <span class="nv">m</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConstVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">AffineVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConvexVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConcaveVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">NotDcp</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
 </pre>
 
 
 </li>
 <li>
 <p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
-<pre class="code literal-block"><span></span><span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">n</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Tuple</span><span class="p">{</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">Int</span><span class="p">},</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">ComplexVariable</span><span class="p">(</span><span class="nx">size</span><span class="o">::</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">sets</span><span class="o">::</span><span class="nx">Symbol</span><span class="p">...)</span> <span class="o">=</span> <span class="nx">Variable</span><span class="p">((</span><span class="nx">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">ComplexSign</span><span class="p">(),</span> <span class="nx">sets</span><span class="p">...)</span>
-<span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
-<span class="kd">function</span> <span class="nx">HermitianSemidefinite</span><span class="p">(</span><span class="nx">m</span><span class="o">::</span><span class="nx">Integer</span><span class="p">,</span> <span class="nx">n</span><span class="o">::</span><span class="nx">Integer</span><span class="p">)</span>
-  <span class="k">if</span> <span class="nx">m</span><span class="o">==</span><span class="nx">n</span>
-    <span class="k">return</span> <span class="nx">ComplexVariable</span><span class="p">((</span><span class="nx">m</span><span class="p">,</span><span class="nx">m</span><span class="p">),</span> <span class="o">:</span><span class="nx">Semidefinite</span><span class="p">)</span>
+<pre class="code literal-block"><span></span><span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Int</span>, <span class="nv">n</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="mi">1</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Tuple</span>{<span class="nv">Int</span>, <span class="nv">Int</span>}, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">size</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">size</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
+<span class="nv">function</span> <span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span>, <span class="nv">n</span>::<span class="nv">Integer</span><span class="ss">)</span>
+  <span class="k">if</span> <span class="nv">m</span><span class="o">==</span><span class="nv">n</span>
+    <span class="k">return</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
   <span class="k">else</span>
-    <span class="nx">error</span><span class="p">(</span><span class="s2">"HermitianSemidefinite matrices must be square"</span><span class="p">)</span>
-  <span class="nx">end</span>
-<span class="nx">end</span>
+    <span class="nv">error</span><span class="ss">(</span><span class="s2">"</span><span class="s">HermitianSemidefinite matrices must be square</span><span class="s2">"</span><span class="ss">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </pre>
 
 
 <p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
-<pre class="code literal-block"><span></span>y = ComplexVariable()
-Variable of
-size: (1, 1)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
-z = HermitianSemidefinite(4)
-Variable of
-size: (4, 4)
-sign: Convex.ComplexSign()
-vexity: Convex.AffineVexity()
+<pre class="code literal-block"><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">ComplexVariable</span><span class="p">()</span>
+<span class="k">Variable</span> <span class="k">of</span>
+<span class="k">size</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sign</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">ComplexSign</span><span class="p">()</span>
+<span class="n">vexity</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">AffineVexity</span><span class="p">()</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">HermitianSemidefinite</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">Variable</span> <span class="k">of</span>
+<span class="k">size</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">sign</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">ComplexSign</span><span class="p">()</span>
+<span class="n">vexity</span><span class="p">:</span> <span class="n">Convex</span><span class="p">.</span><span class="n">AffineVexity</span><span class="p">()</span>
 </pre>
 
 
