@@ -15,6 +15,7 @@
 <div>
     <p style="float: left;"><img src="/images/zemanta_pic.jpg" class="img-circle" height="245px" width="245px" border="1px" style="margin: 0px 20px" ></p>
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
+</div>
 
 I am a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am involved in developing an algorithm to detect the event-type of the news articles and buiding an API to serve the developed models to our users.
 
@@ -28,7 +29,7 @@ I have also been involved in the project titled "[Machine learning tools for cla
 
 As Google Summer of Code 2016 student, I implemented the support for the **Complex SemiDefinite Programming** in [Convex.jl](http://convexjl.readthedocs.io/en/latest/) under the guidance of [Madeleine Udell](https://people.orie.cornell.edu/mru8/) and [Dvijotham Krishnamurthy](http://www.its.caltech.edu/~dvij/). I have also been part of the project involving the application of optimization techniques in field of portfolio optimization. 
 
-While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, hiking, running and playing cricket.</p>
+While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, hiking, running and playing cricket.
 
 ## Contact 
 **Gmail:** | **ayushpandey.iitkgp@gmail.com**
