@@ -108,7 +108,7 @@
 </noscript>
 
         
-        <footer id="footer"><p>Contents © 2019         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        <footer id="footer"><p>Contents © 2020         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
@@ -124,7 +124,7 @@
 var jsonContent = [{"height": 135, "size": {"h": 135, "w": 180}, "title": "Jersey pic", "url": "Jersey Pic.JPG", "url_thumb": "Jersey Pic.thumbnail.JPG", "width": 180}, {"height": 135, "size": {"h": 135, "w": 180}, "title": "Img 0336", "url": "IMG_0336.JPG", "url_thumb": "IMG_0336.thumbnail.JPG", "width": 180}, {"height": 180, "size": {"h": 180, "w": 120}, "title": "Trophy", "url": "Trophy.jpg", "url_thumb": "Trophy.thumbnail.jpg", "width": 120}, {"height": 135, "size": {"h": 135, "w": 180}, "title": "Img 0341", "url": "IMG_0341.JPG", "url_thumb": "IMG_0341.thumbnail.JPG", "width": 180}, {"height": 120, "size": {"h": 120, "w": 180}, "title": "Victory pic 1", "url": "Victory Pic_1.jpg", "url_thumb": "Victory Pic_1.thumbnail.jpg", "width": 180}, {"height": 120, "size": {"h": 120, "w": 180}, "title": "Bowling", "url": "Bowling.jpg", "url_thumb": "Bowling.thumbnail.jpg", "width": 180}, {"height": 120, "size": {"h": 120, "w": 180}, "title": "Bowling pic", "url": "Bowling Pic.jpg", "url_thumb": "Bowling Pic.thumbnail.jpg", "width": 180}, {"height": 120, "size": {"h": 120, "w": 180}, "title": "Alumni cup", "url": "Alumni Cup.jpg", "url_thumb": "Alumni Cup.thumbnail.jpg", "width": 180}, {"height": 120, "size": {"h": 120, "w": 180}, "title": "Team meeting", "url": "Team Meeting.jpg", "url_thumb": "Team Meeting.thumbnail.jpg", "width": 180}];
 var thumbnailSize = 180;
 renderGallery(jsonContent, thumbnailSize);
-window.addEventListener('resize', renderGallery);
+window.addEventListener('resize', function(){renderGallery(jsonContent, thumbnailSize)});
 </script>
 </body>
 </html>
