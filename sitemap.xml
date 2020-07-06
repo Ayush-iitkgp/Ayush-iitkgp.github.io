@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2016/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2017/</loc>
@@ -23,15 +23,19 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2020-07-06T13:54:00Z</lastmod>
+  <lastmod>2020-07-06T14:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
-  <lastmod>2020-07-06T13:49:00Z</lastmod>
+  <lastmod>2020-07-06T14:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/blog/index-1.html</loc>
+  <lastmod>2020-07-06T14:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/adtech/</loc>
@@ -63,7 +67,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/galleries/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/galleries/4th-Inter-IIT-Tech-Meet/</loc>
@@ -87,19 +91,23 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/__pycache__/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/listings/hello.py.html</loc>
-  <lastmod>2020-07-06T13:54:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/</loc>
+  <lastmod>2020-07-06T14:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</loc>
@@ -119,7 +127,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/gsoc-2017/</loc>
@@ -143,7 +151,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/charts/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/creating-a-theme/</loc>
@@ -155,7 +163,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/extending/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/handbook/</loc>
@@ -163,7 +171,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/internals/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/</loc>
@@ -183,7 +191,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/path-handlers/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/quickref/</loc>
@@ -199,7 +207,7 @@
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/social_buttons/</loc>
-  <lastmod>2020-07-06T13:53:00Z</lastmod>
+  <lastmod>2020-07-06T14:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/stories/theming/</loc>
