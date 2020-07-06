@@ -91,7 +91,7 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 <p>PipelineModel has the same number of stages as the original Pipeline, <strong>but all Estimators in the original Pipeline have become Transformers</strong>. This PipelineModel is used at test time. </p>
 <p>Let's dive into the Python code using an example mentioned in the Spark's doc <a href="https://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline">here</a> where we are trying to classify a line of text into 0 or 1:</p>
 <p><strong>Step 1: Create a DataFrame</strong></p>
-<pre class="code literal-block"><span></span><span class="c1"># Some import statements</span>
+<pre class="code literal-block"><span></span><code><span class="c1"># Some import statements</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">HashingTF</span><span class="p">,</span> <span class="n">Tokenizer</span>
@@ -111,11 +111,11 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"spark hadoop spark"</span><span class="p">),</span>
 <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"apache hadoop"</span><span class="p">)</span>
 <span class="p">],</span> <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">])</span>
-</pre>
+</code></pre>
 
 
 <p><strong>Step 2: Specify the transformers and the estimators of the pipeline</strong></p>
-<pre class="code literal-block"><span></span><span class="o">#</span> <span class="n">Tokenizer</span> <span class="k">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="k">convert</span> <span class="n">the</span> <span class="nb">text</span> <span class="k">column</span> <span class="k">into</span> <span class="n">words</span> <span class="k">using</span> <span class="k">space</span> <span class="k">as</span> <span class="n">a</span> <span class="n">delimeter</span>
+<pre class="code literal-block"><span></span><code><span class="o">#</span> <span class="n">Tokenizer</span> <span class="k">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="k">convert</span> <span class="n">the</span> <span class="nb">text</span> <span class="k">column</span> <span class="k">into</span> <span class="n">words</span> <span class="k">using</span> <span class="k">space</span> <span class="k">as</span> <span class="n">a</span> <span class="n">delimeter</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="ss">"text"</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="ss">"words"</span><span class="p">)</span>
 
 <span class="o">#</span> <span class="n">HashingTF</span> <span class="k">is</span> <span class="n">again</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">takes</span> <span class="n">the</span> <span class="k">column</span> <span class="ss">"words as an input and creates a new column of a vector"</span> 
@@ -123,24 +123,24 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 
 <span class="o">#</span> <span class="n">Logistic</span> <span class="n">Regression</span> <span class="k">is</span> <span class="n">an</span> <span class="n">Estimator</span> <span class="n">which</span> <span class="n">would</span> <span class="n">take</span> <span class="ss">"features"</span> <span class="k">and</span> <span class="ss">"label"</span> <span class="k">as</span> <span class="n">an</span> <span class="k">input</span> <span class="k">and</span> <span class="k">create</span> <span class="n">a</span> <span class="n">trained</span> <span class="n">model</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">001</span><span class="p">)</span>
-</pre>
+</code></pre>
 
 
 <p><strong>Step 3: Create the pipeline using the transformers and the estimators defined in step 2</strong></p>
-<pre class="code literal-block"><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">hashingTF</span><span class="p">,</span> <span class="n">lr</span><span class="p">])</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])</span>
+</code></pre>
 
 
 <p><strong>Step 4: Call the fit() method on the pipeline to create a PipelineModel</strong></p>
-<pre class="code literal-block"><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">model = pipeline.fit(training)</span>
+</code></pre>
 
 
 <p><strong>Step 5: Use the PipelineModel to do the predictions of the test dataset</strong></p>
-<pre class="code literal-block"><span></span><span class="nv">prediction</span> <span class="o">=</span> <span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
-<span class="nv">selected</span> <span class="o">=</span> <span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"</span><span class="s">id</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">text</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">probability</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">prediction</span><span class="s2">"</span><span class="ss">)</span>
-<span class="nv">selected</span>.<span class="k">show</span><span class="ss">()</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">prediction = model.transform(test)</span>
+<span class="err">selected = prediction.select("id", "text", "probability", "prediction")</span>
+<span class="err">selected.show()</span>
+</code></pre>
 
 
 <p>One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. </p>

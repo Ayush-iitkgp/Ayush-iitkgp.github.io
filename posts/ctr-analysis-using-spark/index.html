@@ -92,12 +92,12 @@ In recent years, programmatic advertising is been taking over the online adverti
 <p>If an exchange is using <a href="https://en.wikipedia.org/wiki/First-price_sealed-bid_auction">First Price Auction</a>, the win pice and the bid price is same but if the exchange is using <a href="https://en.wikipedia.org/wiki/Generalized_second-price_auction">Second Price Auction</a>, the advertizer with the highest bid price wins but it pays the price equivalent to the second highest bid price hence the win price is less than the bid price.</p>
 <h3><strong>Setting up notebook and importing libraries</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</code></pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">os</span>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'SPARK_HOME'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/home/spark-2.3.2-bin-hadoop2.7"</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'JAVA_HOME'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/home/jdk1.8.0_181"</span>
@@ -112,51 +112,51 @@ In recent years, programmatic advertising is been taking over the online adverti
 <span class="n">conf</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="n">CLUSTER_URL</span><span class="p">)</span><span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">"CTR Analysis"</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"spark.executor.memory"</span><span class="p">,</span> <span class="s2">"120g"</span><span class="p">)</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
-</pre>
+</code></pre>
 
 
 <h3><strong>Reading CSV File</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">,</span> <span class="k">names</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">error_bad_lines</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">warn_bad_lines</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')</span>
+</code></pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StringType</span>
 <span class="n">file_location</span> <span class="o">=</span> <span class="s2">"hdfs://address:port/hadoop/dataNode/pyspark/data.csv"</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
 <span class="c1"># df = spark.read.csv(file_location, header=False, inferSchema=True, sep=",")</span>
 <span class="c1"># df.cache()</span>
-</pre>
+</code></pre>
 
 
 <h3><strong>Cleaning data</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span><span class="n">numeric_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">'label','win_price','ctr','bid_cpc'</span><span class="o">]</span><span class="w"></span>
+<pre class="code literal-block"><span></span><code><span class="n">numeric_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">'label','win_price','ctr','bid_cpc'</span><span class="o">]</span><span class="w"></span>
 <span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="p">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
 <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="k">True</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span><span class="w"></span>
-</pre>
+</code></pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span><span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'ctr'</span><span class="p">,</span><span class="s1">'bid_cpc'</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">numeric_cols = ['label','win_price','ctr','bid_cpc']</span>
+<span class="err">df = df.dropna(subset=numeric_cols)</span>
+</code></pre>
 
 
 <h3><strong>Calculating Spend, CTR, CPC Per Algo</strong></h3>
 <h5><strong>Pandas</strong></h5>
-<pre class="code literal-block"><span></span><span class="k">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">]).</span><span class="n">agg</span><span class="p">(</span><span class="err">{</span><span class="s1">'win_price'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="n">c_label</span><span class="p">:</span><span class="err">{</span><span class="s1">'clicks'</span><span class="p">:</span><span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">,</span> <span class="s1">'wins'</span><span class="p">:</span><span class="s1">'count'</span><span class="err">}}</span><span class="p">).</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">.</span>
-<span class="k">data</span><span class="p">[</span><span class="s1">'ecpc'</span><span class="p">]</span> <span class="o">=</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'win_price'</span><span class="p">,</span><span class="s1">'sum'</span><span class="p">)]</span> <span class="o">/</span> <span class="k">data</span><span class="p">[(</span><span class="s1">'label,'</span><span class="n">clicks</span><span class="s1">')]</span>
-<span class="s1">data = pd.DataFrame(data.to_records())</span>
-<span class="s1">data.columns = ['',algo, '</span><span class="n">spend</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">impressions</span><span class="s1">', '</span><span class="nb">number</span> <span class="k">of</span> <span class="n">clicks</span><span class="s1">', '</span><span class="n">effective</span> <span class="n">cpc</span><span class="err">'</span><span class="p">]</span>
-</pre>
+<pre class="code literal-block"><span></span><code><span class="err">data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()</span>
+<span class="err">data[('win_price','sum')] = data[('win_price','sum')] / 1000.</span>
+<span class="err">data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]</span>
+<span class="err">data = pd.DataFrame(data.to_records())</span>
+<span class="err">data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']</span>
+</code></pre>
 
 
 <h5><strong>Spark</strong></h5>
-<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">udf</span>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">udf</span>
 <span class="kn">import</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">as</span> <span class="nn">f</span>
 
 <span class="k">def</span> <span class="nf">divide_by_1000</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -178,7 +178,7 @@ In recent years, programmatic advertising is been taking over the online adverti
 <span class="c1"># print data_clicks.columns</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data_wins</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_clicks</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'algo'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"effective cpc"</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
-</pre>
+</code></pre>
 
 
 <div id="disqus_thread"></div>
