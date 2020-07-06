@@ -17,7 +17,7 @@
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
 </div>
 
-I am a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API. I am applying for a [Data Science](https://www.toptal.com/data-science) position at Toptal.
+I am a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API. I am applying for a [Data Science](https://www.toptal.com/data-science) position at [Toptal](https://www.toptal.com/).
 
 Previously, I worked as a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infrastructure.
 
