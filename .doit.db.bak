@@ -883,3 +883,4 @@
 'copy_files:output/images/nikola.png', (117760, 255)
 'render_galleries:output/galleries/demo/tesla_lightning2_lg.thumbnail.jpg', (60416, 298)
 'render_posts:cache/posts/exciting-summers-ahead.hi.html', (2588160, 394)
+'copy_assets:output/assets/js/luxon.min.js', (6572544, 404)
