@@ -884,3 +884,7 @@
 'render_galleries:output/galleries/demo/tesla_lightning2_lg.thumbnail.jpg', (60416, 298)
 'render_posts:cache/posts/exciting-summers-ahead.hi.html', (2588160, 394)
 'copy_assets:output/assets/js/luxon.min.js', (6572544, 404)
+'render_posts:cache/posts/index.html', (7266304, 343)
+'render_sources:output/posts/index.md', (7266816, 235)
+'render_pages:output/posts/index.html', (7267328, 4771)
+'render_taxonomies:output/blog/index-1.html', (7272448, 4384)

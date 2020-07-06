@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jul 2020 13:54:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Applying Machine Learning in Ad Tech</title><link>http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ayush Pandey</title><link>http://Ayush-iitkgp.github.io/</link><description>Ayush Pandey</description><atom:link href="http://Ayush-iitkgp.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 06 Jul 2020 14:57:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Applying Machine Learning in Ad Tech</title><link>http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on the internet. The success of the DSPs to deliver the values to the advertisers is evaluated on the below two criteria:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;High Click Through Rate = Number of clicks/ Number of ads shown&lt;/li&gt;
@@ -598,7 +598,49 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</guid><pubDate>Tue, 26 Jul 2016 20:43:21 GMT</pubDate></item><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/</guid><pubDate>Tue, 26 Jul 2016 20:43:21 GMT</pubDate></item><item><title>About Me </title><link>http://Ayush-iitkgp.github.io/posts/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div&gt;
+    &lt;p style="float: left;"&gt;&lt;img src="http://Ayush-iitkgp.github.io/images/zemanta_pic.jpg" class="img-circle" height="245px" width="245px" border="1px" style="margin: 0px 20px"&gt;&lt;/p&gt;
+    &lt;p&gt;Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I am a Deep Learning Engineer at &lt;a href="http://eventregistry.org/"&gt;EventRegistry&lt;/a&gt; where I am developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API. I am applying for a &lt;a href="https://www.toptal.com/data-science"&gt;Data Science&lt;/a&gt; position at &lt;a href="https://www.toptal.com/"&gt;Toptal&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Previously, I worked as a Data Scientist at &lt;a href="http://www.zemanta.com/"&gt;Zemanta, an Outbrain Company&lt;/a&gt; based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infrastructure.&lt;/p&gt;
+&lt;p&gt;Before joining Zemanta, I worked as the Product Engineer, Data Engine at Sprinklr, India where I was involved in implementing the machine learning module in the data flow execution pipeline using Kafka, Spark, and Spring framework.&lt;/p&gt;
+&lt;p&gt;I graduated from the Indian Institute of Technology(IIT), Kharagpur with majors in Mathematics and Computer Science and a micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. &lt;/p&gt;
+&lt;p&gt;I have also been involved in the project titled "&lt;a href="https://julialang.org/soc/projects/diffeq.html#machine-learning-tools-for-classification-of-qualitative-traits-of-differential-equation-solutions"&gt;Machine learning tools for classification of qualitative traits of differential equation solutions&lt;/a&gt;" where I developed set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning under the mentorship of &lt;a href="http://www.chrisrackauckas.com/"&gt;Chris Rackauckas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As Google Summer of Code 2016 student, I implemented the support for the &lt;strong&gt;Complex SemiDefinite Programming&lt;/strong&gt; in &lt;a href="http://convexjl.readthedocs.io/en/latest/"&gt;Convex.jl&lt;/a&gt; under the guidance of &lt;a href="https://people.orie.cornell.edu/mru8/"&gt;Madeleine Udell&lt;/a&gt; and &lt;a href="http://www.its.caltech.edu/~dvij/"&gt;Dvijotham Krishnamurthy&lt;/a&gt;. I have also been part of the project involving the application of optimization techniques in field of portfolio optimization. &lt;/p&gt;
+&lt;p&gt;While trying to keep up with the rapid advancements in technology, I like to spend my free time traveling, hiking, running and playing cricket.&lt;/p&gt;
+&lt;h3&gt;Contact&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Gmail:&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;ayushpandey.iitkgp@gmail.com&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt; &lt;a href="https://www.linkedin.com/in/ayushiitkgp"&gt;&lt;strong&gt;Ayush Pandey&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;GitHub:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt; &lt;a href="http://github.com/Ayush-iitkgp"&gt;&lt;strong&gt;Ayush-iitkgp&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Updates&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;May, 2018:&lt;/strong&gt; This is a giant leap forward in life, I am moving to a relatively unknown country Slovenia to work as the Data Scientist at Zemanta, an Outbrain Company. I am grateful for this opportunity and look forward to living an expat life.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jul, 2017:&lt;/strong&gt; The new phase of life has begun, I am joining Sprinklr as a Product Engineer in their R&amp;amp;D department. I will be starting to work with the Data Engine team  where we will be implementing the machine learning module in the data flow execution pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jun, 2017:&lt;/strong&gt; It feel honoured to present my work related to the &lt;strong&gt;Applications of Convex.jl in Optimization Involving Complex Numbers&lt;/strong&gt; at JuliaCon'17 held at University of California, Berkeley. &lt;a href="https://www.youtube.com/watch?v=dIlarXpwT5I"&gt;Here is the link to the talk&lt;/a&gt; I delivered .&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jun, 2017:&lt;/strong&gt; The unbelievable journey has finally concluded. I am graduating from the Indian Institute of Technology Kharagpur with majors in Mathematics and Computing Sciences and a micro-specialization in Optimization Theory and Applications.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;May, 2017:&lt;/strong&gt; I will be working with Julia Language to add Machine Learning functionality in &lt;a href="https://github.com/JuliaDiffEq/DiffEqParamEstim.jl"&gt;DiffEqParamEstim.jl&lt;/a&gt; as Google Summer of Code 2017 student. &lt;a href="https://summerofcode.withgoogle.com/projects/#5914180975591424"&gt;Here&lt;/a&gt; is my proposal. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apr, 2017:&lt;/strong&gt; I am honoured to receive Institute Blue for my contribution to the game of cricket in IIT Kharagpur at the Annual Gymkhana Awards ceremony.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aug, 2016:&lt;/strong&gt; I would be working as Teaching Assitant for the NPTEL online course &lt;a href="https://onlinecourses.nptel.ac.in/noc16_cs24/course"&gt;Fundamental Algorithms: Design and Analysis&lt;/a&gt; supervised by &lt;a href="http://www.facweb.iitkgp.ernet.in/~sourav/"&gt;Prof. Sourav Mukhopadhyay&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jul, 2016:&lt;/strong&gt; &lt;a href="http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/"&gt;Announcing support for complex-domain Linear Programming in Convex.jl.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Jun, 2016:&lt;/strong&gt; It was great experience meeting with Julia developers at JuliaCon2016 at MIT, Cambridge. &lt;a href="http://Ayush-iitkgp.github.io/stories/juliacon-2016-talk/"&gt;Here is the talk&lt;/a&gt; I delivered to introduce the community of my work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;May, 2016:&lt;/strong&gt; Joining Samsung Research Institute, Bangalore as Student Trainee.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apr, 2016:&lt;/strong&gt; It gives me immense pleasure to announce that I have been selected under Google Summer of Code, 2016 program to work under The Julia Language on the project titled &lt;em&gt;Adding support for complex-domain convex optimization problems in Convex.jl&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feb, 2016:&lt;/strong&gt; IIT Kharagpur won the General Championship in the &lt;strong&gt;4th Inter IIT Tech Meet&lt;/strong&gt;. So proud to be the member of the contingent.&lt;/p&gt;&lt;/div&gt;</description><guid>http://Ayush-iitkgp.github.io/posts/</guid><pubDate>Mon, 25 Jul 2016 09:31:32 GMT</pubDate></item><item><title>A month of Excitement!</title><link>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Every day is a new experience and it opening up new opportunities. Life is awesome&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.&lt;/p&gt;
 &lt;p&gt;I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: &lt;/p&gt;
 &lt;p&gt;Many problems in applied sciences are posed as optimization problems over the complex field such as:&lt;/p&gt;
@@ -701,42 +743,4 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 &lt;/script&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</guid><pubDate>Sun, 22 May 2016 16:14:47 GMT</pubDate></item><item><title>Exciting Summers Ahead!</title><link>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</link><dc:creator>Ayush Pandey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Fall seven times, stand up eight !!!!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Google Summer of Code, the thing I wanted to be a part of as soon as I heard of it in my 1st year of college. It took me 4 years when I am finally selected for the prestigious open source program. Harsh Gupta no word can express my gratefulness for you. Thank you very much for always being there. Coincidently, the results were announced in the middle of my end-semester examination and I must accept my selection was one more reason for not studying for the exams. I am glad that my exams are over and as always I am looking forward to the summers where I apply the theories I have learnt during the semester in a practical world. I think I should make it apparent that applying to Julia and getting selected was a well-thought process, there were series of events which helped me getting selected in GSoC under The Julia Lang. It all started when I was finishing the web-development internship during the winter vacations when I realized that I need to pursue applied mathematics more seriously as that is somewhere I can excel at. &lt;strong&gt;Operations Research and Optimization&lt;/strong&gt; was an obvious choice as I enjoyed the introductory course in Linear Programming way more than other cs and mathematics courses that I took during my stay at IIT Kharagpur. I decided to take an advanced course in Optimization(Non-Linear Programming) but sadly the course was open for final year students but yes &lt;em&gt;where there is will, there is a way&lt;/em&gt;, I was able to enroll for the course after consulting with my professor, interestingly I was the only pre-final year student in that class yet I tried to attend each and every class in spite of not having familiar faces to sit with. During the semester, 4th InterIIT Meet was being held at IIT Mandi. Initially, I was not the part of IIT Kharagpur's contingent as I didn't find myself competent enough to apply for the selections. But as soon as the problem statement for the event Portfolio Optimization was out, my friend Raja Ambrish contacted me as the problem was related to Convex Optimization because he thought I could help him. My eyes were lit bright as soon as I saw the problem statement as it was the application of what I have been reading throughout the semester. I worked with the other team members and was finally selected to present our solution to the jury at IIT Mandi. Yay, IIT Kharagpur were the overall champions and also our team managed to win gold medal Portfolio Optimization as well.&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://Ayush-iitkgp.github.io/images/InterIITTech.jpg" alt="A click during InterIIT Presentation" height="400px" width="750px" border="1px" style="margin: 0px 20px"&gt;&lt;/p&gt;
-&lt;p&gt;The InterIIT experience was awesome and it made me realize that indeed I have a special interest in the field of Optimization. I wanted to explore more of this field and Google Summer of Code was an exciting opportunity. I told my friend Harsh about the plans to participate in GSoC in an organization which has Optimization related projects and his first suggestion was &lt;a href="http://julialang.org/"&gt;Julia&lt;/a&gt;. I came back room and browsed projects and wow Julia has this one project namely &lt;code&gt;"Support for Complex SemiDefinite Programming within Convex.jl"&lt;/code&gt; on Convex Optimization that I fell in love with. The concepts I learnt during the classroom hours in Non-Linear Programming were of immense help to me in getting started with Convex.jl special thanks to Prof. Geetanjali Panda for teaching this course in a very intuitive way.&lt;/p&gt;
-&lt;p&gt;Finally, after having an extensive discussion with my mentors &lt;a href="https://people.orie.cornell.edu/mru8/"&gt;Madeleine Udell&lt;/a&gt; and &lt;a href="http://www.its.caltech.edu/~dvij/"&gt;Dvijotham Krishnamurthy&lt;/a&gt;, I submitted my &lt;a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb"&gt;proposal&lt;/a&gt; under The Julia Lang and NumFocus and was selected under former. I want to express my gratefulness to each and everyone who has helped me before and throughout the GSoC Application Period.&lt;/p&gt;
-&lt;p&gt;I am officially in the first week of the Community Bonding Period. My week started with having a video call with my mentors where we discussed my proposal in more detail and went through some of the existing codebase in order to understand what specific changes need to be made to accomplish our task. We have started by first tackling the complex-domain Linear Programming Problems. We have decided that we would need few utility functions like:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A function to recurse on the expression tree to check if an expression is real or complex&lt;/li&gt;
-&lt;li&gt;A function conj(A)&lt;/li&gt;
-&lt;li&gt;A function to check the LHS and RHS of each inequality constraint is real.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I would also need to think of the rules that would be helpful in determining whether the combination of two or more expressions is real or complex on the lines of how we determine the DCP compliance of a problem. The next step would be to rewrite all the atoms to accept the complex parameters.&lt;/p&gt;
-&lt;p&gt;The next assignment was to set-up a blog to write and publish my experience as GSoCer or rather JuliaSoCer which I did just complete :D During this week, I was also introduced to the Julia community and added to their slack channel. I believe I would have some awesome time with the community and hope to see them during JuliaCon 2016.&lt;/p&gt;
-&lt;p&gt;Interestingly, I have my birthday on 4th May which I plan to celebrate with my family so I would be traveling to my home from my university. Don't forget to wish me ;) &lt;/p&gt;
-&lt;p&gt;This is all for now. Thank you very much for making it this far :)&lt;/p&gt;
-&lt;div id="disqus_thread"&gt;&lt;/div&gt;
-
-&lt;script&gt;
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//avoyage.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/exciting-summers-ahead/</guid><pubDate>Tue, 03 May 2016 16:08:08 GMT</pubDate></item></channel></rss>
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript" rel="nofollow"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</description><category>GSoC'16</category><guid>http://Ayush-iitkgp.github.io/posts/a-month-of-excitement/</guid><pubDate>Sun, 22 May 2016 16:14:47 GMT</pubDate></item></channel></rss>
