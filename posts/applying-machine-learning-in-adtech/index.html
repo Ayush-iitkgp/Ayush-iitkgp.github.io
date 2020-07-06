@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Applying Machine Learning in Ad Tech | Ayush Pandey</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/poole.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/lanyon.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ayush Pandey">
+<link rel="prev" href="../building-machine-learning-data-pipeline-using-apache-spark/" title="Building Machine Learning Data Pipeline using Apache Spark" type="text/html">
+<meta property="og:site_name" content="Ayush Pandey">
+<meta property="og:title" content="Applying Machine Learning in Ad Tech">
+<meta property="og:url" content="http://Ayush-iitkgp.github.io/posts/applying-machine-learning-in-adtech/">
+<meta property="og:description" content="Introduction
+In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on t">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-04-08T02:13:21+05:30">
+<meta property="article:tag" content="AdTech">
+<meta property="article:tag" content="Data Science">
+<meta property="article:tag" content="Machine Learning">
+</head>
+<body class="theme-base-0d">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <!---<div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div> -->
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../blog">Blog</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/open?id=1NMfMEWj8fj9yLBgl0IsKBVPjyA9Ik5y4">Resume</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc">University Projects</a>
+        <a class="sidebar-nav-item" href="../gsoc-2017/">GSoC'17</a>
+        <a class="sidebar-nav-item" href="../is-it-the-end-or-another-beginning/">GSoC'16</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="http://Ayush-iitkgp.github.io/" title="Ayush Pandey" rel="home">Ayush Pandey</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Applying Machine Learning in Ad Tech</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-08T02:13:21+05:30" itemprop="datePublished" title="2019-04-08 02:13">2019-04-08 02:13</time></a></p>
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<h2>Introduction</h2>
+<p>In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on the internet. The success of the DSPs to deliver the values to the advertisers is evaluated on the below two criteria:</p>
+<ol>
+<li>High Click Through Rate = Number of clicks/ Number of ads shown</li>
+<li>High Conversion Rate = Number of conversions (such as a purchase)/ Number of ads shown</li>
+</ol>
+<p>To achieve high CTR and Conversion Rates, DSPs heavily rely on using Artificial Intelligence techniques and develop their in-house Machine Learning algorithms. The problem of applying Machine Learning in Adtech is different from the standard problem in many sense. Google's paper <a href="https://ai.google/research/pubs/pub41159"><em>Ad Click Prediction: a view from the Trenches</em></a> and Facebook's paper <a href="https://research.fb.com/publications/practical-lessons-from-predicting-clicks-on-ads-at-facebook/"><em>Practical Lessons from Predicting Clicks on Ads at Facebbok</em></a> have discussed in details the lessons learned while building an AI for the adtech industry. In the remaining blog post, I will try to summarize the intricacies of applying ML in adtech and how it is tackled in general:</p>
+<ul>
+<li>
+<p><strong>Large size of the training vector:</strong> Every feature in the ML model is a categorical feature and encoding them into numerical feature explodes the size of the training vector to the order of billions. For example, one of the most important features in the ML model is the <em>publisher</em> website where the ad would be displayed which is a categorical feature and there are millions of publishers so using one-hot encoding would result in a training vector of million entries.</p>
+</li>
+<li>
+<p><strong>Skewness of the training data:</strong> Typically, CTRs are much lower than 50% (generally, CTR is around 1-2%)which means that positive examples (clicks) are relatively rare, hence is the problem of skewness in the training data is introduced.</p>
+</li>
+<li>
+<p><strong>Rapid changes in the online ad landscape:</strong> The adtech domain is a very dynamic environment where the data distribution changes over time. Facebook conducted an experiment where they trained the model on one day of data and evaluated on the six consecutive days. The results showed that the performance of the model decreases as the delay between the training and test set increases. Thus, it is very important to update the model every few hours to keep it very real-time</p>
+</li>
+<li>
+<p><strong>Per-coordinate learning rate:</strong> In most of the standard ML problems, the learning rate is a constant. In adtech, there is a huge imbalance of the number of training instances on each feature. For example, a famous publisher such as cnn.com will be having more users thus more ad-slots compared to a very unknown one thus, our training data will have a huge number of training instances for cnn.com. Therefore, we want to decrease the learning rate for the coordinate as its frequency in the training data increases.</p>
+</li>
+<li>
+<p><strong>Using Progressive Validation rather than cross-validation:</strong> Validating the model on the data set which lags the train set by hours or days is not a good idea as we discussed above that the nature of the dataset changes with time. The <em>online log loss</em> is instead a good proxy for the model performance because it measures the performance only on the most recent data before we train on it, this is exactly analogous to what happens when the model is in production. This also ensures that we can use 100% of our data for both training and testing.</p>
+</li>
+<li>
+<p><strong>Relative changes in the metric compared to Absolute metric:</strong> Click rates vary from country to country and from ad-slot to ad-slot and therefore the metrics change over the course of a single day. Google experiments indicate that the relative changes(compared to a baseline model) are much more stable over time, therefore, a relative change in logloss is a better metric than the average log loss. We also take care only to compare metrics computed from exactly the same data.</p>
+</li>
+<li>
+<p><strong>Segmented performance metrics instead of aggregated metrics:</strong> One of the things that we have to take care while analyzing the performance of the models in adtech is that the aggregated performance metrics may hide effects that are specific to certain sub-populations of the data. For example, a high CTR may, in fact, be caused by a mix of low and high CTR from different ad exchanges. This makes it critical to visualize the performance metrics not only on the aggregate data but also on the various slicing of the data such as per ad exchange, per adgroup, per device type, per publisher.</p>
+</li>
+</ul>
+<p>This blog is the aggregation of all the lessons learnt while working as Data Scientist in the AdTech company. Do let me know if you have any additional comments. </p>
+<p>Do you have any questions?</p>
+<p>Ask your questions in the comments below and I will do my best to answer.</p>
+<div id="disqus_thread"></div>
+
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/adtech/" rel="tag">AdTech</a></li>
+            <li><a class="tag p-category" href="../../categories/data-science/" rel="tag">Data Science</a></li>
+            <li><a class="tag p-category" href="../../categories/machine-learning/" rel="tag">Machine Learning</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../building-machine-learning-data-pipeline-using-apache-spark/" rel="prev" title="Building Machine Learning Data Pipeline using Apache Spark">Previous post</a>
+            </li>
+        </ul></nav></aside></article><footer id="footer"><p>Contents © 2020         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
