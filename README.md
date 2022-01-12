@@ -1,21 +1,21 @@
 # Ayush-iitkgp.github.io
 
-Hi, this is my personal website
+Hi, this is my [personal website](https://ayush-iitkgp.github.io/)
 
-This folder contains the source used to generate a static site using Nikola.
+The website is created using a static site generator [Nikola](https://getnikola.com/).
 
-Installation and documentation at https://getnikola.com/
+## Configuration 
 
 Configuration file for the site is ``conf.py``.
 
 To build the site::
 
-    nikola build
+    `nikola build`
 
 To see it::
 
-    nikola serve -b
+    `nikola serve -b`
 
 To check all available commands::
 
-    nikola help
+    `nikola help`
