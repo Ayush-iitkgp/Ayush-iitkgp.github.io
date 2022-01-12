@@ -37,7 +37,7 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 ----------------|--------------------------
 **LinkedIn:** | &nbsp;[**Ayush Pandey**](https://www.linkedin.com/in/ayushiitkgp)
 **GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
-**Gitlab:** | &nbsp;[**Ayush-iitkgp**](https://gitlab.com/ayush-iitkgp)
+**GitLab:** | &nbsp;[**Ayush-iitkgp**](https://gitlab.com/ayush-iitkgp)
 
 
 ## Updates
