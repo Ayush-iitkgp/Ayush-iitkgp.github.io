@@ -1096,3 +1096,7 @@
 'render_pages:output\\posts\\index.html', (7617024, 3222)
 'render_galleries:output\\galleries\\50th-Inter-IIT-Sports-Meet\\Jersey Pic.JPG', (7620608, 330)
 'render_posts:cache\\stories\\internals.html', (7621120, 367)
+'render_posts:cache\\posts\\learnings-from-a-month-of-being-a-tech-lead.html', (7621632, 460)
+'render_sources:output\\posts\\learnings-from-a-month-of-being-a-tech-lead\\index.md', (7622144, 313)
+'render_pages:output\\posts\\learnings-from-a-month-of-being-a-tech-lead\\index.html', (7633408, 3413)
+'render_taxonomies:output\\2022\\index.html', (7653376, 2811)

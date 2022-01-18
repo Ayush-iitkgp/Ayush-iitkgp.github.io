@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://Ayush-iitkgp.github.io/</loc>
-  <lastmod>2022-01-18T21:37:00Z</lastmod>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/2016/</loc>
@@ -22,12 +22,20 @@
   <lastmod>2022-01-18T21:37:00Z</lastmod>
  </url>
  <url>
+  <loc>http://Ayush-iitkgp.github.io/2022/</loc>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://Ayush-iitkgp.github.io/archive.html</loc>
-  <lastmod>2022-01-18T21:37:00Z</lastmod>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/blog/</loc>
-  <lastmod>2022-01-18T21:37:00Z</lastmod>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/blog/index-1.html</loc>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/categories/</loc>
@@ -128,6 +136,10 @@
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/is-it-the-end-or-another-beginning/</loc>
   <lastmod>2022-01-18T21:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://Ayush-iitkgp.github.io/posts/learnings-from-a-month-of-being-a-tech-lead/</loc>
+  <lastmod>2022-01-18T22:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://Ayush-iitkgp.github.io/posts/one-class-classification-algorithms/</loc>
