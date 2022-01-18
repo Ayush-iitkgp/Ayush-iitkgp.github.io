@@ -1,4 +1,0 @@
-Sitemap: http://Ayush-iitkgp.github.io/sitemapindex.xml
-
-User-Agent: *
-Host: Ayush-iitkgp.github.io

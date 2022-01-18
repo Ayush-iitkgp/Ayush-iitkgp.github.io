@@ -17,12 +17,11 @@
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
 </div>
 
-I am an Assistant Tech Lead at [Adacta Fintech](https://www.adacta-fintech.com/) spearheading the development of insurance solutions for Europe-based companies such as the Sava and DVA Insurance while honing my skills as a full-stack engineer. 
+I am a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API.
 
-Before plunging into software development, I was a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I am developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API. I am applying for a [Data Science](https://www.toptal.com/data-science) position at [Toptal](https://www.toptal.com/).
-I also worked as a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infrastructure.
+Previously, I worked as a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infrastructure.
 
-Before moving to Slovenia, I worked as the Product Engineer at [Sprinklr](https://www.sprinklr.com/), India where I was involved in implementing the machine learning module in the data flow execution pipeline using Kafka, Spark, and Spring framework.
+Before joining Zemanta, I worked as the Product Engineer, Data Engine at Sprinklr, India where I was involved in implementing the machine learning module in the data flow execution pipeline using Kafka, Spark, and Spring framework.
 
 I graduated from the Indian Institute of Technology(IIT), Kharagpur with majors in Mathematics and Computer Science and a micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
 
@@ -37,7 +36,6 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 ----------------|--------------------------
 **LinkedIn:** | &nbsp;[**Ayush Pandey**](https://www.linkedin.com/in/ayushiitkgp)
 **GitHub:** | &nbsp;[**Ayush-iitkgp**](http://github.com/Ayush-iitkgp)
-**GitLab:** | &nbsp;[**Ayush-iitkgp**](https://gitlab.com/ayush-iitkgp)
 
 
 ## Updates

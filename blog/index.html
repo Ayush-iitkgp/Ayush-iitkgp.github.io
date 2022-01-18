@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Ayush Pandey">
+<meta name="viewport" content="width=device-width">
+<title>Ayush Pandey | Ayush Pandey</title>
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/poole.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/lanyon.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://Ayush-iitkgp.github.io/blog/">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</head>
+<body class="theme-base-0d">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <!---<div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div> -->
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../blog">Blog</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/file/d/1ivW6csbp9xI5cuGABnqIOriUDvFyNB88/view?usp=sharing">Resume</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc">University Projects</a>
+        <a class="sidebar-nav-item" href="../posts/gsoc-2017/">GSoC'17</a>
+        <a class="sidebar-nav-item" href="../posts/is-it-the-end-or-another-beginning/">GSoC'16</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="http://Ayush-iitkgp.github.io/" title="Ayush Pandey" rel="home">Ayush Pandey</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+
+<div class="posts">
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/applying-machine-learning-in-adtech/" class="u-url">Applying Machine Learning in Ad Tech</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/applying-machine-learning-in-adtech/" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-08T02:13:21+05:30" title="2019-04-08 02:13">2019-04-08 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h2>Introduction</h2>
+<p>In recent years, programmatic advertising is been taking over the online advertisement industry. Many companies referred to as DSP (Demand Side Platform) compete for the same ad-slot on the internet. The success of the DSPs to deliver the values to the advertisers is evaluated on the below two criteria:</p>
+<ol>
+<li>High Click Through Rate = Number of clicks/ Number of ads shown</li>
+<li>High Conversion Rate = Number of conversions (such as a purchase)/ Number of ads shown</li>
+</ol>
+<p>To achieve high CTR and Conversion Rates, DSPs heavily rely on using Artificial Intelligence techniques and develop their in-house Machine Learning algorithms. The problem of applying Machine Learning in Adtech is different from the standard problem in many sense. Google's paper <a href="https://ai.google/research/pubs/pub41159"><em>Ad Click Prediction: a view from the Trenches</em></a> and Facebook's paper <a href="https://research.fb.com/publications/practical-lessons-from-predicting-clicks-on-ads-at-facebook/"><em>Practical Lessons from Predicting Clicks on Ads at Facebbok</em></a> have discussed in details the lessons learned while building an AI for the adtech industry. In the remaining blog post, I will try to summarize the intricacies of applying ML in adtech and how it is tackled in general:</p>
+<ul>
+<li>
+<p><strong>Large size of the training vector:</strong> Every feature in the ML model is a categorical feature and encoding them into numerical feature explodes the size of the training vector to the order of billions. For example, one of the most important features in the ML model is the <em>publisher</em> website where the ad would be displayed which is a categorical feature and there are millions of publishers so using one-hot encoding would result in a training vector of million entries.</p>
+</li>
+<li>
+<p><strong>Skewness of the training data:</strong> Typically, CTRs are much lower than 50% (generally, CTR is around 1-2%)which means that positive examples (clicks) are relatively rare, hence is the problem of skewness in the training data is introduced.</p>
+</li>
+<li>
+<p><strong>Rapid changes in the online ad landscape:</strong> The adtech domain is a very dynamic environment where the data distribution changes over time. Facebook conducted an experiment where they trained the model on one day of data and evaluated on the six consecutive days. The results showed that the performance of the model decreases as the delay between the training and test set increases. Thus, it is very important to update the model every few hours to keep it very real-time</p>
+</li>
+<li>
+<p><strong>Per-coordinate learning rate:</strong> In most of the standard ML problems, the learning rate is a constant. In adtech, there is a huge imbalance of the number of training instances on each feature. For example, a famous publisher such as cnn.com will be having more users thus more ad-slots compared to a very unknown one thus, our training data will have a huge number of training instances for cnn.com. Therefore, we want to decrease the learning rate for the coordinate as its frequency in the training data increases.</p>
+</li>
+<li>
+<p><strong>Using Progressive Validation rather than cross-validation:</strong> Validating the model on the data set which lags the train set by hours or days is not a good idea as we discussed above that the nature of the dataset changes with time. The <em>online log loss</em> is instead a good proxy for the model performance because it measures the performance only on the most recent data before we train on it, this is exactly analogous to what happens when the model is in production. This also ensures that we can use 100% of our data for both training and testing.</p>
+</li>
+<li>
+<p><strong>Relative changes in the metric compared to Absolute metric:</strong> Click rates vary from country to country and from ad-slot to ad-slot and therefore the metrics change over the course of a single day. Google experiments indicate that the relative changes(compared to a baseline model) are much more stable over time, therefore, a relative change in logloss is a better metric than the average log loss. We also take care only to compare metrics computed from exactly the same data.</p>
+</li>
+<li>
+<p><strong>Segmented performance metrics instead of aggregated metrics:</strong> One of the things that we have to take care while analyzing the performance of the models in adtech is that the aggregated performance metrics may hide effects that are specific to certain sub-populations of the data. For example, a high CTR may, in fact, be caused by a mix of low and high CTR from different ad exchanges. This makes it critical to visualize the performance metrics not only on the aggregate data but also on the various slicing of the data such as per ad exchange, per adgroup, per device type, per publisher.</p>
+</li>
+</ul>
+<p>This blog is the aggregation of all the lessons learnt while working as Data Scientist in the AdTech company. Do let me know if you have any additional comments. </p>
+<p>Do you have any questions?</p>
+<p>Ask your questions in the comments below and I will do my best to answer.</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/building-machine-learning-data-pipeline-using-apache-spark/" class="u-url">Building Machine Learning Data Pipeline using Apache Spark</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/building-machine-learning-data-pipeline-using-apache-spark/" rel="bookmark"><time class="post-date published dt-published" datetime="2019-03-20T02:13:21+05:30" title="2019-03-20 02:13">2019-03-20 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h2>Introduction</h2>
+<p><a href="../posts/building-machine-learning-data-pipeline-using-apache-spark/">Apache Spark</a> is increasingly becoming popular in the field of Data Sciences because of its ability to deal with the huge datasets and the capability to  run computations in memory which is particularly useful in iterative tasks such as the training step of the Machine Learning algorithm. As part of the Data Engine team at <a href="https://www.sprinklr.com/">Sprinklr</a>, I had some experience building the data processing pipeline in Spark. In this blog post, I will try to summarize my learning in simpler, easy to understand terms along with the python code.  </p>
+<p><strong>Q. Why is Apache Spark a suitable tool for building the ML data pipeline?</strong></p>
+<p><strong>Ans.</strong> Few years ago, <a href="https://scikit-learn.org/stable/">scikit-learn</a> came up with the idea of data pipeline but with the advent of big data, it became very problematic to scale. Spark's data pipeline concept is mostly inspired by the scikit-learn project. It provides the APIs for machine learning algorithms which make it easier to combine multiple algorithms into a single pipeline, or workflow.</p>
+<p>Now, I will introduce the key concepts used in the Pipeline API:</p>
+<p><strong>DataFrame:</strong> It is basically a data structure for storing the data in-memory in a highly efficient way. Dataframe in Spark is conceptually equivalent to a dataframe in R/Python. It can store  different data types such a string, vectors, true labels, and predictions. Dataframes can be created from the csv, json and many different file formats stored on the local filesystem, Hadoop HDFS or cloud environment such as AWS S3.</p>
+<p><strong>Transformer:</strong> It is a method or an algorithm which can transform one DataFrame into another DataFrame. It includes SQL statements, feature transformers and learned ML models. While defining a transformer, you have to specify the column it would operate on and the output column it would append to the input DataFrame. Technically, a Transformer implements a method <strong>transform()</strong>. E.g., a SQL <em>select</em> statement which would return a new dataframe with only required columns. Another example is a <em>trained ML model</em> which turns a dataframe with feature vectors into a dataframe with predictions.</p>
+<p><strong>Estimator:</strong> It is an algorithm which can be fit on a DataFrame to produce a Transformer.  Technically, an Estimator implements a method <strong>fit()</strong> which accepts a DataFrame and produces a <strong>Model</strong> which is a Transformer. For example, a machine learning algorithm is an Estimator which trains on a DataFrame and produces a trained model which is a transformer as it can transform a feature vector into predictions.</p>
+<p><strong>Parameter:</strong> These are the hyperparameters used during cross-validation phase of the ML pipeline.</p>
+<p><strong>Pipeline:</strong> A Pipeline is a sequence of PipelineStage (Transformers and Estimators)together to be running in a particular order to specify a Machine Learning workflow. <strong>A Pipeline’s stages are specified as an ordered array</strong>. For example predicting the price of a house given it's breadth, length, location and age involve several stages:</p>
+<ul>
+<li>Remove the data points which have all columns as null value - Transformer</li>
+<li>Create a new feature <strong>area</strong> - Transformer</li>
+<li>Learn a prediction model using the feature vectors and the actual price - Estimator</li>
+<li>Use the learned model to predict the prices - Transformer</li>
+</ul>
+<p>A Pipeline is an <em>Estimator</em> in itself. Thus, after a Pipeline’s fit() method is called, it produces a <em>PipelineModel</em>, which is a Transformer. </p>
+<p>PipelineModel has the same number of stages as the original Pipeline, <strong>but all Estimators in the original Pipeline have become Transformers</strong>. This PipelineModel is used at test time. </p>
+<p>Let's dive into the Python code using an example mentioned in the Spark's doc <a href="https://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline">here</a> where we are trying to classify a line of text into 0 or 1:</p>
+<p><strong>Step 1: Create a DataFrame</strong></p>
+<pre class="code literal-block"><span></span><code><span class="c1"># Some import statements</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">HashingTF</span><span class="p">,</span> <span class="n">Tokenizer</span>
+
+<span class="c1"># DataFrame could be created from a csv file or any other sources </span>
+<span class="n">training</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"a b c d e spark"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"b d"</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"spark f g h"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"hadoop mapreduce"</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="p">],</span> <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
+
+<span class="c1"># Let's also create a test dataset which we will use later</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"spark i j k"</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"l m n"</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"spark hadoop spark"</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"apache hadoop"</span><span class="p">)</span>
+<span class="p">],</span> <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">])</span>
+</code></pre>
+
+<p><strong>Step 2: Specify the transformers and the estimators of the pipeline</strong></p>
+<pre class="code literal-block"><span></span><code><span class="p">#</span> <span class="n">Tokenizer</span> <span class="n">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="n">convert</span> <span class="n">the</span> <span class="n">text</span> <span class="n">column</span> <span class="n">into</span> <span class="n">words</span> <span class="n">using</span> <span class="n">space</span> <span class="n">as</span> <span class="n">a</span> <span class="n">delimeter</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s">"text"</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s">"words"</span><span class="p">)</span>
+
+<span class="p">#</span> <span class="n">HashingTF</span> <span class="n">is</span> <span class="n">again</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">takes</span> <span class="n">the</span> <span class="n">column</span> <span class="s">"words as an input and creates a new column of a vector"</span> 
+<span class="n">hashingTF</span> <span class="o">=</span> <span class="n">HashingTF</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">getOutputCol</span><span class="p">(),</span> <span class="n">outputCol</span><span class="o">=</span><span class="s">"features"</span><span class="p">)</span>
+
+<span class="p">#</span> <span class="n">Logistic</span> <span class="n">Regression</span> <span class="n">is</span> <span class="n">an</span> <span class="n">Estimator</span> <span class="n">which</span> <span class="n">would</span> <span class="n">take</span> <span class="s">"features"</span> <span class="k">and</span> <span class="s">"label"</span> <span class="n">as</span> <span class="n">an</span> <span class="k">input</span> <span class="k">and</span> <span class="n">create</span> <span class="n">a</span> <span class="n">trained</span> <span class="n">model</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mh">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre>
+
+<p><strong>Step 3: Create the pipeline using the transformers and the estimators defined in step 2</strong></p>
+<pre class="code literal-block"><span></span><code>pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
+</code></pre>
+
+<p><strong>Step 4: Call the fit() method on the pipeline to create a PipelineModel</strong></p>
+<pre class="code literal-block"><span></span><code>model = pipeline.fit(training)
+</code></pre>
+
+<p><strong>Step 5: Use the PipelineModel to do the predictions of the test dataset</strong></p>
+<pre class="code literal-block"><span></span><code><span class="nv">prediction</span> <span class="o">=</span> <span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
+<span class="nv">selected</span> <span class="o">=</span> <span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"</span><span class="s">id</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">text</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">probability</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">prediction</span><span class="s2">"</span><span class="ss">)</span>
+<span class="nv">selected</span>.<span class="k">show</span><span class="ss">()</span>
+</code></pre>
+
+<p>One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. </p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/ctr-analysis-using-spark/" class="u-url">Click Through Rate Analysis using Spark</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/ctr-analysis-using-spark/" rel="bookmark"><time class="post-date published dt-published" datetime="2019-02-21T02:13:21+05:30" title="2019-02-21 02:13">2019-02-21 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h2>Introduction</h2>
+<p>In recent years, programmatic advertising is been taking over the online advertisement industry. To enable automatic selling and purchasing ad impressions between advertisers and publishers through real-time auctions, Real-Time Bidding (RTB) is quickly becoming the leading method.</p>
+<p>In contrast to the traditional online ad market, where a certain amount of impressions is sold at a fixed rate, RTB allows advertisers to bid each impression individually in real time at a cost based on impression-level features. Real-time Bidding (RTB) is a way of transacting media that allows an individual ad impression to be put up for bid in real-time. This is done through a programmatic <strong>on-the-spot auction</strong>, which is similar to how financial markets operate. RTB allows for Addressable Advertising; the ability to serve ads to consumers directly based on their demographic, psychographic, or behavioral attributes.</p>
+<p>Many DSPs (Demand Side Platforms) act as agents for the advertisers and take part in the real-time auction on behalf of them. In order to enable real-time bidding and provide the advertisers with the clicks at the lowest price possible, DSPs develop their own machine learning algorithms using techniques such as <a href="https://en.wikipedia.org/wiki/Feature_hashing">hashing trick</a>, feature combinations, stochastic gradient descent etc.</p>
+<h2>Motivation</h2>
+<p>Like the standard practice in most of the data science use cases, whenever a new algorithm is developed, they are put into A/B test against the already existing algorithm in the production (at least for few days) in order to do determine which algorithm suits the business metrics better. </p>
+<p>Due to the huge volume of bid requests (around a million bid requests per second), the amount of data collected during AB is in the order of 100 GBs. Python's Pandas library has basically all the functionality needed to do the offline analysis of the data collected in terms of CPCs, spend, clicks, CTR, AUC etc. </p>
+<p>But, Pandas has a huge problem, it has to load all the dataset in memory in order to run some computations on it. From my experience, <strong>Pandas needs the RAM size to be 3 times the size of the dataset</strong> and it can not be run into a distributed environment as cluster a of machines. This is where <a href="https://spark.apache.org/">Apache Spark</a> is useful as it can process the datasets whose size is more than the size of the RAM. This blog will not cover the internals of Apache Spark and how it works rather I will jump to how the Pandas CTR Analysis code can be easily converted into spark analysis with few syntax changes.</p>
+<h2>Migrating to Spark from Pandas</h2>
+<p>In new versions, Spark started to support Dataframes which is conceptually equivalent to a dataframe in R/Python. Dataframe support in Spark has made it comparatively easy for users to switch to Spark from Pandas using a very similar syntax. In this section, I would jump to coding and show how the CTR analysis that is done in Pandas can be migrated to Spark. </p>
+<p>Before I jump into the coding, I would like to introduce some of the keywords used in the code:</p>
+<p><em>Effective CPC</em>: Total money spent / Total number of clicks</p>
+<p><em>Label</em>: It is either 0 or 1 (1 signifies that the click happened and 0 is for no click)</p>
+<p><em>Win Price</em>: The price paid to win the on-spot auction</p>
+<p><em>Bid CPC</em>: The price the advertiser is willing to pay for the impression</p>
+<p><em>CTR</em>: Click Through Rate = Total Number of Clicks / Total Number of Impressions</p>
+<p><strong>How is Win Price different from Bid Price?</strong></p>
+<p>If an exchange is using <a href="https://en.wikipedia.org/wiki/First-price_sealed-bid_auction">First Price Auction</a>, the win pice and the bid price is same but if the exchange is using <a href="https://en.wikipedia.org/wiki/Generalized_second-price_auction">Second Price Auction</a>, the advertizer with the highest bid price wins but it pays the price equivalent to the second highest bid price hence the win price is less than the bid price.</p>
+<h3><strong>Setting up notebook and importing libraries</strong></h3>
+<h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre>
+
+<h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'SPARK_HOME'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/home/spark-2.3.2-bin-hadoop2.7"</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'JAVA_HOME'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/home/jdk1.8.0_181"</span>
+<span class="n">spark_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SPARK_HOME"</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spark_home</span> <span class="o">+</span> <span class="s2">"/python"</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spark_home</span><span class="p">,</span> <span class="s2">"python/lib/py4j-0.10.7-src.zip"</span><span class="p">))</span>
+
+<span class="kn">from</span>  <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="kn">import</span> <span class="n">SparkConf</span>
+<span class="n">CLUSTER_URL</span> <span class="o">=</span> <span class="s2">"spark://address:7077"</span>
+<span class="n">conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span>
+<span class="n">conf</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="n">CLUSTER_URL</span><span class="p">)</span><span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">"CTR Analysis"</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"spark.executor.memory"</span><span class="p">,</span> <span class="s2">"120g"</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+</code></pre>
+
+<h3><strong>Reading CSV File</strong></h3>
+<h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span><code>df = pd.read_csv(data_file_path, names=cols, error_bad_lines=False, warn_bad_lines=True, sep=',')
+</code></pre>
+
+<h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">StructField</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StringType</span>
+<span class="n">file_location</span> <span class="o">=</span> <span class="s2">"hdfs://address:port/hadoop/dataNode/pyspark/data.csv"</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
+<span class="c1"># df = spark.read.csv(file_location, header=False, inferSchema=True, sep=",")</span>
+<span class="c1"># df.cache()</span>
+</code></pre>
+
+<h3><strong>Cleaning data</strong></h3>
+<h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span><code><span class="n">numeric_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">'label','win_price','ctr','bid_cpc'</span><span class="o">]</span><span class="w"></span>
+<span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="o">[</span><span class="n">numeric_cols</span><span class="o">]</span><span class="p">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+<span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="k">True</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">)</span><span class="w"></span>
+</code></pre>
+
+<h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span><code>numeric_cols = ['label','win_price','ctr','bid_cpc']
+df = df.dropna(subset=numeric_cols)
+</code></pre>
+
+<h3><strong>Calculating Spend, CTR, CPC Per Algo</strong></h3>
+<h5><strong>Pandas</strong></h5>
+<pre class="code literal-block"><span></span><code>data = df.groupby(['algo']).agg({'win_price': np.sum, c_label:{'clicks':np.sum, 'wins':'count'}}).reset_index()
+data[('win_price','sum')] = data[('win_price','sum')] / 1000.
+data['ecpc'] = data[('win_price','sum')] / data[('label,'clicks')]
+data = pd.DataFrame(data.to_records())
+data.columns = ['',algo, 'spend', 'number of impressions', 'number of clicks', 'effective cpc']
+</code></pre>
+
+<h5><strong>Spark</strong></h5>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">udf</span>
+<span class="kn">import</span> <span class="nn">pyspark.sql.functions</span> <span class="k">as</span> <span class="nn">f</span>
+
+<span class="k">def</span> <span class="nf">divide_by_1000</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mf">1000.0</span>
+
+<span class="n">udfdivide_by_1000</span> <span class="o">=</span> <span class="n">udf</span><span class="p">(</span><span class="n">divide_by_1000</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">())</span>
+
+<span class="n">data_wins</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span> <span class="p">{</span><span class="s1">'win_price'</span><span class="p">:</span> <span class="s1">'sum'</span><span class="p">,</span> <span class="s1">'label: '</span><span class="n">count</span><span class="s1">'})</span>
+<span class="n">data_clicks</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'algo'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'label: '</span><span class="nb">sum</span><span class="s1">'})</span>
+<span class="c1"># print data_wins.columns</span>
+<span class="c1"># print data_clicks.columns</span>
+<span class="c1"># Rename the columns</span>
+<span class="n">data_wins</span> <span class="o">=</span> <span class="n">data_wins</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"sum(win_price)"</span><span class="p">,</span> <span class="s2">"win_price"</span><span class="p">)</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"count(label)"</span><span class="p">,</span> <span class="s2">"wins"</span><span class="p">)</span>
+<span class="c1">#     print data_wins.schema</span>
+<span class="c1">#     data_wins['win_price'] = data_wins.win_price/1000.</span>
+<span class="n">data_wins</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_wins</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">,</span><span class="n">udfdivide_by_1000</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">)))</span>
+<span class="n">data_clicks</span> <span class="o">=</span> <span class="n">data_clicks</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">"sum(label)"</span><span class="p">,</span> <span class="s2">"clicks"</span><span class="p">)</span>
+<span class="c1">#     print data_wins.columns</span>
+<span class="c1"># print data_clicks.columns</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_wins</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_clicks</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">'algo'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"effective cpc"</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">"win_price"</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
+</code></pre>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/gsoc-2017/" class="u-url">Google Summer of Code 2017</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/gsoc-2017/" rel="bookmark"><time class="post-date published dt-published" datetime="2017-08-26T02:13:21+05:30" title="2017-08-26 02:13">2017-08-26 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h3>
+<a href="https://summerofcode.withgoogle.com/projects/#5914180975591424">Proposal</a>            <a href="https://drive.google.com/open?id=0B2oOdWdSJWa1b3JvRDR1OHZEUTg">Poster</a>            <a href="https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/pulls?q=is%3Apr+is%3Aclosed+author%3AAyush-iitkgp">Github</a>
+</h3>
+<p>Google Summer of Code 2016 under the Julia Language was an experience of a lifetime which motivated me to apply to this year's program as well. While, my last year project with <a href="../posts/gsoc-2017/">Convex.jl</a> was hardcore mathematics, this time I wanted to work in the field of Machine Learning (mainly it's application in the field where there was a potential but not much had been explored). I was well aware of the applications of Machine Learning techniques in Computer Vision, Natural Language Processing, Stock Market Predictions but I never heard or read anyone saying that they used Machine Learning in Differential Equations. So, as soon as I read about the project <a href="https://julialang.org/soc/projects/diffeq.html#machine-learning-tools-for-classification-of-qualitative-traits-of-differential-equation-solutions">Machine learning tools for classification of qualitative traits of differential equation solutions</a>, I knew what I had to do in the coming summers. It's been awesome 4 months working on my project and I am so thankful to Google Summer of Code 2017 program and The Julia Language for providing me such an incredible opportunity. The thanksgiving note would be incomplete without the mention of my mentor <a href="http://www.chrisrackauckas.com/">Chris Rackauckas</a> who always helped me whenever I felt like giving up.</p>
+<p>In the remaining blog, I will touch upon the technical aspects of my project and my work:</p>
+<h2>Project Abstract</h2>
+<p>Differential equation models are widely used in many scientific fields that include engineering, physics and biomedical sciences. The so-called “forward problem” that is the problem of solving differential equations for given parameter values in the differential equation models has been extensively studied by mathematicians, physicists, and engineers. However, the “inverse problem”, the problem of parameter estimation based on the measurements of output variables, has not been well explored using modern optimization and statistical methods. Parameter estimation aims to find the unknown parameters of the model which give the best fit to a set of experimental data. In this way, parameters which cannot be measured directly will be determined in order to ensure the best fit of the model with the experimental results. This will be done by globally minimizing an objective function which measures the quality of the fit. This inverse problem usually considers a cost function to be optimized (such as maximum likelihood). This problem has applications in systems biology, HIV-AIDS study.</p>
+<p>The expected outcome of my project was <strong>set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning.</strong></p>
+<h2>Application - HIV-AIDS Viral Dynamics Study</h2>
+<p>Studies of HIV dynamics in AIDS research are very important for understanding the pathogenesis of HIV infection and for assessing the potency of antiviral therapies. Ordinary differential equation (ODE) models are proposed to describe the interactions between HIV virus and immune cellular response.</p>
+<p>One popular HIV dynamic model can be written as:</p>
+<p></p>
+<center><img src="../images/HIV.png" alt="HIV-AIDS Dynamics Differential Equation" height="300px" width="500px" border="1px" style="margin: 0px 20px"></center>
+<p>where (T) is target cells which are assumed to be produced at a constant rate s and which are assumed to die at rate d per cell. Productive infection by virus (V), occurs by virus interacting with target cells at a rate proportional to the product of their densities i.e at rate βVT, where β is called the infection rate constant. Productively infected cells (I) are assumed to die at rate δ per cell. Virus is produced from productively infected cells at rate p per cell and is assumed to either infect new cells or be cleared. In the basic model, loss of virus by cell infection is included in the clearance process and virus is assumed to be cleared by all mechanisms at rate c per virion.</p>
+<p>Here we assume that the parameters p and c are known and can be obtained from the literature.</p>
+<p>Very similar to any Machine Lerning problem, we approached the problem of parameter estimation of differential equations by 2 ways: the Bayesian approach (where the idea is to find the probability distribution of the parameters) and the optimization approach (where we are interested to know the point estimates of the parameters).</p>
+<h2>Optimization Approach</h2>
+<p>My mentor Chris had integrated the LossFunctions.jl which builds L2Loss objective function to estimate the parameters of the differential equations. I started by implementing the Two-stage method which is based on based on the local smoothing approach and a pseudo-least squares (PsLS) principle under a framework of measurement error in regression models.</p>
+<p>The following is the comparative study of the above two methods:</p>
+<h3>Advantages</h3>
+<ol>
+<li>Computational efficiency</li>
+<li>The initial values of the state variables of the differential equations are not required</li>
+<li>Providing good initial estimates of the unknown parameters for other computationally-intensive methods to further refine the estimates rapidly</li>
+<li>Easing of the convergence problem</li>
+</ol>
+<h3>Disadvantages</h3>
+<ol>
+<li>This method does not converge to the global/local minima as the Non-Linear regression does if the cost function is convex/concave.</li>
+</ol>
+<p>I also wrote implementations and test cases for supporting different optimizers and algorithms such as:
+1. Genetic Algorithm from Evolutionary.jl
+2. Stochastic Algorithms from BlackBoxOptim.jl
+3. Simulated Annealing, Brent method, Golden Section Search, BFGS algorithm from Optim.jl
+4. MathProgBase associated solvers such as IPOPT, NLopt, MOSEK, etc.</p>
+<p>Then, I integrated the PenaltyFunctions.jl with DiffEqParamEstim to add regularization to the loss function such as Tikhonov and Lasso regularization to surmount ill-posedness and ill-conditioning of the parameter estimation problem.</p>
+<h2>Bayesian Approach</h2>
+<p>Our objective was to translate the ODE described in DifferentialEquations.jl using ParameterizedFunctions.jl into the corresponding Stan (a Markov Chain Monte Carlo Bayesian inference engine) code and use Stan.jl to find the probability distribution of the parameters <strong>without writing a single line of Stan code</strong>.</p>
+<p>The exhaustive list of pull requests can be found <a href="https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/pulls?q=is%3Apr+is%3Aclosed+author%3AAyush-iitkgp">here</a>.</p>
+<p>I am glad to have been successfully implemented what I proposed.</p>
+<h2>References</h2>
+<p>[1].<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631937/">Parameter Estimation for Differential Equation Models Using a Framework of Measurement Error in Regression Models</a></p>
+<p>[2].<a href="https://github.com/JuliaDiffEq/DiffEqParamEstim.jl/issues/5">Parameter estimation: the build_loss_objective #5</a></p>
+<p>[3].<a href="http://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-015-0219-2">Robust and efficient parameter estimation in dynamic models of biological systems</a></p>
+<p>[4].<a href="http://faculty.bscb.cornell.edu/~hooker/ODE_Estimation.pdf">Parameter Estimation for Differential Equations: A Generalized Smoothing Approach</a></p>
+<p>[5].<a href="http://www.stat.columbia.edu/~gelman/research/published/stan_jebs_2.pdf">Stan: A probabilistic programming language for Bayesian inference and optimization</a></p>
+<p>[6]. <a href="https://github.com/JuliaDiffEq/DifferentialEquations.jl/issues/135">Linking with Stan project #135</a></p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/one-class-classification-algorithms/" class="u-url">One-Class Classification Algorithms</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/one-class-classification-algorithms/" rel="bookmark"><time class="post-date published dt-published" datetime="2017-01-22T12:13:21+05:30" title="2017-01-22 12:13">2017-01-22 12:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>In my <a href="../posts/when-does-traditional-classification-algorithm-fail/">previous blog entry</a>, I have put forth a case for when the traditional classification algorithms do not perform well i.e. when the training data has reasonable level of imbalance between the various classes. The <a href="https://drive.google.com/file/d/0B2oOdWdSJWa1NF8ySXhvR1ZvODA/view?usp=sharing">problem statement</a> that I was trying to solve had a similar problem of the skewed distribution of the training data. <strong>The power company had only created the database of fraudulent customers</strong>. </p>
+<p>As I mentioned in my previous blog post, there are 2 methods to tackle the case when we have data from only one class:</p>
+<ol>
+<li>
+<p>The first method is an obvious approach to generate an artificial second class and proceed with traditional classification algorithms.</p>
+</li>
+<li>
+<p>The second one is to modify the existing classification algoriths to learn on the data from only one class. These algorithms are called "one-class classfication algorithms" and include one-class SVM, One-Class K-Means, One-Class K-Nearest Neighbor, and One-Class Gaussian.</p>
+</li>
+</ol>
+<p>In this blog entry, I will elaborate on the second method and explain the mathematics behind the one-class classification algorithms and how it improves over the traditional classification algorithms. </p>
+<h3>Fundamental difference between Binary and One Class Classification Algorithms</h3>
+<p>Binary classification algorithms are <em>discriminatory in nature</em>, since they learn to discriminate between classes using all data classes to create a hyperplane(as seen in the fig. below) and use the hyperplane to label a new sample. In case of imbalance between the classes, the discriminatory methods can not be used to their full potential, since by their very nature, they rely on data from all classes to build the hyperplane that separate the various classes.</p>
+<p></p>
+<center>
+<img src="../images/binaryClassification.png" alt="Binary Classification Hyperplane" height="200px" width="375px" border="1px" style="margin: 0px 20px">Binary Classification Hyperplane</center>
+<br><p>Where as the one-class algorithms are based on <em>recognition</em> since their aim is to recognize data from a particular class, and reject data from all other classes. This is accomplished by creating a boundary that encompasses all the data belonging to the target class within itself, so when a new sample arrives the algorithm only has to check whether it lies within the boundary or outside and accordingly classify the sample as belonging to the target class or the outlier.</p>
+<p></p>
+<center>
+<img src="../images/oneClassClassification.png" alt="One-Class Classification Boundary" height="200px" width="375px" border="1px" style="margin: 0px 20px">One-Class Classification Boundary</center>
+<br><h3>Mathematics behind different One-Class Classification Algorithms</h3>
+<p>In this section, I will explain the mathematics behind different one-class machine learning algorithms by taking a cue from <a href="http://file.scirp.org/pdf/JBiSE20100300003_45072138.pdf">this research paper</a>.</p>
+<h4><strong>One-Class Gaussian</strong></h4>
+<p>This is basically a density estimation model. It assumes that the training data are the samples from the <em>Multivariate Normal Population</em>, therefore for a test sample (say z) having n-feaures, the probability of it belonging to the target class can be calculated as follows:</p>
+<p></p>
+<center><img src="../images/one-classGaussian.png" alt="one-class gaussian" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center>
+<br><p>where the parameters μ and Σ are the <em>poputation mean and covariance</em>. Hence, the objective function of this machine learning algorithm is to determine the estimates for μ and Σ. Using the <strong>method of maximum likelihood estimator</strong>, we can show that the sample mean and sample covariance are the unbiased and consistent estimators for population mean and variance respectively. Hence, once we calculate the probability p(z), we can set a threshold to determine whether a new sample is outlier or not.</p>
+<h4><strong>One-Class Kmeans</strong></h4>
+<p>In this method, we first classify the training data into k clusters (which is chosen as per our requirements). Then, for a new sample (say z), the distance <em>d(z)</em> is calculated as the minimum distance of the sample from the centroid of all the k clusters. Now if <em>d(z)</em> is less than a particular thereshold (which is again chosen as per our requirements), then the sample belongs to the target class otherwise it is classified as the outlier.</p>
+<h4><strong>One-Class K-Nearest Neighbor</strong></h4>
+<p>Let us take note of some notation before we understand the mathematics behind the algorithm.</p>
+<p><em>d(z,y)</em> : distance between two samples z and y</p>
+<p><em>NN(y)</em> : Nearest Neighbor of sample y</p>
+<p>Now given a test sample z, we find the nearest neighbor of z from the training data (which is NN(z) = y) and the nearest neighbor of y (which is NN(y)). Now the rule is to classify z as belonging to the target class when:</p>
+<p></p>
+<center><img src="../images/K-NearestNeighbor.png" alt="K-Nearest Neighbor" height="100px" width="375px" border="1px" style="margin: 0px 20px"></center>
+<br><p>where the default value of δ is 1 but can be chosen to satisfy our requirements.</p>
+<p>In my next blog entry, I will try to explain the most widely used one-class classification algorithm i.e. one-class support vector machines. Stay tuned !</p>
+<p>Thank you very much for making it this far.</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/when-does-traditional-classification-algorithm-fail/" class="u-url">When does traditional classification algorithm fail?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/when-does-traditional-classification-algorithm-fail/" rel="bookmark"><time class="post-date published dt-published" datetime="2017-01-17T12:13:21+05:30" title="2017-01-17 12:13">2017-01-17 12:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>One of the most intriguing Machine Learning problems that I have come across was during my 3rd year in the college where a startup named Quantta Analytics presented us with the problem statement about a power distribution company which had observed a significant loss of revenue over a period of time. The loss in revenue was mainly becuase of possible power theft by malicious consumers. The power company resorted to periodic vigilance of customers by sampling and <strong>creating a database of only the fraudulent customers</strong> to curb this practice. The company wanted the vigilance process to be more robust and effective. Hence, the objective of the problem statement was to deploy a machine learning algorithm to provide a list of customers who are likely to commit fraud. So the problem was effectively a classification problem (<strong>with a catch!</strong>) where given the attributes of a customer, we had to predict where it is likely to commit the electricity theft or not.</p>
+<p>In order to appreciate the problem statement, let us first have the review of the well-known famous classification algorithms. Classification problems try to solve the two or multi-class situation. The goal is to distinguish test data between a number of classes, using training data which has samples from all the possible classes and <strong>training data has reasonable level of balance between the various classes</strong>. Now the question that arise is - <em>At what levels of imbalance does the use of traditional classifiers becomes futile?</em></p>
+<p><a href="http://ieeexplore.ieee.org/document/6406735/">This paper</a> has made observation by conducting experiments on various datasets from the UCI repository, and monitoring the performance of the traditional classifiers. I am listing down the most important observations stated in the paper:</p>
+<ul>
+<li>
+<p>The performance of the traditional classifiers start to decline when the imbalance between output classes increase and <strong>the decline becomes prominent at the ratio 1:2.8</strong>.</p>
+</li>
+<li>
+<p><strong>At the ratio 1:10</strong>, the performance is so poor for traditional classifiers that it can no longer be trusted.</p>
+</li>
+</ul>
+<p>Figure below shows the initial ratio of the classes present in UCI dataset and the ratio at which the performance of the binary classiﬁers starts to deteriorate.</p>
+<p></p>
+<center><img src="../images/BinaryPerformanceTable.png" alt="Binary Classification Algorithm Performance Table" height="200px" width="375px" border="1px" style="margin: 0px 20px"></center>
+<p>Now the questions that arise are - what if we have the training data which has imbalance between the classes or data only from one class? Why do we need to study such case? And are there any situations where such data is available?</p>
+<p>To answer the latter first, yes there are plenty of situations where we have the data from only one class. Consider a case of a nuclear power plant. We have the measurement of the plant conditions such as temperature, reaction rate when the plant is in working condition. Is it possible to get such measurements in case of an accident? No. Now, if we want to predict the possible scenario of the breakdown of the plant. From the above observations it is sure that the traditional classification algorithms will not perform well. Some other cases are:</p>
+<ul>
+<li>
+<p>Detection of oil spill</p>
+</li>
+<li>
+<p>In computational biology to predict microRNA gene target</p>
+</li>
+</ul>
+<p>There are 2 methods to tackle the case when we have data from only one class:</p>
+<ol>
+<li>
+<p>The first method is an obvious approach to generate an artificial second class and proceed with traditional classification algorithms.</p>
+</li>
+<li>
+<p>The second one is to modify the existing classification algoriths to learn on the data from only one class. These algorithms are called "one-class classfication algorithms" and include one-class SVM, One-Class K-Means, One-Class K-Nearest Neighbor, and One-Class Gaussian.</p>
+</li>
+</ol>
+<p>I will be elaborating on the above two methods in my next blog post. Thank you very much for making it this far.</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/is-it-the-end-or-another-beginning/" class="u-url">Is it the end or another beginning ?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/is-it-the-end-or-another-beginning/" rel="bookmark"><time class="post-date published dt-published" datetime="2016-08-20T02:13:21+05:30" title="2016-08-20 02:13">2016-08-20 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h3>
+<a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb">Proposal</a>            <a href="https://ayush-iitkgp.github.io/categories/gsoc16/">Blog</a>            <a href="../stories/juliacon-2016-talk/">Talk</a>            <a href="https://drive.google.com/file/d/0B2oOdWdSJWa1cUFKTGI0czFDSDQ/view?usp=sharing">Presentation</a>            <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2">Github</a>
+</h3>
+<p>It hasn't been long when I was hugging my friends, calling my parents to inform them of my selection to Google Summer of Code, 2016 program and now here I am writing a wrap-up post for the program. I remember wanting to spend my summers working on the project that involved lots of mathematics, some of the computer science and travel as part of the project. I am so thankful to Google Summer of Code, 2016 program and The Julia Language to have made my each and every wish come true. The thanksgiving note would be incomplete without the mention of my mentors Madeleine and Dj who always helped me whenever I felt like giving up.</p>
+<p>Now, coming to the technical aspects of my project, it was divide in 3 phases based on the branches of convex programming namely:</p>
+<h4>1. Support for complex-domain linear programs</h4>
+<p>During this phase of the project, I extended the present implementation in Convex.jl to provide support for linear programs involving complex variables and the complex coefficients. The technical details of the implementation are described in the blog post <a href="https://ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/">here</a>.</p>
+<h4>2. Support for second order conic programs</h4>
+<p>In this phase of the project, I in consulation with my mentors, rewrote many the second order cone atoms such as abs, norm to accept complex arguments. We also had an intense discussion on whether redefining the above atoms to accept complex arguments would violate DCP compliance and we came to a conclusion that defining inverse or the square atoms on complex variables neither makes sense nor does it preserve the DCP compliance.</p>
+<h4>3. Support for Complex Semidefinite programs</h4>
+<p>The above 2 phases were relatively difficult for us as we had no literature references and the decision we made were solely based on our understanding and intuition. During this phase, we used the mapping in the introductory section of the research paper <a href="http://arxiv.org/pdf/1007.2905v2.pdf">here</a> to transform a complex semidefinite program to the corresponding real semidefinite program. Presently, I am writing test cases to check the correctness of our implementation.</p>
+<p>The exhaustive list of commits can be found <a href="https://github.com/Ayush-iitkgp/Convex.jl/commits/gsoc2">here</a>.</p>
+<p>I am glad to have been successfully implemented what I proposed. Presently, I am also writing the documentation and examples to demonstrate the usability of my implementation. The project will culminate with a single pull request to the Convex.jl repository as well as the release of a new version of Convex.jl which we plan to do in next few days. </p>
+<h3>References</h3>
+<p>[1].<a href="http://www.sciencedirect.com/science/article/pii/S0022000003001454">Approximation algorithms for MAX-3-CUT and other problems via complex semidefinite programming</a></p>
+<p>[2].<a href="http://arxiv.org/pdf/1007.2905v2.pdf">Invariant semidefinite programs</a></p>
+<p>[3].<a href="http://arxiv.org/pdf/1410.4821.pdf">Convex Optimization in Julia</a></p>
+<p>[4].<a href="https://github.com/JuliaOpt/Convex.jl/issues/103">Support for complex variables</a></p>
+<p>[5].<a href="https://github.com/cvxgrp/cvxpy/issues/191">Add complex variables</a></p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/" class="u-url">Announcing support for complex-domain linear Programs in Convex.jl</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/" rel="bookmark"><time class="post-date published dt-published" datetime="2016-07-27T02:13:21+05:30" title="2016-07-27 02:13">2016-07-27 02:13</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the <em>Google Summer of Code</em> students under <em>The Julia Language</em>, I had proposed to implement the support for complex semidefinite programming. In the first phase of project, I started by tackling the problem of complex-domain LPs where in first subphase, I had announced the support for complex coefficients during <a href="https://www.youtube.com/watch?v=fHG4uEOlMbY">JuliaCon'16</a> and now I take this opportunity to announce the support for complex variables in LPs.</p>
+<p>Complex-domain LPs consist of a real linear objective function, real linear inequality constraints, and real and complex linear equality constraints.</p>
+<p>In order to enable complex-domain LPs, we came up with these ideas:</p>
+<ol>
+<li>We redefined the <strong>conic_form!</strong> of every affine atom to accept complex arguments.</li>
+<li>Every complex variable z was internally represented as <code>z = z1 + i*z2</code>, where z1 and z2 are real.</li>
+<li>We introduced two new affine atoms <strong>real</strong> and <strong>imag</strong> which return the real and the imaginary parts of the complex variable respectively.</li>
+<li>transpose and ctranspose perform differently on complex variables so a new atom <strong>CTransposeAtom</strong> was created.</li>
+<li>A complex-equality constraint <em>RHS = LHS</em> can be decomposed into two corresponding real equalities constraint <em>real(RHS) = real(LHS)</em> and <em>imag(RHS) = imag(LHS)</em>
+</li>
+</ol>
+<p>After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:</p>
+<pre class="code literal-block"><span></span><code><span class="c1"># Importing Packages</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">"https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"</span><span class="p">)</span>
+<span class="n">using</span> <span class="n">Convex</span>
+
+<span class="c1"># Complex LP with real variable"</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># variable dimension (parameter)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># number of constraints (parameter)</span>
+<span class="n">xo</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">xo</span> 
+<span class="c1"># Declare a real variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="c1"># Notice A*x==b is complex equality constraint </span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+
+<span class="c1"># Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">real</span><span class="p">(</span><span class="n">b</span><span class="p">),</span>      <span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="n">imag</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+<span class="n">x1</span><span class="o">==</span><span class="n">x2</span> <span class="c1"># should return true</span>
+
+
+<span class="c1"># Let's now take an example where the complex variable is used</span>
+<span class="c1"># Complex LP with complex variable</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># variable dimension (parameter)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># number of constraints (parameter)</span>
+<span class="n">xo</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">im</span><span class="o">*</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">xo</span>
+
+<span class="c1"># Declare a complex variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">ComplexVariable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">real</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">imag</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+
+<span class="n">xr</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">xr</span><span class="p">),</span> <span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xr</span><span class="o">-</span><span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">==</span> <span class="n">real</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xr</span><span class="o">+</span><span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">==</span> <span class="n">imag</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">xr</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xi</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">x1</span><span class="o">==</span> <span class="n">xr</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">xi</span><span class="o">.</span><span class="n">value</span> <span class="c1"># should return true</span>
+</code></pre>
+
+<p>List of all the affine atoms are as follows:</p>
+<ol>
+<li>addition, substraction, multiplication, division</li>
+<li>indexing and slicing</li>
+<li>k-th diagonal of a matrix</li>
+<li>construct diagonal matrix</li>
+<li>transpose and ctranspose</li>
+<li>stacking</li>
+<li>sum</li>
+<li>trace</li>
+<li>conv</li>
+<li>real and imag</li>
+</ol>
+<p>Now, I am working towards implementing the complex-domain Second Order Conic Programming. Meanwhile, I invite the Julia community to play around with the complex-domain LPs. The link to the development branch is <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2">here</a>.</p>
+<p>Looking forward to your suggestions!</p>
+<p>Special thanks to my mentors Madeleine and Dj!</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/a-month-of-excitement/" class="u-url">A month of Excitement!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/a-month-of-excitement/" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-22T21:44:47+05:30" title="2016-05-22 21:44">2016-05-22 21:44</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><strong>Every day is a new experience and it opening up new opportunities. Life is awesome</strong>. </p>
+<p>That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.</p>
+<p>I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: </p>
+<p>Many problems in applied sciences are posed as optimization problems over the complex field such as:</p>
+<ul>
+<li>Phase retrieval from sparse signals</li>
+<li>Designing an FIR filter given desired frequency response</li>
+<li>Optimization problems in AC power systems</li>
+<li>Frequency domain analysis in signal processing and control theory.</li>
+</ul>
+<p>The present approach is to manually convert the complex-domain problems to real-domain problems <a href="http://nbviewer.jupyter.org/github/cvxgrp/cvxpy/blob/master/examples/notebooks/WWW/fir_chebychev_design.ipynb">(example)</a> and pass to solvers. This process can be time-consuming and non-intuitive sometimes. The correct approach to such problem would be to make existing packages deal with complex-domain optimization hence making it easier for the optimization community to deal with complex-domain problems.</p>
+<p>In the first hangout call with my mentors, we had decided to implement the functionality to support the Linear complex-domain optimization problem in Convex.jl. In order to support the above functionality, I was required to make the following changes:</p>
+<ol>
+<li>
+<p>Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign <code>ComplexSign</code> which was introduced as the subtype of the user-defined type <code>Sign</code> in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with <code>ComplexSign</code></p>
+<pre class="code literal-block"><span></span><code><span class="nv">abstract</span> <span class="nv">Sign</span>
+<span class="nv">type</span> <span class="nv">Positive</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">Negative</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                   <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">NoSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                     <span class="k">end</span>
+<span class="nv">type</span> <span class="nv">ComplexSign</span> <span class="o">&lt;</span>: <span class="nv">Sign</span>                <span class="k">end</span>
+
+<span class="o">-</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexSign</span><span class="ss">()</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">+</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span><span class="o">+</span><span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">t</span>::<span class="nv">ComplexSign</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">Sign</span>, <span class="nv">t</span>::<span class="nv">ComplexSign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">t</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">m</span>::<span class="nv">Monotonicity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NoMonotonicity</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Monotonicity</span>, <span class="nv">s</span>::<span class="nv">Sign</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">s</span> <span class="o">*</span> <span class="nv">m</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConstVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">AffineVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConvexVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">ConcaveVexity</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">NotDcp</span><span class="ss">()</span>
+<span class="o">*</span><span class="ss">(</span><span class="nv">s</span>::<span class="nv">ComplexSign</span>, <span class="nv">v</span>::<span class="nv">NotDcp</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">v</span>
+</code></pre>
+
+</li>
+<li>
+<p>As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.</p>
+<pre class="code literal-block"><span></span><code><span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Int</span>, <span class="nv">n</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">n</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="mi">1</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Tuple</span>{<span class="nv">Int</span>, <span class="nv">Int</span>}, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">(</span><span class="nv">size</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">ComplexVariable</span><span class="ss">(</span><span class="nv">size</span>::<span class="nv">Int</span>, <span class="nv">sets</span>::<span class="nv">Symbol</span>...<span class="ss">)</span> <span class="o">=</span> <span class="nv">Variable</span><span class="ss">((</span><span class="nv">size</span>, <span class="mi">1</span><span class="ss">)</span>, <span class="nv">ComplexSign</span><span class="ss">()</span>, <span class="nv">sets</span>...<span class="ss">)</span>
+<span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span><span class="ss">)</span> <span class="o">=</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
+<span class="nv">function</span> <span class="nv">HermitianSemidefinite</span><span class="ss">(</span><span class="nv">m</span>::<span class="nv">Integer</span>, <span class="nv">n</span>::<span class="nv">Integer</span><span class="ss">)</span>
+  <span class="k">if</span> <span class="nv">m</span><span class="o">==</span><span class="nv">n</span>
+    <span class="k">return</span> <span class="nv">ComplexVariable</span><span class="ss">((</span><span class="nv">m</span>,<span class="nv">m</span><span class="ss">)</span>, :<span class="nv">Semidefinite</span><span class="ss">)</span>
+  <span class="k">else</span>
+    <span class="nv">error</span><span class="ss">(</span><span class="s2">"</span><span class="s">HermitianSemidefinite matrices must be square</span><span class="s2">"</span><span class="ss">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Now, the user can create the complex variables, Hermitian-semidefinite matrix in Convex.jl as follows:</p>
+<pre class="code literal-block"><span></span><code>y = ComplexVariable()
+Variable of
+size: (1, 1)
+sign: Convex.ComplexSign()
+vexity: Convex.AffineVexity()
+z = HermitianSemidefinite(4)
+Variable of
+size: (4, 4)
+sign: Convex.ComplexSign()
+vexity: Convex.AffineVexity()
+</code></pre>
+
+</li>
+<li>
+<p>The third step was to redefine the <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine">affine</a> atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. </p>
+</li>
+</ol>
+<p>So this was the summary of what I have been doing on the coding side of GSoC. On the other side, I moved to Bangalore (India's Silicon Valley) where I would be spending next two months and I am very excited to meet the other JuliaSoCers at the Julia Computing Bangalore office in the days to come.</p>
+<p>Also, the coming week is crucial for us as we have decided to fully implement the complex-domain Linear Programming Problem in Convex.jl. Last night, we had our 3rd hangout meeting where we discussed the nitty-gritty of Convex.jl especially the conic form functionality and how to proceed so as to meet the deadline that we have set up for ourselves. I look forward to another week of coding and making new friends and getting involved in the Open Source Community.</p>
+<p><strong>The Bragging Rights- Convex.jl would be the second optimization package after Matlab's cvx to support complex-domain optimization problems, so yes this excites me as well to be a part the team that is developing such a useful package.</strong></p>
+<p>Also, I am very very much excited to attend JuliaCon'16 at the Massachusetts Institute of Technology and give a talk on what I have been doing this summer. I hope I get the visa on time, wish me luck everyone :)</p>
+<p>See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! </p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="../posts/exciting-summers-ahead/" class="u-url">Exciting Summers Ahead!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="../posts/exciting-summers-ahead/" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-03T21:38:08+05:30" title="2016-05-03 21:38">2016-05-03 21:38</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><strong>Fall seven times, stand up eight !!!!</strong></p>
+<p>Google Summer of Code, the thing I wanted to be a part of as soon as I heard of it in my 1st year of college. It took me 4 years when I am finally selected for the prestigious open source program. Harsh Gupta no word can express my gratefulness for you. Thank you very much for always being there. Coincidently, the results were announced in the middle of my end-semester examination and I must accept my selection was one more reason for not studying for the exams. I am glad that my exams are over and as always I am looking forward to the summers where I apply the theories I have learnt during the semester in a practical world. I think I should make it apparent that applying to Julia and getting selected was a well-thought process, there were series of events which helped me getting selected in GSoC under The Julia Lang. It all started when I was finishing the web-development internship during the winter vacations when I realized that I need to pursue applied mathematics more seriously as that is somewhere I can excel at. <strong>Operations Research and Optimization</strong> was an obvious choice as I enjoyed the introductory course in Linear Programming way more than other cs and mathematics courses that I took during my stay at IIT Kharagpur. I decided to take an advanced course in Optimization(Non-Linear Programming) but sadly the course was open for final year students but yes <em>where there is will, there is a way</em>, I was able to enroll for the course after consulting with my professor, interestingly I was the only pre-final year student in that class yet I tried to attend each and every class in spite of not having familiar faces to sit with. During the semester, 4th InterIIT Meet was being held at IIT Mandi. Initially, I was not the part of IIT Kharagpur's contingent as I didn't find myself competent enough to apply for the selections. But as soon as the problem statement for the event Portfolio Optimization was out, my friend Raja Ambrish contacted me as the problem was related to Convex Optimization because he thought I could help him. My eyes were lit bright as soon as I saw the problem statement as it was the application of what I have been reading throughout the semester. I worked with the other team members and was finally selected to present our solution to the jury at IIT Mandi. Yay, IIT Kharagpur were the overall champions and also our team managed to win gold medal Portfolio Optimization as well.</p>
+<p><img src="../images/InterIITTech.jpg" alt="A click during InterIIT Presentation" height="400px" width="750px" border="1px" style="margin: 0px 20px"></p>
+<p>The InterIIT experience was awesome and it made me realize that indeed I have a special interest in the field of Optimization. I wanted to explore more of this field and Google Summer of Code was an exciting opportunity. I told my friend Harsh about the plans to participate in GSoC in an organization which has Optimization related projects and his first suggestion was <a href="http://julialang.org/">Julia</a>. I came back room and browsed projects and wow Julia has this one project namely <code>"Support for Complex SemiDefinite Programming within Convex.jl"</code> on Convex Optimization that I fell in love with. The concepts I learnt during the classroom hours in Non-Linear Programming were of immense help to me in getting started with Convex.jl special thanks to Prof. Geetanjali Panda for teaching this course in a very intuitive way.</p>
+<p>Finally, after having an extensive discussion with my mentors <a href="https://people.orie.cornell.edu/mru8/">Madeleine Udell</a> and <a href="http://www.its.caltech.edu/~dvij/">Dvijotham Krishnamurthy</a>, I submitted my <a href="http://nbviewer.jupyter.org/github/Ayush-iitkgp/GSoc-Proposal/blob/master/GSoC%202016%20Application%20Ayush%20Pandey-%20Support%20for%20complex%20numbers%20within%20Convex.jl.ipynb">proposal</a> under The Julia Lang and NumFocus and was selected under former. I want to express my gratefulness to each and everyone who has helped me before and throughout the GSoC Application Period.</p>
+<p>I am officially in the first week of the Community Bonding Period. My week started with having a video call with my mentors where we discussed my proposal in more detail and went through some of the existing codebase in order to understand what specific changes need to be made to accomplish our task. We have started by first tackling the complex-domain Linear Programming Problems. We have decided that we would need few utility functions like:</p>
+<ul>
+<li>A function to recurse on the expression tree to check if an expression is real or complex</li>
+<li>A function conj(A)</li>
+<li>A function to check the LHS and RHS of each inequality constraint is real.</li>
+</ul>
+<p>I would also need to think of the rules that would be helpful in determining whether the combination of two or more expressions is real or complex on the lines of how we determine the DCP compliance of a problem. The next step would be to rewrite all the atoms to accept the complex parameters.</p>
+<p>The next assignment was to set-up a blog to write and publish my experience as GSoCer or rather JuliaSoCer which I did just complete :D During this week, I was also introduced to the Julia community and added to their slack channel. I believe I would have some awesome time with the community and hope to see them during JuliaCon 2016.</p>
+<p>Interestingly, I have my birthday on 4th May which I plan to celebrate with my family so I would be traveling to my home from my university. Don't forget to wish me ;) </p>
+<p>This is all for now. Thank you very much for making it this far :)</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    </article>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+        
+        <footer id="footer"><p>Contents © 2022         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
+

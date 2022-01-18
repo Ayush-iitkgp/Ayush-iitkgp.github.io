@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Announcing support for complex-domain linear Programs in Convex.jl | Ayush Pandey</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/poole.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/lanyon.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ayush Pandey">
+<link rel="prev" href="../a-month-of-excitement/" title="A month of Excitement!" type="text/html">
+<link rel="next" href="../is-it-the-end-or-another-beginning/" title="Is it the end or another beginning ?" type="text/html">
+<meta property="og:site_name" content="Ayush Pandey">
+<meta property="og:title" content="Announcing support for complex-domain linear Programs in Convex.jl">
+<meta property="og:url" content="http://Ayush-iitkgp.github.io/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/">
+<meta property="og:description" content="I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the Google Summer of Code students under The Julia Language, I had proposed to implement the suppo">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-27T02:13:21+05:30">
+<meta property="article:tag" content="GSoC'16">
+</head>
+<body class="theme-base-0d">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <!---<div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div> -->
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../blog">Blog</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/file/d/1ivW6csbp9xI5cuGABnqIOriUDvFyNB88/view?usp=sharing">Resume</a>
+        <a class="sidebar-nav-item" href="https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc">University Projects</a>
+        <a class="sidebar-nav-item" href="../gsoc-2017/">GSoC'17</a>
+        <a class="sidebar-nav-item" href="../is-it-the-end-or-another-beginning/">GSoC'16</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="http://Ayush-iitkgp.github.io/" title="Ayush Pandey" rel="home">Ayush Pandey</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Announcing support for complex-domain linear Programs in Convex.jl</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ayush Pandey</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2016-07-27T02:13:21+05:30" itemprop="datePublished" title="2016-07-27 02:13">2016-07-27 02:13</time></a></p>
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>I am pleased to announce the support for complex-domain linear Programs (LPs) in Convex.jl. As one of the <em>Google Summer of Code</em> students under <em>The Julia Language</em>, I had proposed to implement the support for complex semidefinite programming. In the first phase of project, I started by tackling the problem of complex-domain LPs where in first subphase, I had announced the support for complex coefficients during <a href="https://www.youtube.com/watch?v=fHG4uEOlMbY">JuliaCon'16</a> and now I take this opportunity to announce the support for complex variables in LPs.</p>
+<p>Complex-domain LPs consist of a real linear objective function, real linear inequality constraints, and real and complex linear equality constraints.</p>
+<p>In order to enable complex-domain LPs, we came up with these ideas:</p>
+<ol>
+<li>We redefined the <strong>conic_form!</strong> of every affine atom to accept complex arguments.</li>
+<li>Every complex variable z was internally represented as <code>z = z1 + i*z2</code>, where z1 and z2 are real.</li>
+<li>We introduced two new affine atoms <strong>real</strong> and <strong>imag</strong> which return the real and the imaginary parts of the complex variable respectively.</li>
+<li>transpose and ctranspose perform differently on complex variables so a new atom <strong>CTransposeAtom</strong> was created.</li>
+<li>A complex-equality constraint <em>RHS = LHS</em> can be decomposed into two corresponding real equalities constraint <em>real(RHS) = real(LHS)</em> and <em>imag(RHS) = imag(LHS)</em>
+</li>
+</ol>
+<p>After above changes were made to the codebase, we wrote two use cases to demonstrate the usability and the correctness of our idea which I am presenting below:</p>
+<pre class="code literal-block"><span></span><code><span class="c1"># Importing Packages</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">"https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2"</span><span class="p">)</span>
+<span class="n">using</span> <span class="n">Convex</span>
+
+<span class="c1"># Complex LP with real variable"</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># variable dimension (parameter)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># number of constraints (parameter)</span>
+<span class="n">xo</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">xo</span> 
+<span class="c1"># Declare a real variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="c1"># Notice A*x==b is complex equality constraint </span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+
+<span class="c1"># Let's now solve by decomposing complex equality constraint into the corresponding real and imaginary part.</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">real</span><span class="p">(</span><span class="n">b</span><span class="p">),</span>      <span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="n">imag</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+<span class="n">x1</span><span class="o">==</span><span class="n">x2</span> <span class="c1"># should return true</span>
+
+
+<span class="c1"># Let's now take an example where the complex variable is used</span>
+<span class="c1"># Complex LP with complex variable</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># variable dimension (parameter)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># number of constraints (parameter)</span>
+<span class="n">xo</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">im</span><span class="o">*</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">xo</span>
+
+<span class="c1"># Declare a complex variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">ComplexVariable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">real</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">imag</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span>
+
+<span class="n">xr</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">xr</span><span class="p">),</span> <span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xr</span><span class="o">-</span><span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">==</span> <span class="n">real</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">imag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xr</span><span class="o">+</span><span class="n">real</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">==</span> <span class="n">imag</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">xr</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xi</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">solve</span><span class="o">!</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">x1</span><span class="o">==</span> <span class="n">xr</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">im</span><span class="o">*</span><span class="n">xi</span><span class="o">.</span><span class="n">value</span> <span class="c1"># should return true</span>
+</code></pre>
+
+<p>List of all the affine atoms are as follows:</p>
+<ol>
+<li>addition, substraction, multiplication, division</li>
+<li>indexing and slicing</li>
+<li>k-th diagonal of a matrix</li>
+<li>construct diagonal matrix</li>
+<li>transpose and ctranspose</li>
+<li>stacking</li>
+<li>sum</li>
+<li>trace</li>
+<li>conv</li>
+<li>real and imag</li>
+</ol>
+<p>Now, I am working towards implementing the complex-domain Second Order Conic Programming. Meanwhile, I invite the Julia community to play around with the complex-domain LPs. The link to the development branch is <a href="https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc2">here</a>.</p>
+<p>Looking forward to your suggestions!</p>
+<p>Special thanks to my mentors Madeleine and Dj!</p>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//avoyage.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/gsoc16/" rel="tag">GSoC'16</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../a-month-of-excitement/" rel="prev" title="A month of Excitement!">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../is-it-the-end-or-another-beginning/" rel="next" title="Is it the end or another beginning ?">Next post</a>
+            </li>
+        </ul></nav></aside></article><footer id="footer"><p>Contents © 2022         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
+
