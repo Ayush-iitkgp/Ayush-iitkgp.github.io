@@ -11,7 +11,7 @@
 
 Today is exactly a month since I was given the responsibility of co-leading a small team of software developers at [Adacta Fintech](https://www.adacta-fintech.com/) to develop insurance solutions for our clients. It was intimidating at the beginning not just because I was taking this responsibility for the first time but also, it came at a time when the Tech Lead and the Product Manager were on vacations simultaneously and the senior developers in the team were moving to other opportunities in their careers.
 
-But as they say, they never waste a crisis, I took this challenge as an opportunity to hone my skills as a Technical Lead. In this blog post, I will share some of the learning and realizations I went through in this period:
+As they say, they never waste a crisis, I took this challenge as an opportunity to hone my skills as a Technical Lead. In this blog post, I will share some of the learning and realizations I went through in this period:
 
 ** 1. Preparation is the key**
 
