@@ -23,7 +23,7 @@ Before plunging into software development, I was a Deep Learning Engineer at [Ev
 
 Before moving to Slovenia, I worked as the Product Engineer at [Sprinklr](https://www.sprinklr.com/), India where I was involved in implementing the machine learning module in the data flow execution pipeline using Kafka, Spark, and Spring framework.
 
-I graduated from the Indian Institute of Technology(IIT), Kharagpur with majors in Mathematics and Computer Science and a micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives. 
+I graduated from the Indian Institute of Technology(IIT), Kharagpur with majors in Mathematics and Computer Science and a micro-specialization in Optimization Theory and Applications. My interests lie in the intersection of Applied Mathematics and Computer Science. More specifically, I am intrigued by the current trend in the field of Optimization, Data Analytics and Machine Learning and their application in improving our day to day lives.
 
 I have also been involved in the project titled "[Machine learning tools for classification of qualitative traits of differential equation solutions](https://julialang.org/soc/projects/diffeq.html#machine-learning-tools-for-classification-of-qualitative-traits-of-differential-equation-solutions)" where I developed set of a tools for easily classifying parameters using machine learning tooling for users inexperienced with machine learning under the mentorship of [Chris Rackauckas](http://www.chrisrackauckas.com/).
 
