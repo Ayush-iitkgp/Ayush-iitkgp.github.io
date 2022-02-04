@@ -35,7 +35,7 @@ Coming from an open-source community, I have always been excited to share my kno
 
 ** 6. Do not burn yourself**
 
-It is natural that I wanted to prove that I am fit for the new responsibilities that are assigned to me. As a consequence, I started to code and write emails to different stakeholders outside my work hours. While I could do it for the first few weeks but I started to burn out after some time. My suggestion is accept that it’s exhausting and pace yourself. Chill, Watch movies, Play Cricket, Work out. Find what works for you. Get the steam out :-)
+It is natural that I wanted to prove that I am fit for the new responsibilities that are assigned to me. As a consequence, I started to code and write emails to different stakeholders outside my work hours. While I could do it for the first few weeks but I started to burn out after some time. My suggestion is to accept that it’s exhausting and pace yourself. Chill, Watch movies, Play Cricket, Work out. Find what works for you. Get the steam out :-)
 
 Let me know what you think about my blog, I am looking forward to your suggestions and comments.
 
