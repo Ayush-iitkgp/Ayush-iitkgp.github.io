@@ -15,7 +15,7 @@ As they say, they never waste a crisis, I took this challenge as an opportunity 
 
 ** 1. Preparation is the key**
 
-At first, it was intimidating to know that I needed to talk to different stakeholders such as Business Analysts, Product Manager, and Developers. Also provide estimations, write technical notes, organize sprints, and take care of JIRA tasks all at the same time instead of just being in my shallow and programming. Thanks to my product manager and my senior lead, we were able to organize multiple sessions on how to handle the different responsibilities, how to articulate the business aspects of the project and find a correlation between the technical and the business sides of the project. While it is never enough, I did build some confidence over the course of these multiple sessions and I highly advise it for anyone aiming to transition into a Technical Lead role.
+At first, it was intimidating to know that I needed to talk to different stakeholders such as Business Analysts, Product Manager, and Developers. Also provide estimations, write technical notes, organize sprints, and take care of JIRA tasks all at the same time instead of just being in my shell and programming. Thanks to my product manager and my senior lead, we were able to organize multiple sessions on how to handle the different responsibilities, how to articulate the business aspects of the project and find a correlation between the technical and the business sides of the project. While it is never enough, I did build some confidence over the course of these multiple sessions and I highly advise it for anyone aiming to transition into a Technical Lead role.
 
 ** 2. Imposter Syndrome is natural, accept it and be honest about it with your colleagues**
 
