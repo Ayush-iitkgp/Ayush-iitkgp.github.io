@@ -90,7 +90,7 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 <p>PipelineModel has the same number of stages as the original Pipeline, <strong>but all Estimators in the original Pipeline have become Transformers</strong>. This PipelineModel is used at test time. </p>
 <p>Let's dive into the Python code using an example mentioned in the Spark's doc <a href="https://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline">here</a> where we are trying to classify a line of text into 0 or 1:</p>
 <p><strong>Step 1: Create a DataFrame</strong></p>
-<pre class="code literal-block"><span></span><code><span class="c1"># Some import statements</span>
+<div class="code"><pre class="code literal-block"><span class="c1"># Some import statements</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">HashingTF</span><span class="p">,</span> <span class="n">Tokenizer</span>
@@ -110,32 +110,32 @@ Apache Spark is increasingly becoming popular in the field of Data Sciences beca
 <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"spark hadoop spark"</span><span class="p">),</span>
 <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"apache hadoop"</span><span class="p">)</span>
 <span class="p">],</span> <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">])</span>
-</code></pre>
+</pre></div>
 
 <p><strong>Step 2: Specify the transformers and the estimators of the pipeline</strong></p>
-<pre class="code literal-block"><span></span><code><span class="p">#</span> <span class="n">Tokenizer</span> <span class="n">is</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">would</span> <span class="n">convert</span> <span class="n">the</span> <span class="n">text</span> <span class="n">column</span> <span class="n">into</span> <span class="n">words</span> <span class="n">using</span> <span class="n">space</span> <span class="n">as</span> <span class="n">a</span> <span class="n">delimeter</span>
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s">"text"</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s">"words"</span><span class="p">)</span>
+<div class="code"><pre class="code literal-block"><span class="p">#</span><span class="w"> </span><span class="n">Tokenizer</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">transformer</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">words</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">delimeter</span>
+<span class="n">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tokenizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s">"text"</span><span class="p">,</span><span class="w"> </span><span class="n">outputCol</span><span class="o">=</span><span class="s">"words"</span><span class="p">)</span>
 
-<span class="p">#</span> <span class="n">HashingTF</span> <span class="n">is</span> <span class="n">again</span> <span class="n">a</span> <span class="n">transformer</span> <span class="n">which</span> <span class="n">takes</span> <span class="n">the</span> <span class="n">column</span> <span class="s">"words as an input and creates a new column of a vector"</span> 
-<span class="n">hashingTF</span> <span class="o">=</span> <span class="n">HashingTF</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">getOutputCol</span><span class="p">(),</span> <span class="n">outputCol</span><span class="o">=</span><span class="s">"features"</span><span class="p">)</span>
+<span class="p">#</span><span class="w"> </span><span class="n">HashingTF</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">again</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">transformer</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="s">"words as an input and creates a new column of a vector"</span><span class="w"> </span>
+<span class="n">hashingTF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashingTF</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">getOutputCol</span><span class="p">(),</span><span class="w"> </span><span class="n">outputCol</span><span class="o">=</span><span class="s">"features"</span><span class="p">)</span>
 
-<span class="p">#</span> <span class="n">Logistic</span> <span class="n">Regression</span> <span class="n">is</span> <span class="n">an</span> <span class="n">Estimator</span> <span class="n">which</span> <span class="n">would</span> <span class="n">take</span> <span class="s">"features"</span> <span class="k">and</span> <span class="s">"label"</span> <span class="n">as</span> <span class="n">an</span> <span class="k">input</span> <span class="k">and</span> <span class="n">create</span> <span class="n">a</span> <span class="n">trained</span> <span class="n">model</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mh">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-</code></pre>
+<span class="p">#</span><span class="w"> </span><span class="n">Logistic</span><span class="w"> </span><span class="n">Regression</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">Estimator</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="s">"features"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s">"label"</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">input</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">trained</span><span class="w"> </span><span class="n">model</span>
+<span class="n">lr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mh">10</span><span class="p">,</span><span class="w"> </span><span class="n">regParam</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
 
 <p><strong>Step 3: Create the pipeline using the transformers and the estimators defined in step 2</strong></p>
-<pre class="code literal-block"><span></span><code>pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
-</code></pre>
+<div class="code"><pre class="code literal-block">pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
+</pre></div>
 
 <p><strong>Step 4: Call the fit() method on the pipeline to create a PipelineModel</strong></p>
-<pre class="code literal-block"><span></span><code>model = pipeline.fit(training)
-</code></pre>
+<div class="code"><pre class="code literal-block">model = pipeline.fit(training)
+</pre></div>
 
 <p><strong>Step 5: Use the PipelineModel to do the predictions of the test dataset</strong></p>
-<pre class="code literal-block"><span></span><code><span class="nv">prediction</span> <span class="o">=</span> <span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
-<span class="nv">selected</span> <span class="o">=</span> <span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"</span><span class="s">id</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">text</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">probability</span><span class="s2">"</span>, <span class="s2">"</span><span class="s">prediction</span><span class="s2">"</span><span class="ss">)</span>
+<div class="code"><pre class="code literal-block"><span class="nv">prediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">model</span>.<span class="nv">transform</span><span class="ss">(</span><span class="nv">test</span><span class="ss">)</span>
+<span class="nv">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prediction</span>.<span class="nv">select</span><span class="ss">(</span><span class="s2">"id"</span>,<span class="w"> </span><span class="s2">"text"</span>,<span class="w"> </span><span class="s2">"probability"</span>,<span class="w"> </span><span class="s2">"prediction"</span><span class="ss">)</span>
 <span class="nv">selected</span>.<span class="k">show</span><span class="ss">()</span>
-</code></pre>
+</pre></div>
 
 <p>One of the big benefits of the Machine Learning Data Pipeline in Spark is hyperparameter optimization which I would try to explain in the next blog post. I hope this blog would help you in getting started with Spark for building ML data pipelines. </p>
 <div id="disqus_thread"></div>
@@ -172,7 +172,7 @@ s.setAttribute('data-timestamp', +new Date());
             <li class="next">
                 <a href="../applying-machine-learning-in-adtech/" rel="next" title="Applying Machine Learning in Ad Tech">Next post</a>
             </li>
-        </ul></nav></aside></article><footer id="footer"><p>Contents © 2022         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </ul></nav></aside></article><footer id="footer"><p>Contents © 2023         <a href="mailto:ayushpandey.iitkgp@gmail.com">Ayush Pandey</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
@@ -187,4 +187,3 @@ s.setAttribute('data-timestamp', +new Date());
     </script><!-- end fancy dates -->
 </body>
 </html>
-
