@@ -17,7 +17,9 @@
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
 </div>
 
-I am an Assistant Tech Lead at [Adacta Fintech](https://www.adacta-fintech.com/) spearheading the development of insurance solutions for Europe-based companies such as the Sava and DVA Insurance while honing my skills as a full-stack engineer. 
+I am a backend engineer at [Tier Mobility SE] (https://www.tier.app/) based in Berlin, Germany.
+
+Before moving to Berlin, I was an Assistant Tech Lead at [Adacta Fintech](https://www.adacta-fintech.com/) based in Slovenia spearheading the development of insurance solutions for Europe-based companies such as the Sava and DVA Insurance while honing my skills as a full-stack engineer. 
 
 Before plunging into software development, I was a Deep Learning Engineer at [EventRegistry](http://eventregistry.org/) where I was developing data science pipeline using deep learning based text classification algorithms and deploying it using rest API. I also worked as a Data Scientist at [Zemanta, an Outbrain Company](http://www.zemanta.com/) based in Ljubljana, Slovenia. My day to day work involves implementing and analyzing the real-time machine algorithms and integrating it with the bidder infrastructure.
 
