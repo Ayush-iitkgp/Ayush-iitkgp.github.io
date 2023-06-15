@@ -1,6 +1,6 @@
 <!-- 
-.. title: A walk to Camino!
-.. slug: a-walk-to-camino
+.. title: "Journey of Reflection: A walk to Camino"
+.. slug: journey-of-reflection-a-walk-to-camino
 .. date: 2023-06-12 21:44:47 UTC+05:30
 .. tags:
 .. category: 
@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-**Every day is a new experience and it opening up new opportunities. Life is awesome**. 
+**The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation**. 
 
 That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.
 
