@@ -43,6 +43,8 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 ## Updates
 
+**Jun, 2022:** My stay in Slovenia has come to an end, I am moving to Germany. Thank you Slovenia for lovely memories.
+
 **May, 2018:** This is a giant leap forward in life, I am moving to a relatively unknown country Slovenia to work as the Data Scientist at Zemanta, an Outbrain Company. I am grateful for this opportunity and look forward to living an expat life.
 
 **Jul, 2017:** The new phase of life has begun, I am joining Sprinklr as a Product Engineer in their R&D department. I will be starting to work with the Data Engine team  where we will be implementing the machine learning module in the data flow execution pipeline.
