@@ -17,7 +17,7 @@
     <p>Mathematics itself is too enthralling to resist. More so, when coupled with insights from Computer Science, the satisfaction of learning is remarkable.</p>
 </div>
 
-I am a backend engineer at [Tier Mobility SE] (https://www.tier.app/) based in Berlin, Germany.
+I am a backend engineer at [Tier Mobility SE](https://www.tier.app/) based in Berlin, Germany.
 
 Before moving to Berlin, I was an Assistant Tech Lead at [Adacta Fintech](https://www.adacta-fintech.com/) based in Slovenia spearheading the development of insurance solutions for Europe-based companies such as the Sava and DVA Insurance while honing my skills as a full-stack engineer. 
 
