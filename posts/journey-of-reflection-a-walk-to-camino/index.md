@@ -11,7 +11,7 @@
 
 **The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation**. 
 
-That is how I would describe my experience of walking the Camino for around 130 km in 5 days.
+That is how I would describe my experience of walking the Camino.
 
 It was during a call with a very close friend of mine in the midst of long Berlin winter that I decided to hike the Camino De Santiago. 
 
