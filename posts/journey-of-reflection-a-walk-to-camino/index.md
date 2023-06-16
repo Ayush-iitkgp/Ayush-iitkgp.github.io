@@ -13,9 +13,7 @@
 
 That is how I would describe my experience of walking the Camino.
 
-It was during a call with a very close friend of mine in the midst of long Berlin winter that I decided to hike the Camino De Santiago. People have different motivations for the walk, mine was to be able to push myself physically and being able to ponder over my thoughts away from the hustle bustle of the city.
-
-I decided to walk the Portuguese path for a distance of 130 km 
+It was during a call with a very close friend of mine in the midst of long and very hard Berlin winter that I decided to hike the Camino De Santiago. People have different motivations for the walk, mine was to establish a deeper connection with myself and push myself physically and try long distance walking of around 130 km in 5 days that I never even conceived in my wildest imaginations.
 
 Many problems in applied sciences are posed as optimization problems over the complex field such as:
 
