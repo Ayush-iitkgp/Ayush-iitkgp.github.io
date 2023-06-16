@@ -11,9 +11,13 @@
 
 **The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation**. 
 
-That is how I would describe my first month as GSoCer. From meeting new like minded people from all across the world to having an intense discussion about our projects in different groups to getting excited about receiving google goodies and now finally getting invited to JuliaCon'16 to be held at MIT, Cambridge, Massachusetts. Every experience has been worth the work put behind getting selected into GSoC'16.
+That is how I would describe my experience of walking the Camino for around 130 km in 5 days.
 
-I got into coding my project and community bonding as soon as my exams got over on 29th April. Before I get into the details of my project, I would like to extend this opportunity to explain how my project is of importance to the optimization community in particular. The reason is as follows: 
+It was during a call with a very close friend of mine in the midst of long Berlin winter that I decided to hike the Camino De Santiago. 
+
+Different people have different motivations for the walk, mine was to be able to push myself physically and being able to ponder over my thoughts away from the hustle bustle of the city.
+
+I decided to walk the Portuguese path for a distance of 130 km 
 
 Many problems in applied sciences are posed as optimization problems over the complex field such as:
 
