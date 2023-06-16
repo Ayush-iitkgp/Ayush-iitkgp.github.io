@@ -13,9 +13,7 @@
 
 That is how I would describe my experience of walking the Camino.
 
-It was during a call with a very close friend of mine in the midst of long Berlin winter that I decided to hike the Camino De Santiago. 
-
-Different people have different motivations for the walk, mine was to be able to push myself physically and being able to ponder over my thoughts away from the hustle bustle of the city.
+It was during a call with a very close friend of mine in the midst of long Berlin winter that I decided to hike the Camino De Santiago. People have different motivations for the walk, mine was to be able to push myself physically and being able to ponder over my thoughts away from the hustle bustle of the city.
 
 I decided to walk the Portuguese path for a distance of 130 km 
 
