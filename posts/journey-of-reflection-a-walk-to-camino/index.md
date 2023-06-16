@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-      **The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation**. 
+**The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation**. 
 
 That is how I would describe my experience of walking the Camino.
 
