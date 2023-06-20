@@ -27,6 +27,9 @@ In order to train mentally, I read and talked to the people about their Camino e
 
 Last but not the least, taking care of the logistical planning immensely made the experience more pleasureful.
 
+**During challenging moments, take one step at a time**
+
+There were often the very difficult and demanding moments, when I felt like giving up and it is in these moments that embracing a steadfast approach of reminding myself to take each step of the journey one at a time helped me push forward and not give up.
 
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
