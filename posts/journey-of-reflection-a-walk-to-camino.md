@@ -18,7 +18,9 @@ It was during a call with a very close friend of mine in the midst of long and v
 In this blogpost, I would share the learnings and realizations from the experience I had :)
 
 **Preparation is the key**
-Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally. I picked up new a new sports hobby high intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for 20 km or more on the outskirts of Berlin almost every weekend leading upto the Camino. In order to train mentally, I read and talked to the people about their Camino experience, practiced being open to embrace the unknowns and most importantly set aside time for myself to embrace the solitude.  
+
+Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally. I picked up new a new sports hobby high intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for 20 km or more on the outskirts of Berlin almost every weekend leading upto the Camino. In order to train mentally, I read and talked to the people about their Camino experience, practiced being open to embrace the unknowns and most importantly set aside time for myself to embrace the solitude. Last but not the least, taking care of the logistical planning immensely made the experience more pleasureful. 
+
 
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
