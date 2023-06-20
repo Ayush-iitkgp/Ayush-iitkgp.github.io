@@ -17,11 +17,8 @@ It was during a call with a very close friend of mine in the midst of long and v
 
 In this blogpost, I would share the learnings and realizations from the experience I had :)
 
-1. Add support for complex variables, Hermitian SemiDefinite matrix and complex constants. This was done by introducing a new sign `ComplexSign` which was introduced as the subtype of the user-defined type `Sign` in dcp.jl file. I also went on to define the new rules for basic rules on interactions of mathematical expressions with the mathematical expression with `ComplexSign`
-
-2. As a result of changes made in point 1, I was able to modify the constant.jl and variable.jl file accordingly.
-
-3. The third step was to redefine the [affine](https://github.com/Ayush-iitkgp/Convex.jl/tree/gsoc1/src/atoms/affine) atoms in Convex.jl to accommodate the complex variable case as well. Interestingly, by virtue of the rules defined in step 1 in dcp.jl, we didn't even need to define any affine atom to accommodate the complex case, Convex.jl is smart enough to pick the sign of the expression using rules in dcp.jl. 
+**Preparation is the key**
+Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally. I picked up new a new sports hobby high intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for 20 km or more on the outskirts of Berlin almost every weekend leading upto the Camino.
 
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
