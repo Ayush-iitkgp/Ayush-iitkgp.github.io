@@ -29,7 +29,10 @@ Last but not the least, taking care of the logistical planning immensely made th
 
 **During challenging moments, take one step at a time**
 
-There were often the very difficult and demanding moments, when I felt like giving up and it is in these moments that embracing a steadfast approach of reminding myself to take each step of the journey one at a time helped me push forward and not give up.
+There were often the very difficult and demanding moments, when I felt like giving up and it is in these moments that embracing a steadfast approach of reminding myself to take each step of the journey one at a time helped me push forward and not give up. 
+
+Take **one step at a time** sound so simple that I often never paid attention to it but it was during this walk I finally experienced how powerful of a statement it is. 
+
 
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
