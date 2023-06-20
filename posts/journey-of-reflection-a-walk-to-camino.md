@@ -21,7 +21,7 @@ In this blogpost, I would share the learnings and realizations from the experien
 
 Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally.
 
-I picked up a new sports hobby high intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for 20 km or more on the outskirts of Berlin almost every weekend leading upto the Camino.
+I picked up a new sports hobby high intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for atleast 10 km on the outskirts of Berlin almost every weekend leading upto the Camino.
 
 In order to train mentally, I read and talked to the people about their Camino experiences, practiced being open to embrace the unknowns and most importantly set aside time for myself to embrace the solitude allow myself the space to process emotions, find inspiration, and foster personal growth.
 
