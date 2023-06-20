@@ -17,7 +17,7 @@ It was during a call with a very close friend of mine in the midst of long and v
 
 In this blogpost, I would share the learnings and realizations from the experience I had :)
 
-**Preparation is the key**
+### Preparation is the key
 
 Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally.
 
@@ -25,11 +25,11 @@ I picked up a new sports hobby high intensity indoor cycling (spinning) and regu
 
 Last but not the least, taking care of the logistical planning immensely made the experience more pleasureful.
 
-**During challenging moments, take one step at a time**
+### During challenging moments, take one step at a time
 
 There were often the very difficult and demanding moments, when I felt like giving up and it is in these moments that embracing a steadfast approach of reminding myself to take each step of the journey one at a time helped me push forward and not give up. 
 
-Take **one step at a time** sound so simple that I often never paid attention to it but it was during this walk I finally experienced how powerful of a statement it is. 
+Take "_one step at a time_" sound so simple that I often never paid attention to it but it was during this walk I finally experienced how powerful of a statement it is. 
 
 
 
