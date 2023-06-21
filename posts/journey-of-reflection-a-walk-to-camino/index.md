@@ -17,7 +17,7 @@ It was during a call with a very close friend of mine in the midst of a long and
 
 In this blog post, I would share the learnings and realizations from the experience I had :)
 
-## **Preparation is the key**
+## **Adequate preparation is the key**
 
 Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally.
 
