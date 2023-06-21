@@ -1,7 +1,7 @@
 <!-- 
 .. title: Journey of Reflection: A walk to Camino
 .. slug: journey-of-reflection-a-walk-to-camino
-.. date: 2023-06-12 21:44:47 UTC+05:30
+.. date: 2023-06-21 21:44:47 UTC+05:30
 .. tags:
 .. category: 
 .. link: 
