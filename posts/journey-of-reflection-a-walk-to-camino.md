@@ -49,6 +49,7 @@ I hope I was able to inspire some of you with my experience. I fell in so much l
 
 <center><img src="/images/camino.jpg" alt="Diploma - Camino De Santiago" height="450px" width="850px" border="1px" style="margin: 0px 20px"></center>
 
+
 Until we meet again, continue to embrace laughter, spread joy, and, above all, fully immerse yourself in the beautiful adventure that is life!
 
 <div id="disqus_thread"></div>
