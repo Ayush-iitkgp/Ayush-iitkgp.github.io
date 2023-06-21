@@ -31,6 +31,12 @@ There were often the very difficult and demanding moments, when I felt like givi
 
 Take "_one step at a time_" sound so simple that I often never paid attention to it but it was during this walk I finally experienced how powerful of a statement it is. 
 
+### **Remember to surrender and let go**
+
+I had different set of expectations from the hike. But a lot of things did not go as planned. One the first day of the hike we had to walk 30 KM without getting a proper meal, on the fourth day we walked 5 KM more than we had planned, my body would experience pain in different parts every other hour.
+
+It is in these moments surrendering myself to the journey and letting go of the fear of the outcome allowed me to approach the hike in a more relaxed and peaceful manner and gave me the mental space to enjoy the journey even in the face of the hardships.
+
 
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
