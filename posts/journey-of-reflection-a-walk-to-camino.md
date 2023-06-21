@@ -37,10 +37,19 @@ I had different set of expectations from the hike. But a lot of things did not g
 
 It is in these moments surrendering myself to the journey and letting go of the fear of the outcome allowed me to approach the hike in a more relaxed and peaceful manner and gave me the mental space to enjoy the journey even in the face of the hardships.
 
+### **Human mind and spirit is  unconquerable**
 
+My friends and me started to get foot blisters starting from the day 1 of the hike, I met countless people having difficulties even taking a single step, I developed fever on the day 3 of the hike, one of the friend's knee problems re-appeared omn the day 2 of the hike, we met people as old as 70 years who have been walking for few hundred KMs but despite all these difficulties we all had one firm goal "Santiago" that no one was willing to compromise on.
+
+The journey made me experience closely the power of human mind and spirit that despite countless issues all of us wanted to reach Santiago at all cost and all of us finally did!
+
+### **Conclusion**
+
+I hope I was able to inspire some of you with my experience. I fell in so much love with the experience that I am already planning another Camino De Santiago next spring for approximately 200 KMs. I would conclude the blogpost with a picture of one of the prized possessions from the trip. 
+
+<center><img src="/images/camino.jpg" alt="Diploma - Camino De Santiago" height="300px" width="500px" border="1px" style="margin: 0px 20px"></center>
 
 See you next time till then keep laughing, spreading happiness and the most importantly living this journey called life!!!! 
-
 
 <div id="disqus_thread"></div>
 <script>
