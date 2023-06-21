@@ -21,7 +21,9 @@ In this blog post, I would share the learnings and realizations from the experie
 
 Since, I had never imagined walking 130 km, taking on this challenge meant I had to prepare myself physically and mentally.
 
-I picked up a new sports hobby high-intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for at least 10 km on the outskirts of Berlin almost every weekend leading up to the Camino.
+Gaining insights from various blogs about the Camino de Santiago proved invaluable in my mental preparation. Additionally, I was fortunate to have a friend who had embarked on this pilgrimage before, and conversing with her about the emotions and experiences she encountered greatly aided me in readying myself mentally for the journey ahead.
+
+In anticipation of the physical demands awaiting me , I picked up a new sports hobby high-intensity indoor cycling (spinning) and regularly attended HIIT classes. I also went hiking for at least 10 km on the outskirts of Berlin almost every weekend leading up to the Camino.
 
 Last but not least, taking care of the logistical planning immensely made the experience more pleasant.
 
