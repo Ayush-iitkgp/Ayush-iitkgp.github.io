@@ -1,5 +1,5 @@
 <!-- 
-.. title: Journey of Reflection: A walk to Camino
+.. title: Journey of Reflection: A walk to Santiago
 .. slug: journey-of-reflection-a-walk-to-camino
 .. date: 2023-06-21 21:44:47 UTC+05:30
 .. tags:
@@ -11,7 +11,7 @@
 
 **The Camino de Santiago is not just a walk; it is a journey of the soul, where every step carries the weight of countless stories and the promise of personal transformation.** 
 
-That is how I would describe my experience of walking the Camino.
+That is how I would describe my experience of hiking the Camino.
 
 It was during a call with a very close friend of mine in the midst of a long and very hard Berlin winter that I decided to hike the Camino De Santiago. People have different motivations for the walk, mine was to establish a deeper connection with myself and push me physically to try to achieve long-distance walking of around 130 km in 5 days that I had never ever conceived in my wildest imagination.
 
