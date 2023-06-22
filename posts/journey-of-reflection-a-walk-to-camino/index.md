@@ -49,9 +49,9 @@ The journey made me experience closely the power of the human mind and spirit th
 
 I hope I was able to inspire some of you with my experience. I fell in so much love with the experience that I am already planning another Camino De Santiago next spring for approximately 200 km. I would conclude the blog post with a picture of one of my prized possessions from the trip.
 
+<div>
 <center><img src="/images/camino.jpg" alt="Diploma - Camino De Santiago" height="450px" width="800px" border="1px" style="margin: 0px 20px"></center>
-
-
+</div>
 Until we meet again, continue to embrace laughter, spread joy, and, above all, fully immerse yourself in the beautiful adventure that is life!
 
 <div id="disqus_thread"></div>
