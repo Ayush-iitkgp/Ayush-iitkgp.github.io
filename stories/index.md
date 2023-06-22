@@ -55,10 +55,9 @@ While trying to keep up with the rapid advancements in technology, I like to spe
 
 **May, 2017:** I will be working with Julia Language to add Machine Learning functionality in [DiffEqParamEstim.jl](https://github.com/JuliaDiffEq/DiffEqParamEstim.jl) as Google Summer of Code 2017 student. [Here](https://summerofcode.withgoogle.com/projects/#5914180975591424) is my proposal. 
 
-
 **Apr, 2017:** I am honoured to receive Institute Blue for my contribution to the game of cricket in IIT Kharagpur at the Annual Gymkhana Awards ceremony.
 
-**Aug, 2016:** I would be working as Teaching Assitant for the NPTEL online course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
+**Aug, 2016:** I would be working as Teaching Assistant for the NPTEL online course [Fundamental Algorithms: Design and Analysis](https://onlinecourses.nptel.ac.in/noc16_cs24/course) supervised by [Prof. Sourav Mukhopadhyay](http://www.facweb.iitkgp.ernet.in/~sourav/).
 
 **Jul, 2016:** [Announcing support for complex-domain Linear Programming in Convex.jl.](/posts/announcing-support-for-complex-domain-linear-programs-in-convexjl/)
 

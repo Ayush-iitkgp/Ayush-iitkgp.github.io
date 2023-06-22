@@ -148,7 +148,7 @@ NAVIGATION_LINKS = {
 
         ("/blog", "Blog"),
         ("https://drive.google.com/file/d/1ivW6csbp9xI5cuGABnqIOriUDvFyNB88/view?usp=sharing", "Resume"),
-        ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "University Projects"),
+        # ('https://drive.google.com/drive/folders/0B2oOdWdSJWa1RWRsQWdCZ25LUXc', "University Projects"),
         ("/posts/gsoc-2017/", "GSoC'17"),
         ("/posts/is-it-the-end-or-another-beginning/", "GSoC'16"),
 
