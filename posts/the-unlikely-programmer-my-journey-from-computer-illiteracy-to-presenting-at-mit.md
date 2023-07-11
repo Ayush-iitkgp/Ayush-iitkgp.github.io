@@ -2,7 +2,7 @@
 .. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at MIT.md
 .. slug: the-unlikely-programmer-my-journey-from-computer-illiteracy-to-presenting-at-mit.md
 .. date: 2023-07-12 21:38:08 UTC+05:30
-.. tags: GSoC'16
+.. tags:
 .. category: 
 .. link: 
 .. description: 
