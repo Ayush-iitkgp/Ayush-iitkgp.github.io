@@ -1,6 +1,6 @@
 <!-- 
-.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at MIT.md
-.. slug: the-unlikely-programmer-my-journey-from-computer-illiteracy-to-presenting-at-mit.md
+.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at MIT
+.. slug: the-unlikely-programmer-my-journey-from-computer-illiteracy-to-presenting-at-mit
 .. date: 2023-07-11 21:38:08 UTC+05:30
 .. tags:
 .. category: 
