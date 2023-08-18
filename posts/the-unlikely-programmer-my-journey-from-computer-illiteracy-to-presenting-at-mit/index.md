@@ -1,5 +1,5 @@
 <!-- 
-.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at MIT
+.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at Massachusetts Institute of Technology
 .. slug: the-unlikely-programmer-my-journey-from-computer-illiteracy-to-presenting-at-mit
 .. date: 2023-07-11 21:38:08 UTC+05:30
 .. tags:
@@ -12,7 +12,7 @@
 
 ## Introduction
 
-Only a select few of my closest friends are aware of my journey from computer illiteracy to becoming a computer scientist. Recently, my very dear friend and my first mentor [Anshit Mandloi]() encouraged me to write a blog post about my progression, on how I managed to overcome my lack of knowledge in computers to present my work at MIT within four years. My intention in sharing this story is to inspire individuals who, much like myself, come from similar backgrounds and may harbor doubts about their ability to navigate the world of technology. Through this blog, I hope to ignite a spark of possibility and show that with determination, incredible transformations are within our grasp.
+Only a select few of my closest friends are aware of my journey from computer illiteracy to becoming a computer scientist. Recently, my very dear friend and my first mentor [Anshit Mandloi]() encouraged me to write a blog post about my progression, on how I managed to overcome my lack of knowledge in computers to present my work at Massachusetts Institute of Technology within four years. My intention in sharing this story is to inspire individuals who, much like myself, come from similar backgrounds and may harbor doubts about their ability to navigate the world of technology. Through this blog, I hope to ignite a spark of possibility and show that with determination, incredible transformations are within our grasp.
 
 ## Starting from Scratch: The Beginnings
 
