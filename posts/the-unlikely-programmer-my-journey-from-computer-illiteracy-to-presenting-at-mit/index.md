@@ -49,7 +49,7 @@ During this summer, an unexpected invitation arrived: I was asked to speak about
 As a concluding note, I'll share the link to the talk I presented. Please bear with any imperfections in my English, as I also grappled with it during my programming journey – a story for another time :)
 
 .. youtube:: fHG4uEOlMbY
-:align: center
+   :align: center
 
 I hope this blog post has left you feeling inspired. I eagerly await your feedback and hope to hear your thoughts and stories as well!"
 
