@@ -1,7 +1,7 @@
 <!-- 
-.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at Massachusetts Institute of Technology
+.. title: The Unlikely Programmer: My Journey from Computer Illiteracy to Presenting at Massachusetts Institute of Technology (MIT)
 .. slug: the-unlikely-programmer-my-journey-from-computer-illiteracy-to-presenting-at-mit
-.. date: 2023-07-11 21:38:08 UTC+05:30
+.. date: 2023-09-01 10:38:08 UTC+05:30
 .. tags:
 .. category: 
 .. link: 
@@ -20,7 +20,7 @@ The purpose of sharing this deeply personal account is to provide inspiration to
 
 I come from small town situated in one of the less developed regions of North India. Hailing from a family of eight, my father shouldered the role of the sole provider. In such circumstances, pursuing quality education proved to be an uphill battle, rendering the idea of having a computer at home an unattainable dream. Hence, my exposure to computers was limited to the few sessions we had during our high school curriculum. 
 
-However, destiny had its designs, I managed to emerge successful in the IIT-JEE exam (an exam with an acceptance rate of a 1 in 500). This paved the way for my academic journey, leading me to opt for the study of Mathematics and Computer Science at the Indian Institute of Technology (IIT), Kharagpur.
+However, destiny had its designs, I managed to emerge successful in the IIT-JEE exam (an exam with an acceptance rate of 1 in 500). This paved the way for my academic journey, leading me to opt for the study of Mathematics and Computer Science at the Indian Institute of Technology (IIT), Kharagpur.
 
 ## The Challenges
 
@@ -42,9 +42,16 @@ After three years of taking various courses, participating in hackathons (with m
 
 ## MIT
 
-I wanted to be part of the prestigious [Google Summer of Code program](), I first tried to get into the program at the end of my third year at the university but guess what I did not get selected. Instead of getting disappointed, I decided to try again the next year and this time I succeeded and I spent my summer contributing the Julia Programming Language adding support for optimization with complex numbers in their Covex.jl library. And it was during the summer I was invited to speak about my work at Julialang Conference'16 held at MIT, Boston. I always wanted to visit to MIT, MIT was a dream but I had never even in my wildest dreams that I would be invited to speak at a conference there. It just felt like all my struggles and hardwork was meant to lead me to MIT without me even realizing it. It is so far one of the proudest moments of my life. and it led me to believe that no matter how late you start in your life you, you can still end up doing things that you never even dreamt of. I would end the blogpost with the link to the talk I presented.
+My aspiration was to become a part of the esteemed [Google Summer of Code program](). In my initial attempt at the end of my third year at university, I faced rejection. I tried the following year, my effort bore fruit, and I spent that summer of 2016 contributing to the Julia Programming Language, specifically adding support for optimization with complex numbers in their Convex.jl library.
+
+During this summer, an unexpected invitation arrived: I was asked to speak about my work at [JuliaCon'16](), hosted at MIT in Boston. Visiting MIT had always been a dream, one I thought might forever remain unfulfilled, let alone being invited as a speaker at a conference there. It felt as though all my struggles and hard work had unknowingly paved the path to MIT. This experience to this day still stands as one of the proudest moments of my life, reinforcing the belief that, regardless of where one begin, one can achieve things beyond their wildest dreams.
+
+As a concluding note, I'll share the link to the talk I presented. Please bear with any imperfections in my English, as I also grappled with it during my programming journey – a story for another time :)
 
 .. youtube:: fHG4uEOlMbY
+:align: center
+
+I hope this blog post has left you feeling inspired. I eagerly await your feedback and hope to hear your thoughts and stories as well!"
 
 <div id="disqus_thread"></div>
 <script>
