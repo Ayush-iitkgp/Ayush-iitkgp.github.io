@@ -42,7 +42,7 @@ After three years of taking various courses, participating in hackathons (with m
 
 ## MIT
 
-My aspiration was to become a part of the esteemed [Google Summer of Code program](). In my initial attempt at the end of my third year at university, I faced rejection. I tried the following year, my effort bore fruit, and I spent that summer of 2016 contributing to the Julia Programming Language, specifically adding support for optimization with complex numbers in their Convex.jl library.
+My aspiration was to become a part of the esteemed [Google Summer of Code program](). In my initial attempt at the end of my third year at university, I faced rejection. I tried the following year, my effort bore fruit, and I spent the summer of 2016 contributing to the Julia Programming Language, specifically adding support for optimization with complex numbers in their Convex.jl library.
 
 During this summer, an unexpected invitation arrived: I was asked to speak about my work at [JuliaCon'16](), hosted at MIT in Boston. Visiting MIT had always been a dream, one I thought might forever remain unfulfilled, let alone being invited as a speaker at a conference there. It felt as though all my struggles and hard work had unknowingly paved the path to MIT. This experience to this day still stands as one of the proudest moments of my life, reinforcing the belief that, regardless of where one begin, one can achieve things beyond their wildest dreams.
 
