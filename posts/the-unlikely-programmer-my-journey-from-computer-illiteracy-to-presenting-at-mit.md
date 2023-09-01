@@ -20,7 +20,7 @@ The purpose of sharing this deeply personal account is to provide inspiration to
 
 I come from small town situated in one of the less developed regions of North India. Hailing from a family of eight, my father shouldered the role of the sole provider. In such circumstances, pursuing quality education proved to be an uphill battle, rendering the idea of having a computer at home an unattainable dream. Hence, my exposure to computers was limited to the few sessions we had during our high school curriculum. 
 
-however, destiny had its designs, I managed to emerge successful in the IIT-JEE exam (an exam with an acceptance rate of a 1 in 500). This paved the way for my academic journey, leading me to opt for the study of Mathematics and Computer Science at the Indian Institute of Technology (IIT), Kharagpur.
+However, destiny had its designs, I managed to emerge successful in the IIT-JEE exam (an exam with an acceptance rate of a 1 in 500). This paved the way for my academic journey, leading me to opt for the study of Mathematics and Computer Science at the Indian Institute of Technology (IIT), Kharagpur.
 
 ## The Challenges
 
@@ -32,7 +32,17 @@ What accompanied these challenges were not merely technical, but a roller-coaste
 
 ## The Journey
 
+This journey instilled humility in me. Over time, my determination to grasp the unfamiliar and uncover the secrets of programming only grew stronger. I began with a book that my professors discouraged but I could understand it on my own - "Let Us C" by Yashwant Kanetkar. My evenings were dedicated to the library, reading a page or two and writing down notes. Every week, I spent all my allotted lab time attempting assignments, often ending in failure. 
+
+It was during these moments that I found invaluable friends and mentors who recognized my need for help. My wingmates, [Anshit Mandloi]() and [Naman Mitruka](), were instrumental in my journey. They patiently listened, clarified my doubts, and even guided me through basic programming exercises. Their support transformed them from just wingmates into mentors on this challenging path. 
+
+In my second year the university, I met [Harsh Gupta](), who was my batchmate, and he played a pivotal role in my growth as a programmer. His willingness to lend a helping hand on numerous occasions marked a turning point in my journey. He generously shared his knowledge, ensuring I grasped complex concepts and tackled intricate problems with confidence.
+
+After three years of taking various courses, participating in hackathons (with mostly failures), my confidence as a programmer began to bloom. It was finally time to put my skills to the test in the real world.
+
 ## MIT
+
+I wanted to be part of the prestigious [Google Summer of Code program](), I first tried to get into the program at the end of my third year at the university but guess what I did not get selected. Instead of getting disappointed, I decided to try again the next year and this time I succeeded and I spent my summer contributing the Julia Programming Language adding support for optimization with complex numbers in their Covex.jl library. And it was during the summer I was invited to speak about my work at Julialang Conference'16 held at MIT, Boston. I always wanted to visit to MIT, MIT was a dream but I had never even in my wildest dreams that I would be invited to speak at a conference there. It just felt like all my struggles and hardwork was meant to lead me to MIT without me even realizing it. It is so far one of the proudest moments of my life. and it led me to believe that no matter how late you start in your life you, you can still end up doing things that you never even dreamt of. I would end the blogpost with the link to the talk I presented.
 
 
 
