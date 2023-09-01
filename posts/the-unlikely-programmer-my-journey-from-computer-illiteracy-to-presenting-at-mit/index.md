@@ -44,7 +44,7 @@ After three years of taking various courses, participating in hackathons (with m
 
 I wanted to be part of the prestigious [Google Summer of Code program](), I first tried to get into the program at the end of my third year at the university but guess what I did not get selected. Instead of getting disappointed, I decided to try again the next year and this time I succeeded and I spent my summer contributing the Julia Programming Language adding support for optimization with complex numbers in their Covex.jl library. And it was during the summer I was invited to speak about my work at Julialang Conference'16 held at MIT, Boston. I always wanted to visit to MIT, MIT was a dream but I had never even in my wildest dreams that I would be invited to speak at a conference there. It just felt like all my struggles and hardwork was meant to lead me to MIT without me even realizing it. It is so far one of the proudest moments of my life. and it led me to believe that no matter how late you start in your life you, you can still end up doing things that you never even dreamt of. I would end the blogpost with the link to the talk I presented.
 
-
+.. youtube:: fHG4uEOlMbY
 
 <div id="disqus_thread"></div>
 <script>
